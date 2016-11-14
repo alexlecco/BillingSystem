@@ -1,0 +1,10 @@
+<ConnectionInformation>
+	<DBName>GX_KB_BillingSystem</DBName>
+	<IntegratedSecurity>True</IntegratedSecurity>
+	<ServerInstance>LECCO\SQLEXPRESS</ServerInstance>
+	<CreateDbInKbFolder>True</CreateDbInKbFolder>
+	<Directory>C:\Models\BillingSystem</Directory>
+	<DataFile>GX_KB_BillingSystem.mdf</DataFile>
+	<LogFile>GX_KB_BillingSystem_log.LDF</LogFile>
+	<HostName>LECCO</HostName>
+</ConnectionInformation>
