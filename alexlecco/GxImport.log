@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ImportLog>
+	<RowImport>
+		<Status>Ok</Status>
+		<Type>00972a17-9975-449e-aab1-d26165d51393</Type>
+		<Name>RecentLinksOptions</Name>
+		<Errors />
+		<Warnings />
+		<Info />
+	</RowImport>
+	<RowImport>
+		<Status>Ok</Status>
+		<Type>00972a17-9975-449e-aab1-d26165d51393</Type>
+		<Name>ObjectName</Name>
+		<Errors />
+		<Warnings />
+		<Info />
+	</RowImport>
+	<RowImport>
+		<Status>Ok</Status>
+		<Type>00972a17-9975-449e-aab1-d26165d51393</Type>
+		<Name>URLString</Name>
+		<Errors />
+		<Warnings />
+		<Info />
+	</RowImport>
+	<RowImport>
+		<Status>Ok</Status>
+		<Type>447527b5-9210-4523-898b-5dccb17be60a</Type>
+		<Name>LinkList</Name>
+		<Errors />
+		<Warnings />
+		<Info />
+	</RowImport>
+	<RowImport>
+		<Status>Ok</Status>
+		<Type>00000000-0000-0000-0000-000000000008</Type>
+		<Name>GeneralWeb</Name>
+		<Errors />
+		<Warnings />
+		<Info />
+	</RowImport>
+	<RowImport>
+		<Status>Ok</Status>
+		<Type>c9584656-94b6-4ccd-890f-332d11fc2c25</Type>
+		<Name>AppMasterPage</Name>
+		<Errors />
+		<Warnings />
+		<Info />
+	</RowImport>
+	<RowImport>
+		<Status>Ok</Status>
+		<Type>c9584656-94b6-4ccd-890f-332d11fc2c25</Type>
+		<Name>PromptMasterPage</Name>
+		<Errors />
+		<Warnings />
+		<Info />
+	</RowImport>
+	<RowImport>
+		<Status>Ok</Status>
+		<Type>c9584656-94b6-4ccd-890f-332d11fc2c25</Type>
+		<Name>RecentLinks</Name>
+		<Errors />
+		<Warnings />
+		<Info />
+	</RowImport>
+</ImportLog>
