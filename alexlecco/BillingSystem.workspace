@@ -1,8 +1,29 @@
 <Objects>
   <Object>
+    <Name>Customer</Name>
+    <Type>1db606f2-af09-4cf9-a3b5-b481519d28f6</Type>
+    <Part>9b0a32a3-de6d-4be1-a4dd-1b85d3741534</Part>
+  </Object>
+  <Object>
     <Name>Country</Name>
     <Type>1db606f2-af09-4cf9-a3b5-b481519d28f6</Type>
-    <Part>264be5fb-1b28-4b25-a598-6ca900dd059f</Part>
+    <Part>9b0a32a3-de6d-4be1-a4dd-1b85d3741534</Part>
   </Object>
-  <Recent />
+  <Recent>
+    <RecentKBObjectsList>
+      <MaximumItems>10</MaximumItems>
+      <RecentKBObjects>
+        <RecentKBObject>
+          <Key>1db606f2-af09-4cf9-a3b5-b481519d28f6-1</Key>
+          <Name>Country</Name>
+          <LastAccess>2016-11-14T18:01:15.7510129-03:00</LastAccess>
+        </RecentKBObject>
+        <RecentKBObject>
+          <Key>1db606f2-af09-4cf9-a3b5-b481519d28f6-0</Key>
+          <Name>Transaction1</Name>
+          <LastAccess>2016-11-14T17:53:24.6273975-03:00</LastAccess>
+        </RecentKBObject>
+      </RecentKBObjects>
+    </RecentKBObjectsList>
+  </Recent>
 </Objects>

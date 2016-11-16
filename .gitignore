@@ -45,3 +45,6 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+GX_KB_BillingSystem.mdf
+GX_KB_BillingSystem_log.LDF
+*.lock

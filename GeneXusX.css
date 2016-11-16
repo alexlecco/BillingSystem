@@ -145,7 +145,7 @@
 	padding-right: 0pt;
 	padding-top: 0pt;
 	background-color: #9F9F9F;
-	background-image: url(Button.gif);
+	background-image: url(Resources/Button.gif);
 	border-bottom-color: #797979;
 	border-left-color: #797979;
 	border-right-color: #797979;
@@ -176,7 +176,7 @@
 
 .RButton .BtnLeft
 {
-	background-image: url(btnL.gif);
+	background-image: url(Resources/btnL.gif);
 	padding-left: 9px;
 	cursor: pointer;
 }
@@ -184,14 +184,14 @@
 .RButton .BtnRight
 {
 	cursor: pointer;
-	background-image: url(btnR.gif);
+	background-image: url(Resources/btnR.gif);
 	padding-right: 9px;
 }
 
 .RButton .BtnBackground
 {
 	cursor: pointer;
-	background-image: url(btnC.gif);
+	background-image: url(Resources/btnC.gif);
 }
 
 .RButton .BtnText
@@ -223,7 +223,7 @@
 
 .RSpecialButtons .BtnLeft
 {
-	background-image: url(btnL.gif);
+	background-image: url(Resources/btnL.gif);
 	padding-left: 9px;
 	cursor: pointer;
 }
@@ -231,14 +231,14 @@
 .RSpecialButtons .BtnRight
 {
 	cursor: pointer;
-	background-image: url(btnR.gif);
+	background-image: url(Resources/btnR.gif);
 	padding-right: 9px;
 }
 
 .RSpecialButtons .BtnBackground
 {
 	cursor: pointer;
-	background-image: url(btnC.gif);
+	background-image: url(Resources/btnC.gif);
 }
 
 .RSpecialButtons .BtnText
@@ -270,7 +270,7 @@
 
 .RBtnCancel .BtnLeft
 {
-	background-image: url(btnL.gif);
+	background-image: url(Resources/btnL.gif);
 	padding-left: 9px;
 	cursor: pointer;
 }
@@ -278,14 +278,14 @@
 .RBtnCancel .BtnRight
 {
 	cursor: pointer;
-	background-image: url(btnR.gif);
+	background-image: url(Resources/btnR.gif);
 	padding-right: 9px;
 }
 
 .RBtnCancel .BtnBackground
 {
 	cursor: pointer;
-	background-image: url(btnC.gif);
+	background-image: url(Resources/btnC.gif);
 }
 
 .RBtnCancel .BtnText
@@ -317,7 +317,7 @@
 
 .RBtnCheck .BtnLeft
 {
-	background-image: url(btnL.gif);
+	background-image: url(Resources/btnL.gif);
 	padding-left: 9px;
 	cursor: pointer;
 }
@@ -325,14 +325,14 @@
 .RBtnCheck .BtnRight
 {
 	cursor: pointer;
-	background-image: url(btnR.gif);
+	background-image: url(Resources/btnR.gif);
 	padding-right: 9px;
 }
 
 .RBtnCheck .BtnBackground
 {
 	cursor: pointer;
-	background-image: url(btnC.gif);
+	background-image: url(Resources/btnC.gif);
 }
 
 .RBtnCheck .BtnText
@@ -364,7 +364,7 @@
 
 .RBtnDelete .BtnLeft
 {
-	background-image: url(btnL.gif);
+	background-image: url(Resources/btnL.gif);
 	padding-left: 9px;
 	cursor: pointer;
 }
@@ -372,14 +372,14 @@
 .RBtnDelete .BtnRight
 {
 	cursor: pointer;
-	background-image: url(btnR.gif);
+	background-image: url(Resources/btnR.gif);
 	padding-right: 9px;
 }
 
 .RBtnDelete .BtnBackground
 {
 	cursor: pointer;
-	background-image: url(btnC.gif);
+	background-image: url(Resources/btnC.gif);
 }
 
 .RBtnDelete .BtnText
@@ -411,7 +411,7 @@
 
 .RBtnEnter .BtnLeft
 {
-	background-image: url(btnL.gif);
+	background-image: url(Resources/btnL.gif);
 	padding-left: 9px;
 	cursor: pointer;
 }
@@ -419,14 +419,14 @@
 .RBtnEnter .BtnRight
 {
 	cursor: pointer;
-	background-image: url(btnR.gif);
+	background-image: url(Resources/btnR.gif);
 	padding-right: 9px;
 }
 
 .RBtnEnter .BtnBackground
 {
 	cursor: pointer;
-	background-image: url(btnC.gif);
+	background-image: url(Resources/btnC.gif);
 }
 
 .RBtnEnter .BtnText
@@ -458,7 +458,7 @@
 
 .RBtnFirst .BtnLeft
 {
-	background-image: url(btnL.gif);
+	background-image: url(Resources/btnL.gif);
 	padding-left: 9px;
 	cursor: pointer;
 }
@@ -466,14 +466,14 @@
 .RBtnFirst .BtnRight
 {
 	cursor: pointer;
-	background-image: url(btnR.gif);
+	background-image: url(Resources/btnR.gif);
 	padding-right: 9px;
 }
 
 .RBtnFirst .BtnBackground
 {
 	cursor: pointer;
-	background-image: url(btnC.gif);
+	background-image: url(Resources/btnC.gif);
 }
 
 .RBtnFirst .BtnText
@@ -505,7 +505,7 @@
 
 .RBtnGet .BtnLeft
 {
-	background-image: url(btnL.gif);
+	background-image: url(Resources/btnL.gif);
 	padding-left: 9px;
 	cursor: pointer;
 }
@@ -513,14 +513,14 @@
 .RBtnGet .BtnRight
 {
 	cursor: pointer;
-	background-image: url(btnR.gif);
+	background-image: url(Resources/btnR.gif);
 	padding-right: 9px;
 }
 
 .RBtnGet .BtnBackground
 {
 	cursor: pointer;
-	background-image: url(btnC.gif);
+	background-image: url(Resources/btnC.gif);
 }
 
 .RBtnGet .BtnText
@@ -552,7 +552,7 @@
 
 .RBtnHelp .BtnLeft
 {
-	background-image: url(btnL.gif);
+	background-image: url(Resources/btnL.gif);
 	padding-left: 9px;
 	cursor: pointer;
 }
@@ -560,14 +560,14 @@
 .RBtnHelp .BtnRight
 {
 	cursor: pointer;
-	background-image: url(btnR.gif);
+	background-image: url(Resources/btnR.gif);
 	padding-right: 9px;
 }
 
 .RBtnHelp .BtnBackground
 {
 	cursor: pointer;
-	background-image: url(btnC.gif);
+	background-image: url(Resources/btnC.gif);
 }
 
 .RBtnHelp .BtnText
@@ -599,7 +599,7 @@
 
 .RBtnLast .BtnLeft
 {
-	background-image: url(btnL.gif);
+	background-image: url(Resources/btnL.gif);
 	padding-left: 9px;
 	cursor: pointer;
 }
@@ -607,14 +607,14 @@
 .RBtnLast .BtnRight
 {
 	cursor: pointer;
-	background-image: url(btnR.gif);
+	background-image: url(Resources/btnR.gif);
 	padding-right: 9px;
 }
 
 .RBtnLast .BtnBackground
 {
 	cursor: pointer;
-	background-image: url(btnC.gif);
+	background-image: url(Resources/btnC.gif);
 }
 
 .RBtnLast .BtnText
@@ -646,7 +646,7 @@
 
 .RBtnNext .BtnLeft
 {
-	background-image: url(btnL.gif);
+	background-image: url(Resources/btnL.gif);
 	padding-left: 9px;
 	cursor: pointer;
 }
@@ -654,14 +654,14 @@
 .RBtnNext .BtnRight
 {
 	cursor: pointer;
-	background-image: url(btnR.gif);
+	background-image: url(Resources/btnR.gif);
 	padding-right: 9px;
 }
 
 .RBtnNext .BtnBackground
 {
 	cursor: pointer;
-	background-image: url(btnC.gif);
+	background-image: url(Resources/btnC.gif);
 }
 
 .RBtnNext .BtnText
@@ -693,7 +693,7 @@
 
 .RBtnPrevious .BtnLeft
 {
-	background-image: url(btnL.gif);
+	background-image: url(Resources/btnL.gif);
 	padding-left: 9px;
 	cursor: pointer;
 }
@@ -701,14 +701,14 @@
 .RBtnPrevious .BtnRight
 {
 	cursor: pointer;
-	background-image: url(btnR.gif);
+	background-image: url(Resources/btnR.gif);
 	padding-right: 9px;
 }
 
 .RBtnPrevious .BtnBackground
 {
 	cursor: pointer;
-	background-image: url(btnC.gif);
+	background-image: url(Resources/btnC.gif);
 }
 
 .RBtnPrevious .BtnText
@@ -740,7 +740,7 @@
 
 .RBtnRefresh .BtnLeft
 {
-	background-image: url(btnL.gif);
+	background-image: url(Resources/btnL.gif);
 	padding-left: 9px;
 	cursor: pointer;
 }
@@ -748,14 +748,14 @@
 .RBtnRefresh .BtnRight
 {
 	cursor: pointer;
-	background-image: url(btnR.gif);
+	background-image: url(Resources/btnR.gif);
 	padding-right: 9px;
 }
 
 .RBtnRefresh .BtnBackground
 {
 	cursor: pointer;
-	background-image: url(btnC.gif);
+	background-image: url(Resources/btnC.gif);
 }
 
 .RBtnRefresh .BtnText
@@ -787,7 +787,7 @@
 
 .RBtnSelect .BtnLeft
 {
-	background-image: url(btnL.gif);
+	background-image: url(Resources/btnL.gif);
 	padding-left: 9px;
 	cursor: pointer;
 }
@@ -795,14 +795,14 @@
 .RBtnSelect .BtnRight
 {
 	cursor: pointer;
-	background-image: url(btnR.gif);
+	background-image: url(Resources/btnR.gif);
 	padding-right: 9px;
 }
 
 .RBtnSelect .BtnBackground
 {
 	cursor: pointer;
-	background-image: url(btnC.gif);
+	background-image: url(Resources/btnC.gif);
 }
 
 .RBtnSelect .BtnText
@@ -840,7 +840,7 @@
 
 .RSpecialButtonsDisabled .BtnLeft
 {
-	background-image: url(btnLDisabled.gif);
+	background-image: url(Resources/btnLDisabled.gif);
 	padding-left: 9px;
 	cursor: pointer;
 }
@@ -848,14 +848,14 @@
 .RSpecialButtonsDisabled .BtnRight
 {
 	cursor: pointer;
-	background-image: url(btnRDisabled.gif);
+	background-image: url(Resources/btnRDisabled.gif);
 	padding-right: 9px;
 }
 
 .RSpecialButtonsDisabled .BtnBackground
 {
 	cursor: pointer;
-	background-image: url(btnCDisabled.gif);
+	background-image: url(Resources/btnCDisabled.gif);
 }
 
 .RSpecialButtonsDisabled .BtnText
@@ -887,7 +887,7 @@
 
 .RButtonDragging .BtnLeft
 {
-	background-image: url(btnL.gif);
+	background-image: url(Resources/btnL.gif);
 	padding-left: 9px;
 	cursor: pointer;
 }
@@ -895,14 +895,14 @@
 .RButtonDragging .BtnRight
 {
 	cursor: pointer;
-	background-image: url(btnR.gif);
+	background-image: url(Resources/btnR.gif);
 	padding-right: 9px;
 }
 
 .RButtonDragging .BtnBackground
 {
 	cursor: pointer;
-	background-image: url(btnC.gif);
+	background-image: url(Resources/btnC.gif);
 }
 
 .RButtonDragging .BtnText
@@ -934,7 +934,7 @@
 
 .RButtonAcceptDrag .BtnLeft
 {
-	background-image: url(btnL.gif);
+	background-image: url(Resources/btnL.gif);
 	padding-left: 9px;
 	cursor: pointer;
 }
@@ -942,14 +942,14 @@
 .RButtonAcceptDrag .BtnRight
 {
 	cursor: pointer;
-	background-image: url(btnR.gif);
+	background-image: url(Resources/btnR.gif);
 	padding-right: 9px;
 }
 
 .RButtonAcceptDrag .BtnBackground
 {
 	cursor: pointer;
-	background-image: url(btnC.gif);
+	background-image: url(Resources/btnC.gif);
 }
 
 .RButtonAcceptDrag .BtnText
@@ -981,7 +981,7 @@
 
 .RButtonNoAcceptDrag .BtnLeft
 {
-	background-image: url(btnL.gif);
+	background-image: url(Resources/btnL.gif);
 	padding-left: 9px;
 	cursor: pointer;
 }
@@ -989,14 +989,14 @@
 .RButtonNoAcceptDrag .BtnRight
 {
 	cursor: pointer;
-	background-image: url(btnR.gif);
+	background-image: url(Resources/btnR.gif);
 	padding-right: 9px;
 }
 
 .RButtonNoAcceptDrag .BtnBackground
 {
 	cursor: pointer;
-	background-image: url(btnC.gif);
+	background-image: url(Resources/btnC.gif);
 }
 
 .RButtonNoAcceptDrag .BtnText
@@ -1034,7 +1034,7 @@
 
 .RActionButtons .BtnLeft
 {
-	background-image: url(btnL.gif);
+	background-image: url(Resources/btnL.gif);
 	padding-left: 9px;
 	cursor: pointer;
 }
@@ -1042,14 +1042,14 @@
 .RActionButtons .BtnRight
 {
 	cursor: pointer;
-	background-image: url(btnR.gif);
+	background-image: url(Resources/btnR.gif);
 	padding-right: 9px;
 }
 
 .RActionButtons .BtnBackground
 {
 	cursor: pointer;
-	background-image: url(btnC.gif);
+	background-image: url(Resources/btnC.gif);
 }
 
 .RActionButtons .BtnText
@@ -1087,7 +1087,7 @@
 
 .RButtonDisabled .BtnLeft
 {
-	background-image: url(btnLDisabled.gif);
+	background-image: url(Resources/btnLDisabled.gif);
 	padding-left: 9px;
 	cursor: pointer;
 }
@@ -1095,14 +1095,14 @@
 .RButtonDisabled .BtnRight
 {
 	cursor: pointer;
-	background-image: url(btnRDisabled.gif);
+	background-image: url(Resources/btnRDisabled.gif);
 	padding-right: 9px;
 }
 
 .RButtonDisabled .BtnBackground
 {
 	cursor: pointer;
-	background-image: url(btnCDisabled.gif);
+	background-image: url(Resources/btnCDisabled.gif);
 }
 
 .RButtonDisabled .BtnText
@@ -1636,32 +1636,32 @@
 
 .PagingButtonsFirst
 {
-	background-image: url(PageFirst.gif);
+	background-image: url(Resources/PageFirst.gif);
 
 }
 
 .PagingButtonsLast
 {
-	background-image: url(PageLast.gif);
+	background-image: url(Resources/PageLast.gif);
 
 }
 
 .PagingButtonsNext
 {
-	background-image: url(PageNext.gif);
+	background-image: url(Resources/PageNext.gif);
 
 }
 
 .PagingButtonsPrevious
 {
-	background-image: url(PagePrevious.gif);
+	background-image: url(Resources/PagePrevious.gif);
 
 }
 
 .ImageHeaderBackground
 {
 	background-repeat: no-repeat;
-	background-image: url(header_small1.gif);
+	background-image: url(Resources/header_small1.gif);
 	height: 90px;
 	width: 390px;
 
@@ -1779,7 +1779,7 @@
 {
 	background-repeat: repeat-x;
 	list-style-image: none;
-	background-image: url(HeaderBackground.gif);
+	background-image: url(Resources/HeaderBackground.gif);
 	height: 80px;
 	width: 100%;
 
@@ -1978,7 +1978,7 @@
 	padding-left: 22pt;
 	padding-top: 5pt;
 	-moz-box-sizing: border-box;
-	background-image: url(line_header.gif);
+	background-image: url(Resources/line_header.gif);
 	font-size: 10pt;
 	height: 29px;
 	color: #78797A;
@@ -2021,7 +2021,7 @@
 	display: block;
 	-moz-box-sizing: border-box;
 	background-color: White;
-	background-image: url(TabSelected.gif);
+	background-image: url(Resources/TabSelected.gif);
 	font-size: 8pt;
 	height: 20px;
 	vertical-align: bottom;
@@ -2034,7 +2034,7 @@
 	display: block;
 	-moz-box-sizing: border-box;
 	background-color: White;
-	background-image: url(TabUnselected.gif);
+	background-image: url(Resources/TabUnselected.gif);
 	font-size: 8pt;
 	height: 20px;
 	vertical-align: bottom;
@@ -2081,7 +2081,7 @@
 
 .TabContainer
 {
-	background-image: url(TabLine.gif);
+	background-image: url(Resources/TabLine.gif);
 	background-position: 0 3px;
 	background-repeat: repeat-x;
 	float: left;
@@ -2169,7 +2169,7 @@
 .Calendar .nav 
 {
 	background-color: #E4E5E6;
-	background-image: url(menuarrow.gif);
+	background-image: url(Resources/menuarrow.gif);
 	background-position: 100% 100%;
 	background-repeat: no-repeat;
 	font-family: tahoma,verdana,sans-serif;
@@ -2794,7 +2794,7 @@ DIV.suggestions  DIV.current
 
 .PopupHeader 
 {
-	background-image: url(popupheader.gif);
+	background-image: url(Resources/popupheader.gif);
 	float: left;
 	width: 100%;
 	cursor: move;
@@ -2812,7 +2812,7 @@ DIV.suggestions  DIV.current
 
 .PopupHeaderButton 
 {
-	background-image: url(ClosePrompt.gif);
+	background-image: url(Resources/ClosePrompt.gif);
 	background-position: right;
 	float: right;
 	height: 16px;
@@ -2839,7 +2839,7 @@ DIV.suggestions  DIV.current
 
 .UnSelectedTab 
 {
-	background-image: url(TabUnselected.gif);
+	background-image: url(Resources/TabUnselected.gif);
 	font-family: Arial;
 	font-size: 8pt;
 
@@ -2984,7 +2984,7 @@ UL.Tabs LI.Tab A.TabFirst
 {
 	background-attachment: scroll;
 	background-color: transparent;
-	background-image: url(TabBeginUnselected.gif);
+	background-image: url(Resources/TabBeginUnselected.gif);
 	background-position: 0 0;
 	background-repeat: no-repeat;
 	padding-left: 11px;
@@ -3013,7 +3013,7 @@ UL.Tabs LI.Tab SPAN.TabBackground
 {
 	background-attachment: scroll;
 	background-color: transparent;
-	background-image: url(TabUnselected.gif);
+	background-image: url(Resources/TabUnselected.gif);
 	background-repeat: repeat-x;
 	overflow: hidden;
 
@@ -3023,7 +3023,7 @@ UL.Tabs LI.Tab SPAN.TabLast
 {
 	background-attachment: scroll;
 	background-color: transparent;
-	background-image: url(TabEndUnselected.gif);
+	background-image: url(Resources/TabEndUnselected.gif);
 	background-position: right 0;
 	background-repeat: no-repeat;
 	padding-right: 18px;
@@ -3034,7 +3034,7 @@ UL.Tabs LI.Tab SPAN.TabRight
 {
 	background-attachment: scroll;
 	background-color: transparent;
-	background-image: url(TabUnselectedUnselected.gif);
+	background-image: url(Resources/TabUnselectedUnselected.gif);
 	background-position: right 0;
 	background-repeat: no-repeat;
 	padding-right: 23px;
@@ -3069,7 +3069,7 @@ UL.Tabs LI.TabSelected A.TabFirst
 {
 	background-attachment: scroll;
 	background-color: transparent;
-	background-image: url(TabBeginSelected.gif);
+	background-image: url(Resources/TabBeginSelected.gif);
 	background-position: 0 0;
 	background-repeat: no-repeat;
 	padding-left: 12px;
@@ -3080,7 +3080,7 @@ UL.Tabs LI.TabSelected A.TabLeft
 {
 	background-attachment: scroll;
 	background-color: transparent;
-	background-image: url(TabUnselectedSelected.gif);
+	background-image: url(Resources/TabUnselectedSelected.gif);
 	background-position: 0 0;
 	background-repeat: no-repeat;
 	margin-left: -23px;
@@ -3098,7 +3098,7 @@ UL.Tabs LI.TabSelected SPAN
 UL.Tabs LI.TabSelected SPAN.TabBackground
 {
 	background-color: transparent;
-	background-image: url(TabSelected.gif);
+	background-image: url(Resources/TabSelected.gif);
 
 }
 
@@ -3106,7 +3106,7 @@ UL.Tabs LI.TabSelected SPAN.TabLast
 {
 	background-attachment: scroll;
 	background-color: transparent;
-	background-image: url(TabEndSelected.gif);
+	background-image: url(Resources/TabEndSelected.gif);
 	background-position: right 0;
 	background-repeat: no-repeat;
 	padding-right: 19px;
@@ -3117,7 +3117,7 @@ UL.Tabs LI.TabSelected SPAN.TabRight
 {
 	background-attachment: scroll;
 	background-color: transparent;
-	background-image: url(TabSelectedUnselected.gif);
+	background-image: url(Resources/TabSelectedUnselected.gif);
 	background-position: right 0;
 	background-repeat: no-repeat;
 	margin-right: 0px;
