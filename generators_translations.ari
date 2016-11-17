@@ -1,0 +1,367 @@
+lng_i(1,[ 'English','English',eng ]).
+ 
+lng_prop_i(1,'ISOLangCode','EN',v).
+lng_prop_i(1,'ISOCountryCode','US',v).
+lng_prop_i(1,'Codepage','1252',v).
+lng_prop_i(1,'LanguageLocalization','',d).
+lng_prop_i(1,'LangDateFormat','ENG',v).
+lng_prop_i(1,'LangTimeFormat','12',v).
+lng_prop_i(1,'LangDecimalPoint','.',v).
+ 
+lit(eng,datefmt,'SET DATE AMERICAN').
+lit(eng,trnrpt,[ '''More Transactions''','''More Reports''','''More Procedures''','''More Work Panels''','''More Menus''' ]).
+lit(eng,mmmainmenu,[ '''Main menu''','''Database Administrator Menu''','''Transactions''','''Reports''','''Create database''','''Rebuild indices''','''Rebuild redundancy''','''Reorganize database''','''Export application''','''Use interpreter''','''Procedures''','''Work Panels''','''Menus''' ]).
+lit(eng,mmint,[ '''GX Menu Integrator''','''Menus''' ]).
+lit(eng,opt,'''Options''').
+lit(eng,nomenu,'''There are no user menus''').
+lit(eng,keys,'''Esc=Return  F1=Help''').
+lit(eng,prot,'''Prototype''').
+lit(eng,prod,'''Production''').
+lit(eng,idx,'''Reindex database?''').
+lit(eng,endofproc,'''End of process''').
+lit(eng,mmmain,'''GENEXUS - Menu manager''').
+lit(eng,mmmdlname,'''Model name''').
+lit(eng,mmmdldate,'''Date created''').
+lit(eng,nooptions,'''There are no options for this menu''').
+lit(eng,more,'''More').
+lit(eng,moredots,'More...').
+lit(eng,deleinfo,'"Do you really want to delete?"').
+lit(eng,sltlst,'"Selection List"').
+lit(eng,poslst,'"Type all or part of one of the following fields, then press Enter."').
+lit(eng,selopt,[ '"Select one of the following, then press Enter."','"More:"' ]).
+lit(eng,lastrec,'"This is the last matching record"').
+lit(eng,firstrec,'"This is the first matching record"').
+lit(eng,norectobrow,'"There is no matching record"').
+lit(eng,filecrea,'"Creating table %1 %2."').
+lit(eng,fileremove,'"Removing table %1 %2."').
+lit(eng,fileupdate,'"Updating table %1 %2."').
+lit(eng,refintcrea,'"Creating referential integrity %1."').
+lit(eng,ambiguousck,'"%1 is ambiguous"').
+lit(eng,deleterow,'"Delete row"').
+lit(eng,fileren,'"Renaming %1 as %2"').
+lit(eng,dbadduser,'''Adding user %1 to database %2''').
+lit(eng,dbcrea,'''Creating database''').
+lit(eng,conftrn,'''Confirm transaction?''').
+lit(eng,waschg,'%1 was changed.').
+lit(eng,tlotitle,'"Data transfer to Lotus 1-2-3 (tm)"').
+lit(eng,creaindx,'"Creating index %1 ..."').
+lit(eng,recconv,'"records converted"').
+lit(eng,loaddata,'"Loading data in"').
+lit(eng,nodelete,'"Unable to delete"').
+lit(eng,inex,'"No matching %1"').
+lit(eng,inex_browse,'". BROWSE DATA?"').
+lit(eng,queryok,'"Is query criteria ok?"').
+lit(eng,failequal,'"Record is not accesible"').
+lit(eng,yes,'"Y"').
+lit(eng,no,'"N"').
+lit(eng,date,[ 'MM','DD','YY' ]).
+lit(eng,conf,'"Is data ok? (Y/N)"').
+lit(eng,rtop,'"Send report to printer? (Y/N)"').
+lit(eng,rptques,'"Send report to"').
+lit(eng,rptsel,'"Screen SCR;Printer PRN;File FIL"').
+lit(eng,printing,'"Printing..."').
+lit(eng,canques,'"Cancel program? (Y/N)"').
+lit(eng,canmsg,'"Program canceled due to user request"').
+lit(eng,wait,'"Press Enter key to continue ..."').
+lit(eng,del,'"Invalid delete, related information in %1"').
+lit(eng,delcas,'"Delete all Info for"').
+lit(eng,lock,[ '"Record','in use by another"' ]).
+lit(eng,flock,[ '"Table','in use by another"' ]).
+lit(eng,help,'"Help"').
+lit(eng,noupdate,'"Record already exists"').
+lit(eng,noinsert,'"Record not found"').
+lit(eng,chg,'"Discard modifications? (Y/N)"').
+lit(eng,mlmax,'"Number of lines exceeded').
+lit(eng,rgzlcktb,'"%1. Locking tables to reorganize."').
+lit(eng,rgzdic,'"%1. Dropping referential integrity constraints."').
+lit(eng,rgzdropcol,'"Dropping attributes from table %1."').
+lit(eng,1001,'"Dropping index %2, table %1."').
+lit(eng,1002,'"Dropping table %1."').
+lit(eng,1003,'"Setting initial values for attributes in table %1"').
+lit(eng,1004,'"%1 already exists"').
+lit(eng,dropindx,'"Droping index %1 ..."').
+lit(eng,outrange,'"%1 out of range"').
+lit(eng,graph,'"Graph"').
+lit(eng,print,'"Print"').
+lit(eng,strdate,'%2 %3, %1').
+lit(eng,runpgm,'"Running program %1."').
+lit(eng,mbactions,'Actions').
+lit(eng,mbview,'View').
+lit(eng,mbhelp,'Help').
+lit(eng,mbview_first,'First').
+lit(eng,mbview_last,'Last').
+lit(eng,mbview_previous,'Previous').
+lit(eng,mbview_next,'Next').
+lit(eng,mbview_select,'Select').
+lit(eng,mbhelp_cont,'Contents').
+lit(eng,mbdelete,'Delete').
+lit(eng,mbrefresh,'Refresh').
+lit(eng,mbclose,'Cancel').
+lit(eng,mbconfirm,'Confirm').
+lit(eng,selone,'''Select one of the following. Then press Enter.''').
+lit(eng,selnocor,'Selected menu option is not correct.').
+lit(eng,cmdandopt,'Can not select a menu option and specify a command.').
+lit(eng,cmdlpmpt,'''Command ===>''').
+lit(eng,deltbl,'''Dropping old table %1 and creating new one.''').
+lit(eng,rename,'''Renaming table %1 to %2''').
+lit(eng,confrpt,'''Press Enter to start processing.''').
+lit(eng,nochgmode,'''Cannot change to requested mode.''').
+lit(eng,oneselonly,'''Cannot select more than one item.''').
+lit(eng,eof,'''Beginning/End of data reached.''').
+lit(eng,canctrn,'''Transaction canceled.''').
+lit(eng,confins,'''Inserting data. Press Enter to confirm.''').
+lit(eng,confupd,'''Updating data. Press Enter to confirm.''').
+lit(eng,confdel,'''Deleting data. Press Enter to confirm.''').
+lit(eng,recins,'''Data was inserted.''').
+lit(eng,recupd,'''Data was updated.''').
+lit(eng,recdel,'''Data was deleted.''').
+lit(eng,notsame,'''Data does not belong to the same %1.''').
+lit(eng,faildel,'''Invalid delete. Related info in %1''').
+lit(eng,noexist,'''Could not find %1''').
+lit(eng,noaccept,'''Changes made to %1 ignored.''').
+lit(eng,failbool,'''%1 must be "Y" or "N".''').
+lit(eng,wrongopt,'''Option must be "4" or space''').
+lit(eng,dupkey,'''Data already added by another user.''').
+lit(eng,noprompt,'''Cursor position is not valid for prompt request.''').
+lit(eng,spc,'Specify selection value').
+lit(eng,tcpe,'Type selection criteria, press Enter.').
+lit(eng,spv,'Select an item from list').
+lit(eng,tope,'Type options, press Enter.').
+lit(eng,oeqs,'1=Select').
+lit(eng,datachg,'''Data modified by another user (%1).''').
+lit(eng,icp,'''Cursor position is not valid.''').
+lit(eng,seloptwrong,'''Option is not allowed.''').
+lit(eng,nomnuopt,'''No options for this menu''').
+lit(eng,emptylist,'(List is empty.)').
+lit(eng,callerr,'''Error calling program %1''').
+lit(eng,exist,'''Already existing %1''').
+lit(eng,norecrpt,'There is no data satisfying this report.').
+lit(eng,0,'Enter').
+lit(eng,enter,'Process').
+lit(eng,cancel,'Cancel').
+lit(eng,display,'Display').
+lit(eng,insert,'Insert').
+lit(eng,update,'Update').
+lit(eng,delete,'Delete').
+lit(eng,first,'First').
+lit(eng,next,'Next').
+lit(eng,previous,'Previous').
+lit(eng,prompt,'Prompt').
+lit(eng,select,'Select').
+lit(eng,menu,'Menu bar').
+lit(eng,exit,'Exit').
+lit(eng,refresh,'Refresh').
+lit(eng,retrieve,'Retrieve').
+lit(eng,morekeys,'More keys').
+lit(eng,badkey,'''Key is not valid now.''').
+lit(eng,faildate,'''%1 is not a valid date/time.''').
+lit(eng,nohelp,'No help available.').
+lit(eng,lockrcd,'''Another user locks data of''').
+lit(eng,readerr,[ '''Error (''',''') processing''' ]).
+lit(eng,usrcanc,'''Process terminated by user.''').
+lit(eng,tipe,'Type information, press Enter.').
+lit(eng,actions,'''Actions''').
+lit(eng,view,'''View''').
+lit(eng,rgzctnt,'"%1. Create temporary and new tables."').
+lit(eng,rgzrrpgm,'"%1. Running reorganization programs."').
+lit(eng,rgzrnmtbl,'"%1. Renaming tables."').
+lit(eng,rgzbldidx,'"%1. Building indices and integrity constraints."').
+lit(eng,rgzdroptbl,'"%1. Dropping removed tables."').
+lit(eng,rgztbllck,'"Locking table %1."').
+lit(eng,rgzd1c,'"Dropping integrity constraints on table %1."').
+lit(eng,recdeleted,'"Error - Record was deleted by another user."').
+lit(eng,keynfound,'"Data with the specified key could not be found."').
+lit(eng,unexp,'"An unexpected error has occurred while updating your data. Please try again."').
+lit(eng,sucadded,'"Data has been successfuly added."').
+lit(eng,sucupdated,'"Data has been successfuly updated."').
+lit(eng,sucdeleted,'"Data has been successfuly deleted."').
+lit(eng,captionadd,'"Insert"').
+lit(eng,captionupdate,'"Update"').
+lit(eng,captiondelete,'"Delete"').
+lit(eng,captionconfirm,'"Confirm"').
+lit(eng,getbeforedlt,'"Please ''Get'' data before trying to delete it."').
+lit(eng,getbeforeupd,'"Please ''Get'' data before trying to update it."').
+lit(eng,mustconfirm,'"Please confirm the data."').
+lit(eng,confdelete,'"Confirm deletion."').
+lit(eng,baddatetime,'"%1 is not a valid date and time."').
+lit(eng,badtime,'"%1 is not a valid time."').
+lit(eng,badnum,'"The value is not a valid number."').
+lit(eng,nomatch,'No matching data was found.').
+lit(eng,pmterr,'Could not find prompt program %1').
+lit(eng,refcallerror,'Could not find refcall program %1').
+lit(eng,browse,'Browse').
+lit(eng,badkeyrfr,'Key is not valid now. Refresh pending').
+lit(eng,dateoutr,'%1 out of range (%2-%3).').
+lit(eng,arrayerror,'Index out of range').
+lit(eng,callerror,'Error calling program').
+lit(eng,divideerror,'Divide by 0').
+lit(eng,numericalerror,'Numerical error').
+lit(eng,fileerror,'File error in file').
+lit(eng,code,code).
+lit(eng,index,index).
+lit(eng,refinterror,'"Unknown Referntial Integrity Error"').
+lit(eng,makdsc,[ 'Main menu' ]).
+lit(eng,dbcr1,'"Database creation"').
+lit(eng,dbcr2,'"Table creation"').
+lit(eng,dbcr3,'"Index Creation"').
+lit(eng,dbcr4,'"Data transfer"').
+lit(eng,dbcr5,'"Rename Tables"').
+lit(eng,dbcr6,'"Model Update"').
+lit(eng,dbcrtitle,'"GeneXus Database Manager"').
+lit(eng,tblcrea,'"Creating Tables"').
+lit(eng,idxcrea,'"Creating Indices"').
+lit(eng,reocom,'"Reorganization complete"').
+lit(eng,delreo,'"Deleting reorganization specifications"').
+lit(eng,creinpro,'"Database creation in progress ...').
+lit(eng,notcrespc,'"No creation specifications found"').
+lit(eng,notreospc,'"There are no reorganization specifications"').
+lit(eng,asktocre,'"Do you really want to create an empty database structure?"').
+lit(eng,creok,'"Database Created"').
+lit(eng,asktoreo,'"Do you want to reorganize the database?"').
+lit(eng,reoinpro,'"Model reorganization in progress ..."').
+lit(eng,okcapt,'"O&K"').
+lit(eng,genwith,'Generated with').
+lit(eng,aboutcapt,'About').
+lit(eng,sysinfo,'"&System Info..."').
+lit(eng,notsysinfo,'System Information Is Unavailable At This Time').
+lit(eng,cnclcapt,'"&Cancel"').
+lit(eng,prtready,'"Is the printer ready? (Y/N)"').
+lit(eng,rwait,'"Enter=Continue  Esc=Return"').
+lit(eng,idate,'"Invalid Date"').
+lit(eng,isdone,'"Done"').
+lit(eng,nnul,'"Null values not allowed"').
+lit(eng,discard,'"Discard modifications"').
+lit(eng,logfull,'"Transaction Log Is Full, must commit or rollback"').
+lit(eng,opna,'"Option not Available"').
+lit(eng,savechanges,'"Do you want to save Changes ?"').
+lit(eng,mnuopts,[ '&File','E&xit','&Edit','Cu&t','&Copy','&Paste','&Delete','&Select All','&View','&Previous','&Next','&First','&Last','&Toolbar','&Status Bar','&Actions','&Select','&Refresh','&Delete Record','&Window','&Cascade','Arrange &Icons','&Help','&Contents','&Search...','&About','&Object','&Expand','Expand &All' ]).
+lit(eng,newmnuopts,[ '&File','&Close','E&xit','&Edit','Cu&t','&Copy','&Paste','&Delete','&Select All','&View','&Previous','&Next','&First','&Last','&Toolbar','&Status Bar','&Actions','&Select','&Refresh','&Delete Record','&Window','&Cascade','Arrange &Icons','&Help','&Contents','&Search...','&About','&Confirm' ]).
+lit(eng,invalid_dir,'''%1 is not a valid directory''').
+lit(eng,gxws_loadingfrom,'''Loading %1 from''').
+lit(eng,captionaddweb,'''Add''').
+lit(eng,captionupdateweb,'''Update''').
+lit(eng,captionconfirmweb,'''Confirm''').
+lit(eng,captiondeleteweb,'''Delete''').
+lit(eng,errtitle,'''Error''').
+lit(eng,err_details,'''&Details''').
+lit(eng,err_quit,'''&Quit''').
+lit(eng,err_retry,'''&Retry''').
+lit(eng,err_login_ldap,'''Invalid user/password''').
+lit(eng,runtimeerr,'''Runtime Application Exception''').
+lit(eng,runtimedb,'''An error ocurred while accessing the database.''').
+lit(eng,runtimeappsrv,'''An error ocurred while accessing the application server.''').
+lit(eng,colordialog,'''Select color''').
+lit(eng,dblogin,'''Server Login''').
+lit(eng,user,'''User name''').
+lit(eng,password,'''Password''').
+lit(eng,enteruser,'''Please type the user name''').
+lit(eng,enterpwd,'''Please type the password''').
+lit(eng,invaliddate,'''Invalid date''').
+lit(eng,reportdest,'''Select destination''').
+lit(eng,reportdest_printer,'''Printer''').
+lit(eng,reportdest_screen,'''Screen''').
+lit(eng,reportdest_file,'''File''').
+lit(eng,button_cancel,'''&Cancel''').
+lit(eng,button_ok,'''&Ok''').
+lit(eng,confirmtitle,'''Confirm''').
+lit(eng,msgtitle,'''Message''').
+lit(eng,yestext,'''Yes''').
+lit(eng,notext,'''No''').
+lit(eng,errconas,'''Error while connecting to Application Server or Database''').
+lit(eng,gxdbm,'''GeneXus Database Manager''').
+lit(eng,gxdbm_reorg,'''GeneXus Database Manager - Reorganization''').
+lit(eng,gxdbm_cpymdl,'''GeneXus Database Manager - Model Update''').
+lit(eng,confirm_cpymdl,'''You chose to update the GeneXus model. Are you sure?''').
+lit(eng,gxdbm_gxdb,'''GeneXus Database Manager - GXDB++ Update''').
+lit(eng,confirmgxdb,'''You chose to just update the GXDB++. Are you sure?''').
+lit(eng,noreorg,'''There are no reorganization specifications.''').
+lit(eng,nosuccess,'''The generation of the reorganization programs wasn''t successful. Try again.''').
+lit(eng,confirmreorg,'''Do you really want to execute the reorganization?''').
+lit(eng,dbnotreorg,'''The database is not reorganized.''').
+lit(eng,reorgpref,'''(Reorganize Server Tables preference = No)''').
+lit(eng,reorgsuccess,'''The reorganization process was successfully completed.''').
+lit(eng,reorgnotsuccess,'''The reorganization process was not successfully completed.''').
+lit(eng,reorgupdgxdb,'''Updating GXDB++ ...''').
+lit(eng,reorgrenre,'''Couldn''t rename reorganization flag''').
+lit(eng,reorgrengx,'''Couldn''t rename GXDB++ specification file''').
+lit(eng,reorgerrupdgxdb,'''Error while trying to update GXDB++ classes''').
+lit(eng,mnufile,'''&File''').
+lit(eng,mnuexit,'''E&xit''').
+lit(eng,mnuedit,'''&Edit''').
+lit(eng,mnucut,'''Cu&t''').
+lit(eng,mnucopy,'''&Copy''').
+lit(eng,mnupaste,'''&Paste''').
+lit(eng,mnudelete,'''&Delete''').
+lit(eng,mnuselectall,'''&Select All''').
+lit(eng,mnuview,'''&View''').
+lit(eng,mnuprev,'''&Previous''').
+lit(eng,mnunext,'''&Next''').
+lit(eng,mnufirst,'''&First''').
+lit(eng,mnulast,'''&Last''').
+lit(eng,mnutoolbar,'''&Toolbar''').
+lit(eng,mnustatusbar,'''&Status Bar''').
+lit(eng,mnuactions,'''&Actions''').
+lit(eng,mnuselect,'''&Select''').
+lit(eng,mnurefresh,'''&Refresh''').
+lit(eng,mnudelrec,'''&Delete Record''').
+lit(eng,mnuwindow,'''&Window''').
+lit(eng,mnuarrange,'''&Tile''').
+lit(eng,mnucascade,'''&Cascade''').
+lit(eng,mnuhelp,'''&Help''').
+lit(eng,mnuindex,'''&Contents''').
+lit(eng,mnusearch,'''&Search...''').
+lit(eng,mnuabout,'''&About''').
+lit(eng,mnuclose,'''&Close''').
+lit(eng,mnuconfirm,'''&Confirm''').
+lit(eng,toolcut,'''Cut''').
+lit(eng,toolcopy,'''Copy''').
+lit(eng,toolpaste,'''Paste''').
+lit(eng,toolrefresh,'''Refresh''').
+lit(eng,toolhelp,'''Help''').
+lit(eng,devmenutrn,'''Transactions''').
+lit(eng,devmenurpt,'''Reports''').
+lit(eng,devmenuproc,'''Procedures''').
+lit(eng,devmenuscr,'''Work Panels''').
+lit(eng,ids_column,'''Reorganization Output''').
+lit(eng,ids_execute,'''&Execute''').
+lit(eng,ids_failed,'''Reorganization Failed.''').
+lit(eng,ids_ok,'''Reorganization completed''').
+lit(eng,ids_title,'''GeneXus Reorganization''').
+lit(eng,ids_close,'''&Close''').
+lit(eng,ids_noneeded,'''No Reorganization Needed''').
+lit(eng,ids_needed,'''Reorganization Needed''').
+lit(eng,ids_run,'''Running...''').
+lit(eng,january,'''January''').
+lit(eng,february,'''February''').
+lit(eng,march,'''March''').
+lit(eng,april,'''April''').
+lit(eng,may,'''May''').
+lit(eng,june,'''June''').
+lit(eng,july,'''July''').
+lit(eng,august,'''August''').
+lit(eng,september,'''September''').
+lit(eng,sessionexpired,'''Session has expired, page will be reloaded''').
+lit(eng,october,'''October''').
+lit(eng,november,'''November''').
+lit(eng,december,'''December''').
+lit(eng,vsltlst,'"Selection list"').
+lit(eng,toolcalculator,'Calculator').
+lit(eng,toolcalendar,'Calendar').
+lit(eng,toolbrowsedata,'Browse data').
+lit(eng,toolselectall,'&Select All').
+lit(eng,tooldelete,'&Delete').
+lit(eng,mnu_previous,'&Previous').
+lit(eng,mnu_tile,'&Tile').
+lit(eng,mnu_contents,'Contents').
+lit(eng,table_recordcount,'"Table %1 has %2 records"').
+lit(eng,executing,'"Executing %1"').
+lit(eng,lastreorg_failed1,'"The last reorganization has failed and you are trying to execute a different reorganization"').
+lit(eng,lastreorg_failed2,'"Unexpected errors may occur if you don''t try to finalize previous reorganization before running this one"').
+lit(eng,lastreorg_failed3,'"If you want to run this reorganization anyway, use ''ignoreresume'' parameter"').
+lit(eng,bad_DBMS_version,'"Reorganization code was generated to run on DBMS versions higher than the current one. DBMS should be at least in version %1 or you may regenerate and re-run the reorganization after changing the corresponding DBMS version property"').
+lit(eng,error_in_schema_verification,'"An error was found in the database schema verification process."').
+lit(eng,table_exist,'"Table or View %1 already exist"').
+lit(eng,table_not_exist,'"Table or View %1 doesn''t exist"').
+lit(eng,column_exist,'"Column %1 in table %2 already exist"').
+lit(eng,column_not_exist,'"Column %1 in table %2 doesn''t exist"').
+ 

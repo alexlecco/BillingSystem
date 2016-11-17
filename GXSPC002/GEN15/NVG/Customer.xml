@@ -1,0 +1,181 @@
+
+<ObjectSpec>
+<SpecVersion>10_1_6-46473</SpecVersion>
+<Object>
+<ObjCls>0</ObjCls>
+<ObjId>2</ObjId>
+<ObjName>Customer</ObjName>
+<ObjDesc>Customer</ObjDesc>
+<ObjPgmName>Customer</ObjPgmName>
+<ObjClsName>Transaction</ObjClsName></Object>
+<Result>genreq</Result>
+<Warnings></Warnings>
+<Errors></Errors>
+<Generator>
+<GenId>15</GenId>
+<GenName>Default (C#)</GenName></Generator>
+<FormClass>HTML</FormClass>
+<Parameters></Parameters>
+<Levels>
+<Level>
+<LevelType>Trn</LevelType>
+<LevelNumber>2</LevelNumber>
+<BaseTable>
+<Table>
+<TableId>2</TableId>
+<TableName>Customer</TableName>
+<Description>Customer</Description></Table></BaseTable>
+<NavigationTree>
+<Table>
+<TableId>2</TableId>
+<TableName>Customer</TableName>
+<Description>Customer</Description>
+<Updated>Yes</Updated>
+<RecordsToRead>many</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>3</AttriId>
+<AttriName>CustomerId</AttriName>
+<Description>Customer Id</Description></Attribute></KeyAttributes>
+<Tables>
+<Table>
+<TableId>1</TableId>
+<TableName>Country</TableName>
+<Description>Country</Description>
+<RecordsToRead>one</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>1</AttriId>
+<AttriName>CountryId</AttriName>
+<Description>Country Id</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table></Tables></Table></NavigationTree>
+<Formulas>
+<VerticalFormulas></VerticalFormulas>
+<AggSelFormulas></AggSelFormulas></Formulas>
+<DynamicLoads></DynamicLoads>
+<Rules></Rules>
+<AfterAttributeRules></AfterAttributeRules>
+<AfterConfirmRules></AfterConfirmRules>
+<TablesToUpdate>
+<TableToUpdate>
+<Table>
+<TableId>2</TableId>
+<TableName>Customer</TableName>
+<Description>Customer</Description></Table>
+<TableAction>insert</TableAction>
+<AttrisToUpdate>
+<Attribute>
+<AttriId>9</AttriId>
+<AttriName>CustomerBalance</AttriName>
+<Description>Customer Balance</Description></Attribute>
+<Attribute>
+<AttriId>4</AttriId>
+<AttriName>CustomerName</AttriName>
+<Description>Customer Name</Description></Attribute>
+<Attribute>
+<AttriId>5</AttriId>
+<AttriName>CustomerAddress</AttriName>
+<Description>Customer Address</Description></Attribute>
+<Attribute>
+<AttriId>6</AttriId>
+<AttriName>CustomerGender</AttriName>
+<Description>Customer Gender</Description></Attribute>
+<Attribute>
+<AttriId>7</AttriId>
+<AttriName>CustomerTotalPurchases</AttriName>
+<Description>Customer Total Purchases</Description></Attribute>
+<Attribute>
+<AttriId>8</AttriId>
+<AttriName>CustomerTotalPayments</AttriName>
+<Description>Customer Total Payments</Description></Attribute>
+<Attribute>
+<AttriId>1</AttriId>
+<AttriName>CountryId</AttriName>
+<Description>Country Id</Description></Attribute></AttrisToUpdate></TableToUpdate>
+<TableToUpdate>
+<Table>
+<TableId>2</TableId>
+<TableName>Customer</TableName>
+<Description>Customer</Description></Table>
+<TableAction>update</TableAction>
+<AttrisToUpdate>
+<Attribute>
+<AttriId>9</AttriId>
+<AttriName>CustomerBalance</AttriName>
+<Description>Customer Balance</Description></Attribute>
+<Attribute>
+<AttriId>4</AttriId>
+<AttriName>CustomerName</AttriName>
+<Description>Customer Name</Description></Attribute>
+<Attribute>
+<AttriId>5</AttriId>
+<AttriName>CustomerAddress</AttriName>
+<Description>Customer Address</Description></Attribute>
+<Attribute>
+<AttriId>6</AttriId>
+<AttriName>CustomerGender</AttriName>
+<Description>Customer Gender</Description></Attribute>
+<Attribute>
+<AttriId>7</AttriId>
+<AttriName>CustomerTotalPurchases</AttriName>
+<Description>Customer Total Purchases</Description></Attribute>
+<Attribute>
+<AttriId>8</AttriId>
+<AttriName>CustomerTotalPayments</AttriName>
+<Description>Customer Total Payments</Description></Attribute>
+<Attribute>
+<AttriId>1</AttriId>
+<AttriName>CountryId</AttriName>
+<Description>Country Id</Description></Attribute></AttrisToUpdate></TableToUpdate>
+<TableToUpdate>
+<Table>
+<TableId>2</TableId>
+<TableName>Customer</TableName>
+<Description>Customer</Description></Table>
+<TableAction>delete</TableAction>
+<AttrisToUpdate></AttrisToUpdate></TableToUpdate></TablesToUpdate>
+<AfterInsertRules></AfterInsertRules>
+<AfterUpdateRules></AfterUpdateRules>
+<AfterDeleteRules></AfterDeleteRules>
+<TablesToControlOnDelete></TablesToControlOnDelete>
+<Levels></Levels>
+<AfterTrnRules></AfterTrnRules>
+<AfterLevelRules></AfterLevelRules></Level></Levels>
+<Prompts>
+<Prompt>
+<Table>
+<TableId>1</TableId>
+<TableName>Country</TableName>
+<Description>Country</Description></Table>
+<Object>
+<ObjCls>13</ObjCls>
+<ObjId>4</ObjId>
+<ObjName>Gx0010</ObjName>
+<ObjPgmName>Gx0010</ObjPgmName>
+<ObjClsName>Web Panel</ObjClsName></Object>
+<InputParameters></InputParameters>
+<OutputParameters>
+<Attribute>
+<AttriId>1</AttriId>
+<AttriName>CountryId</AttriName>
+<Description>Country Id</Description></Attribute></OutputParameters>
+<PromptType>System</PromptType></Prompt>
+<Prompt>
+<Table>
+<TableId>2</TableId>
+<TableName>Customer</TableName>
+<Description>Customer</Description></Table>
+<Object>
+<ObjCls>13</ObjCls>
+<ObjId>5</ObjId>
+<ObjName>Gx0020</ObjName>
+<ObjPgmName>Gx0020</ObjPgmName>
+<ObjClsName>Web Panel</ObjClsName></Object>
+<InputParameters></InputParameters>
+<OutputParameters>
+<Attribute>
+<AttriId>3</AttriId>
+<AttriName>CustomerId</AttriName>
+<Description>Customer Id</Description></Attribute></OutputParameters>
+<PromptType>System</PromptType></Prompt></Prompts>
+<Suggests></Suggests></ObjectSpec>

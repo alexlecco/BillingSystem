@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="prgs.xsl"?>
+<Objects>
+   <Charset>iso-8859-1</Charset>
+   <Path>file:///C:/Program Files (x86)/Artech/GeneXus/GeneXusXEv1Trial/</Path>
+   <Object>
+      <ObjCls>0</ObjCls>
+      <ObjName>Country</ObjName>
+      <ObjDesc>Country</ObjDesc>
+      <ObjLink>country.aspx</ObjLink>
+   </Object>
+   <Object>
+      <ObjCls>0</ObjCls>
+      <ObjName>Customer</ObjName>
+      <ObjDesc>Customer</ObjDesc>
+      <ObjLink>customer.aspx</ObjLink>
+   </Object>
+</Objects>

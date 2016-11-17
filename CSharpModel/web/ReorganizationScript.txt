@@ -1,0 +1,7 @@
+CREATE TABLE [Customer] ([CustomerId] int NOT NULL  IDENTITY(1,1), [CustomerName] char(30) NOT NULL , [CustomerAddress] char(30) NOT NULL , [CustomerGender] char(1) NOT NULL , [CustomerTotalPurchases] money NOT NULL , [CustomerTotalPayments] money NOT NULL , [CustomerBalance] money NOT NULL , [CountryId] int NOT NULL , PRIMARY KEY([CustomerId]))
+CREATE NONCLUSTERED INDEX [ICUSTOMER1] ON [Customer] ([CountryId] )
+
+CREATE TABLE [Country] ([CountryId] int NOT NULL  IDENTITY(1,1), [CountryName] char(30) NOT NULL , PRIMARY KEY([CountryId]))
+
+ALTER TABLE [Customer] ADD CONSTRAINT [ICUSTOMER1] FOREIGN KEY ([CountryId]) REFERENCES [Country] ([CountryId])
+

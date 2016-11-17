@@ -1,0 +1,147 @@
+
+<ObjectSpec>
+<SpecVersion>10_1_6-46473</SpecVersion>
+<Object>
+<ObjCls>13</ObjCls>
+<ObjId>5</ObjId>
+<ObjName>Gx0020</ObjName>
+<ObjDesc>Selection List Customer</ObjDesc>
+<ObjPgmName>Gx0020</ObjPgmName>
+<ObjClsName>Web Panel</ObjClsName></Object>
+<Result>genreq</Result>
+<Warnings></Warnings>
+<Errors></Errors>
+<Generator>
+<GenId>15</GenId>
+<GenName>Default (C#)</GenName></Generator>
+<FormClass>HTML</FormClass>
+<Parameters>
+<Parameter>
+<IO>out</IO>
+<Variable>
+<VarId>Pcustomerid</VarId>
+<VarName>&amp;pCustomerId</VarName></Variable></Parameter></Parameters>
+<StandAloneRules></StandAloneRules>
+<Event>
+<EventName>Start</EventName></Event>
+<Event>
+<EventName>Load</EventName>
+<LoadMethod>Auto</LoadMethod>
+<ImplicitForEach>
+<LevelType>For Each</LevelType>
+<LevelBeginRow>1</LevelBeginRow>
+<BaseTable>
+<Table>
+<TableId>2</TableId>
+<TableName>Customer</TableName>
+<Description>Customer</Description></Table></BaseTable>
+<Order>
+<Attribute>
+<AttriId>3</AttriId>
+<AttriName>CustomerId</AttriName>
+<Description>Customer Id</Description></Attribute></Order>
+<Condition></Condition>
+<IndexName>ICUSTOMER</IndexName>
+<LevelOptions></LevelOptions>
+<OptimizedWhere>
+<StartFrom>
+<Condition>
+<Attribute>
+<AttriId>3</AttriId>
+<AttriName>CustomerId</AttriName>
+<Description>Customer Id</Description></Attribute>
+<Sp></Sp>
+<Token>&gt;=</Token>
+<Sp></Sp>
+<Variable>
+<VarId>Ccustomerid</VarId>
+<VarName>&amp;cCustomerId</VarName></Variable></Condition></StartFrom>
+<LoopWhile>
+<Condition>
+<Token>NotEndOfTable</Token></Condition></LoopWhile></OptimizedWhere>
+<NonOptimizedWhere>
+<Condition>
+<Attribute>
+<AttriId>4</AttriId>
+<AttriName>CustomerName</AttriName>
+<Description>Customer Name</Description></Attribute>
+<Sp></Sp>
+<Token>like</Token>
+<Sp></Sp>
+<Variable>
+<VarId>Ccustomername</VarId>
+<VarName>&amp;cCustomerName</VarName></Variable></Condition>
+<Condition>
+<Attribute>
+<AttriId>5</AttriId>
+<AttriName>CustomerAddress</AttriName>
+<Description>Customer Address</Description></Attribute>
+<Sp></Sp>
+<Token>like</Token>
+<Sp></Sp>
+<Variable>
+<VarId>Ccustomeraddress</VarId>
+<VarName>&amp;cCustomerAddress</VarName></Variable></Condition>
+<Condition>
+<Attribute>
+<AttriId>6</AttriId>
+<AttriName>CustomerGender</AttriName>
+<Description>Customer Gender</Description></Attribute>
+<Sp></Sp>
+<Token>like</Token>
+<Sp></Sp>
+<Variable>
+<VarId>Ccustomergender</VarId>
+<VarName>&amp;cCustomerGender</VarName></Variable></Condition>
+<Condition>
+<Attribute>
+<AttriId>7</AttriId>
+<AttriName>CustomerTotalPurchases</AttriName>
+<Description>Customer Total Purchases</Description></Attribute>
+<Sp></Sp>
+<Token>&gt;=</Token>
+<Sp></Sp>
+<Variable>
+<VarId>Ccustomertotalpurchases</VarId>
+<VarName>&amp;cCustomerTotalPurchases</VarName></Variable></Condition>
+<Condition>
+<Attribute>
+<AttriId>8</AttriId>
+<AttriName>CustomerTotalPayments</AttriName>
+<Description>Customer Total Payments</Description></Attribute>
+<Sp></Sp>
+<Token>&gt;=</Token>
+<Sp></Sp>
+<Variable>
+<VarId>Ccustomertotalpayments</VarId>
+<VarName>&amp;cCustomerTotalPayments</VarName></Variable></Condition>
+<Condition>
+<Attribute>
+<AttriId>9</AttriId>
+<AttriName>CustomerBalance</AttriName>
+<Description>Customer Balance</Description></Attribute>
+<Sp></Sp>
+<Token>&gt;=</Token>
+<Sp></Sp>
+<Variable>
+<VarId>Ccustomerbalance</VarId>
+<VarName>&amp;cCustomerBalance</VarName></Variable></Condition></NonOptimizedWhere>
+<NavigationTree>
+<Table>
+<TableId>2</TableId>
+<TableName>Customer</TableName>
+<Description>Customer</Description>
+<RecordsToRead>many</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>3</AttriId>
+<AttriName>CustomerId</AttriName>
+<Description>Customer Id</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table></NavigationTree>
+<TablesToUpdate></TablesToUpdate>
+<Formulas>
+<VerticalFormulas></VerticalFormulas>
+<AggSelFormulas></AggSelFormulas></Formulas></ImplicitForEach></Event>
+<Event>
+<EventName>Enter</EventName></Event>
+<Suggests></Suggests></ObjectSpec>
