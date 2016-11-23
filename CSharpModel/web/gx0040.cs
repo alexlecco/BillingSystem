@@ -2,7 +2,7 @@
                File: Gx0040
         Description: Selection List Invoice
              Author: GeneXus C# Generator version 10_1_6-46473
-       Generated on: 11/23/2016 16:35:51.38
+       Generated on: 11/23/2016 17:25:22.71
        Program type: Callable routine
           Main DBMS: sqlserver
 */
@@ -461,6 +461,7 @@ namespace GeneXus.Programs {
                               A3CustomerId = (int)(context.localUtil.CToN( cgiGet( edtCustomerId_Internalname), ".", ",")) ;
                               context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A3CustomerId", StringUtil.LTrim( StringUtil.Str( (decimal)(A3CustomerId), 6, 0)));
                               A16InvoiceAmount = context.localUtil.CToN( cgiGet( edtInvoiceAmount_Internalname), ".", ",") ;
+                              n16InvoiceAmount = false ;
                               context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
                               sEvtType = StringUtil.Right( sEvt, 1) ;
                               if ( StringUtil.StrCmp(sEvtType, ".") == 0 )
@@ -628,20 +629,24 @@ namespace GeneXus.Programs {
             edtInvoiceDate_Internalname = "INVOICEDATE_"+sGXsfl_36_idx ;
             edtCustomerId_Internalname = "CUSTOMERID_"+sGXsfl_36_idx ;
             edtInvoiceAmount_Internalname = "INVOICEAMOUNT_"+sGXsfl_36_idx ;
-            /* Using cursor H00072 */
+            /* Using cursor H00073 */
             pr_default.execute(0, new Object[] {AV6cInvoiceId, AV7cInvoiceDate, AV8cCustomerId, AV9cInvoiceAmount});
             nGXsfl_36_idx = 1 ;
             GRID1_nEOF = 0 ;
             while ( ( (pr_default.getStatus(0) != 101) ) && ( ( ( 10 == 0 ) || ( GRID1_nCurrentRecord < GRID1_nFirstRecordOnPage + subGrid1_Recordsperpage( ) ) ) ) )
             {
-               A16InvoiceAmount = H00072_A16InvoiceAmount[0] ;
-               context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
-               A3CustomerId = H00072_A3CustomerId[0] ;
+               A3CustomerId = H00073_A3CustomerId[0] ;
                context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A3CustomerId", StringUtil.LTrim( StringUtil.Str( (decimal)(A3CustomerId), 6, 0)));
-               A15InvoiceDate = H00072_A15InvoiceDate[0] ;
+               A15InvoiceDate = H00073_A15InvoiceDate[0] ;
                context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A15InvoiceDate", context.localUtil.Format(A15InvoiceDate, "99/99/99"));
-               A14InvoiceId = H00072_A14InvoiceId[0] ;
+               A14InvoiceId = H00073_A14InvoiceId[0] ;
                context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A14InvoiceId", StringUtil.LTrim( StringUtil.Str( (decimal)(A14InvoiceId), 6, 0)));
+               A16InvoiceAmount = H00073_A16InvoiceAmount[0] ;
+               context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
+               n16InvoiceAmount = H00073_n16InvoiceAmount[0] ;
+               A16InvoiceAmount = H00073_A16InvoiceAmount[0] ;
+               context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
+               n16InvoiceAmount = H00073_n16InvoiceAmount[0] ;
                /* Execute user event: E12072 */
                E12072 ();
                pr_default.readNext(0);
@@ -665,9 +670,9 @@ namespace GeneXus.Programs {
 
       protected int subGrid1_Recordcount( )
       {
-         /* Using cursor H00073 */
+         /* Using cursor H00075 */
          pr_default.execute(1, new Object[] {AV6cInvoiceId, AV7cInvoiceDate, AV8cCustomerId, AV9cInvoiceAmount});
-         GRID1_nRecordCount = H00073_AGRID1_nRecordCount[0] ;
+         GRID1_nRecordCount = H00075_AGRID1_nRecordCount[0] ;
          pr_default.close(1);
          return GRID1_nRecordCount ;
       }
@@ -1267,7 +1272,7 @@ namespace GeneXus.Programs {
          idxLst = 1 ;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( Form.Jscriptsrc.Item(idxLst)), "?16355175");
+            context.AddJavascriptSource(StringUtil.RTrim( Form.Jscriptsrc.Item(idxLst)), "?17252310");
             idxLst = (int)(idxLst+1) ;
          }
          /* End function define_styles */
@@ -1276,7 +1281,7 @@ namespace GeneXus.Programs {
       protected void include_jscripts( )
       {
          context.AddJavascriptSource("messages.eng.js", "?46473");
-         context.AddJavascriptSource("gx0040.js", "?16355175");
+         context.AddJavascriptSource("gx0040.js", "?17252311");
          /* End function include_jscripts */
       }
 
@@ -1491,11 +1496,12 @@ namespace GeneXus.Programs {
          A15InvoiceDate = DateTime.MinValue ;
          Grid1Container = new GXWebGrid( context);
          scmdbuf = "" ;
-         H00072_A16InvoiceAmount = new decimal[1] ;
-         H00072_A3CustomerId = new int[1] ;
-         H00072_A15InvoiceDate = new DateTime[] {DateTime.MinValue} ;
-         H00072_A14InvoiceId = new int[1] ;
-         H00073_AGRID1_nRecordCount = new int[1] ;
+         H00073_A3CustomerId = new int[1] ;
+         H00073_A15InvoiceDate = new DateTime[] {DateTime.MinValue} ;
+         H00073_A14InvoiceId = new int[1] ;
+         H00073_A16InvoiceAmount = new decimal[1] ;
+         H00073_n16InvoiceAmount = new bool[] {false} ;
+         H00075_AGRID1_nRecordCount = new int[1] ;
          sStyleString = "" ;
          ClassString = "" ;
          StyleString = "" ;
@@ -1520,10 +1526,10 @@ namespace GeneXus.Programs {
          pr_default = new DataStoreProvider(context, new GeneXus.Programs.gx0040__default(),
             new Object[][] {
                 new Object[] {
-               H00072_A16InvoiceAmount, H00072_A3CustomerId, H00072_A15InvoiceDate, H00072_A14InvoiceId
+               H00073_A3CustomerId, H00073_A15InvoiceDate, H00073_A14InvoiceId, H00073_A16InvoiceAmount, H00073_n16InvoiceAmount
                }
                , new Object[] {
-               H00073_AGRID1_nRecordCount
+               H00075_AGRID1_nRecordCount
                }
             }
          );
@@ -1630,6 +1636,7 @@ namespace GeneXus.Programs {
       private bool wbLoad ;
       private bool Rfr0gs ;
       private bool wbErr ;
+      private bool n16InvoiceAmount ;
       private bool returnInSub ;
       private String AV5LinkSelection ;
       private GXMasterPage MasterPageObj ;
@@ -1638,11 +1645,12 @@ namespace GeneXus.Programs {
       private GXWebColumn Grid1Column ;
       private IGxDataStore dsDefault ;
       private IDataStoreProvider pr_default ;
-      private decimal[] H00072_A16InvoiceAmount ;
-      private int[] H00072_A3CustomerId ;
-      private DateTime[] H00072_A15InvoiceDate ;
-      private int[] H00072_A14InvoiceId ;
-      private int[] H00073_AGRID1_nRecordCount ;
+      private int[] H00073_A3CustomerId ;
+      private DateTime[] H00073_A15InvoiceDate ;
+      private int[] H00073_A14InvoiceId ;
+      private decimal[] H00073_A16InvoiceAmount ;
+      private bool[] H00073_n16InvoiceAmount ;
+      private int[] H00075_AGRID1_nRecordCount ;
       private msglist BackMsgLst ;
       private msglist LclMsgLst ;
       private int aP0_pInvoiceId ;
@@ -1665,13 +1673,6 @@ namespace GeneXus.Programs {
     {
        if ( def == null )
        {
-          Object[] prmH00072 ;
-          prmH00072 = new Object[] {
-          new Object[] {"@AV6cInvoiceId",SqlDbType.Int,6,0} ,
-          new Object[] {"@AV7cInvoiceDate",SqlDbType.DateTime,8,0} ,
-          new Object[] {"@AV8cCustomerId",SqlDbType.Int,6,0} ,
-          new Object[] {"@AV9cInvoiceAmount",SqlDbType.Decimal,9,2}
-          } ;
           Object[] prmH00073 ;
           prmH00073 = new Object[] {
           new Object[] {"@AV6cInvoiceId",SqlDbType.Int,6,0} ,
@@ -1679,9 +1680,16 @@ namespace GeneXus.Programs {
           new Object[] {"@AV8cCustomerId",SqlDbType.Int,6,0} ,
           new Object[] {"@AV9cInvoiceAmount",SqlDbType.Decimal,9,2}
           } ;
+          Object[] prmH00075 ;
+          prmH00075 = new Object[] {
+          new Object[] {"@AV6cInvoiceId",SqlDbType.Int,6,0} ,
+          new Object[] {"@AV7cInvoiceDate",SqlDbType.DateTime,8,0} ,
+          new Object[] {"@AV8cCustomerId",SqlDbType.Int,6,0} ,
+          new Object[] {"@AV9cInvoiceAmount",SqlDbType.Decimal,9,2}
+          } ;
           def= new CursorDef[] {
-              new CursorDef("H00072", "SELECT [InvoiceAmount], [CustomerId], [InvoiceDate], [InvoiceId] FROM [Invoice] WITH (NOLOCK) WHERE ([InvoiceId] >= @AV6cInvoiceId) AND ([InvoiceDate] >= @AV7cInvoiceDate) AND ([CustomerId] >= @AV8cCustomerId) AND ([InvoiceAmount] >= @AV9cInvoiceAmount) ORDER BY [InvoiceId]  OPTION (FAST 11)",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmH00072,11,0,false,false )
-             ,new CursorDef("H00073", "SELECT COUNT(*) FROM [Invoice] WITH (NOLOCK) WHERE ([InvoiceId] >= @AV6cInvoiceId) AND ([InvoiceDate] >= @AV7cInvoiceDate) AND ([CustomerId] >= @AV8cCustomerId) AND ([InvoiceAmount] >= @AV9cInvoiceAmount) ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmH00073,1,0,false,false )
+              new CursorDef("H00073", "SELECT T1.[CustomerId], T1.[InvoiceDate], T1.[InvoiceId], COALESCE( T2.[InvoiceAmount], 0) AS InvoiceAmount FROM ([Invoice] T1 WITH (NOLOCK) LEFT JOIN (SELECT SUM(T4.[ProductPrice] * CAST(T3.[InvoiceDetailQuantiity] AS decimal( 14, 5))) AS InvoiceAmount, T3.[InvoiceId] FROM ([InvoiceDetail] T3 WITH (NOLOCK) INNER JOIN [Product] T4 WITH (NOLOCK) ON T4.[ProductId] = T3.[ProductId]) GROUP BY T3.[InvoiceId] ) T2 ON T2.[InvoiceId] = T1.[InvoiceId]) WHERE (T1.[InvoiceId] >= @AV6cInvoiceId) AND (T1.[InvoiceDate] >= @AV7cInvoiceDate) AND (T1.[CustomerId] >= @AV8cCustomerId) AND (COALESCE( T2.[InvoiceAmount], 0) >= @AV9cInvoiceAmount) ORDER BY T1.[InvoiceId]  OPTION (FAST 11)",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmH00073,11,0,false,false )
+             ,new CursorDef("H00075", "SELECT COUNT(*) FROM ([Invoice] T1 WITH (NOLOCK) LEFT JOIN (SELECT SUM(T4.[ProductPrice] * CAST(T3.[InvoiceDetailQuantiity] AS decimal( 14, 5))) AS InvoiceAmount, T3.[InvoiceId] FROM ([InvoiceDetail] T3 WITH (NOLOCK) INNER JOIN [Product] T4 WITH (NOLOCK) ON T4.[ProductId] = T3.[ProductId]) GROUP BY T3.[InvoiceId] ) T2 ON T2.[InvoiceId] = T1.[InvoiceId]) WHERE (T1.[InvoiceId] >= @AV6cInvoiceId) AND (T1.[InvoiceDate] >= @AV7cInvoiceDate) AND (T1.[CustomerId] >= @AV8cCustomerId) AND (COALESCE( T2.[InvoiceAmount], 0) >= @AV9cInvoiceAmount) ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmH00075,1,0,false,false )
           };
        }
     }
@@ -1693,10 +1701,11 @@ namespace GeneXus.Programs {
        switch ( cursor )
        {
              case 0 :
-                ((decimal[]) buf[0])[0] = rslt.getDecimal(1) ;
-                ((int[]) buf[1])[0] = rslt.getInt(2) ;
-                ((DateTime[]) buf[2])[0] = rslt.getGXDate(3) ;
-                ((int[]) buf[3])[0] = rslt.getInt(4) ;
+                ((int[]) buf[0])[0] = rslt.getInt(1) ;
+                ((DateTime[]) buf[1])[0] = rslt.getGXDate(2) ;
+                ((int[]) buf[2])[0] = rslt.getInt(3) ;
+                ((decimal[]) buf[3])[0] = rslt.getDecimal(4) ;
+                ((bool[]) buf[4])[0] = rslt.wasNull(4);
                 break;
              case 1 :
                 ((int[]) buf[0])[0] = rslt.getInt(1) ;

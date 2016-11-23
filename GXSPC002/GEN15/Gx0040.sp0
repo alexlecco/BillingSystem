@@ -2,18 +2,18 @@ spec_i([ web,7,'Selection List Invoice','Gx0040',0,eng,'10_1_6-46473' ]).
  
 struct_i(2,1,[],[]).
  
-level_i(2,[ 4,[ [ 4,many ] ],[],[],[ [ [ 4 ],[ 16,3,15,14 ] ] ],[ [ [ 4 ],[] ] ],[ 14 ],'IINVOICE',[],[] ]).
+level_i(2,[ 4,[ [ 4,many ],[ 2000,one ] ],[],[],[ [ [ 4,2000 ],[ 3,15,14,16 ] ] ],[ [ [ 4,2000 ],[] ] ],[ 14 ],'IINVOICE',[],[] ]).
  
-tw_i(2,[]).
+tw_i(2,[ [ 2000,[ [ 4,oe([ t(14,2) ]),14 ] ] ] ]).
  
 lwi_i(2,[ [ c([ t(15,2),t(>=,10),t('Cinvoicedate',23) ],[ 15 ]),c([ t(3,2),t(>=,10),t('Ccustomerid',23) ],[ 3 ]),c([ t(16,2),t(>=,10),t('Cinvoiceamount',23) ],[ 16 ]) ] ]).
  
  
  
  
-ta_i(2,[ [ [ 4,16 ],[ 4,3 ],[ 4,15 ],[ 4,14 ] ] ]).
+ta_i(2,[ [ [ 4,3 ],[ 4,15 ],[ 4,14 ],[ 2000,se(16,[ [ 2000,16 ] ],[ t('coalesce(',1),t(16,2),t(',',7),t('0',3),t(')',4) ]) ] ] ]).
  
-las_i(2,[ [ 'Pinvoiceid','Cinvoiceid','Cinvoicedate','Ccustomerid','Cinvoiceamount',16,3,15,14 ] ]).
+las_i(2,[ [ 'Pinvoiceid','Cinvoiceid','Cinvoicedate','Ccustomerid','Cinvoiceamount',3,15,14,16 ] ]).
  
 lac_i(2,[ [ 'Cinvoiceid','Cinvoicedate','Ccustomerid','Cinvoiceamount' ] ]).
  
@@ -132,19 +132,25 @@ rule_i(0,order([ 14 ])).
  
 a_i(1,1,f,'Err',[],[ [],[ t('0',3) ] ]).
 a_i(2,2,t,4,[],[ [],'IINVOICE',[] ]).
+a_i(3,2,r,2000,[],[ [ [ 4,oe([ t(14,2) ]),14 ] ],'IINVOICE',[] ]).
  
 v_i(f,i,1,[]).
 v_i(f,o,1,'Err').
 v_i(t,i,2,[]).
-v_i(t,o,2,16).
 v_i(t,o,2,3).
 v_i(t,o,2,15).
 v_i(t,o,2,14).
+v_i(r,i,3,14).
+v_i(r,o,3,16).
  
  
  
  
  
+attri_i(13,[ 'ProductPrice',int,9,2,'ZZZZZ9.99',0,'Product Price','',0 ]).
+attri_i(18,[ 'InvoiceDetailQuantiity',int,3,0,'ZZ9',0,'Invoice Detail Quantiity','',0 ]).
+attri_i(10,[ 'ProductId',int,6,0,'ZZZZZ9',0,'Product Identifier','',0 ]).
+attri_i(17,[ 'InvoiceDetailId',int,2,0,'Z9',0,'Detail Identifier','',0 ]).
 attri_i(16,[ 'InvoiceAmount',int,9,2,'ZZZZZ9.99',0,'Invoice Amount','',0 ]).
 attri_i(3,[ 'CustomerId',int,6,0,'ZZZZZ9',0,'Customer Id','',0 ]).
 attri_i(15,[ 'InvoiceDate',date,8,0,'99/99/99',0,'Invoice Date','',0 ]).
@@ -158,14 +164,22 @@ attri_i('Cinvoicedate',[ cInvoiceDate,date,8,0,'99/99/99',0,'Invoice Date','',7 
 attri_i('Cinvoiceid',[ cInvoiceId,int,6,0,'ZZZZZ9',0,'Invoice Id','',6 ]).
 attri_i('Linkselection',[ 'LinkSelection',bits,4,0,'',0,'Link Selection','',5 ]).
  
-table_i(4,[ 'Invoice',[ 14,15,3,16 ],'Invoice','Invoice' ]).
+table_i(3,[ 'Product',[ 10,13 ],'Product','Product' ]).
+table_i(5,[ 'InvoiceDetail',[ 14,17,10,18 ],'Detail','InvoiceDetail' ]).
+table_i(2000,[ 'Invoice',[ 16,14 ],'Invoice','Invoice' ]).
+table_i(4,[ 'Invoice',[ 14,15,3 ],'Invoice','Invoice' ]).
  
+index_i(5,[ 'IINVOICEDETAIL',u,[ 14,17 ],'IInvoiceDetail' ]).
+index_i(3,[ 'IPRODUCT',u,[ 10 ],'IProduct' ]).
 index_i(4,[ 'IINVOICE',u,[ 14 ],'IInvoice' ]).
+index_i(2000,[ 'IINVOICE',u,[ 14 ],'IInvoice' ]).
+ 
+lv_i(2,2000,4).
  
  
  
  
- 
+nav_view_i(2000,[ 16 ],[ 14 ],[ 14 ],[ [ 2000,[ [ 4,oe([ t(14,2) ]),14 ] ] ] ],[ [ [ 5,[ 'sum(',se(19,[ [ 3,13 ],[ 5,18 ] ],[ t(13,2),t(*,6),t(18,2) ]) ] ],[ 5,14 ] ],n,[ [ 5,many ],[ 3,one ] ],[ [ 3,[ [ 5,10,10 ] ] ] ],[],[ none ],[],[ 14 ],[] ]).
  
  
  
@@ -709,17 +723,67 @@ att_prop_i(2,16,'ATT_INITIAL_VALUE','',d).
 att_prop_i(2,16,'AttRegEx','',d).
 att_prop_i(2,16,'AttValidationFailedMsg','',d).
 att_prop_i(2,16,'FullName','InvoiceAmount',v).
+att_prop_i(2,13,'ExternalName','ProductPrice',d).
+att_prop_i(2,13,'ExternalNamespace','BillingSystem',d).
+att_prop_i(2,13,'EmptyAsNull','Yes',d).
+att_prop_i(2,13,'AUTONUMBER','0',d).
+att_prop_i(2,13,'ATT_INITIAL_VALUE','',d).
+att_prop_i(2,13,'AttRegEx','',d).
+att_prop_i(2,13,'AttValidationFailedMsg','',d).
+att_prop_i(2,13,'FullName','ProductPrice',v).
+att_prop_i(2,10,'ExternalName','ProductId',d).
+att_prop_i(2,10,'ExternalNamespace','BillingSystem',d).
+att_prop_i(2,10,'EmptyAsNull','Yes',d).
+att_prop_i(2,10,'AUTONUMBER','-1',d).
+att_prop_i(2,10,'AUTONUMBER_START','1',d).
+att_prop_i(2,10,'AUTONUMBER_STEP','1',d).
+att_prop_i(2,10,'AUTONUMBER_FORREPLICATION','-1',d).
+att_prop_i(2,10,'ATT_INITIAL_VALUE','',d).
+att_prop_i(2,10,'AttRegEx','',d).
+att_prop_i(2,10,'AttValidationFailedMsg','',d).
+att_prop_i(2,10,'FullName','ProductId',v).
+att_prop_i(2,18,'ExternalName','InvoiceDetailQuantiity',d).
+att_prop_i(2,18,'ExternalNamespace','BillingSystem',d).
+att_prop_i(2,18,'EmptyAsNull','Yes',d).
+att_prop_i(2,18,'AUTONUMBER','0',d).
+att_prop_i(2,18,'ATT_INITIAL_VALUE','',d).
+att_prop_i(2,18,'AttRegEx','',d).
+att_prop_i(2,18,'AttValidationFailedMsg','',d).
+att_prop_i(2,18,'FullName','InvoiceDetailQuantiity',v).
+att_prop_i(2,17,'ExternalName','InvoiceDetailId',d).
+att_prop_i(2,17,'ExternalNamespace','BillingSystem',d).
+att_prop_i(2,17,'EmptyAsNull','Yes',d).
+att_prop_i(2,17,'AUTONUMBER','0',d).
+att_prop_i(2,17,'ATT_INITIAL_VALUE','',d).
+att_prop_i(2,17,'AttRegEx','',d).
+att_prop_i(2,17,'AttValidationFailedMsg','',d).
+att_prop_i(2,17,'FullName','InvoiceDetailId',v).
  
+tbl_prop_i(2,5,'AllDirSuper',[ [ 3,[ 10 ] ],[ 4,[ 14 ] ] ],v).
+tbl_prop_i(2,2000,'DirSubor',[ [ 5,[ 14 ] ] ],v).
+tbl_prop_i(2,3,'DirSubor',[ [ 5,[ 10 ] ] ],v).
+tbl_prop_i(2,4,'DirSubor',[ [ 5,[ 14 ] ] ],v).
+tbl_prop_i(2,5,'DirSuper',[ [ 3,[ 10 ] ],[ 4,[ 14 ] ] ],v).
  
+tbl_att_prop_i(2,3,13,'AllowNulls',n).
+tbl_att_prop_i(2,5,10,'AllowNulls',n).
+tbl_att_prop_i(2,5,18,'AllowNulls',n).
+tbl_att_prop_i(2,5,14,'AllowNulls',n).
+tbl_att_prop_i(2,5,17,'AllowNulls',n).
+tbl_att_prop_i(2,3,10,'AllowNulls',n).
+tbl_att_prop_i(2,3,10,'AUTONUMBER',y).
 tbl_att_prop_i(2,4,14,'AllowNulls',n).
 tbl_att_prop_i(2,4,14,'AUTONUMBER',y).
 tbl_att_prop_i(2,4,15,'AllowNulls',n).
 tbl_att_prop_i(2,4,3,'AllowNulls',n).
-tbl_att_prop_i(2,4,16,'AllowNulls',n).
+tbl_att_prop_i(2,2000,14,'AllowNulls',n).
+tbl_att_prop_i(2,2000,14,'AUTONUMBER',y).
  
  
  
  
+a_alias_i([ 'sum(',se(19,[ [ 3,13 ],[ 5,18 ] ],[ t(13,2),t(*,6),t(18,2) ]) ],'InvoiceAmount').
+a_alias_i(se(16,[ [ 2000,16 ] ],[ t('coalesce(',1),t(16,2),t(',',7),t('0',3),t(')',4) ]),'InvoiceAmount').
  
  
  

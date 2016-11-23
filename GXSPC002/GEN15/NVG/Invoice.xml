@@ -9,7 +9,16 @@
 <ObjPgmName>Invoice</ObjPgmName>
 <ObjClsName>Transaction</ObjClsName></Object>
 <Result>genreq</Result>
-<Warnings></Warnings>
+<Warnings>
+<Warning>
+<MsgCode>spc0033</MsgCode>
+<Message>
+<Token></Token>
+<Attribute>
+<AttriId>10</AttriId>
+<AttriName>ProductId</AttriName>
+<Description>Product Identifier</Description></Attribute>
+<Token> will be read-only in update mode.</Token></Message></Warning></Warnings>
 <Errors></Errors>
 <Generator>
 <GenId>15</GenId>
@@ -48,7 +57,54 @@
 <AttriId>3</AttriId>
 <AttriName>CustomerId</AttriName>
 <Description>Customer Id</Description></Attribute></KeyAttributes>
-<Tables></Tables></Table></Tables></Table></NavigationTree>
+<Tables></Tables></Table>
+<Table>
+<TableId>4</TableId>
+<TableName>InvoiceLastLineId navigation</TableName>
+<Description>Invoice</Description>
+<RecordsToRead>one</RecordsToRead>
+<JoinType>Outer</JoinType>
+<Tables>
+<Table>
+<TableId>5</TableId>
+<TableName>InvoiceDetail</TableName>
+<Description>Detail</Description>
+<RecordsToRead>many</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>14</AttriId>
+<AttriName>InvoiceId</AttriName>
+<Description>Invoice Id</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table></Tables></Table>
+<Table>
+<TableId>4</TableId>
+<TableName>InvoiceAmount navigation</TableName>
+<Description>Invoice</Description>
+<RecordsToRead>one</RecordsToRead>
+<JoinType>Outer</JoinType>
+<Tables>
+<Table>
+<TableId>5</TableId>
+<TableName>InvoiceDetail</TableName>
+<Description>Detail</Description>
+<RecordsToRead>many</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>14</AttriId>
+<AttriName>InvoiceId</AttriName>
+<Description>Invoice Id</Description></Attribute></KeyAttributes>
+<Tables>
+<Table>
+<TableId>3</TableId>
+<TableName>Product</TableName>
+<Description>Product</Description>
+<RecordsToRead>one</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>10</AttriId>
+<AttriName>ProductId</AttriName>
+<Description>Product Identifier</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table></Tables></Table></Tables></Table></Tables></Table></NavigationTree>
 <Formulas>
 <VerticalFormulas></VerticalFormulas>
 <AggSelFormulas></AggSelFormulas></Formulas>
@@ -69,10 +125,6 @@
 <AttriName>InvoiceDate</AttriName>
 <Description>Invoice Date</Description></Attribute>
 <Attribute>
-<AttriId>16</AttriId>
-<AttriName>InvoiceAmount</AttriName>
-<Description>Invoice Amount</Description></Attribute>
-<Attribute>
 <AttriId>3</AttriId>
 <AttriName>CustomerId</AttriName>
 <Description>Customer Id</Description></Attribute></AttrisToUpdate></TableToUpdate>
@@ -87,10 +139,6 @@
 <AttriId>15</AttriId>
 <AttriName>InvoiceDate</AttriName>
 <Description>Invoice Date</Description></Attribute>
-<Attribute>
-<AttriId>16</AttriId>
-<AttriName>InvoiceAmount</AttriName>
-<Description>Invoice Amount</Description></Attribute>
 <Attribute>
 <AttriId>3</AttriId>
 <AttriName>CustomerId</AttriName>
@@ -136,6 +184,7 @@
 <TableId>3</TableId>
 <TableName>Product</TableName>
 <Description>Product</Description>
+<Updated>Yes</Updated>
 <RecordsToRead>one</RecordsToRead>
 <KeyAttributes>
 <Attribute>
@@ -171,10 +220,6 @@
 <AttriName>InvoiceDetailQuantiity</AttriName>
 <Description>Invoice Detail Quantiity</Description></Attribute>
 <Attribute>
-<AttriId>19</AttriId>
-<AttriName>InvoiceDetailAmount</AttriName>
-<Description>Invoice Detail Amount</Description></Attribute>
-<Attribute>
 <AttriId>10</AttriId>
 <AttriName>ProductId</AttriName>
 <Description>Product Identifier</Description></Attribute></AttrisToUpdate></TableToUpdate>
@@ -190,10 +235,6 @@
 <AttriName>InvoiceDetailQuantiity</AttriName>
 <Description>Invoice Detail Quantiity</Description></Attribute>
 <Attribute>
-<AttriId>19</AttriId>
-<AttriName>InvoiceDetailAmount</AttriName>
-<Description>Invoice Detail Amount</Description></Attribute>
-<Attribute>
 <AttriId>10</AttriId>
 <AttriName>ProductId</AttriName>
 <Description>Product Identifier</Description></Attribute></AttrisToUpdate></TableToUpdate>
@@ -203,7 +244,18 @@
 <TableName>InvoiceDetail</TableName>
 <Description>Detail</Description></Table>
 <TableAction>delete</TableAction>
-<AttrisToUpdate></AttrisToUpdate></TableToUpdate></TablesToUpdate>
+<AttrisToUpdate></AttrisToUpdate></TableToUpdate>
+<TableToUpdate>
+<Table>
+<TableId>3</TableId>
+<TableName>Product</TableName>
+<Description>Product</Description></Table>
+<TableAction>update</TableAction>
+<AttrisToUpdate>
+<Attribute>
+<AttriId>12</AttriId>
+<AttriName>ProductStock</AttriName>
+<Description>Product Stock</Description></Attribute></AttrisToUpdate></TableToUpdate></TablesToUpdate>
 <AfterInsertRules></AfterInsertRules>
 <AfterUpdateRules></AfterUpdateRules>
 <AfterDeleteRules></AfterDeleteRules>
@@ -236,7 +288,12 @@
 <TableId>5</TableId>
 <TableName>InvoiceDetail</TableName>
 <Description>Detail</Description></Table>
-<Token>Gx0051</Token>
+<Object>
+<ObjCls>13</ObjCls>
+<ObjId>8</ObjId>
+<ObjName>Gx0051</ObjName>
+<ObjPgmName>Gx0051</ObjPgmName>
+<ObjClsName>Web Panel</ObjClsName></Object>
 <InputParameters>
 <Attribute>
 <AttriId>14</AttriId>
@@ -271,7 +328,12 @@
 <TableId>4</TableId>
 <TableName>Invoice</TableName>
 <Description>Invoice</Description></Table>
-<Token>Gx0040</Token>
+<Object>
+<ObjCls>13</ObjCls>
+<ObjId>7</ObjId>
+<ObjName>Gx0040</ObjName>
+<ObjPgmName>Gx0040</ObjPgmName>
+<ObjClsName>Web Panel</ObjClsName></Object>
 <InputParameters></InputParameters>
 <OutputParameters>
 <Attribute>

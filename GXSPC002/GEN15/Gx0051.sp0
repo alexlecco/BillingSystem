@@ -2,18 +2,18 @@ spec_i([ web,8,'Selection List Detail','Gx0051',0,eng,'10_1_6-46473' ]).
  
 struct_i(2,1,[],[]).
  
-level_i(2,[ 5,[ [ 5,many ] ],[],[],[ [ [ 5 ],[ 14,19,18,10,17 ] ] ],[ [ [ 5 ],[] ] ],[ 14,17 ],'IINVOICEDETAIL',[ 5,[ [ [],'Pinvoiceid',14 ] ] ],[] ]).
+level_i(2,[ 5,[ [ 5,many ],[ 3,one ] ],[],[],[ [ [ 5,3 ],[ 14,10,17,13,18,19 ] ] ],[ [ [ 5,3 ],[] ] ],[ 14,17 ],'IINVOICEDETAIL',[ 5,[ [ [],'Pinvoiceid',14 ] ] ],[] ]).
  
-tw_i(2,[]).
+tw_i(2,[ [ 3,[ [ 5,10,10 ] ] ] ]).
  
-lwi_i(2,[ [ c([ t(10,2),t(>=,10),t('Cproductid',23) ],[ 10 ]),c([ t(18,2),t(>=,10),t('Cinvoicedetailquantiity',23) ],[ 18 ]),c([ t(19,2),t(>=,10),t('Cinvoicedetailamount',23) ],[ 19 ]) ] ]).
- 
- 
+lwi_i(2,[ [ c([ t(10,2),t(>=,10),t('Cproductid',23) ],[ 10 ]),c([ t(18,2),t(>=,10),t('Cinvoicedetailquantiity',23) ],[ 18 ]),c([ t('(',0),t(13,2),t(*,6),t(18,2),t(')',4),t(>=,10),t('Cinvoicedetailamount',23) ],[ 13,18 ]) ] ]).
  
  
-ta_i(2,[ [ [ 5,14 ],[ 5,19 ],[ 5,18 ],[ 5,10 ],[ 5,17 ] ] ]).
  
-las_i(2,[ [ 'Pinvoiceid','Pinvoicedetailid','Cinvoicedetailid','Cproductid','Cinvoicedetailquantiity','Cinvoicedetailamount',14,19,18,10,17 ] ]).
+ 
+ta_i(2,[ [ [ 5,14 ],[ 5,10 ],[ 5,17 ],[ 3,13 ],[ 5,18 ] ] ]).
+ 
+las_i(2,[ [ 'Pinvoiceid','Pinvoicedetailid','Cinvoicedetailid','Cproductid','Cinvoicedetailquantiity','Cinvoicedetailamount',14,10,17,13,18,19 ] ]).
  
 lac_i(2,[ [ 'Cinvoicedetailid','Cproductid','Cinvoicedetailquantiity','Cinvoicedetailamount' ] ]).
  
@@ -131,22 +131,29 @@ rule_i(0,parm([ 'Pinvoiceid','Pinvoicedetailid' ],[])).
 rule_i(0,parmio([ [ 'Pinvoiceid',in ],[ 'Pinvoicedetailid',out ] ])).
 rule_i(0,order([ 14,17 ])).
  
-a_i(1,1,f,'Err',[],[ [],[ t('0',3) ] ]).
-a_i(2,2,t,5,[],[ [ [ [],'Pinvoiceid',14 ] ],'IINVOICEDETAIL',[] ]).
+a_i(1,2,f,19,[],[ [],[ t(13,2),t(*,6),t(18,2) ] ]).
+a_i(2,1,f,'Err',[],[ [],[ t('0',3) ] ]).
+a_i(3,2,t,5,[],[ [ [ [],'Pinvoiceid',14 ] ],'IINVOICEDETAIL',[] ]).
+a_i(4,2,r,3,[],[ [ [ 5,10,10 ] ],'IPRODUCT',[] ]).
  
-v_i(f,i,1,[]).
-v_i(f,o,1,'Err').
-v_i(t,i,2,'Pinvoiceid').
-v_i(t,o,2,14).
-v_i(t,o,2,19).
-v_i(t,o,2,18).
-v_i(t,o,2,10).
-v_i(t,o,2,17).
+v_i(f,i,1,13).
+v_i(f,i,1,18).
+v_i(f,o,1,19).
+v_i(f,i,2,[]).
+v_i(f,o,2,'Err').
+v_i(t,i,3,'Pinvoiceid').
+v_i(t,o,3,14).
+v_i(t,o,3,10).
+v_i(t,o,3,17).
+v_i(t,o,3,18).
+v_i(r,i,4,10).
+v_i(r,o,4,13).
  
  
  
  
  
+attri_i(13,[ 'ProductPrice',int,9,2,'ZZZZZ9.99',0,'Product Price','',0 ]).
 attri_i(14,[ 'InvoiceId',int,6,0,'ZZZZZ9',0,'Invoice Id','',0 ]).
 attri_i(19,[ 'InvoiceDetailAmount',int,9,2,'ZZZZZ9.99',0,'Invoice Detail Amount','',0 ]).
 attri_i(18,[ 'InvoiceDetailQuantiity',int,3,0,'ZZ9',0,'Invoice Detail Quantiity','',0 ]).
@@ -162,9 +169,11 @@ attri_i('Cproductid',[ cProductId,int,6,0,'ZZZZZ9',0,'Product Identifier','',7 ]
 attri_i('Cinvoicedetailid',[ cInvoiceDetailId,int,2,0,'Z9',0,'Detail Identifier','',6 ]).
 attri_i('Linkselection',[ 'LinkSelection',bits,4,0,'',0,'Link Selection','',5 ]).
  
-table_i(5,[ 'InvoiceDetail',[ 14,17,10,18,19 ],'Detail','InvoiceDetail' ]).
+table_i(3,[ 'Product',[ 10,13 ],'Product','Product' ]).
+table_i(5,[ 'InvoiceDetail',[ 14,17,10,18 ],'Detail','InvoiceDetail' ]).
  
 index_i(5,[ 'IINVOICEDETAIL',u,[ 14,17 ],'IInvoiceDetail' ]).
+index_i(3,[ 'IPRODUCT',u,[ 10 ],'IProduct' ]).
  
  
  
@@ -174,6 +183,7 @@ index_i(5,[ 'IINVOICEDETAIL',u,[ 14,17 ],'IInvoiceDetail' ]).
  
  
  
+sql_no_eval_hor_i(2,19).
  
  
  
@@ -742,13 +752,26 @@ att_prop_i(2,14,'ATT_INITIAL_VALUE','',d).
 att_prop_i(2,14,'AttRegEx','',d).
 att_prop_i(2,14,'AttValidationFailedMsg','',d).
 att_prop_i(2,14,'FullName','InvoiceId',v).
+att_prop_i(2,13,'ExternalName','ProductPrice',d).
+att_prop_i(2,13,'ExternalNamespace','BillingSystem',d).
+att_prop_i(2,13,'EmptyAsNull','Yes',d).
+att_prop_i(2,13,'AUTONUMBER','0',d).
+att_prop_i(2,13,'ATT_INITIAL_VALUE','',d).
+att_prop_i(2,13,'AttRegEx','',d).
+att_prop_i(2,13,'AttValidationFailedMsg','',d).
+att_prop_i(2,13,'FullName','ProductPrice',v).
  
+tbl_prop_i(2,5,'AllDirSuper',[ [ 3,[ 10 ] ] ],v).
+tbl_prop_i(2,3,'DirSubor',[ [ 5,[ 10 ] ] ],v).
+tbl_prop_i(2,5,'DirSuper',[ [ 3,[ 10 ] ] ],v).
  
 tbl_att_prop_i(2,5,14,'AllowNulls',n).
 tbl_att_prop_i(2,5,17,'AllowNulls',n).
 tbl_att_prop_i(2,5,10,'AllowNulls',n).
 tbl_att_prop_i(2,5,18,'AllowNulls',n).
-tbl_att_prop_i(2,5,19,'AllowNulls',n).
+tbl_att_prop_i(2,3,10,'AllowNulls',n).
+tbl_att_prop_i(2,3,10,'AUTONUMBER',y).
+tbl_att_prop_i(2,3,13,'AllowNulls',n).
  
  
  

@@ -2,7 +2,7 @@
                File: Invoice
         Description: Invoice
              Author: GeneXus C# Generator version 10_1_6-46473
-       Generated on: 11/23/2016 16:35:48.35
+       Generated on: 11/23/2016 17:25:24.69
        Program type: Callable routine
           Main DBMS: sqlserver
 */
@@ -57,7 +57,33 @@ namespace GeneXus.Programs {
             dyncall( GetNextPar( )) ;
             return  ;
          }
-         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_6") == 0 )
+         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_15") == 0 )
+         {
+            A14InvoiceId = (int)(NumberUtil.Val( GetNextPar( ), ".")) ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A14InvoiceId", StringUtil.LTrim( StringUtil.Str( (decimal)(A14InvoiceId), 6, 0)));
+            setAjaxCallMode();
+            if ( ! IsValidAjaxCall( true) )
+            {
+               GxWebError = 1 ;
+               return  ;
+            }
+            gxLoad_15( A14InvoiceId) ;
+            return  ;
+         }
+         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_16") == 0 )
+         {
+            A14InvoiceId = (int)(NumberUtil.Val( GetNextPar( ), ".")) ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A14InvoiceId", StringUtil.LTrim( StringUtil.Str( (decimal)(A14InvoiceId), 6, 0)));
+            setAjaxCallMode();
+            if ( ! IsValidAjaxCall( true) )
+            {
+               GxWebError = 1 ;
+               return  ;
+            }
+            gxLoad_16( A14InvoiceId) ;
+            return  ;
+         }
+         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_14") == 0 )
          {
             A3CustomerId = (int)(NumberUtil.Val( GetNextPar( ), ".")) ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A3CustomerId", StringUtil.LTrim( StringUtil.Str( (decimal)(A3CustomerId), 6, 0)));
@@ -67,10 +93,10 @@ namespace GeneXus.Programs {
                GxWebError = 1 ;
                return  ;
             }
-            gxLoad_6( A3CustomerId) ;
+            gxLoad_14( A3CustomerId) ;
             return  ;
          }
-         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_8") == 0 )
+         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_18") == 0 )
          {
             A10ProductId = (int)(NumberUtil.Val( GetNextPar( ), ".")) ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A10ProductId", StringUtil.LTrim( StringUtil.Str( (decimal)(A10ProductId), 6, 0)));
@@ -80,7 +106,7 @@ namespace GeneXus.Programs {
                GxWebError = 1 ;
                return  ;
             }
-            gxLoad_8( A10ProductId) ;
+            gxLoad_18( A10ProductId) ;
             return  ;
          }
          else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxEvt") == 0 )
@@ -490,6 +516,12 @@ namespace GeneXus.Programs {
             else if ( ( nKeyPressed == 3 ) || ( nKeyPressed == 4 ) || ( ( nKeyPressed == 1 ) && ( AnyError != 0 ) ) )
             {
                /* Button check  or addlines. */
+               B20InvoiceLastLineId = A20InvoiceLastLineId ;
+               n20InvoiceLastLineId = false ;
+               context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+               B16InvoiceAmount = A16InvoiceAmount ;
+               n16InvoiceAmount = false ;
+               context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
                standaloneNotModal045( ) ;
                standaloneModal045( ) ;
                sMode5 = Gx_mode ;
@@ -519,6 +551,12 @@ namespace GeneXus.Programs {
                }
                Gx_mode = sMode5 ;
                context.httpAjaxContext.ajax_rsp_assign_attri("", false, "Gx_mode", Gx_mode);
+               A20InvoiceLastLineId = B20InvoiceLastLineId ;
+               n20InvoiceLastLineId = false ;
+               context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+               A16InvoiceAmount = B16InvoiceAmount ;
+               n16InvoiceAmount = false ;
+               context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
             }
             else
             {
@@ -543,6 +581,12 @@ namespace GeneXus.Programs {
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "Gx_mode", Gx_mode);
             InitAll045( ) ;
             init_level_properties5( ) ;
+            B20InvoiceLastLineId = A20InvoiceLastLineId ;
+            n20InvoiceLastLineId = false ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+            B16InvoiceAmount = A16InvoiceAmount ;
+            n16InvoiceAmount = false ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
             standaloneNotModal045( ) ;
             standaloneModal045( ) ;
             nRcdExists_5 = 0 ;
@@ -562,6 +606,12 @@ namespace GeneXus.Programs {
             }
             Gx_mode = sMode5 ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "Gx_mode", Gx_mode);
+            A20InvoiceLastLineId = B20InvoiceLastLineId ;
+            n20InvoiceLastLineId = false ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+            A16InvoiceAmount = B16InvoiceAmount ;
+            n16InvoiceAmount = false ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
             sStyleString = " style=\"display:none;\"" ;
             sStyleString = "" ;
             context.WriteHtmlText( "<div id=\""+"Gridinvoice_detailContainer"+"Div\" "+sStyleString+">"+"</div>") ;
@@ -586,10 +636,9 @@ namespace GeneXus.Programs {
             context.WriteHtmlText( "</td>") ;
             context.WriteHtmlText( "<td>") ;
             /* Single line edit */
-            TempTags = "  onfocus=\"gx.evt.onfocus(this, 76,'',false,'',0)\"" ;
             ClassString = "Attribute" ;
             StyleString = "" ;
-            GxWebStd.gx_single_line_edit( context, edtInvoiceAmount_Internalname, StringUtil.LTrim( StringUtil.NToC( A16InvoiceAmount, 9, 2, ".", "")), "", 9, "chr", 1, "row", 9, 1, edtInvoiceAmount_Enabled, 0, 0, 0, "", "", StyleString, ClassString, "", context.localUtil.Format( A16InvoiceAmount, "ZZZZZ9.99"), TempTags+" onchange=\"gx.evt.onchange(this)\" "+" onblur=\""+"gx.num.valid_decimal( this, ',','.','2');"+";gx.evt.onblur(76);\"", 0, edtInvoiceAmount_Jsonclick, "", 0, 1, -1, true, "right", "HLP_Invoice.htm");
+            GxWebStd.gx_single_line_edit( context, edtInvoiceAmount_Internalname, StringUtil.LTrim( StringUtil.NToC( A16InvoiceAmount, 9, 2, ".", "")), "", 9, "chr", 1, "row", 9, 1, edtInvoiceAmount_Enabled, 0, 0, 0, "", "", StyleString, ClassString, "", context.localUtil.Format( A16InvoiceAmount, "ZZZZZ9.99"), "", 0, edtInvoiceAmount_Jsonclick, "", 0, 1, -1, true, "right", "HLP_Invoice.htm");
             context.WriteHtmlText( "</td>") ;
             context.WriteHtmlText( "</tr>") ;
             context.WriteHtmlText( "</tbody>") ;
@@ -813,32 +862,22 @@ namespace GeneXus.Programs {
                context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A4CustomerName", A4CustomerName);
                A7CustomerTotalPurchases = context.localUtil.CToN( cgiGet( edtCustomerTotalPurchases_Internalname), ".", ",") ;
                context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A7CustomerTotalPurchases", StringUtil.LTrim( StringUtil.Str( A7CustomerTotalPurchases, 9, 2)));
-               if ( ( ( context.localUtil.CToN( cgiGet( edtInvoiceAmount_Internalname), ".", ",") < Convert.ToDecimal( 0 )) ) || ( ( context.localUtil.CToN( cgiGet( edtInvoiceAmount_Internalname), ".", ",") > 999999.99m ) ) )
-               {
-                  GX_msglist.addItem(context.GetMessage( "GXM_badnum"), 1, "INVOICEAMOUNT");
-                  AnyError = 1 ;
-                  GX_FocusControl = edtInvoiceAmount_Internalname ;
-                  context.httpAjaxContext.ajax_rsp_assign_attri("", false, "GX_FocusControl", GX_FocusControl);
-                  wbErr = true ;
-                  A16InvoiceAmount = 0 ;
-                  context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
-               }
-               else
-               {
-                  A16InvoiceAmount = context.localUtil.CToN( cgiGet( edtInvoiceAmount_Internalname), ".", ",") ;
-                  context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
-               }
+               A16InvoiceAmount = context.localUtil.CToN( cgiGet( edtInvoiceAmount_Internalname), ".", ",") ;
+               n16InvoiceAmount = false ;
+               context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
                /* Read saved values. */
                Z14InvoiceId = (int)(context.localUtil.CToN( cgiGet( "Z14InvoiceId"), ".", ",")) ;
                Z15InvoiceDate = context.localUtil.CToD( cgiGet( "Z15InvoiceDate"), 0) ;
-               Z16InvoiceAmount = context.localUtil.CToN( cgiGet( "Z16InvoiceAmount"), ".", ",") ;
                Z3CustomerId = (int)(context.localUtil.CToN( cgiGet( "Z3CustomerId"), ".", ",")) ;
+               O20InvoiceLastLineId = (short)(context.localUtil.CToN( cgiGet( "O20InvoiceLastLineId"), ".", ",")) ;
+               O16InvoiceAmount = context.localUtil.CToN( cgiGet( "O16InvoiceAmount"), ".", ",") ;
                IsConfirmed = (short)(context.localUtil.CToN( cgiGet( "IsConfirmed"), ".", ",")) ;
                IsModified = (short)(context.localUtil.CToN( cgiGet( "IsModified"), ".", ",")) ;
                Gx_mode = cgiGet( "Mode") ;
                nRC_Gridinvoice_detail = (short)(context.localUtil.CToN( cgiGet( "nRC_Gridinvoice_detail"), ".", ",")) ;
                Gx_date = context.localUtil.CToD( cgiGet( "vTODAY"), 0) ;
                Gx_BScreen = (short)(context.localUtil.CToN( cgiGet( "vGXBSCREEN"), ".", ",")) ;
+               A20InvoiceLastLineId = (short)(context.localUtil.CToN( cgiGet( "INVOICELASTLINEID"), ".", ",")) ;
                Gx_mode = cgiGet( "vMODE") ;
                A12ProductStock = (short)(context.localUtil.CToN( cgiGet( "PRODUCTSTOCK"), ".", ",")) ;
                /* Read subfile selected row values. */
@@ -1044,6 +1083,12 @@ namespace GeneXus.Programs {
 
       protected void CONFIRM_045( )
       {
+         s20InvoiceLastLineId = O20InvoiceLastLineId ;
+         n20InvoiceLastLineId = false ;
+         context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+         s16InvoiceAmount = O16InvoiceAmount ;
+         n16InvoiceAmount = false ;
+         context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
          nGXsfl_65_idx = 0 ;
          while ( nGXsfl_65_idx < nRC_Gridinvoice_detail )
          {
@@ -1066,6 +1111,12 @@ namespace GeneXus.Programs {
                         {
                            IsConfirmed = 1 ;
                         }
+                        O20InvoiceLastLineId = A20InvoiceLastLineId ;
+                        n20InvoiceLastLineId = false ;
+                        context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+                        O16InvoiceAmount = A16InvoiceAmount ;
+                        n16InvoiceAmount = false ;
+                        context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
                      }
                   }
                   else
@@ -1090,6 +1141,12 @@ namespace GeneXus.Programs {
                         if ( AnyError == 0 )
                         {
                            OnDeleteControls045( ) ;
+                           O20InvoiceLastLineId = A20InvoiceLastLineId ;
+                           n20InvoiceLastLineId = false ;
+                           context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+                           O16InvoiceAmount = A16InvoiceAmount ;
+                           n16InvoiceAmount = false ;
+                           context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
                         }
                      }
                      else
@@ -1107,6 +1164,12 @@ namespace GeneXus.Programs {
                               {
                                  IsConfirmed = 1 ;
                               }
+                              O20InvoiceLastLineId = A20InvoiceLastLineId ;
+                              n20InvoiceLastLineId = false ;
+                              context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+                              O16InvoiceAmount = A16InvoiceAmount ;
+                              n16InvoiceAmount = false ;
+                              context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
                            }
                         }
                      }
@@ -1131,8 +1194,11 @@ namespace GeneXus.Programs {
             ChangePostValue( edtInvoiceDetailAmount_Internalname, StringUtil.LTrim( StringUtil.NToC( A19InvoiceDetailAmount, 9, 2, ".", ""))) ;
             ChangePostValue( "ZT_"+"Z17InvoiceDetailId_"+sGXsfl_65_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(Z17InvoiceDetailId), 2, 0, ".", ""))) ;
             ChangePostValue( "ZT_"+"Z18InvoiceDetailQuantiity_"+sGXsfl_65_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(Z18InvoiceDetailQuantiity), 3, 0, ".", ""))) ;
-            ChangePostValue( "ZT_"+"Z19InvoiceDetailAmount_"+sGXsfl_65_idx, StringUtil.LTrim( StringUtil.NToC( Z19InvoiceDetailAmount, 9, 2, ".", ""))) ;
             ChangePostValue( "ZT_"+"Z10ProductId_"+sGXsfl_65_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(Z10ProductId), 6, 0, ".", ""))) ;
+            ChangePostValue( "ZT_"+"Z11ProductDescription_"+sGXsfl_65_idx, StringUtil.RTrim( Z11ProductDescription)) ;
+            ChangePostValue( "ZT_"+"Z13ProductPrice_"+sGXsfl_65_idx, StringUtil.LTrim( StringUtil.NToC( Z13ProductPrice, 9, 2, ".", ""))) ;
+            ChangePostValue( "T12ProductStock_"+sGXsfl_65_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(O12ProductStock), 4, 0, ".", ""))) ;
+            ChangePostValue( "T19InvoiceDetailAmount_"+sGXsfl_65_idx, StringUtil.LTrim( StringUtil.NToC( O19InvoiceDetailAmount, 9, 2, ".", ""))) ;
             ChangePostValue( "nRcdDeleted_5_"+sGXsfl_65_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(nRcdDeleted_5), 4, 0, ".", ""))) ;
             ChangePostValue( "nRcdExists_5_"+sGXsfl_65_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(nRcdExists_5), 4, 0, ".", ""))) ;
             ChangePostValue( "nIsMod_5_"+sGXsfl_65_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(nIsMod_5), 4, 0, ".", ""))) ;
@@ -1146,6 +1212,12 @@ namespace GeneXus.Programs {
                ChangePostValue( "INVOICEDETAILAMOUNT_"+sGXsfl_65_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtInvoiceDetailAmount_Enabled), 5, 0, ".", ""))) ;
             }
          }
+         O20InvoiceLastLineId = s20InvoiceLastLineId ;
+         n20InvoiceLastLineId = false ;
+         context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+         O16InvoiceAmount = s16InvoiceAmount ;
+         n16InvoiceAmount = false ;
+         context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
          /* Start of After( level) rules */
          /* End of After( level) rules */
       }
@@ -1156,27 +1228,26 @@ namespace GeneXus.Programs {
 
       protected void ZM044( short GX_JID )
       {
-         if ( ( GX_JID == 5 ) || ( GX_JID == 0 ) )
+         if ( ( GX_JID == 13 ) || ( GX_JID == 0 ) )
          {
             if ( StringUtil.StrCmp(Gx_mode, "INS") != 0 )
             {
-               Z15InvoiceDate = T00046_A15InvoiceDate[0] ;
-               Z16InvoiceAmount = T00046_A16InvoiceAmount[0] ;
-               Z3CustomerId = T00046_A3CustomerId[0] ;
+               Z15InvoiceDate = T00047_A15InvoiceDate[0] ;
+               Z3CustomerId = T00047_A3CustomerId[0] ;
             }
             else
             {
                Z15InvoiceDate = A15InvoiceDate ;
-               Z16InvoiceAmount = A16InvoiceAmount ;
                Z3CustomerId = A3CustomerId ;
             }
          }
-         if ( GX_JID == -5 )
+         if ( GX_JID == -13 )
          {
             Z14InvoiceId = A14InvoiceId ;
             Z15InvoiceDate = A15InvoiceDate ;
-            Z16InvoiceAmount = A16InvoiceAmount ;
             Z3CustomerId = A3CustomerId ;
+            Z20InvoiceLastLineId = A20InvoiceLastLineId ;
+            Z16InvoiceAmount = A16InvoiceAmount ;
             Z4CustomerName = A4CustomerName ;
             Z7CustomerTotalPurchases = A7CustomerTotalPurchases ;
          }
@@ -1215,29 +1286,69 @@ namespace GeneXus.Programs {
 
       protected void Load044( )
       {
-         /* Using cursor T00048 */
-         pr_default.execute(6, new Object[] {A14InvoiceId});
-         if ( (pr_default.getStatus(6) != 101) )
+         /* Using cursor T000415 */
+         pr_default.execute(9, new Object[] {A14InvoiceId});
+         if ( (pr_default.getStatus(9) != 101) )
          {
             RcdFound4 = 1 ;
-            A15InvoiceDate = T00048_A15InvoiceDate[0] ;
+            A15InvoiceDate = T000415_A15InvoiceDate[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A15InvoiceDate", context.localUtil.Format(A15InvoiceDate, "99/99/99"));
-            A4CustomerName = T00048_A4CustomerName[0] ;
+            A4CustomerName = T000415_A4CustomerName[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A4CustomerName", A4CustomerName);
-            A7CustomerTotalPurchases = T00048_A7CustomerTotalPurchases[0] ;
+            A7CustomerTotalPurchases = T000415_A7CustomerTotalPurchases[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A7CustomerTotalPurchases", StringUtil.LTrim( StringUtil.Str( A7CustomerTotalPurchases, 9, 2)));
-            A16InvoiceAmount = T00048_A16InvoiceAmount[0] ;
-            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
-            A3CustomerId = T00048_A3CustomerId[0] ;
+            A3CustomerId = T000415_A3CustomerId[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A3CustomerId", StringUtil.LTrim( StringUtil.Str( (decimal)(A3CustomerId), 6, 0)));
-            ZM044( -5) ;
+            A20InvoiceLastLineId = T000415_A20InvoiceLastLineId[0] ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+            n20InvoiceLastLineId = T000415_n20InvoiceLastLineId[0] ;
+            A16InvoiceAmount = T000415_A16InvoiceAmount[0] ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
+            n16InvoiceAmount = T000415_n16InvoiceAmount[0] ;
+            ZM044( -13) ;
          }
-         pr_default.close(6);
+         pr_default.close(9);
          OnLoadActions044( ) ;
       }
 
       protected void OnLoadActions044( )
       {
+         /* Using cursor T000410 */
+         pr_default.execute(7, new Object[] {A14InvoiceId});
+         if ( (pr_default.getStatus(7) != 101) )
+         {
+            A20InvoiceLastLineId = T000410_A20InvoiceLastLineId[0] ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+            n20InvoiceLastLineId = T000410_n20InvoiceLastLineId[0] ;
+         }
+         else
+         {
+            A20InvoiceLastLineId = 0 ;
+            n20InvoiceLastLineId = false ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+         }
+         O20InvoiceLastLineId = A20InvoiceLastLineId ;
+         n20InvoiceLastLineId = false ;
+         context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+         pr_default.close(7);
+         /* Using cursor T000412 */
+         pr_default.execute(8, new Object[] {A14InvoiceId});
+         if ( (pr_default.getStatus(8) != 101) )
+         {
+            A16InvoiceAmount = T000412_A16InvoiceAmount[0] ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
+            n16InvoiceAmount = T000412_n16InvoiceAmount[0] ;
+         }
+         else
+         {
+            A16InvoiceAmount = 0 ;
+            n16InvoiceAmount = false ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
+         }
+         O16InvoiceAmount = A16InvoiceAmount ;
+         n16InvoiceAmount = false ;
+         context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
+         pr_default.close(8);
       }
 
       protected void CheckExtendedTable044( )
@@ -1245,6 +1356,36 @@ namespace GeneXus.Programs {
          Gx_BScreen = 1 ;
          context.httpAjaxContext.ajax_rsp_assign_attri("", false, "Gx_BScreen", StringUtil.Str( (decimal)(Gx_BScreen), 1, 0));
          standaloneModal( ) ;
+         /* Using cursor T000410 */
+         pr_default.execute(7, new Object[] {A14InvoiceId});
+         if ( (pr_default.getStatus(7) != 101) )
+         {
+            A20InvoiceLastLineId = T000410_A20InvoiceLastLineId[0] ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+            n20InvoiceLastLineId = T000410_n20InvoiceLastLineId[0] ;
+         }
+         else
+         {
+            A20InvoiceLastLineId = 0 ;
+            n20InvoiceLastLineId = false ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+         }
+         pr_default.close(7);
+         /* Using cursor T000412 */
+         pr_default.execute(8, new Object[] {A14InvoiceId});
+         if ( (pr_default.getStatus(8) != 101) )
+         {
+            A16InvoiceAmount = T000412_A16InvoiceAmount[0] ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
+            n16InvoiceAmount = T000412_n16InvoiceAmount[0] ;
+         }
+         else
+         {
+            A16InvoiceAmount = 0 ;
+            n16InvoiceAmount = false ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
+         }
+         pr_default.close(8);
          if ( ! ( (DateTime.MinValue==A15InvoiceDate) || ( A15InvoiceDate >= context.localUtil.YMDToD( 1753, 1, 1) ) ) )
          {
             GX_msglist.addItem("Field Invoice Date is out of range", "OutOfRange", 1, "");
@@ -1255,9 +1396,9 @@ namespace GeneXus.Programs {
             GX_msglist.addItem("No se permiten FACTURAS sin FECHA", 1, "");
             AnyError = 1 ;
          }
-         /* Using cursor T00047 */
-         pr_default.execute(5, new Object[] {A3CustomerId});
-         if ( (pr_default.getStatus(5) == 101) )
+         /* Using cursor T00048 */
+         pr_default.execute(6, new Object[] {A3CustomerId});
+         if ( (pr_default.getStatus(6) == 101) )
          {
             GX_msglist.addItem("No matching 'Customer'.", "ForeignKeyNotFound", 1, "CUSTOMERID");
             AnyError = 1 ;
@@ -1266,12 +1407,12 @@ namespace GeneXus.Programs {
          }
          if ( AnyError == 0 )
          {
-            A4CustomerName = T00047_A4CustomerName[0] ;
+            A4CustomerName = T00048_A4CustomerName[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A4CustomerName", A4CustomerName);
-            A7CustomerTotalPurchases = T00047_A7CustomerTotalPurchases[0] ;
+            A7CustomerTotalPurchases = T00048_A7CustomerTotalPurchases[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A7CustomerTotalPurchases", StringUtil.LTrim( StringUtil.Str( A7CustomerTotalPurchases, 9, 2)));
          }
-         pr_default.close(5);
+         pr_default.close(6);
          if ( A15InvoiceDate > Gx_date )
          {
             GX_msglist.addItem("La fecha es mayor a la del dia de hoy", 1, "");
@@ -1281,7 +1422,9 @@ namespace GeneXus.Programs {
 
       protected void CloseExtendedTableCursors044( )
       {
-         pr_default.close(5);
+         pr_default.close(7);
+         pr_default.close(8);
+         pr_default.close(6);
       }
 
       protected void enableDisable( )
@@ -1298,11 +1441,69 @@ namespace GeneXus.Programs {
          }
       }
 
-      protected void gxLoad_6( int A3CustomerId )
+      protected void gxLoad_15( int A14InvoiceId )
       {
-         /* Using cursor T00049 */
-         pr_default.execute(7, new Object[] {A3CustomerId});
-         if ( (pr_default.getStatus(7) == 101) )
+         /* Using cursor T000417 */
+         pr_default.execute(10, new Object[] {A14InvoiceId});
+         if ( (pr_default.getStatus(10) != 101) )
+         {
+            A20InvoiceLastLineId = T000417_A20InvoiceLastLineId[0] ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+            n20InvoiceLastLineId = T000417_n20InvoiceLastLineId[0] ;
+         }
+         else
+         {
+            A20InvoiceLastLineId = 0 ;
+            n20InvoiceLastLineId = false ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+         }
+         GxWebStd.set_html_headers( context, 0, "", "");
+         context.GX_webresponse.AddString("new Array( new Array(");
+         context.GX_webresponse.AddString("\""+GXUtil.EncodeJSConstant( StringUtil.LTrim( StringUtil.NToC( (decimal)(A20InvoiceLastLineId), 4, 0, ".", "")))+"\"");
+         context.GX_webresponse.AddString(")");
+         if ( (pr_default.getStatus(10) == 101) )
+         {
+            context.GX_webresponse.AddString(",");
+            context.GX_webresponse.AddString("101");
+         }
+         context.GX_webresponse.AddString(")");
+         pr_default.close(10);
+      }
+
+      protected void gxLoad_16( int A14InvoiceId )
+      {
+         /* Using cursor T000419 */
+         pr_default.execute(11, new Object[] {A14InvoiceId});
+         if ( (pr_default.getStatus(11) != 101) )
+         {
+            A16InvoiceAmount = T000419_A16InvoiceAmount[0] ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
+            n16InvoiceAmount = T000419_n16InvoiceAmount[0] ;
+         }
+         else
+         {
+            A16InvoiceAmount = 0 ;
+            n16InvoiceAmount = false ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
+         }
+         GxWebStd.set_html_headers( context, 0, "", "");
+         context.GX_webresponse.AddString("new Array( new Array(");
+         context.GX_webresponse.AddString("\""+GXUtil.EncodeJSConstant( StringUtil.LTrim( StringUtil.NToC( A16InvoiceAmount, 9, 2, ".", "")))+"\"");
+         context.GX_webresponse.AddString(")");
+         if ( (pr_default.getStatus(11) == 101) )
+         {
+            context.GX_webresponse.AddString(",");
+            context.GX_webresponse.AddString("101");
+         }
+         context.GX_webresponse.AddString(")");
+         pr_default.close(11);
+      }
+
+      protected void gxLoad_14( int A3CustomerId )
+      {
+         /* Using cursor T000420 */
+         pr_default.execute(12, new Object[] {A3CustomerId});
+         if ( (pr_default.getStatus(12) == 101) )
          {
             GX_msglist.addItem("No matching 'Customer'.", "ForeignKeyNotFound", 1, "CUSTOMERID");
             AnyError = 1 ;
@@ -1311,29 +1512,29 @@ namespace GeneXus.Programs {
          }
          if ( AnyError == 0 )
          {
-            A4CustomerName = T00049_A4CustomerName[0] ;
+            A4CustomerName = T000420_A4CustomerName[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A4CustomerName", A4CustomerName);
-            A7CustomerTotalPurchases = T00049_A7CustomerTotalPurchases[0] ;
+            A7CustomerTotalPurchases = T000420_A7CustomerTotalPurchases[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A7CustomerTotalPurchases", StringUtil.LTrim( StringUtil.Str( A7CustomerTotalPurchases, 9, 2)));
          }
          GxWebStd.set_html_headers( context, 0, "", "");
          context.GX_webresponse.AddString("new Array( new Array(");
          context.GX_webresponse.AddString("\""+GXUtil.EncodeJSConstant( StringUtil.RTrim( A4CustomerName))+"\""+","+"\""+GXUtil.EncodeJSConstant( StringUtil.LTrim( StringUtil.NToC( A7CustomerTotalPurchases, 9, 2, ".", "")))+"\"");
          context.GX_webresponse.AddString(")");
-         if ( (pr_default.getStatus(7) == 101) )
+         if ( (pr_default.getStatus(12) == 101) )
          {
             context.GX_webresponse.AddString(",");
             context.GX_webresponse.AddString("101");
          }
          context.GX_webresponse.AddString(")");
-         pr_default.close(7);
+         pr_default.close(12);
       }
 
       protected void GetKey044( )
       {
-         /* Using cursor T000410 */
-         pr_default.execute(8, new Object[] {A14InvoiceId});
-         if ( (pr_default.getStatus(8) != 101) )
+         /* Using cursor T000421 */
+         pr_default.execute(13, new Object[] {A14InvoiceId});
+         if ( (pr_default.getStatus(13) != 101) )
          {
             RcdFound4 = 1 ;
          }
@@ -1341,24 +1542,22 @@ namespace GeneXus.Programs {
          {
             RcdFound4 = 0 ;
          }
-         pr_default.close(8);
+         pr_default.close(13);
       }
 
       protected void getByPrimaryKey( )
       {
-         /* Using cursor T00046 */
-         pr_default.execute(4, new Object[] {A14InvoiceId});
-         if ( (pr_default.getStatus(4) != 101) )
+         /* Using cursor T00047 */
+         pr_default.execute(5, new Object[] {A14InvoiceId});
+         if ( (pr_default.getStatus(5) != 101) )
          {
-            ZM044( 5) ;
+            ZM044( 13) ;
             RcdFound4 = 1 ;
-            A14InvoiceId = T00046_A14InvoiceId[0] ;
+            A14InvoiceId = T00047_A14InvoiceId[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A14InvoiceId", StringUtil.LTrim( StringUtil.Str( (decimal)(A14InvoiceId), 6, 0)));
-            A15InvoiceDate = T00046_A15InvoiceDate[0] ;
+            A15InvoiceDate = T00047_A15InvoiceDate[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A15InvoiceDate", context.localUtil.Format(A15InvoiceDate, "99/99/99"));
-            A16InvoiceAmount = T00046_A16InvoiceAmount[0] ;
-            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
-            A3CustomerId = T00046_A3CustomerId[0] ;
+            A3CustomerId = T00047_A3CustomerId[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A3CustomerId", StringUtil.LTrim( StringUtil.Str( (decimal)(A3CustomerId), 6, 0)));
             Z14InvoiceId = A14InvoiceId ;
             sMode4 = Gx_mode ;
@@ -1380,7 +1579,7 @@ namespace GeneXus.Programs {
             Gx_mode = sMode4 ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "Gx_mode", Gx_mode);
          }
-         pr_default.close(4);
+         pr_default.close(5);
       }
 
       protected void getEqualNoModal( )
@@ -1402,43 +1601,43 @@ namespace GeneXus.Programs {
       protected void move_next( )
       {
          RcdFound4 = 0 ;
-         /* Using cursor T000411 */
-         pr_default.execute(9, new Object[] {A14InvoiceId});
-         if ( (pr_default.getStatus(9) != 101) )
+         /* Using cursor T000422 */
+         pr_default.execute(14, new Object[] {A14InvoiceId});
+         if ( (pr_default.getStatus(14) != 101) )
          {
-            while ( (pr_default.getStatus(9) != 101) && ( ( T000411_A14InvoiceId[0] < A14InvoiceId ) ) )
+            while ( (pr_default.getStatus(14) != 101) && ( ( T000422_A14InvoiceId[0] < A14InvoiceId ) ) )
             {
-               pr_default.readNext(9);
+               pr_default.readNext(14);
             }
-            if ( (pr_default.getStatus(9) != 101) && ( ( T000411_A14InvoiceId[0] > A14InvoiceId ) ) )
+            if ( (pr_default.getStatus(14) != 101) && ( ( T000422_A14InvoiceId[0] > A14InvoiceId ) ) )
             {
-               A14InvoiceId = T000411_A14InvoiceId[0] ;
+               A14InvoiceId = T000422_A14InvoiceId[0] ;
                context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A14InvoiceId", StringUtil.LTrim( StringUtil.Str( (decimal)(A14InvoiceId), 6, 0)));
                RcdFound4 = 1 ;
             }
          }
-         pr_default.close(4);
+         pr_default.close(5);
       }
 
       protected void move_previous( )
       {
          RcdFound4 = 0 ;
-         /* Using cursor T000412 */
-         pr_default.execute(10, new Object[] {A14InvoiceId});
-         if ( (pr_default.getStatus(10) != 101) )
+         /* Using cursor T000423 */
+         pr_default.execute(15, new Object[] {A14InvoiceId});
+         if ( (pr_default.getStatus(15) != 101) )
          {
-            while ( (pr_default.getStatus(10) != 101) && ( ( T000412_A14InvoiceId[0] > A14InvoiceId ) ) )
+            while ( (pr_default.getStatus(15) != 101) && ( ( T000423_A14InvoiceId[0] > A14InvoiceId ) ) )
             {
-               pr_default.readNext(10);
+               pr_default.readNext(15);
             }
-            if ( (pr_default.getStatus(10) != 101) && ( ( T000412_A14InvoiceId[0] < A14InvoiceId ) ) )
+            if ( (pr_default.getStatus(15) != 101) && ( ( T000423_A14InvoiceId[0] < A14InvoiceId ) ) )
             {
-               A14InvoiceId = T000412_A14InvoiceId[0] ;
+               A14InvoiceId = T000423_A14InvoiceId[0] ;
                context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A14InvoiceId", StringUtil.LTrim( StringUtil.Str( (decimal)(A14InvoiceId), 6, 0)));
                RcdFound4 = 1 ;
             }
          }
-         pr_default.close(3);
+         pr_default.close(4);
       }
 
       protected void btn_enter( )
@@ -1465,6 +1664,12 @@ namespace GeneXus.Programs {
             }
             else if ( StringUtil.StrCmp(Gx_mode, "DLT") == 0 )
             {
+               A20InvoiceLastLineId = O20InvoiceLastLineId ;
+               n20InvoiceLastLineId = false ;
+               context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+               A16InvoiceAmount = O16InvoiceAmount ;
+               n16InvoiceAmount = false ;
+               context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
                delete( ) ;
                AfterTrn( ) ;
                GX_FocusControl = edtInvoiceId_Internalname ;
@@ -1475,6 +1680,12 @@ namespace GeneXus.Programs {
                Gx_mode = "UPD" ;
                context.httpAjaxContext.ajax_rsp_assign_attri("", false, "Gx_mode", Gx_mode);
                /* Update record */
+               A20InvoiceLastLineId = O20InvoiceLastLineId ;
+               n20InvoiceLastLineId = false ;
+               context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+               A16InvoiceAmount = O16InvoiceAmount ;
+               n16InvoiceAmount = false ;
+               context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
                Update044( ) ;
                GX_FocusControl = edtInvoiceId_Internalname ;
                context.httpAjaxContext.ajax_rsp_assign_attri("", false, "GX_FocusControl", GX_FocusControl);
@@ -1487,6 +1698,12 @@ namespace GeneXus.Programs {
                Gx_mode = "INS" ;
                context.httpAjaxContext.ajax_rsp_assign_attri("", false, "Gx_mode", Gx_mode);
                /* Insert record */
+               A20InvoiceLastLineId = O20InvoiceLastLineId ;
+               n20InvoiceLastLineId = false ;
+               context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+               A16InvoiceAmount = O16InvoiceAmount ;
+               n16InvoiceAmount = false ;
+               context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
                GX_FocusControl = edtInvoiceId_Internalname ;
                context.httpAjaxContext.ajax_rsp_assign_attri("", false, "GX_FocusControl", GX_FocusControl);
                Insert044( ) ;
@@ -1510,6 +1727,12 @@ namespace GeneXus.Programs {
                   Gx_mode = "INS" ;
                   context.httpAjaxContext.ajax_rsp_assign_attri("", false, "Gx_mode", Gx_mode);
                   /* Insert record */
+                  A20InvoiceLastLineId = O20InvoiceLastLineId ;
+                  n20InvoiceLastLineId = false ;
+                  context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+                  A16InvoiceAmount = O16InvoiceAmount ;
+                  n16InvoiceAmount = false ;
+                  context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
                   GX_FocusControl = edtInvoiceId_Internalname ;
                   context.httpAjaxContext.ajax_rsp_assign_attri("", false, "GX_FocusControl", GX_FocusControl);
                   Insert044( ) ;
@@ -1537,6 +1760,12 @@ namespace GeneXus.Programs {
          }
          else
          {
+            A20InvoiceLastLineId = O20InvoiceLastLineId ;
+            n20InvoiceLastLineId = false ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+            A16InvoiceAmount = O16InvoiceAmount ;
+            n16InvoiceAmount = false ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
             delete( ) ;
             AfterTrn( ) ;
             GX_FocusControl = edtInvoiceId_Internalname ;
@@ -1666,15 +1895,15 @@ namespace GeneXus.Programs {
       {
          if ( StringUtil.StrCmp(Gx_mode, "INS") != 0 )
          {
-            /* Using cursor T000413 */
-            pr_default.execute(11, new Object[] {A14InvoiceId});
-            if ( (pr_default.getStatus(11) == 103) )
+            /* Using cursor T000424 */
+            pr_default.execute(16, new Object[] {A14InvoiceId});
+            if ( (pr_default.getStatus(16) == 103) )
             {
                GX_msglist.addItem(context.GetMessage( "GXM_lock", new   object[]  {"Invoice"}), "RecordIsLocked", 1, "");
                AnyError = 1 ;
                return  ;
             }
-            if ( (pr_default.getStatus(11) == 101) || ( Z15InvoiceDate != T000413_A15InvoiceDate[0] ) || ( Z16InvoiceAmount != T000413_A16InvoiceAmount[0] ) || ( Z3CustomerId != T000413_A3CustomerId[0] ) )
+            if ( (pr_default.getStatus(16) == 101) || ( Z15InvoiceDate != T000424_A15InvoiceDate[0] ) || ( Z3CustomerId != T000424_A3CustomerId[0] ) )
             {
                GX_msglist.addItem(context.GetMessage( "GXM_waschg", new   object[]  {"Invoice"}), "RecordWasChanged", 1, "");
                AnyError = 1 ;
@@ -1702,15 +1931,15 @@ namespace GeneXus.Programs {
                   BeforeInsert044( ) ;
                   if ( AnyError == 0 )
                   {
-                     /* Using cursor T000414 */
-                     pr_default.execute(12, new Object[] {A15InvoiceDate, A16InvoiceAmount, A3CustomerId});
-                     pr_default.close(12);
+                     /* Using cursor T000425 */
+                     pr_default.execute(17, new Object[] {A15InvoiceDate, A3CustomerId});
+                     pr_default.close(17);
                      /* Retrieving last key number assigned */
-                     /* Using cursor T000415 */
-                     pr_default.execute(13);
-                     A14InvoiceId = T000415_A14InvoiceId[0] ;
+                     /* Using cursor T000426 */
+                     pr_default.execute(18);
+                     A14InvoiceId = T000426_A14InvoiceId[0] ;
                      context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A14InvoiceId", StringUtil.LTrim( StringUtil.Str( (decimal)(A14InvoiceId), 6, 0)));
-                     pr_default.close(13);
+                     pr_default.close(18);
                      if ( AnyError == 0 )
                      {
                         /* Start of After( Insert) rules */
@@ -1761,10 +1990,10 @@ namespace GeneXus.Programs {
                   BeforeUpdate044( ) ;
                   if ( AnyError == 0 )
                   {
-                     /* Using cursor T000416 */
-                     pr_default.execute(14, new Object[] {A15InvoiceDate, A16InvoiceAmount, A3CustomerId, A14InvoiceId});
-                     pr_default.close(14);
-                     if ( (pr_default.getStatus(14) == 103) )
+                     /* Using cursor T000427 */
+                     pr_default.execute(19, new Object[] {A15InvoiceDate, A3CustomerId, A14InvoiceId});
+                     pr_default.close(19);
+                     if ( (pr_default.getStatus(19) == 103) )
                      {
                         GX_msglist.addItem(context.GetMessage( "GXM_lock", new   object[]  {"Invoice"}), "RecordIsLocked", 1, "");
                         AnyError = 1 ;
@@ -1820,19 +2049,31 @@ namespace GeneXus.Programs {
                BeforeDelete044( ) ;
                if ( AnyError == 0 )
                {
+                  A20InvoiceLastLineId = O20InvoiceLastLineId ;
+                  n20InvoiceLastLineId = false ;
+                  context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+                  A16InvoiceAmount = O16InvoiceAmount ;
+                  n16InvoiceAmount = false ;
+                  context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
                   ScanStart045( ) ;
                   while ( RcdFound5 != 0 )
                   {
                      getByPrimaryKey045( ) ;
                      Delete045( ) ;
                      ScanNext045( ) ;
+                     O20InvoiceLastLineId = A20InvoiceLastLineId ;
+                     n20InvoiceLastLineId = false ;
+                     context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+                     O16InvoiceAmount = A16InvoiceAmount ;
+                     n16InvoiceAmount = false ;
+                     context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
                   }
                   ScanEnd045( ) ;
                   if ( AnyError == 0 )
                   {
-                     /* Using cursor T000417 */
-                     pr_default.execute(15, new Object[] {A14InvoiceId});
-                     pr_default.close(15);
+                     /* Using cursor T000428 */
+                     pr_default.execute(20, new Object[] {A14InvoiceId});
+                     pr_default.close(20);
                      if ( AnyError == 0 )
                      {
                         /* Start of After( delete) rules */
@@ -1879,18 +2120,54 @@ namespace GeneXus.Programs {
          if ( AnyError == 0 )
          {
             /* Delete mode formulas */
-            /* Using cursor T000418 */
-            pr_default.execute(16, new Object[] {A3CustomerId});
-            A4CustomerName = T000418_A4CustomerName[0] ;
+            /* Using cursor T000430 */
+            pr_default.execute(21, new Object[] {A14InvoiceId});
+            if ( (pr_default.getStatus(21) != 101) )
+            {
+               A20InvoiceLastLineId = T000430_A20InvoiceLastLineId[0] ;
+               context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+               n20InvoiceLastLineId = T000430_n20InvoiceLastLineId[0] ;
+            }
+            else
+            {
+               A20InvoiceLastLineId = 0 ;
+               n20InvoiceLastLineId = false ;
+               context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+            }
+            pr_default.close(21);
+            /* Using cursor T000432 */
+            pr_default.execute(22, new Object[] {A14InvoiceId});
+            if ( (pr_default.getStatus(22) != 101) )
+            {
+               A16InvoiceAmount = T000432_A16InvoiceAmount[0] ;
+               context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
+               n16InvoiceAmount = T000432_n16InvoiceAmount[0] ;
+            }
+            else
+            {
+               A16InvoiceAmount = 0 ;
+               n16InvoiceAmount = false ;
+               context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
+            }
+            pr_default.close(22);
+            /* Using cursor T000433 */
+            pr_default.execute(23, new Object[] {A3CustomerId});
+            A4CustomerName = T000433_A4CustomerName[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A4CustomerName", A4CustomerName);
-            A7CustomerTotalPurchases = T000418_A7CustomerTotalPurchases[0] ;
+            A7CustomerTotalPurchases = T000433_A7CustomerTotalPurchases[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A7CustomerTotalPurchases", StringUtil.LTrim( StringUtil.Str( A7CustomerTotalPurchases, 9, 2)));
-            pr_default.close(16);
+            pr_default.close(23);
          }
       }
 
       protected void ProcessNestedLevel045( )
       {
+         s20InvoiceLastLineId = O20InvoiceLastLineId ;
+         n20InvoiceLastLineId = false ;
+         context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+         s16InvoiceAmount = O16InvoiceAmount ;
+         n16InvoiceAmount = false ;
+         context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
          nGXsfl_65_idx = 0 ;
          while ( nGXsfl_65_idx < nRC_Gridinvoice_detail )
          {
@@ -1946,6 +2223,12 @@ namespace GeneXus.Programs {
                      }
                   }
                }
+               O20InvoiceLastLineId = A20InvoiceLastLineId ;
+               n20InvoiceLastLineId = false ;
+               context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+               O16InvoiceAmount = A16InvoiceAmount ;
+               n16InvoiceAmount = false ;
+               context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
             }
             ChangePostValue( edtInvoiceDetailId_Internalname, StringUtil.LTrim( StringUtil.NToC( (decimal)(A17InvoiceDetailId), 2, 0, ".", ""))) ;
             ChangePostValue( edtProductId_Internalname, StringUtil.LTrim( StringUtil.NToC( (decimal)(A10ProductId), 6, 0, ".", ""))) ;
@@ -1955,8 +2238,11 @@ namespace GeneXus.Programs {
             ChangePostValue( edtInvoiceDetailAmount_Internalname, StringUtil.LTrim( StringUtil.NToC( A19InvoiceDetailAmount, 9, 2, ".", ""))) ;
             ChangePostValue( "ZT_"+"Z17InvoiceDetailId_"+sGXsfl_65_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(Z17InvoiceDetailId), 2, 0, ".", ""))) ;
             ChangePostValue( "ZT_"+"Z18InvoiceDetailQuantiity_"+sGXsfl_65_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(Z18InvoiceDetailQuantiity), 3, 0, ".", ""))) ;
-            ChangePostValue( "ZT_"+"Z19InvoiceDetailAmount_"+sGXsfl_65_idx, StringUtil.LTrim( StringUtil.NToC( Z19InvoiceDetailAmount, 9, 2, ".", ""))) ;
             ChangePostValue( "ZT_"+"Z10ProductId_"+sGXsfl_65_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(Z10ProductId), 6, 0, ".", ""))) ;
+            ChangePostValue( "ZT_"+"Z11ProductDescription_"+sGXsfl_65_idx, StringUtil.RTrim( Z11ProductDescription)) ;
+            ChangePostValue( "ZT_"+"Z13ProductPrice_"+sGXsfl_65_idx, StringUtil.LTrim( StringUtil.NToC( Z13ProductPrice, 9, 2, ".", ""))) ;
+            ChangePostValue( "T12ProductStock_"+sGXsfl_65_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(O12ProductStock), 4, 0, ".", ""))) ;
+            ChangePostValue( "T19InvoiceDetailAmount_"+sGXsfl_65_idx, StringUtil.LTrim( StringUtil.NToC( O19InvoiceDetailAmount, 9, 2, ".", ""))) ;
             ChangePostValue( "nRcdDeleted_5_"+sGXsfl_65_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(nRcdDeleted_5), 4, 0, ".", ""))) ;
             ChangePostValue( "nRcdExists_5_"+sGXsfl_65_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(nRcdExists_5), 4, 0, ".", ""))) ;
             ChangePostValue( "nIsMod_5_"+sGXsfl_65_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(nIsMod_5), 4, 0, ".", ""))) ;
@@ -1975,6 +2261,12 @@ namespace GeneXus.Programs {
          InitAll045( ) ;
          if ( AnyError != 0 )
          {
+            O20InvoiceLastLineId = s20InvoiceLastLineId ;
+            n20InvoiceLastLineId = false ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+            O16InvoiceAmount = s16InvoiceAmount ;
+            n16InvoiceAmount = false ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
          }
          nRcdExists_5 = 0 ;
          nIsMod_5 = 0 ;
@@ -1988,6 +2280,12 @@ namespace GeneXus.Programs {
          ProcessNestedLevel045( ) ;
          if ( AnyError != 0 )
          {
+            O20InvoiceLastLineId = s20InvoiceLastLineId ;
+            n20InvoiceLastLineId = false ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+            O16InvoiceAmount = s16InvoiceAmount ;
+            n16InvoiceAmount = false ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
          }
          /* Restore parent mode. */
          Gx_mode = sMode4 ;
@@ -1999,7 +2297,7 @@ namespace GeneXus.Programs {
       {
          if ( StringUtil.StrCmp(Gx_mode, "INS") != 0 )
          {
-            pr_default.close(11);
+            pr_default.close(16);
          }
          if ( AnyError == 0 )
          {
@@ -2007,11 +2305,14 @@ namespace GeneXus.Programs {
          }
          if ( AnyError == 0 )
          {
-            pr_default.close(10);
-            pr_default.close(9);
+            pr_default.close(15);
+            pr_default.close(14);
             pr_default.close(1);
             pr_default.close(0);
-            pr_default.close(16);
+            pr_default.close(23);
+            pr_default.close(21);
+            pr_default.close(22);
+            pr_default.close(3);
             pr_default.close(2);
             context.CommitDataStores("Invoice");
             if ( AnyError == 0 )
@@ -2024,11 +2325,14 @@ namespace GeneXus.Programs {
          }
          else
          {
-            pr_default.close(10);
-            pr_default.close(9);
+            pr_default.close(15);
+            pr_default.close(14);
             pr_default.close(1);
             pr_default.close(0);
-            pr_default.close(16);
+            pr_default.close(23);
+            pr_default.close(21);
+            pr_default.close(22);
+            pr_default.close(3);
             pr_default.close(2);
             context.RollbackDataStores("Invoice");
          }
@@ -2042,13 +2346,13 @@ namespace GeneXus.Programs {
 
       protected void ScanStart044( )
       {
-         /* Using cursor T000419 */
-         pr_default.execute(17);
+         /* Using cursor T000434 */
+         pr_default.execute(24);
          RcdFound4 = 0 ;
-         if ( (pr_default.getStatus(17) != 101) )
+         if ( (pr_default.getStatus(24) != 101) )
          {
             RcdFound4 = 1 ;
-            A14InvoiceId = T000419_A14InvoiceId[0] ;
+            A14InvoiceId = T000434_A14InvoiceId[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A14InvoiceId", StringUtil.LTrim( StringUtil.Str( (decimal)(A14InvoiceId), 6, 0)));
          }
          /* Load Subordinate Levels */
@@ -2056,12 +2360,12 @@ namespace GeneXus.Programs {
 
       protected void ScanNext044( )
       {
-         pr_default.readNext(17);
+         pr_default.readNext(24);
          RcdFound4 = 0 ;
-         if ( (pr_default.getStatus(17) != 101) )
+         if ( (pr_default.getStatus(24) != 101) )
          {
             RcdFound4 = 1 ;
-            A14InvoiceId = T000419_A14InvoiceId[0] ;
+            A14InvoiceId = T000434_A14InvoiceId[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A14InvoiceId", StringUtil.LTrim( StringUtil.Str( (decimal)(A14InvoiceId), 6, 0)));
          }
       }
@@ -2118,30 +2422,32 @@ namespace GeneXus.Programs {
 
       protected void ZM045( short GX_JID )
       {
-         if ( ( GX_JID == 7 ) || ( GX_JID == 0 ) )
+         if ( ( GX_JID == 17 ) || ( GX_JID == 0 ) )
          {
             if ( StringUtil.StrCmp(Gx_mode, "INS") != 0 )
             {
                Z18InvoiceDetailQuantiity = T00043_A18InvoiceDetailQuantiity[0] ;
-               Z19InvoiceDetailAmount = T00043_A19InvoiceDetailAmount[0] ;
                Z10ProductId = T00043_A10ProductId[0] ;
             }
             else
             {
                Z18InvoiceDetailQuantiity = A18InvoiceDetailQuantiity ;
-               Z19InvoiceDetailAmount = A19InvoiceDetailAmount ;
                Z10ProductId = A10ProductId ;
             }
          }
-         if ( GX_JID == -7 )
+         if ( ( GX_JID == 18 ) || ( GX_JID == 0 ) )
+         {
+            Z11ProductDescription = T00045_A11ProductDescription[0] ;
+            Z13ProductPrice = T00045_A13ProductPrice[0] ;
+         }
+         if ( GX_JID == -17 )
          {
             Z14InvoiceId = A14InvoiceId ;
             Z17InvoiceDetailId = A17InvoiceDetailId ;
             Z18InvoiceDetailQuantiity = A18InvoiceDetailQuantiity ;
-            Z19InvoiceDetailAmount = A19InvoiceDetailAmount ;
             Z10ProductId = A10ProductId ;
-            Z11ProductDescription = A11ProductDescription ;
             Z12ProductStock = A12ProductStock ;
+            Z11ProductDescription = A11ProductDescription ;
             Z13ProductPrice = A13ProductPrice ;
          }
       }
@@ -2152,6 +2458,17 @@ namespace GeneXus.Programs {
 
       protected void standaloneModal045( )
       {
+         if ( ( StringUtil.StrCmp(Gx_mode, "INS") == 0 )  )
+         {
+            A20InvoiceLastLineId = (short)(O20InvoiceLastLineId+1) ;
+            n20InvoiceLastLineId = false ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+         }
+         if ( ( StringUtil.StrCmp(Gx_mode, "INS") == 0 )  && ( Gx_BScreen == 1 ) )
+         {
+            A17InvoiceDetailId = A20InvoiceLastLineId ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A17InvoiceDetailId", StringUtil.LTrim( StringUtil.Str( (decimal)(A17InvoiceDetailId), 2, 0)));
+         }
          if ( StringUtil.StrCmp(Gx_mode, "INS") != 0 )
          {
             edtInvoiceDetailId_Enabled = 0 ;
@@ -2170,31 +2487,90 @@ namespace GeneXus.Programs {
 
       protected void Load045( )
       {
-         /* Using cursor T000420 */
-         pr_default.execute(18, new Object[] {A14InvoiceId, A17InvoiceDetailId});
-         if ( (pr_default.getStatus(18) != 101) )
+         /* Using cursor T000435 */
+         pr_default.execute(25, new Object[] {A14InvoiceId, A17InvoiceDetailId});
+         if ( (pr_default.getStatus(25) != 101) )
          {
             RcdFound5 = 1 ;
-            A11ProductDescription = T000420_A11ProductDescription[0] ;
-            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A11ProductDescription", A11ProductDescription);
-            A12ProductStock = T000420_A12ProductStock[0] ;
+            A12ProductStock = T000435_A12ProductStock[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A12ProductStock", StringUtil.LTrim( StringUtil.Str( (decimal)(A12ProductStock), 4, 0)));
-            A13ProductPrice = T000420_A13ProductPrice[0] ;
+            A11ProductDescription = T000435_A11ProductDescription[0] ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A11ProductDescription", A11ProductDescription);
+            A13ProductPrice = T000435_A13ProductPrice[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A13ProductPrice", StringUtil.LTrim( StringUtil.Str( A13ProductPrice, 9, 2)));
-            A18InvoiceDetailQuantiity = T000420_A18InvoiceDetailQuantiity[0] ;
+            A18InvoiceDetailQuantiity = T000435_A18InvoiceDetailQuantiity[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A18InvoiceDetailQuantiity", StringUtil.LTrim( StringUtil.Str( (decimal)(A18InvoiceDetailQuantiity), 3, 0)));
-            A19InvoiceDetailAmount = T000420_A19InvoiceDetailAmount[0] ;
-            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A19InvoiceDetailAmount", StringUtil.LTrim( StringUtil.Str( A19InvoiceDetailAmount, 9, 2)));
-            A10ProductId = T000420_A10ProductId[0] ;
+            A10ProductId = T000435_A10ProductId[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A10ProductId", StringUtil.LTrim( StringUtil.Str( (decimal)(A10ProductId), 6, 0)));
-            ZM045( -7) ;
+            ZM045( -17) ;
          }
-         pr_default.close(18);
+         pr_default.close(25);
          OnLoadActions045( ) ;
       }
 
       protected void OnLoadActions045( )
       {
+         if ( A12ProductStock - A18InvoiceDetailQuantiity >= 0 )
+         {
+            A12ProductStock = (short)(O12ProductStock-A18InvoiceDetailQuantiity) ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A12ProductStock", StringUtil.LTrim( StringUtil.Str( (decimal)(A12ProductStock), 4, 0)));
+         }
+         A19InvoiceDetailAmount = (decimal)(A13ProductPrice*A18InvoiceDetailQuantiity) ;
+         context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A19InvoiceDetailAmount", StringUtil.LTrim( StringUtil.Str( A19InvoiceDetailAmount, 9, 2)));
+         O19InvoiceDetailAmount = A19InvoiceDetailAmount ;
+         context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A19InvoiceDetailAmount", StringUtil.LTrim( StringUtil.Str( A19InvoiceDetailAmount, 9, 2)));
+         if ( ( StringUtil.StrCmp(Gx_mode, "INS") == 0 )  )
+         {
+            A16InvoiceAmount = (decimal)(O16InvoiceAmount+A19InvoiceDetailAmount) ;
+            n16InvoiceAmount = false ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
+         }
+         else
+         {
+            if ( ( StringUtil.StrCmp(Gx_mode, "UPD") == 0 )  )
+            {
+               A16InvoiceAmount = (decimal)(O16InvoiceAmount+A19InvoiceDetailAmount-O19InvoiceDetailAmount) ;
+               n16InvoiceAmount = false ;
+               context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
+            }
+            else
+            {
+               if ( ( StringUtil.StrCmp(Gx_mode, "DLT") == 0 )  )
+               {
+                  A16InvoiceAmount = (decimal)(O16InvoiceAmount-O19InvoiceDetailAmount) ;
+                  n16InvoiceAmount = false ;
+                  context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
+               }
+            }
+         }
+         A19InvoiceDetailAmount = (decimal)(A13ProductPrice*A18InvoiceDetailQuantiity) ;
+         context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A19InvoiceDetailAmount", StringUtil.LTrim( StringUtil.Str( A19InvoiceDetailAmount, 9, 2)));
+         O19InvoiceDetailAmount = A19InvoiceDetailAmount ;
+         context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A19InvoiceDetailAmount", StringUtil.LTrim( StringUtil.Str( A19InvoiceDetailAmount, 9, 2)));
+         if ( ( StringUtil.StrCmp(Gx_mode, "INS") == 0 )  )
+         {
+            A20InvoiceLastLineId = (short)(O20InvoiceLastLineId+1) ;
+            n20InvoiceLastLineId = false ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+         }
+         else
+         {
+            if ( ( StringUtil.StrCmp(Gx_mode, "UPD") == 0 )  )
+            {
+               A20InvoiceLastLineId = O20InvoiceLastLineId ;
+               n20InvoiceLastLineId = false ;
+               context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+            }
+            else
+            {
+               if ( ( StringUtil.StrCmp(Gx_mode, "DLT") == 0 )  )
+               {
+                  A20InvoiceLastLineId = (short)(O20InvoiceLastLineId-1) ;
+                  n20InvoiceLastLineId = false ;
+                  context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+               }
+            }
+         }
       }
 
       protected void CheckExtendedTable045( )
@@ -2202,9 +2578,9 @@ namespace GeneXus.Programs {
          Gx_BScreen = 1 ;
          context.httpAjaxContext.ajax_rsp_assign_attri("", false, "Gx_BScreen", StringUtil.Str( (decimal)(Gx_BScreen), 1, 0));
          standaloneModal045( ) ;
-         /* Using cursor T00044 */
-         pr_default.execute(2, new Object[] {A10ProductId});
-         if ( (pr_default.getStatus(2) == 101) )
+         /* Using cursor T00045 */
+         pr_default.execute(3, new Object[] {A10ProductId});
+         if ( (pr_default.getStatus(3) == 101) )
          {
             GX_msglist.addItem("No matching 'Product'.", "ForeignKeyNotFound", 1, "PRODUCTID");
             AnyError = 1 ;
@@ -2213,30 +2589,89 @@ namespace GeneXus.Programs {
          }
          if ( AnyError == 0 )
          {
-            A11ProductDescription = T00044_A11ProductDescription[0] ;
-            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A11ProductDescription", A11ProductDescription);
-            A12ProductStock = T00044_A12ProductStock[0] ;
+            A12ProductStock = T00045_A12ProductStock[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A12ProductStock", StringUtil.LTrim( StringUtil.Str( (decimal)(A12ProductStock), 4, 0)));
-            A13ProductPrice = T00044_A13ProductPrice[0] ;
+            A11ProductDescription = T00045_A11ProductDescription[0] ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A11ProductDescription", A11ProductDescription);
+            A13ProductPrice = T00045_A13ProductPrice[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A13ProductPrice", StringUtil.LTrim( StringUtil.Str( A13ProductPrice, 9, 2)));
+            O12ProductStock = A12ProductStock ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A12ProductStock", StringUtil.LTrim( StringUtil.Str( (decimal)(A12ProductStock), 4, 0)));
          }
-         pr_default.close(2);
+         pr_default.close(3);
+         if ( A12ProductStock - A18InvoiceDetailQuantiity >= 0 )
+         {
+            A12ProductStock = (short)(O12ProductStock-A18InvoiceDetailQuantiity) ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A12ProductStock", StringUtil.LTrim( StringUtil.Str( (decimal)(A12ProductStock), 4, 0)));
+         }
+         A19InvoiceDetailAmount = (decimal)(A13ProductPrice*A18InvoiceDetailQuantiity) ;
+         context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A19InvoiceDetailAmount", StringUtil.LTrim( StringUtil.Str( A19InvoiceDetailAmount, 9, 2)));
+         if ( ( StringUtil.StrCmp(Gx_mode, "INS") == 0 )  )
+         {
+            A16InvoiceAmount = (decimal)(O16InvoiceAmount+A19InvoiceDetailAmount) ;
+            n16InvoiceAmount = false ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
+         }
+         else
+         {
+            if ( ( StringUtil.StrCmp(Gx_mode, "UPD") == 0 )  )
+            {
+               A16InvoiceAmount = (decimal)(O16InvoiceAmount+A19InvoiceDetailAmount-O19InvoiceDetailAmount) ;
+               n16InvoiceAmount = false ;
+               context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
+            }
+            else
+            {
+               if ( ( StringUtil.StrCmp(Gx_mode, "DLT") == 0 )  )
+               {
+                  A16InvoiceAmount = (decimal)(O16InvoiceAmount-O19InvoiceDetailAmount) ;
+                  n16InvoiceAmount = false ;
+                  context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
+               }
+            }
+         }
+         A19InvoiceDetailAmount = (decimal)(A13ProductPrice*A18InvoiceDetailQuantiity) ;
+         context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A19InvoiceDetailAmount", StringUtil.LTrim( StringUtil.Str( A19InvoiceDetailAmount, 9, 2)));
+         if ( ( StringUtil.StrCmp(Gx_mode, "INS") == 0 )  )
+         {
+            A20InvoiceLastLineId = (short)(O20InvoiceLastLineId+1) ;
+            n20InvoiceLastLineId = false ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+         }
+         else
+         {
+            if ( ( StringUtil.StrCmp(Gx_mode, "UPD") == 0 )  )
+            {
+               A20InvoiceLastLineId = O20InvoiceLastLineId ;
+               n20InvoiceLastLineId = false ;
+               context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+            }
+            else
+            {
+               if ( ( StringUtil.StrCmp(Gx_mode, "DLT") == 0 )  )
+               {
+                  A20InvoiceLastLineId = (short)(O20InvoiceLastLineId-1) ;
+                  n20InvoiceLastLineId = false ;
+                  context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+               }
+            }
+         }
       }
 
       protected void CloseExtendedTableCursors045( )
       {
-         pr_default.close(2);
+         pr_default.close(3);
       }
 
       protected void enableDisable045( )
       {
       }
 
-      protected void gxLoad_8( int A10ProductId )
+      protected void gxLoad_18( int A10ProductId )
       {
-         /* Using cursor T000421 */
-         pr_default.execute(19, new Object[] {A10ProductId});
-         if ( (pr_default.getStatus(19) == 101) )
+         /* Using cursor T000436 */
+         pr_default.execute(26, new Object[] {A10ProductId});
+         if ( (pr_default.getStatus(26) == 101) )
          {
             GX_msglist.addItem("No matching 'Product'.", "ForeignKeyNotFound", 1, "PRODUCTID");
             AnyError = 1 ;
@@ -2245,31 +2680,33 @@ namespace GeneXus.Programs {
          }
          if ( AnyError == 0 )
          {
-            A11ProductDescription = T000421_A11ProductDescription[0] ;
-            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A11ProductDescription", A11ProductDescription);
-            A12ProductStock = T000421_A12ProductStock[0] ;
+            A12ProductStock = T000436_A12ProductStock[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A12ProductStock", StringUtil.LTrim( StringUtil.Str( (decimal)(A12ProductStock), 4, 0)));
-            A13ProductPrice = T000421_A13ProductPrice[0] ;
+            A11ProductDescription = T000436_A11ProductDescription[0] ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A11ProductDescription", A11ProductDescription);
+            A13ProductPrice = T000436_A13ProductPrice[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A13ProductPrice", StringUtil.LTrim( StringUtil.Str( A13ProductPrice, 9, 2)));
+            O12ProductStock = A12ProductStock ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A12ProductStock", StringUtil.LTrim( StringUtil.Str( (decimal)(A12ProductStock), 4, 0)));
          }
          GxWebStd.set_html_headers( context, 0, "", "");
          context.GX_webresponse.AddString("new Array( new Array(");
-         context.GX_webresponse.AddString("\""+GXUtil.EncodeJSConstant( StringUtil.RTrim( A11ProductDescription))+"\""+","+"\""+GXUtil.EncodeJSConstant( StringUtil.LTrim( StringUtil.NToC( (decimal)(A12ProductStock), 4, 0, ".", "")))+"\""+","+"\""+GXUtil.EncodeJSConstant( StringUtil.LTrim( StringUtil.NToC( A13ProductPrice, 9, 2, ".", "")))+"\"");
+         context.GX_webresponse.AddString("\""+GXUtil.EncodeJSConstant( StringUtil.LTrim( StringUtil.NToC( (decimal)(A12ProductStock), 4, 0, ".", "")))+"\""+","+"\""+GXUtil.EncodeJSConstant( StringUtil.RTrim( A11ProductDescription))+"\""+","+"\""+GXUtil.EncodeJSConstant( StringUtil.LTrim( StringUtil.NToC( A13ProductPrice, 9, 2, ".", "")))+"\"");
          context.GX_webresponse.AddString(")");
-         if ( (pr_default.getStatus(19) == 101) )
+         if ( (pr_default.getStatus(26) == 101) )
          {
             context.GX_webresponse.AddString(",");
             context.GX_webresponse.AddString("101");
          }
          context.GX_webresponse.AddString(")");
-         pr_default.close(19);
+         pr_default.close(26);
       }
 
       protected void GetKey045( )
       {
-         /* Using cursor T000422 */
-         pr_default.execute(20, new Object[] {A14InvoiceId, A17InvoiceDetailId});
-         if ( (pr_default.getStatus(20) != 101) )
+         /* Using cursor T000437 */
+         pr_default.execute(27, new Object[] {A14InvoiceId, A17InvoiceDetailId});
+         if ( (pr_default.getStatus(27) != 101) )
          {
             RcdFound5 = 1 ;
          }
@@ -2277,7 +2714,7 @@ namespace GeneXus.Programs {
          {
             RcdFound5 = 0 ;
          }
-         pr_default.close(20);
+         pr_default.close(27);
       }
 
       protected void getByPrimaryKey045( )
@@ -2286,15 +2723,13 @@ namespace GeneXus.Programs {
          pr_default.execute(1, new Object[] {A14InvoiceId, A17InvoiceDetailId});
          if ( (pr_default.getStatus(1) != 101) )
          {
-            ZM045( 7) ;
+            ZM045( 17) ;
             RcdFound5 = 1 ;
             InitializeNonKey045( ) ;
             A17InvoiceDetailId = T00043_A17InvoiceDetailId[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A17InvoiceDetailId", StringUtil.LTrim( StringUtil.Str( (decimal)(A17InvoiceDetailId), 2, 0)));
             A18InvoiceDetailQuantiity = T00043_A18InvoiceDetailQuantiity[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A18InvoiceDetailQuantiity", StringUtil.LTrim( StringUtil.Str( (decimal)(A18InvoiceDetailQuantiity), 3, 0)));
-            A19InvoiceDetailAmount = T00043_A19InvoiceDetailAmount[0] ;
-            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A19InvoiceDetailAmount", StringUtil.LTrim( StringUtil.Str( A19InvoiceDetailAmount, 9, 2)));
             A10ProductId = T00043_A10ProductId[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A10ProductId", StringUtil.LTrim( StringUtil.Str( (decimal)(A10ProductId), 6, 0)));
             Z14InvoiceId = A14InvoiceId ;
@@ -2333,9 +2768,26 @@ namespace GeneXus.Programs {
                AnyError = 1 ;
                return  ;
             }
-            if ( (pr_default.getStatus(0) == 101) || ( Z18InvoiceDetailQuantiity != T00042_A18InvoiceDetailQuantiity[0] ) || ( Z19InvoiceDetailAmount != T00042_A19InvoiceDetailAmount[0] ) || ( Z10ProductId != T00042_A10ProductId[0] ) )
+            if ( (pr_default.getStatus(0) == 101) || ( Z18InvoiceDetailQuantiity != T00042_A18InvoiceDetailQuantiity[0] ) || ( Z10ProductId != T00042_A10ProductId[0] ) )
             {
                GX_msglist.addItem(context.GetMessage( "GXM_waschg", new   object[]  {"InvoiceDetail"}), "RecordWasChanged", 1, "");
+               AnyError = 1 ;
+               return  ;
+            }
+         }
+         /* Using cursor T00044 */
+         pr_default.execute(2, new Object[] {A10ProductId});
+         if ( (pr_default.getStatus(2) == 103) )
+         {
+            GX_msglist.addItem(context.GetMessage( "GXM_lock", new   object[]  {"Product"}), "RecordIsLocked", 1, "");
+            AnyError = 1 ;
+            return  ;
+         }
+         if ( StringUtil.StrCmp(Gx_mode, "INS") != 0 )
+         {
+            if ( false || ( StringUtil.StrCmp(Z11ProductDescription, T00044_A11ProductDescription[0]) != 0 ) || ( Z13ProductPrice != T00044_A13ProductPrice[0] ) )
+            {
+               GX_msglist.addItem(context.GetMessage( "GXM_waschg", new   object[]  {"Product"}), "RecordWasChanged", 1, "");
                AnyError = 1 ;
                return  ;
             }
@@ -2361,16 +2813,17 @@ namespace GeneXus.Programs {
                   BeforeInsert045( ) ;
                   if ( AnyError == 0 )
                   {
-                     /* Using cursor T000423 */
-                     pr_default.execute(21, new Object[] {A14InvoiceId, A17InvoiceDetailId, A18InvoiceDetailQuantiity, A19InvoiceDetailAmount, A10ProductId});
-                     pr_default.close(21);
-                     if ( (pr_default.getStatus(21) == 1) )
+                     /* Using cursor T000438 */
+                     pr_default.execute(28, new Object[] {A14InvoiceId, A17InvoiceDetailId, A18InvoiceDetailQuantiity, A10ProductId});
+                     pr_default.close(28);
+                     if ( (pr_default.getStatus(28) == 1) )
                      {
                         GX_msglist.addItem(context.GetMessage( "GXM_noupdate"), "DuplicatePrimaryKey", 1, "");
                         AnyError = 1 ;
                      }
                      if ( AnyError == 0 )
                      {
+                        UpdateTablesN1045( ) ;
                         /* Start of After( Insert) rules */
                         /* End of After( Insert) rules */
                         if ( AnyError == 0 )
@@ -2413,10 +2866,10 @@ namespace GeneXus.Programs {
                   BeforeUpdate045( ) ;
                   if ( AnyError == 0 )
                   {
-                     /* Using cursor T000424 */
-                     pr_default.execute(22, new Object[] {A18InvoiceDetailQuantiity, A19InvoiceDetailAmount, A10ProductId, A14InvoiceId, A17InvoiceDetailId});
-                     pr_default.close(22);
-                     if ( (pr_default.getStatus(22) == 103) )
+                     /* Using cursor T000439 */
+                     pr_default.execute(29, new Object[] {A18InvoiceDetailQuantiity, A10ProductId, A14InvoiceId, A17InvoiceDetailId});
+                     pr_default.close(29);
+                     if ( (pr_default.getStatus(29) == 103) )
                      {
                         GX_msglist.addItem(context.GetMessage( "GXM_lock", new   object[]  {"InvoiceDetail"}), "RecordIsLocked", 1, "");
                         AnyError = 1 ;
@@ -2428,6 +2881,7 @@ namespace GeneXus.Programs {
                         /* End of After( update) rules */
                         if ( AnyError == 0 )
                         {
+                           UpdateTablesN1045( ) ;
                            getByPrimaryKey045( ) ;
                         }
                      }
@@ -2467,11 +2921,12 @@ namespace GeneXus.Programs {
                if ( AnyError == 0 )
                {
                   /* No cascading delete specified. */
-                  /* Using cursor T000425 */
-                  pr_default.execute(23, new Object[] {A14InvoiceId, A17InvoiceDetailId});
-                  pr_default.close(23);
+                  /* Using cursor T000440 */
+                  pr_default.execute(30, new Object[] {A14InvoiceId, A17InvoiceDetailId});
+                  pr_default.close(30);
                   if ( AnyError == 0 )
                   {
+                     UpdateTablesN1045( ) ;
                      /* Start of After( delete) rules */
                      /* End of After( delete) rules */
                   }
@@ -2497,16 +2952,84 @@ namespace GeneXus.Programs {
          if ( AnyError == 0 )
          {
             /* Delete mode formulas */
-            /* Using cursor T000426 */
-            pr_default.execute(24, new Object[] {A10ProductId});
-            A11ProductDescription = T000426_A11ProductDescription[0] ;
-            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A11ProductDescription", A11ProductDescription);
-            A12ProductStock = T000426_A12ProductStock[0] ;
+            /* Using cursor T000441 */
+            pr_default.execute(31, new Object[] {A10ProductId});
+            Z11ProductDescription = T000441_A11ProductDescription[0] ;
+            Z13ProductPrice = T000441_A13ProductPrice[0] ;
+            A12ProductStock = T000441_A12ProductStock[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A12ProductStock", StringUtil.LTrim( StringUtil.Str( (decimal)(A12ProductStock), 4, 0)));
-            A13ProductPrice = T000426_A13ProductPrice[0] ;
+            A11ProductDescription = T000441_A11ProductDescription[0] ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A11ProductDescription", A11ProductDescription);
+            A13ProductPrice = T000441_A13ProductPrice[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A13ProductPrice", StringUtil.LTrim( StringUtil.Str( A13ProductPrice, 9, 2)));
-            pr_default.close(24);
+            O12ProductStock = A12ProductStock ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A12ProductStock", StringUtil.LTrim( StringUtil.Str( (decimal)(A12ProductStock), 4, 0)));
+            pr_default.close(31);
+            A19InvoiceDetailAmount = (decimal)(A13ProductPrice*A18InvoiceDetailQuantiity) ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A19InvoiceDetailAmount", StringUtil.LTrim( StringUtil.Str( A19InvoiceDetailAmount, 9, 2)));
+            if ( ( StringUtil.StrCmp(Gx_mode, "INS") == 0 )  )
+            {
+               A16InvoiceAmount = (decimal)(O16InvoiceAmount+A19InvoiceDetailAmount) ;
+               n16InvoiceAmount = false ;
+               context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
+            }
+            else
+            {
+               if ( ( StringUtil.StrCmp(Gx_mode, "UPD") == 0 )  )
+               {
+                  A16InvoiceAmount = (decimal)(O16InvoiceAmount+A19InvoiceDetailAmount-O19InvoiceDetailAmount) ;
+                  n16InvoiceAmount = false ;
+                  context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
+               }
+               else
+               {
+                  if ( ( StringUtil.StrCmp(Gx_mode, "DLT") == 0 )  )
+                  {
+                     A16InvoiceAmount = (decimal)(O16InvoiceAmount-O19InvoiceDetailAmount) ;
+                     n16InvoiceAmount = false ;
+                     context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
+                  }
+               }
+            }
+            if ( ( StringUtil.StrCmp(Gx_mode, "INS") == 0 )  )
+            {
+               A20InvoiceLastLineId = (short)(O20InvoiceLastLineId+1) ;
+               n20InvoiceLastLineId = false ;
+               context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+            }
+            else
+            {
+               if ( ( StringUtil.StrCmp(Gx_mode, "UPD") == 0 )  )
+               {
+                  A20InvoiceLastLineId = O20InvoiceLastLineId ;
+                  n20InvoiceLastLineId = false ;
+                  context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+               }
+               else
+               {
+                  if ( ( StringUtil.StrCmp(Gx_mode, "DLT") == 0 )  )
+                  {
+                     A20InvoiceLastLineId = (short)(O20InvoiceLastLineId-1) ;
+                     n20InvoiceLastLineId = false ;
+                     context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+                  }
+               }
+            }
+            A19InvoiceDetailAmount = (decimal)(A13ProductPrice*A18InvoiceDetailQuantiity) ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A19InvoiceDetailAmount", StringUtil.LTrim( StringUtil.Str( A19InvoiceDetailAmount, 9, 2)));
+            if ( A12ProductStock - A18InvoiceDetailQuantiity >= 0 )
+            {
+               A12ProductStock = (short)(O12ProductStock-A18InvoiceDetailQuantiity) ;
+               context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A12ProductStock", StringUtil.LTrim( StringUtil.Str( (decimal)(A12ProductStock), 4, 0)));
+            }
          }
+      }
+
+      protected void UpdateTablesN1045( )
+      {
+         /* Using cursor T000442 */
+         pr_default.execute(32, new Object[] {A12ProductStock, A10ProductId});
+         pr_default.close(32);
       }
 
       protected void EndLevel045( )
@@ -2515,6 +3038,7 @@ namespace GeneXus.Programs {
          {
             pr_default.close(0);
          }
+         pr_default.close(2);
          if ( AnyError != 0 )
          {
             context.wjLoc = "" ;
@@ -2524,13 +3048,13 @@ namespace GeneXus.Programs {
 
       protected void ScanStart045( )
       {
-         /* Using cursor T000427 */
-         pr_default.execute(25, new Object[] {A14InvoiceId});
+         /* Using cursor T000443 */
+         pr_default.execute(33, new Object[] {A14InvoiceId});
          RcdFound5 = 0 ;
-         if ( (pr_default.getStatus(25) != 101) )
+         if ( (pr_default.getStatus(33) != 101) )
          {
             RcdFound5 = 1 ;
-            A17InvoiceDetailId = T000427_A17InvoiceDetailId[0] ;
+            A17InvoiceDetailId = T000443_A17InvoiceDetailId[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A17InvoiceDetailId", StringUtil.LTrim( StringUtil.Str( (decimal)(A17InvoiceDetailId), 2, 0)));
          }
          /* Load Subordinate Levels */
@@ -2538,12 +3062,12 @@ namespace GeneXus.Programs {
 
       protected void ScanNext045( )
       {
-         pr_default.readNext(25);
+         pr_default.readNext(33);
          RcdFound5 = 0 ;
-         if ( (pr_default.getStatus(25) != 101) )
+         if ( (pr_default.getStatus(33) != 101) )
          {
             RcdFound5 = 1 ;
-            A17InvoiceDetailId = T000427_A17InvoiceDetailId[0] ;
+            A17InvoiceDetailId = T000443_A17InvoiceDetailId[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A17InvoiceDetailId", StringUtil.LTrim( StringUtil.Str( (decimal)(A17InvoiceDetailId), 2, 0)));
          }
       }
@@ -2713,20 +3237,27 @@ namespace GeneXus.Programs {
          Gridinvoice_detailRow.AddColumnProperties("edit", 1, isAjaxCallMode( ), new Object[] {(String)edtInvoiceDetailQuantiity_Internalname,StringUtil.LTrim( StringUtil.NToC( (decimal)(A18InvoiceDetailQuantiity), 3, 0, ".", "")),(String)"",(short)0,(String)"px",(short)17,(String)"px",(short)3,(short)-1,(int)edtInvoiceDetailQuantiity_Enabled,(short)0,(short)0,(short)0,(String)"",(String)"",(String)StyleString,(String)ClassString,(String)ROClassString,context.localUtil.Format( (decimal)(A18InvoiceDetailQuantiity), "ZZ9"),TempTags+" onchange=\"gx.evt.onchange(this)\" "+" onblur=\""+"gx.num.valid_integer( this,',');"+";gx.evt.onblur(70);\"",(short)0,(String)edtInvoiceDetailQuantiity_Jsonclick,(String)"",(short)65,(short)1,(short)-1,(bool)true,(String)"right"});
          /* Subfile cell */
          /* Single line edit */
-         TempTags = " gxoch1=\"gx.fn.setControlValue('nIsMod_5_" + sGXsfl_65_idx + "',1);\"  onfocus=\"gx.evt.onfocus(this, 71,'',false,'" + sGXsfl_65_idx + "',65)\"" ;
          ClassString = "Attribute" ;
          StyleString = "" ;
          ROClassString = ClassString ;
-         Gridinvoice_detailRow.AddColumnProperties("edit", 1, isAjaxCallMode( ), new Object[] {(String)edtInvoiceDetailAmount_Internalname,StringUtil.LTrim( StringUtil.NToC( A19InvoiceDetailAmount, 9, 2, ".", "")),(String)"",(short)0,(String)"px",(short)17,(String)"px",(short)9,(short)-1,(int)edtInvoiceDetailAmount_Enabled,(short)0,(short)0,(short)0,(String)"",(String)"",(String)StyleString,(String)ClassString,(String)ROClassString,context.localUtil.Format( A19InvoiceDetailAmount, "ZZZZZ9.99"),TempTags+" onchange=\"gx.evt.onchange(this)\" "+" onblur=\""+"gx.num.valid_decimal( this, ',','.','2');"+";gx.evt.onblur(71);\"",(short)0,(String)edtInvoiceDetailAmount_Jsonclick,(String)"",(short)65,(short)1,(short)-1,(bool)true,(String)"right"});
+         Gridinvoice_detailRow.AddColumnProperties("edit", 1, isAjaxCallMode( ), new Object[] {(String)edtInvoiceDetailAmount_Internalname,StringUtil.LTrim( StringUtil.NToC( A19InvoiceDetailAmount, 9, 2, ".", "")),(String)"",(short)0,(String)"px",(short)17,(String)"px",(short)9,(short)-1,(int)edtInvoiceDetailAmount_Enabled,(short)0,(short)0,(short)0,(String)"",(String)"",(String)StyleString,(String)ClassString,(String)ROClassString,context.localUtil.Format( A19InvoiceDetailAmount, "ZZZZZ9.99"),(String)"",(short)0,(String)edtInvoiceDetailAmount_Jsonclick,(String)"",(short)65,(short)1,(short)-1,(bool)true,(String)"right"});
          context.httpAjaxContext.ajax_sending_grid_row(Gridinvoice_detailRow);
          GXCCtl = "Z17InvoiceDetailId_" + sGXsfl_65_idx ;
          GxWebStd.gx_hidden_field( context, GXCCtl, StringUtil.LTrim( StringUtil.NToC( (decimal)(Z17InvoiceDetailId), 2, 0, ".", "")));
          GXCCtl = "Z18InvoiceDetailQuantiity_" + sGXsfl_65_idx ;
          GxWebStd.gx_hidden_field( context, GXCCtl, StringUtil.LTrim( StringUtil.NToC( (decimal)(Z18InvoiceDetailQuantiity), 3, 0, ".", "")));
-         GXCCtl = "Z19InvoiceDetailAmount_" + sGXsfl_65_idx ;
-         GxWebStd.gx_hidden_field( context, GXCCtl, StringUtil.LTrim( StringUtil.NToC( Z19InvoiceDetailAmount, 9, 2, ".", "")));
          GXCCtl = "Z10ProductId_" + sGXsfl_65_idx ;
          GxWebStd.gx_hidden_field( context, GXCCtl, StringUtil.LTrim( StringUtil.NToC( (decimal)(Z10ProductId), 6, 0, ".", "")));
+         GXCCtl = "Z11ProductDescription_" + sGXsfl_65_idx ;
+         GxWebStd.gx_hidden_field( context, GXCCtl, StringUtil.RTrim( Z11ProductDescription));
+         GXCCtl = "Z13ProductPrice_" + sGXsfl_65_idx ;
+         GxWebStd.gx_hidden_field( context, GXCCtl, StringUtil.LTrim( StringUtil.NToC( Z13ProductPrice, 9, 2, ".", "")));
+         GXCCtl = "O12ProductStock_" + sGXsfl_65_idx ;
+         GxWebStd.gx_hidden_field( context, GXCCtl, StringUtil.LTrim( StringUtil.NToC( (decimal)(O12ProductStock), 4, 0, ".", "")));
+         GXCCtl = "O19InvoiceDetailAmount_" + sGXsfl_65_idx ;
+         GxWebStd.gx_hidden_field( context, GXCCtl, StringUtil.LTrim( StringUtil.NToC( O19InvoiceDetailAmount, 9, 2, ".", "")));
+         GXCCtl = "PRODUCTSTOCK_" + sGXsfl_65_idx ;
+         GxWebStd.gx_hidden_field( context, GXCCtl, StringUtil.LTrim( StringUtil.NToC( (decimal)(A12ProductStock), 4, 0, ".", "")));
          GXCCtl = "nRcdDeleted_5_" + sGXsfl_65_idx ;
          GxWebStd.gx_hidden_field( context, GXCCtl, StringUtil.LTrim( StringUtil.NToC( (decimal)(nRcdDeleted_5), 4, 0, ".", "")));
          GXCCtl = "nRcdExists_5_" + sGXsfl_65_idx ;
@@ -2817,29 +3348,24 @@ namespace GeneXus.Programs {
             A18InvoiceDetailQuantiity = (short)(context.localUtil.CToN( cgiGet( edtInvoiceDetailQuantiity_Internalname), ".", ",")) ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A18InvoiceDetailQuantiity", StringUtil.LTrim( StringUtil.Str( (decimal)(A18InvoiceDetailQuantiity), 3, 0)));
          }
-         if ( ( ( context.localUtil.CToN( cgiGet( edtInvoiceDetailAmount_Internalname), ".", ",") < Convert.ToDecimal( 0 )) ) || ( ( context.localUtil.CToN( cgiGet( edtInvoiceDetailAmount_Internalname), ".", ",") > 999999.99m ) ) )
-         {
-            GX_msglist.addItem(context.GetMessage( "GXM_badnum"), 1, "INVOICEDETAILAMOUNT");
-            AnyError = 1 ;
-            GX_FocusControl = edtInvoiceDetailAmount_Internalname ;
-            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "GX_FocusControl", GX_FocusControl);
-            wbErr = true ;
-            A19InvoiceDetailAmount = 0 ;
-            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A19InvoiceDetailAmount", StringUtil.LTrim( StringUtil.Str( A19InvoiceDetailAmount, 9, 2)));
-         }
-         else
-         {
-            A19InvoiceDetailAmount = context.localUtil.CToN( cgiGet( edtInvoiceDetailAmount_Internalname), ".", ",") ;
-            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A19InvoiceDetailAmount", StringUtil.LTrim( StringUtil.Str( A19InvoiceDetailAmount, 9, 2)));
-         }
+         A19InvoiceDetailAmount = context.localUtil.CToN( cgiGet( edtInvoiceDetailAmount_Internalname), ".", ",") ;
+         context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A19InvoiceDetailAmount", StringUtil.LTrim( StringUtil.Str( A19InvoiceDetailAmount, 9, 2)));
          GXCCtl = "Z17InvoiceDetailId_" + sGXsfl_65_idx ;
          Z17InvoiceDetailId = (short)(context.localUtil.CToN( cgiGet( GXCCtl), ".", ",")) ;
          GXCCtl = "Z18InvoiceDetailQuantiity_" + sGXsfl_65_idx ;
          Z18InvoiceDetailQuantiity = (short)(context.localUtil.CToN( cgiGet( GXCCtl), ".", ",")) ;
-         GXCCtl = "Z19InvoiceDetailAmount_" + sGXsfl_65_idx ;
-         Z19InvoiceDetailAmount = context.localUtil.CToN( cgiGet( GXCCtl), ".", ",") ;
          GXCCtl = "Z10ProductId_" + sGXsfl_65_idx ;
          Z10ProductId = (int)(context.localUtil.CToN( cgiGet( GXCCtl), ".", ",")) ;
+         GXCCtl = "Z11ProductDescription_" + sGXsfl_65_idx ;
+         Z11ProductDescription = cgiGet( GXCCtl) ;
+         GXCCtl = "Z13ProductPrice_" + sGXsfl_65_idx ;
+         Z13ProductPrice = context.localUtil.CToN( cgiGet( GXCCtl), ".", ",") ;
+         GXCCtl = "O12ProductStock_" + sGXsfl_65_idx ;
+         O12ProductStock = (short)(context.localUtil.CToN( cgiGet( GXCCtl), ".", ",")) ;
+         GXCCtl = "O19InvoiceDetailAmount_" + sGXsfl_65_idx ;
+         O19InvoiceDetailAmount = context.localUtil.CToN( cgiGet( GXCCtl), ".", ",") ;
+         GXCCtl = "PRODUCTSTOCK_" + sGXsfl_65_idx ;
+         A12ProductStock = (short)(context.localUtil.CToN( cgiGet( GXCCtl), ".", ",")) ;
          GXCCtl = "nRcdDeleted_5_" + sGXsfl_65_idx ;
          nRcdDeleted_5 = (short)(context.localUtil.CToN( cgiGet( GXCCtl), ".", ",")) ;
          GXCCtl = "nRcdExists_5_" + sGXsfl_65_idx ;
@@ -2879,11 +3405,17 @@ namespace GeneXus.Programs {
             DeletePostValue( "ZT_"+"Z17InvoiceDetailId_"+sGXsfl_65_idx) ;
             ChangePostValue( "Z18InvoiceDetailQuantiity_"+sGXsfl_65_idx, cgiGet( "ZT_"+"Z18InvoiceDetailQuantiity_"+sGXsfl_65_idx)) ;
             DeletePostValue( "ZT_"+"Z18InvoiceDetailQuantiity_"+sGXsfl_65_idx) ;
-            ChangePostValue( "Z19InvoiceDetailAmount_"+sGXsfl_65_idx, cgiGet( "ZT_"+"Z19InvoiceDetailAmount_"+sGXsfl_65_idx)) ;
-            DeletePostValue( "ZT_"+"Z19InvoiceDetailAmount_"+sGXsfl_65_idx) ;
             ChangePostValue( "Z10ProductId_"+sGXsfl_65_idx, cgiGet( "ZT_"+"Z10ProductId_"+sGXsfl_65_idx)) ;
             DeletePostValue( "ZT_"+"Z10ProductId_"+sGXsfl_65_idx) ;
+            ChangePostValue( "Z11ProductDescription_"+sGXsfl_65_idx, cgiGet( "ZT_"+"Z11ProductDescription_"+sGXsfl_65_idx)) ;
+            DeletePostValue( "ZT_"+"Z11ProductDescription_"+sGXsfl_65_idx) ;
+            ChangePostValue( "Z13ProductPrice_"+sGXsfl_65_idx, cgiGet( "ZT_"+"Z13ProductPrice_"+sGXsfl_65_idx)) ;
+            DeletePostValue( "ZT_"+"Z13ProductPrice_"+sGXsfl_65_idx) ;
          }
+         ChangePostValue( "O12ProductStock", cgiGet( "T12ProductStock")) ;
+         DeletePostValue( "T12ProductStock") ;
+         ChangePostValue( "O19InvoiceDetailAmount", cgiGet( "T19InvoiceDetailAmount")) ;
+         DeletePostValue( "T19InvoiceDetailAmount") ;
       }
 
       public override void RenderHtmlHeaders( )
@@ -2945,14 +3477,16 @@ namespace GeneXus.Programs {
          /* Send saved values. */
          GxWebStd.gx_hidden_field( context, "Z14InvoiceId", StringUtil.LTrim( StringUtil.NToC( (decimal)(Z14InvoiceId), 6, 0, ".", "")));
          GxWebStd.gx_hidden_field( context, "Z15InvoiceDate", context.localUtil.DToC( Z15InvoiceDate, 0, "/"));
-         GxWebStd.gx_hidden_field( context, "Z16InvoiceAmount", StringUtil.LTrim( StringUtil.NToC( Z16InvoiceAmount, 9, 2, ".", "")));
          GxWebStd.gx_hidden_field( context, "Z3CustomerId", StringUtil.LTrim( StringUtil.NToC( (decimal)(Z3CustomerId), 6, 0, ".", "")));
+         GxWebStd.gx_hidden_field( context, "O20InvoiceLastLineId", StringUtil.LTrim( StringUtil.NToC( (decimal)(O20InvoiceLastLineId), 4, 0, ".", "")));
+         GxWebStd.gx_hidden_field( context, "O16InvoiceAmount", StringUtil.LTrim( StringUtil.NToC( O16InvoiceAmount, 9, 2, ".", "")));
          GxWebStd.gx_hidden_field( context, "IsConfirmed", StringUtil.LTrim( StringUtil.NToC( (decimal)(IsConfirmed), 4, 0, ".", "")));
          GxWebStd.gx_hidden_field( context, "IsModified", StringUtil.LTrim( StringUtil.NToC( (decimal)(IsModified), 4, 0, ".", "")));
          GxWebStd.gx_hidden_field( context, "Mode", StringUtil.RTrim( Gx_mode));
          GxWebStd.gx_hidden_field( context, "nRC_Gridinvoice_detail", StringUtil.LTrim( StringUtil.NToC( (decimal)(nGXsfl_65_idx), 4, 0, ".", "")));
          GxWebStd.gx_hidden_field( context, "vTODAY", context.localUtil.DToC( Gx_date, 0, "/"));
          GxWebStd.gx_hidden_field( context, "vGXBSCREEN", StringUtil.LTrim( StringUtil.NToC( (decimal)(Gx_BScreen), 1, 0, ".", "")));
+         GxWebStd.gx_hidden_field( context, "INVOICELASTLINEID", StringUtil.LTrim( StringUtil.NToC( (decimal)(A20InvoiceLastLineId), 4, 0, ".", "")));
          GxWebStd.gx_hidden_field( context, "vMODE", StringUtil.RTrim( Gx_mode));
          GxWebStd.gx_hidden_field( context, "PRODUCTSTOCK", StringUtil.LTrim( StringUtil.NToC( (decimal)(A12ProductStock), 4, 0, ".", "")));
          GxWebStd.gx_hidden_field( context, "GX_FocusControl", GX_FocusControl);
@@ -3014,10 +3548,20 @@ namespace GeneXus.Programs {
          context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A4CustomerName", A4CustomerName);
          A7CustomerTotalPurchases = 0 ;
          context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A7CustomerTotalPurchases", StringUtil.LTrim( StringUtil.Str( A7CustomerTotalPurchases, 9, 2)));
+         A20InvoiceLastLineId = 0 ;
+         n20InvoiceLastLineId = false ;
+         context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
          A16InvoiceAmount = 0 ;
+         n16InvoiceAmount = false ;
          context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
          A15InvoiceDate = Gx_date ;
          context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A15InvoiceDate", context.localUtil.Format(A15InvoiceDate, "99/99/99"));
+         O20InvoiceLastLineId = A20InvoiceLastLineId ;
+         n20InvoiceLastLineId = false ;
+         context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+         O16InvoiceAmount = A16InvoiceAmount ;
+         n16InvoiceAmount = false ;
+         context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
       }
 
       protected void InitAll044( )
@@ -3035,17 +3579,21 @@ namespace GeneXus.Programs {
 
       protected void InitializeNonKey045( )
       {
+         A19InvoiceDetailAmount = 0 ;
+         context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A19InvoiceDetailAmount", StringUtil.LTrim( StringUtil.Str( A19InvoiceDetailAmount, 9, 2)));
+         A12ProductStock = 0 ;
+         context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A12ProductStock", StringUtil.LTrim( StringUtil.Str( (decimal)(A12ProductStock), 4, 0)));
          A10ProductId = 0 ;
          context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A10ProductId", StringUtil.LTrim( StringUtil.Str( (decimal)(A10ProductId), 6, 0)));
          A11ProductDescription = "" ;
          context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A11ProductDescription", A11ProductDescription);
-         A12ProductStock = 0 ;
-         context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A12ProductStock", StringUtil.LTrim( StringUtil.Str( (decimal)(A12ProductStock), 4, 0)));
          A13ProductPrice = 0 ;
          context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A13ProductPrice", StringUtil.LTrim( StringUtil.Str( A13ProductPrice, 9, 2)));
          A18InvoiceDetailQuantiity = 0 ;
          context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A18InvoiceDetailQuantiity", StringUtil.LTrim( StringUtil.Str( (decimal)(A18InvoiceDetailQuantiity), 3, 0)));
-         A19InvoiceDetailAmount = 0 ;
+         O12ProductStock = A12ProductStock ;
+         context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A12ProductStock", StringUtil.LTrim( StringUtil.Str( (decimal)(A12ProductStock), 4, 0)));
+         O19InvoiceDetailAmount = A19InvoiceDetailAmount ;
          context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A19InvoiceDetailAmount", StringUtil.LTrim( StringUtil.Str( A19InvoiceDetailAmount, 9, 2)));
       }
 
@@ -3058,6 +3606,9 @@ namespace GeneXus.Programs {
 
       protected void StandaloneModalInsert045( )
       {
+         A20InvoiceLastLineId = i20InvoiceLastLineId ;
+         n20InvoiceLastLineId = false ;
+         context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
       }
 
       protected void define_styles( )
@@ -3067,7 +3618,7 @@ namespace GeneXus.Programs {
          idxLst = 1 ;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( Form.Jscriptsrc.Item(idxLst)), "?16355021");
+            context.AddJavascriptSource(StringUtil.RTrim( Form.Jscriptsrc.Item(idxLst)), "?17252697");
             idxLst = (int)(idxLst+1) ;
          }
          /* End function define_styles */
@@ -3076,7 +3627,7 @@ namespace GeneXus.Programs {
       protected void include_jscripts( )
       {
          context.AddJavascriptSource("messages.eng.js", "?46473");
-         context.AddJavascriptSource("invoice.js", "?16355021");
+         context.AddJavascriptSource("invoice.js", "?17252698");
          /* End function include_jscripts */
       }
 
@@ -3167,8 +3718,8 @@ namespace GeneXus.Programs {
          imgBtn_first_separator_Visible = 1 ;
          imgBtn_first_Visible = 1 ;
          edtInvoiceAmount_Jsonclick = "" ;
-         edtInvoiceAmount_Enabled = 1 ;
-         edtInvoiceDetailAmount_Enabled = 1 ;
+         edtInvoiceAmount_Enabled = 0 ;
+         edtInvoiceDetailAmount_Enabled = 0 ;
          edtInvoiceDetailQuantiity_Enabled = 1 ;
          edtProductPrice_Enabled = 0 ;
          edtProductDescription_Enabled = 0 ;
@@ -3247,24 +3798,59 @@ namespace GeneXus.Programs {
 
       public void Valid_Invoiceid( int GX_Parm1 ,
                                    DateTime GX_Parm2 ,
-                                   decimal GX_Parm3 ,
-                                   int GX_Parm4 )
+                                   int GX_Parm3 ,
+                                   short GX_Parm4 ,
+                                   decimal GX_Parm5 )
       {
          A14InvoiceId = GX_Parm1 ;
          A15InvoiceDate = GX_Parm2 ;
-         A16InvoiceAmount = GX_Parm3 ;
-         A3CustomerId = GX_Parm4 ;
+         A3CustomerId = GX_Parm3 ;
+         A20InvoiceLastLineId = GX_Parm4 ;
+         n20InvoiceLastLineId = false ;
+         A16InvoiceAmount = GX_Parm5 ;
+         n16InvoiceAmount = false ;
          context.wbHandled = 1 ;
          AfterKeyLoadScreen( ) ;
          Draw( ) ;
+         /* Using cursor T000430 */
+         pr_default.execute(21, new Object[] {A14InvoiceId});
+         if ( (pr_default.getStatus(21) != 101) )
+         {
+            A20InvoiceLastLineId = T000430_A20InvoiceLastLineId[0] ;
+            n20InvoiceLastLineId = T000430_n20InvoiceLastLineId[0] ;
+         }
+         else
+         {
+            A20InvoiceLastLineId = 0 ;
+            n20InvoiceLastLineId = false ;
+         }
+         pr_default.close(21);
+         /* Using cursor T000432 */
+         pr_default.execute(22, new Object[] {A14InvoiceId});
+         if ( (pr_default.getStatus(22) != 101) )
+         {
+            A16InvoiceAmount = T000432_A16InvoiceAmount[0] ;
+            n16InvoiceAmount = T000432_n16InvoiceAmount[0] ;
+         }
+         else
+         {
+            A16InvoiceAmount = 0 ;
+            n16InvoiceAmount = false ;
+         }
+         pr_default.close(22);
          dynload_actions( ) ;
          if ( AnyError == 1 )
          {
+            A20InvoiceLastLineId = 0 ;
+            n20InvoiceLastLineId = false ;
+            A16InvoiceAmount = 0 ;
+            n16InvoiceAmount = false ;
             A4CustomerName = "" ;
             A7CustomerTotalPurchases = 0 ;
          }
          isValidOutput.Add((Object)(context.localUtil.Format(A15InvoiceDate, "99/99/99")));
          isValidOutput.Add((Object)(StringUtil.LTrim( StringUtil.NToC( (decimal)(A3CustomerId), 6, 0, ".", ""))));
+         isValidOutput.Add((Object)(StringUtil.LTrim( StringUtil.NToC( (decimal)(A20InvoiceLastLineId), 4, 0, ".", ""))));
          isValidOutput.Add((Object)(StringUtil.LTrim( StringUtil.NToC( A16InvoiceAmount, 9, 2, ".", ""))));
          isValidOutput.Add((Object)(StringUtil.RTrim( A4CustomerName)));
          isValidOutput.Add((Object)(StringUtil.LTrim( StringUtil.NToC( A7CustomerTotalPurchases, 9, 2, ".", ""))));
@@ -3272,9 +3858,12 @@ namespace GeneXus.Programs {
          isValidOutput.Add((Object)(StringUtil.LTrim( StringUtil.NToC( (decimal)(Z14InvoiceId), 6, 0, ".", ""))));
          isValidOutput.Add((Object)(context.localUtil.DToC( Z15InvoiceDate, 0, "/")));
          isValidOutput.Add((Object)(StringUtil.LTrim( StringUtil.NToC( (decimal)(Z3CustomerId), 6, 0, ".", ""))));
+         isValidOutput.Add((Object)(StringUtil.LTrim( StringUtil.NToC( (decimal)(Z20InvoiceLastLineId), 4, 0, ".", ""))));
          isValidOutput.Add((Object)(StringUtil.LTrim( StringUtil.NToC( Z16InvoiceAmount, 9, 2, ".", ""))));
          isValidOutput.Add((Object)(StringUtil.RTrim( Z4CustomerName)));
          isValidOutput.Add((Object)(StringUtil.LTrim( StringUtil.NToC( Z7CustomerTotalPurchases, 9, 2, ".", ""))));
+         isValidOutput.Add((Object)(StringUtil.LTrim( StringUtil.NToC( (decimal)(O20InvoiceLastLineId), 4, 0, ".", ""))));
+         isValidOutput.Add((Object)(StringUtil.LTrim( StringUtil.NToC( O16InvoiceAmount, 9, 2, ".", ""))));
          isValidOutput.Add((Object)(Gridinvoice_detailContainer));
          isValidOutput.Add((Object)(imgBtn_enter2_Enabled));
          isValidOutput.Add((Object)(context.GX_msglist.ToJavascriptSource()));
@@ -3288,9 +3877,9 @@ namespace GeneXus.Programs {
          A3CustomerId = GX_Parm1 ;
          A4CustomerName = GX_Parm2 ;
          A7CustomerTotalPurchases = GX_Parm3 ;
-         /* Using cursor T000418 */
-         pr_default.execute(16, new Object[] {A3CustomerId});
-         if ( (pr_default.getStatus(16) == 101) )
+         /* Using cursor T000433 */
+         pr_default.execute(23, new Object[] {A3CustomerId});
+         if ( (pr_default.getStatus(23) == 101) )
          {
             GX_msglist.addItem("No matching 'Customer'.", "ForeignKeyNotFound", 1, "CUSTOMERID");
             AnyError = 1 ;
@@ -3298,10 +3887,10 @@ namespace GeneXus.Programs {
          }
          if ( AnyError == 0 )
          {
-            A4CustomerName = T000418_A4CustomerName[0] ;
-            A7CustomerTotalPurchases = T000418_A7CustomerTotalPurchases[0] ;
+            A4CustomerName = T000433_A4CustomerName[0] ;
+            A7CustomerTotalPurchases = T000433_A7CustomerTotalPurchases[0] ;
          }
-         pr_default.close(16);
+         pr_default.close(23);
          dynload_actions( ) ;
          if ( AnyError == 1 )
          {
@@ -3315,17 +3904,19 @@ namespace GeneXus.Programs {
       }
 
       public void Valid_Productid( int GX_Parm1 ,
-                                   String GX_Parm2 ,
-                                   short GX_Parm3 ,
+                                   short GX_Parm2 ,
+                                   String GX_Parm3 ,
                                    decimal GX_Parm4 )
       {
          A10ProductId = GX_Parm1 ;
-         A11ProductDescription = GX_Parm2 ;
-         A12ProductStock = GX_Parm3 ;
+         A12ProductStock = GX_Parm2 ;
+         A11ProductDescription = GX_Parm3 ;
          A13ProductPrice = GX_Parm4 ;
-         /* Using cursor T000426 */
-         pr_default.execute(24, new Object[] {A10ProductId});
-         if ( (pr_default.getStatus(24) == 101) )
+         /* Using cursor T000441 */
+         pr_default.execute(31, new Object[] {A10ProductId});
+         Z11ProductDescription = T000441_A11ProductDescription[0] ;
+         Z13ProductPrice = T000441_A13ProductPrice[0] ;
+         if ( (pr_default.getStatus(31) == 101) )
          {
             GX_msglist.addItem("No matching 'Product'.", "ForeignKeyNotFound", 1, "PRODUCTID");
             AnyError = 1 ;
@@ -3333,20 +3924,22 @@ namespace GeneXus.Programs {
          }
          if ( AnyError == 0 )
          {
-            A11ProductDescription = T000426_A11ProductDescription[0] ;
-            A12ProductStock = T000426_A12ProductStock[0] ;
-            A13ProductPrice = T000426_A13ProductPrice[0] ;
+            A12ProductStock = T000441_A12ProductStock[0] ;
+            A11ProductDescription = T000441_A11ProductDescription[0] ;
+            A13ProductPrice = T000441_A13ProductPrice[0] ;
+            O12ProductStock = A12ProductStock ;
          }
-         pr_default.close(24);
+         pr_default.close(31);
          dynload_actions( ) ;
          if ( AnyError == 1 )
          {
-            A11ProductDescription = "" ;
             A12ProductStock = 0 ;
+            A11ProductDescription = "" ;
             A13ProductPrice = 0 ;
          }
-         isValidOutput.Add((Object)(StringUtil.RTrim( A11ProductDescription)));
+         isValidOutput.Add((Object)(StringUtil.LTrim( StringUtil.NToC( (decimal)(O12ProductStock), 4, 0, ".", ""))));
          isValidOutput.Add((Object)(StringUtil.LTrim( StringUtil.NToC( (decimal)(A12ProductStock), 4, 0, ".", ""))));
+         isValidOutput.Add((Object)(StringUtil.RTrim( A11ProductDescription)));
          isValidOutput.Add((Object)(StringUtil.LTrim( StringUtil.NToC( A13ProductPrice, 9, 2, ".", ""))));
          isValidOutput.Add((Object)(context.GX_msglist.ToJavascriptSource()));
          context.GX_webresponse.AddString(isValidOutput.ToJSonString());
@@ -3364,12 +3957,14 @@ namespace GeneXus.Programs {
 
       protected void CloseOpenCursors( )
       {
-         pr_default.close(25);
+         pr_default.close(33);
+         pr_default.close(31);
          pr_default.close(24);
-         pr_default.close(17);
-         pr_default.close(10);
-         pr_default.close(9);
-         pr_default.close(16);
+         pr_default.close(15);
+         pr_default.close(14);
+         pr_default.close(23);
+         pr_default.close(21);
+         pr_default.close(22);
       }
 
       public override void initialize( )
@@ -3431,70 +4026,86 @@ namespace GeneXus.Programs {
          EvtGridId = "" ;
          EvtRowId = "" ;
          sEvtType = "" ;
+         Z11ProductDescription = "" ;
          Z4CustomerName = "" ;
-         T00048_A14InvoiceId = new int[1] ;
-         T00048_A15InvoiceDate = new DateTime[] {DateTime.MinValue} ;
+         T000415_A14InvoiceId = new int[1] ;
+         T000415_A15InvoiceDate = new DateTime[] {DateTime.MinValue} ;
+         T000415_A4CustomerName = new String[] {""} ;
+         T000415_A7CustomerTotalPurchases = new decimal[1] ;
+         T000415_A3CustomerId = new int[1] ;
+         T000415_A20InvoiceLastLineId = new short[1] ;
+         T000415_n20InvoiceLastLineId = new bool[] {false} ;
+         T000415_A16InvoiceAmount = new decimal[1] ;
+         T000415_n16InvoiceAmount = new bool[] {false} ;
+         T000410_A20InvoiceLastLineId = new short[1] ;
+         T000410_n20InvoiceLastLineId = new bool[] {false} ;
+         T000412_A16InvoiceAmount = new decimal[1] ;
+         T000412_n16InvoiceAmount = new bool[] {false} ;
          T00048_A4CustomerName = new String[] {""} ;
          T00048_A7CustomerTotalPurchases = new decimal[1] ;
-         T00048_A16InvoiceAmount = new decimal[1] ;
-         T00048_A3CustomerId = new int[1] ;
-         T00047_A4CustomerName = new String[] {""} ;
-         T00047_A7CustomerTotalPurchases = new decimal[1] ;
-         T00049_A4CustomerName = new String[] {""} ;
-         T00049_A7CustomerTotalPurchases = new decimal[1] ;
-         T000410_A14InvoiceId = new int[1] ;
-         T00046_A14InvoiceId = new int[1] ;
-         T00046_A15InvoiceDate = new DateTime[] {DateTime.MinValue} ;
-         T00046_A16InvoiceAmount = new decimal[1] ;
-         T00046_A3CustomerId = new int[1] ;
+         T000417_A20InvoiceLastLineId = new short[1] ;
+         T000417_n20InvoiceLastLineId = new bool[] {false} ;
+         T000419_A16InvoiceAmount = new decimal[1] ;
+         T000419_n16InvoiceAmount = new bool[] {false} ;
+         T000420_A4CustomerName = new String[] {""} ;
+         T000420_A7CustomerTotalPurchases = new decimal[1] ;
+         T000421_A14InvoiceId = new int[1] ;
+         T00047_A14InvoiceId = new int[1] ;
+         T00047_A15InvoiceDate = new DateTime[] {DateTime.MinValue} ;
+         T00047_A3CustomerId = new int[1] ;
          sMode4 = "" ;
-         T000411_A14InvoiceId = new int[1] ;
-         T000412_A14InvoiceId = new int[1] ;
-         T000413_A14InvoiceId = new int[1] ;
-         T000413_A15InvoiceDate = new DateTime[] {DateTime.MinValue} ;
-         T000413_A16InvoiceAmount = new decimal[1] ;
-         T000413_A3CustomerId = new int[1] ;
-         T000415_A14InvoiceId = new int[1] ;
-         T000418_A4CustomerName = new String[] {""} ;
-         T000418_A7CustomerTotalPurchases = new decimal[1] ;
-         T000419_A14InvoiceId = new int[1] ;
-         Z11ProductDescription = "" ;
-         T000420_A14InvoiceId = new int[1] ;
-         T000420_A17InvoiceDetailId = new short[1] ;
-         T000420_A11ProductDescription = new String[] {""} ;
-         T000420_A12ProductStock = new short[1] ;
-         T000420_A13ProductPrice = new decimal[1] ;
-         T000420_A18InvoiceDetailQuantiity = new short[1] ;
-         T000420_A19InvoiceDetailAmount = new decimal[1] ;
-         T000420_A10ProductId = new int[1] ;
-         T00044_A11ProductDescription = new String[] {""} ;
-         T00044_A12ProductStock = new short[1] ;
-         T00044_A13ProductPrice = new decimal[1] ;
-         T000421_A11ProductDescription = new String[] {""} ;
-         T000421_A12ProductStock = new short[1] ;
-         T000421_A13ProductPrice = new decimal[1] ;
          T000422_A14InvoiceId = new int[1] ;
-         T000422_A17InvoiceDetailId = new short[1] ;
+         T000423_A14InvoiceId = new int[1] ;
+         T000424_A14InvoiceId = new int[1] ;
+         T000424_A15InvoiceDate = new DateTime[] {DateTime.MinValue} ;
+         T000424_A3CustomerId = new int[1] ;
+         T000426_A14InvoiceId = new int[1] ;
+         T000430_A20InvoiceLastLineId = new short[1] ;
+         T000430_n20InvoiceLastLineId = new bool[] {false} ;
+         T000432_A16InvoiceAmount = new decimal[1] ;
+         T000432_n16InvoiceAmount = new bool[] {false} ;
+         T000433_A4CustomerName = new String[] {""} ;
+         T000433_A7CustomerTotalPurchases = new decimal[1] ;
+         T000434_A14InvoiceId = new int[1] ;
+         T000435_A14InvoiceId = new int[1] ;
+         T000435_A17InvoiceDetailId = new short[1] ;
+         T000435_A12ProductStock = new short[1] ;
+         T000435_A11ProductDescription = new String[] {""} ;
+         T000435_A13ProductPrice = new decimal[1] ;
+         T000435_A18InvoiceDetailQuantiity = new short[1] ;
+         T000435_A10ProductId = new int[1] ;
+         T00045_A12ProductStock = new short[1] ;
+         T00045_A11ProductDescription = new String[] {""} ;
+         T00045_A13ProductPrice = new decimal[1] ;
+         T000436_A12ProductStock = new short[1] ;
+         T000436_A11ProductDescription = new String[] {""} ;
+         T000436_A13ProductPrice = new decimal[1] ;
+         T000437_A14InvoiceId = new int[1] ;
+         T000437_A17InvoiceDetailId = new short[1] ;
          T00043_A14InvoiceId = new int[1] ;
          T00043_A17InvoiceDetailId = new short[1] ;
          T00043_A18InvoiceDetailQuantiity = new short[1] ;
-         T00043_A19InvoiceDetailAmount = new decimal[1] ;
          T00043_A10ProductId = new int[1] ;
          T00042_A14InvoiceId = new int[1] ;
          T00042_A17InvoiceDetailId = new short[1] ;
          T00042_A18InvoiceDetailQuantiity = new short[1] ;
-         T00042_A19InvoiceDetailAmount = new decimal[1] ;
          T00042_A10ProductId = new int[1] ;
-         T000426_A11ProductDescription = new String[] {""} ;
-         T000426_A12ProductStock = new short[1] ;
-         T000426_A13ProductPrice = new decimal[1] ;
-         T000427_A14InvoiceId = new int[1] ;
-         T000427_A17InvoiceDetailId = new short[1] ;
+         T00044_A12ProductStock = new short[1] ;
+         T00044_A11ProductDescription = new String[] {""} ;
+         T00044_A13ProductPrice = new decimal[1] ;
+         T000441_A12ProductStock = new short[1] ;
+         T000441_A11ProductDescription = new String[] {""} ;
+         T000441_A13ProductPrice = new decimal[1] ;
+         T000443_A14InvoiceId = new int[1] ;
+         T000443_A17InvoiceDetailId = new short[1] ;
          imgprompt_10_Internalname = "" ;
          Gridinvoice_detailRow = new GXWebRow();
          subGridinvoice_detail_Linesclass = "" ;
          ROClassString = "" ;
          GXCCtl = "" ;
+         GXt_char10 = "" ;
+         GXt_char9 = "" ;
+         GXt_char8 = "" ;
          GXt_char7 = "" ;
          GXt_char6 = "" ;
          GXt_char5 = "" ;
@@ -3502,89 +4113,112 @@ namespace GeneXus.Programs {
          GXt_char3 = "" ;
          GXt_char2 = "" ;
          GXt_char1 = "" ;
-         GXt_char8 = "" ;
-         GXt_char9 = "" ;
-         GXt_char10 = "" ;
+         GXt_char11 = "" ;
+         GXt_char12 = "" ;
+         GXt_char13 = "" ;
          sDynURL = "" ;
          FormProcess = "" ;
-         GXt_char12 = "" ;
-         GXt_char11 = "" ;
+         GXt_char15 = "" ;
+         GXt_char14 = "" ;
          i15InvoiceDate = DateTime.MinValue ;
-         GXt_char13 = "" ;
+         GXt_char16 = "" ;
          isValidOutput = new GxUnknownObjectCollection();
          pr_default = new DataStoreProvider(context, new GeneXus.Programs.invoice__default(),
             new Object[][] {
                 new Object[] {
-               T00042_A14InvoiceId, T00042_A17InvoiceDetailId, T00042_A18InvoiceDetailQuantiity, T00042_A19InvoiceDetailAmount, T00042_A10ProductId
+               T00042_A14InvoiceId, T00042_A17InvoiceDetailId, T00042_A18InvoiceDetailQuantiity, T00042_A10ProductId
                }
                , new Object[] {
-               T00043_A14InvoiceId, T00043_A17InvoiceDetailId, T00043_A18InvoiceDetailQuantiity, T00043_A19InvoiceDetailAmount, T00043_A10ProductId
+               T00043_A14InvoiceId, T00043_A17InvoiceDetailId, T00043_A18InvoiceDetailQuantiity, T00043_A10ProductId
                }
                , new Object[] {
-               T00044_A11ProductDescription, T00044_A12ProductStock, T00044_A13ProductPrice
+               T00044_A12ProductStock, T00044_A11ProductDescription, T00044_A13ProductPrice
                }
                , new Object[] {
-               T00045_A14InvoiceId, T00045_A15InvoiceDate, T00045_A16InvoiceAmount, T00045_A3CustomerId
+               T00045_A12ProductStock, T00045_A11ProductDescription, T00045_A13ProductPrice
                }
                , new Object[] {
-               T00046_A14InvoiceId, T00046_A15InvoiceDate, T00046_A16InvoiceAmount, T00046_A3CustomerId
+               T00046_A14InvoiceId, T00046_A15InvoiceDate, T00046_A3CustomerId
                }
                , new Object[] {
-               T00047_A4CustomerName, T00047_A7CustomerTotalPurchases
+               T00047_A14InvoiceId, T00047_A15InvoiceDate, T00047_A3CustomerId
                }
                , new Object[] {
-               T00048_A14InvoiceId, T00048_A15InvoiceDate, T00048_A4CustomerName, T00048_A7CustomerTotalPurchases, T00048_A16InvoiceAmount, T00048_A3CustomerId
+               T00048_A4CustomerName, T00048_A7CustomerTotalPurchases
                }
                , new Object[] {
-               T00049_A4CustomerName, T00049_A7CustomerTotalPurchases
+               T000410_A20InvoiceLastLineId, T000410_n20InvoiceLastLineId
                }
                , new Object[] {
-               T000410_A14InvoiceId
+               T000412_A16InvoiceAmount, T000412_n16InvoiceAmount
                }
                , new Object[] {
-               T000411_A14InvoiceId
+               T000415_A14InvoiceId, T000415_A15InvoiceDate, T000415_A4CustomerName, T000415_A7CustomerTotalPurchases, T000415_A3CustomerId, T000415_A20InvoiceLastLineId, T000415_n20InvoiceLastLineId, T000415_A16InvoiceAmount, T000415_n16InvoiceAmount
                }
                , new Object[] {
-               T000412_A14InvoiceId
+               T000417_A20InvoiceLastLineId, T000417_n20InvoiceLastLineId
                }
                , new Object[] {
-               T000413_A14InvoiceId, T000413_A15InvoiceDate, T000413_A16InvoiceAmount, T000413_A3CustomerId
+               T000419_A16InvoiceAmount, T000419_n16InvoiceAmount
+               }
+               , new Object[] {
+               T000420_A4CustomerName, T000420_A7CustomerTotalPurchases
+               }
+               , new Object[] {
+               T000421_A14InvoiceId
+               }
+               , new Object[] {
+               T000422_A14InvoiceId
+               }
+               , new Object[] {
+               T000423_A14InvoiceId
+               }
+               , new Object[] {
+               T000424_A14InvoiceId, T000424_A15InvoiceDate, T000424_A3CustomerId
                }
                , new Object[] {
                }
                , new Object[] {
-               T000415_A14InvoiceId
-               }
-               , new Object[] {
-               }
-               , new Object[] {
-               }
-               , new Object[] {
-               T000418_A4CustomerName, T000418_A7CustomerTotalPurchases
-               }
-               , new Object[] {
-               T000419_A14InvoiceId
-               }
-               , new Object[] {
-               T000420_A14InvoiceId, T000420_A17InvoiceDetailId, T000420_A11ProductDescription, T000420_A12ProductStock, T000420_A13ProductPrice, T000420_A18InvoiceDetailQuantiity, T000420_A19InvoiceDetailAmount, T000420_A10ProductId
-               }
-               , new Object[] {
-               T000421_A11ProductDescription, T000421_A12ProductStock, T000421_A13ProductPrice
-               }
-               , new Object[] {
-               T000422_A14InvoiceId, T000422_A17InvoiceDetailId
+               T000426_A14InvoiceId
                }
                , new Object[] {
                }
                , new Object[] {
                }
                , new Object[] {
+               T000430_A20InvoiceLastLineId, T000430_n20InvoiceLastLineId
                }
                , new Object[] {
-               T000426_A11ProductDescription, T000426_A12ProductStock, T000426_A13ProductPrice
+               T000432_A16InvoiceAmount, T000432_n16InvoiceAmount
                }
                , new Object[] {
-               T000427_A14InvoiceId, T000427_A17InvoiceDetailId
+               T000433_A4CustomerName, T000433_A7CustomerTotalPurchases
+               }
+               , new Object[] {
+               T000434_A14InvoiceId
+               }
+               , new Object[] {
+               T000435_A14InvoiceId, T000435_A17InvoiceDetailId, T000435_A12ProductStock, T000435_A11ProductDescription, T000435_A13ProductPrice, T000435_A18InvoiceDetailQuantiity, T000435_A10ProductId
+               }
+               , new Object[] {
+               T000436_A12ProductStock, T000436_A11ProductDescription, T000436_A13ProductPrice
+               }
+               , new Object[] {
+               T000437_A14InvoiceId, T000437_A17InvoiceDetailId
+               }
+               , new Object[] {
+               }
+               , new Object[] {
+               }
+               , new Object[] {
+               }
+               , new Object[] {
+               T000441_A12ProductStock, T000441_A11ProductDescription, T000441_A13ProductPrice
+               }
+               , new Object[] {
+               }
+               , new Object[] {
+               T000443_A14InvoiceId, T000443_A17InvoiceDetailId
                }
             }
          );
@@ -3609,23 +4243,31 @@ namespace GeneXus.Programs {
       private short nBlankRcdCount5 ;
       private short nRcdExists_5 ;
       private short RcdFound5 ;
+      private short B20InvoiceLastLineId ;
+      private short A20InvoiceLastLineId ;
       private short nBlankRcdUsr5 ;
+      private short O20InvoiceLastLineId ;
       private short Gx_BScreen ;
       private short A12ProductStock ;
+      private short s20InvoiceLastLineId ;
       private short nRcdDeleted_5 ;
       private short Z17InvoiceDetailId ;
       private short Z18InvoiceDetailQuantiity ;
+      private short T12ProductStock ;
+      private short O12ProductStock ;
       private short GX_JID ;
+      private short Z20InvoiceLastLineId ;
       private short Z12ProductStock ;
       private short subGridinvoice_detail_Backstyle ;
       private short gxajaxcallmode ;
+      private short i20InvoiceLastLineId ;
+      private int A14InvoiceId ;
       private int A3CustomerId ;
       private int A10ProductId ;
       private int trnEnded ;
       private int bttBtn_enter_Visible ;
       private int bttBtn_cancel_Visible ;
       private int bttBtn_delete_Visible ;
-      private int A14InvoiceId ;
       private int edtInvoiceId_Enabled ;
       private int edtInvoiceDate_Enabled ;
       private int edtCustomerId_Enabled ;
@@ -3670,11 +4312,15 @@ namespace GeneXus.Programs {
       private decimal A7CustomerTotalPurchases ;
       private decimal A13ProductPrice ;
       private decimal A19InvoiceDetailAmount ;
+      private decimal B16InvoiceAmount ;
       private decimal A16InvoiceAmount ;
-      private decimal Z16InvoiceAmount ;
-      private decimal Z19InvoiceDetailAmount ;
-      private decimal Z7CustomerTotalPurchases ;
+      private decimal O16InvoiceAmount ;
+      private decimal s16InvoiceAmount ;
       private decimal Z13ProductPrice ;
+      private decimal T19InvoiceDetailAmount ;
+      private decimal O19InvoiceDetailAmount ;
+      private decimal Z16InvoiceAmount ;
+      private decimal Z7CustomerTotalPurchases ;
       private String sPrefix ;
       private String sGXsfl_65_idx="0001" ;
       private String scmdbuf ;
@@ -3773,9 +4419,9 @@ namespace GeneXus.Programs {
       private String EvtGridId ;
       private String EvtRowId ;
       private String sEvtType ;
+      private String Z11ProductDescription ;
       private String Z4CustomerName ;
       private String sMode4 ;
-      private String Z11ProductDescription ;
       private String imgprompt_10_Internalname ;
       private String subGridinvoice_detail_Class ;
       private String subGridinvoice_detail_Linesclass ;
@@ -3788,6 +4434,9 @@ namespace GeneXus.Programs {
       private String edtInvoiceDetailQuantiity_Jsonclick ;
       private String edtInvoiceDetailAmount_Jsonclick ;
       private String GXCCtl ;
+      private String GXt_char10 ;
+      private String GXt_char9 ;
+      private String GXt_char8 ;
       private String GXt_char7 ;
       private String GXt_char6 ;
       private String GXt_char5 ;
@@ -3795,21 +4444,23 @@ namespace GeneXus.Programs {
       private String GXt_char3 ;
       private String GXt_char2 ;
       private String GXt_char1 ;
-      private String GXt_char8 ;
-      private String GXt_char9 ;
-      private String GXt_char10 ;
+      private String GXt_char11 ;
+      private String GXt_char12 ;
+      private String GXt_char13 ;
       private String sDynURL ;
       private String FormProcess ;
-      private String GXt_char12 ;
-      private String GXt_char11 ;
+      private String GXt_char15 ;
+      private String GXt_char14 ;
       private String subGridinvoice_detail_Internalname ;
-      private String GXt_char13 ;
+      private String GXt_char16 ;
       private DateTime A15InvoiceDate ;
       private DateTime Z15InvoiceDate ;
       private DateTime Gx_date ;
       private DateTime i15InvoiceDate ;
       private bool entryPointCalled ;
       private bool wbErr ;
+      private bool n20InvoiceLastLineId ;
+      private bool n16InvoiceAmount ;
       private GxUnknownObjectCollection isValidOutput ;
       private GXMasterPage MasterPageObj ;
       private GXWebGrid Gridinvoice_detailContainer ;
@@ -3817,66 +4468,78 @@ namespace GeneXus.Programs {
       private GXWebColumn Gridinvoice_detailColumn ;
       private IGxDataStore dsDefault ;
       private IDataStoreProvider pr_default ;
-      private int[] T00048_A14InvoiceId ;
-      private DateTime[] T00048_A15InvoiceDate ;
+      private int[] T000415_A14InvoiceId ;
+      private DateTime[] T000415_A15InvoiceDate ;
+      private String[] T000415_A4CustomerName ;
+      private decimal[] T000415_A7CustomerTotalPurchases ;
+      private int[] T000415_A3CustomerId ;
+      private short[] T000415_A20InvoiceLastLineId ;
+      private bool[] T000415_n20InvoiceLastLineId ;
+      private decimal[] T000415_A16InvoiceAmount ;
+      private bool[] T000415_n16InvoiceAmount ;
+      private short[] T000410_A20InvoiceLastLineId ;
+      private bool[] T000410_n20InvoiceLastLineId ;
+      private decimal[] T000412_A16InvoiceAmount ;
+      private bool[] T000412_n16InvoiceAmount ;
       private String[] T00048_A4CustomerName ;
       private decimal[] T00048_A7CustomerTotalPurchases ;
-      private decimal[] T00048_A16InvoiceAmount ;
-      private int[] T00048_A3CustomerId ;
-      private String[] T00047_A4CustomerName ;
-      private decimal[] T00047_A7CustomerTotalPurchases ;
-      private String[] T00049_A4CustomerName ;
-      private decimal[] T00049_A7CustomerTotalPurchases ;
-      private int[] T000410_A14InvoiceId ;
-      private int[] T00046_A14InvoiceId ;
-      private DateTime[] T00046_A15InvoiceDate ;
-      private decimal[] T00046_A16InvoiceAmount ;
-      private int[] T00046_A3CustomerId ;
-      private int[] T000411_A14InvoiceId ;
-      private int[] T000412_A14InvoiceId ;
-      private int[] T000413_A14InvoiceId ;
-      private DateTime[] T000413_A15InvoiceDate ;
-      private decimal[] T000413_A16InvoiceAmount ;
-      private int[] T000413_A3CustomerId ;
-      private int[] T000415_A14InvoiceId ;
-      private String[] T000418_A4CustomerName ;
-      private decimal[] T000418_A7CustomerTotalPurchases ;
-      private int[] T000419_A14InvoiceId ;
-      private int[] T000420_A14InvoiceId ;
-      private short[] T000420_A17InvoiceDetailId ;
-      private String[] T000420_A11ProductDescription ;
-      private short[] T000420_A12ProductStock ;
-      private decimal[] T000420_A13ProductPrice ;
-      private short[] T000420_A18InvoiceDetailQuantiity ;
-      private decimal[] T000420_A19InvoiceDetailAmount ;
-      private int[] T000420_A10ProductId ;
-      private String[] T00044_A11ProductDescription ;
-      private short[] T00044_A12ProductStock ;
-      private decimal[] T00044_A13ProductPrice ;
-      private String[] T000421_A11ProductDescription ;
-      private short[] T000421_A12ProductStock ;
-      private decimal[] T000421_A13ProductPrice ;
+      private short[] T000417_A20InvoiceLastLineId ;
+      private bool[] T000417_n20InvoiceLastLineId ;
+      private decimal[] T000419_A16InvoiceAmount ;
+      private bool[] T000419_n16InvoiceAmount ;
+      private String[] T000420_A4CustomerName ;
+      private decimal[] T000420_A7CustomerTotalPurchases ;
+      private int[] T000421_A14InvoiceId ;
+      private int[] T00047_A14InvoiceId ;
+      private DateTime[] T00047_A15InvoiceDate ;
+      private int[] T00047_A3CustomerId ;
       private int[] T000422_A14InvoiceId ;
-      private short[] T000422_A17InvoiceDetailId ;
+      private int[] T000423_A14InvoiceId ;
+      private int[] T000424_A14InvoiceId ;
+      private DateTime[] T000424_A15InvoiceDate ;
+      private int[] T000424_A3CustomerId ;
+      private int[] T000426_A14InvoiceId ;
+      private short[] T000430_A20InvoiceLastLineId ;
+      private bool[] T000430_n20InvoiceLastLineId ;
+      private decimal[] T000432_A16InvoiceAmount ;
+      private bool[] T000432_n16InvoiceAmount ;
+      private String[] T000433_A4CustomerName ;
+      private decimal[] T000433_A7CustomerTotalPurchases ;
+      private int[] T000434_A14InvoiceId ;
+      private int[] T000435_A14InvoiceId ;
+      private short[] T000435_A17InvoiceDetailId ;
+      private short[] T000435_A12ProductStock ;
+      private String[] T000435_A11ProductDescription ;
+      private decimal[] T000435_A13ProductPrice ;
+      private short[] T000435_A18InvoiceDetailQuantiity ;
+      private int[] T000435_A10ProductId ;
+      private short[] T00045_A12ProductStock ;
+      private String[] T00045_A11ProductDescription ;
+      private decimal[] T00045_A13ProductPrice ;
+      private short[] T000436_A12ProductStock ;
+      private String[] T000436_A11ProductDescription ;
+      private decimal[] T000436_A13ProductPrice ;
+      private int[] T000437_A14InvoiceId ;
+      private short[] T000437_A17InvoiceDetailId ;
       private int[] T00043_A14InvoiceId ;
       private short[] T00043_A17InvoiceDetailId ;
       private short[] T00043_A18InvoiceDetailQuantiity ;
-      private decimal[] T00043_A19InvoiceDetailAmount ;
       private int[] T00043_A10ProductId ;
       private int[] T00042_A14InvoiceId ;
       private short[] T00042_A17InvoiceDetailId ;
       private short[] T00042_A18InvoiceDetailQuantiity ;
-      private decimal[] T00042_A19InvoiceDetailAmount ;
       private int[] T00042_A10ProductId ;
-      private String[] T000426_A11ProductDescription ;
-      private short[] T000426_A12ProductStock ;
-      private decimal[] T000426_A13ProductPrice ;
-      private int[] T000427_A14InvoiceId ;
-      private short[] T000427_A17InvoiceDetailId ;
-      private int[] T00045_A14InvoiceId ;
-      private DateTime[] T00045_A15InvoiceDate ;
-      private decimal[] T00045_A16InvoiceAmount ;
-      private int[] T00045_A3CustomerId ;
+      private short[] T00044_A12ProductStock ;
+      private String[] T00044_A11ProductDescription ;
+      private decimal[] T00044_A13ProductPrice ;
+      private short[] T000441_A12ProductStock ;
+      private String[] T000441_A11ProductDescription ;
+      private decimal[] T000441_A13ProductPrice ;
+      private int[] T000443_A14InvoiceId ;
+      private short[] T000443_A17InvoiceDetailId ;
+      private int[] T00046_A14InvoiceId ;
+      private DateTime[] T00046_A15InvoiceDate ;
+      private int[] T00046_A3CustomerId ;
       private GXWebForm Form ;
    }
 
@@ -3898,20 +4561,28 @@ namespace GeneXus.Programs {
          ,new ForEachCursor(def[9])
          ,new ForEachCursor(def[10])
          ,new ForEachCursor(def[11])
-         ,new UpdateCursor(def[12])
+         ,new ForEachCursor(def[12])
          ,new ForEachCursor(def[13])
-         ,new UpdateCursor(def[14])
-         ,new UpdateCursor(def[15])
+         ,new ForEachCursor(def[14])
+         ,new ForEachCursor(def[15])
          ,new ForEachCursor(def[16])
-         ,new ForEachCursor(def[17])
+         ,new UpdateCursor(def[17])
          ,new ForEachCursor(def[18])
-         ,new ForEachCursor(def[19])
-         ,new ForEachCursor(def[20])
-         ,new UpdateCursor(def[21])
-         ,new UpdateCursor(def[22])
-         ,new UpdateCursor(def[23])
+         ,new UpdateCursor(def[19])
+         ,new UpdateCursor(def[20])
+         ,new ForEachCursor(def[21])
+         ,new ForEachCursor(def[22])
+         ,new ForEachCursor(def[23])
          ,new ForEachCursor(def[24])
          ,new ForEachCursor(def[25])
+         ,new ForEachCursor(def[26])
+         ,new ForEachCursor(def[27])
+         ,new UpdateCursor(def[28])
+         ,new UpdateCursor(def[29])
+         ,new UpdateCursor(def[30])
+         ,new ForEachCursor(def[31])
+         ,new UpdateCursor(def[32])
+         ,new ForEachCursor(def[33])
        };
     }
 
@@ -3920,57 +4591,25 @@ namespace GeneXus.Programs {
     {
        if ( def == null )
        {
-          Object[] prmT00045 ;
-          prmT00045 = new Object[] {
-          new Object[] {"@InvoiceId",SqlDbType.Int,6,0}
-          } ;
-          Object[] prmT00048 ;
-          prmT00048 = new Object[] {
-          new Object[] {"@InvoiceId",SqlDbType.Int,6,0}
-          } ;
-          Object[] prmT00047 ;
-          prmT00047 = new Object[] {
-          new Object[] {"@CustomerId",SqlDbType.Int,6,0}
-          } ;
-          Object[] prmT00049 ;
-          prmT00049 = new Object[] {
-          new Object[] {"@CustomerId",SqlDbType.Int,6,0}
-          } ;
-          Object[] prmT000410 ;
-          prmT000410 = new Object[] {
-          new Object[] {"@InvoiceId",SqlDbType.Int,6,0}
-          } ;
           Object[] prmT00046 ;
           prmT00046 = new Object[] {
           new Object[] {"@InvoiceId",SqlDbType.Int,6,0}
           } ;
-          Object[] prmT000411 ;
-          prmT000411 = new Object[] {
+          Object[] prmT000415 ;
+          prmT000415 = new Object[] {
+          new Object[] {"@InvoiceId",SqlDbType.Int,6,0}
+          } ;
+          Object[] prmT000410 ;
+          prmT000410 = new Object[] {
           new Object[] {"@InvoiceId",SqlDbType.Int,6,0}
           } ;
           Object[] prmT000412 ;
           prmT000412 = new Object[] {
           new Object[] {"@InvoiceId",SqlDbType.Int,6,0}
           } ;
-          Object[] prmT000413 ;
-          prmT000413 = new Object[] {
-          new Object[] {"@InvoiceId",SqlDbType.Int,6,0}
-          } ;
-          Object[] prmT000414 ;
-          prmT000414 = new Object[] {
-          new Object[] {"@InvoiceDate",SqlDbType.DateTime,8,0} ,
-          new Object[] {"@InvoiceAmount",SqlDbType.Decimal,9,2} ,
+          Object[] prmT00048 ;
+          prmT00048 = new Object[] {
           new Object[] {"@CustomerId",SqlDbType.Int,6,0}
-          } ;
-          Object[] prmT000415 ;
-          prmT000415 = new Object[] {
-          } ;
-          Object[] prmT000416 ;
-          prmT000416 = new Object[] {
-          new Object[] {"@InvoiceDate",SqlDbType.DateTime,8,0} ,
-          new Object[] {"@InvoiceAmount",SqlDbType.Decimal,9,2} ,
-          new Object[] {"@CustomerId",SqlDbType.Int,6,0} ,
-          new Object[] {"@InvoiceId",SqlDbType.Int,6,0}
           } ;
           Object[] prmT000417 ;
           prmT000417 = new Object[] {
@@ -3978,22 +4617,68 @@ namespace GeneXus.Programs {
           } ;
           Object[] prmT000419 ;
           prmT000419 = new Object[] {
+          new Object[] {"@InvoiceId",SqlDbType.Int,6,0}
           } ;
           Object[] prmT000420 ;
           prmT000420 = new Object[] {
-          new Object[] {"@InvoiceId",SqlDbType.Int,6,0} ,
-          new Object[] {"@InvoiceDetailId",SqlDbType.SmallInt,2,0}
-          } ;
-          Object[] prmT00044 ;
-          prmT00044 = new Object[] {
-          new Object[] {"@ProductId",SqlDbType.Int,6,0}
+          new Object[] {"@CustomerId",SqlDbType.Int,6,0}
           } ;
           Object[] prmT000421 ;
           prmT000421 = new Object[] {
-          new Object[] {"@ProductId",SqlDbType.Int,6,0}
+          new Object[] {"@InvoiceId",SqlDbType.Int,6,0}
+          } ;
+          Object[] prmT00047 ;
+          prmT00047 = new Object[] {
+          new Object[] {"@InvoiceId",SqlDbType.Int,6,0}
           } ;
           Object[] prmT000422 ;
           prmT000422 = new Object[] {
+          new Object[] {"@InvoiceId",SqlDbType.Int,6,0}
+          } ;
+          Object[] prmT000423 ;
+          prmT000423 = new Object[] {
+          new Object[] {"@InvoiceId",SqlDbType.Int,6,0}
+          } ;
+          Object[] prmT000424 ;
+          prmT000424 = new Object[] {
+          new Object[] {"@InvoiceId",SqlDbType.Int,6,0}
+          } ;
+          Object[] prmT000425 ;
+          prmT000425 = new Object[] {
+          new Object[] {"@InvoiceDate",SqlDbType.DateTime,8,0} ,
+          new Object[] {"@CustomerId",SqlDbType.Int,6,0}
+          } ;
+          Object[] prmT000426 ;
+          prmT000426 = new Object[] {
+          } ;
+          Object[] prmT000427 ;
+          prmT000427 = new Object[] {
+          new Object[] {"@InvoiceDate",SqlDbType.DateTime,8,0} ,
+          new Object[] {"@CustomerId",SqlDbType.Int,6,0} ,
+          new Object[] {"@InvoiceId",SqlDbType.Int,6,0}
+          } ;
+          Object[] prmT000428 ;
+          prmT000428 = new Object[] {
+          new Object[] {"@InvoiceId",SqlDbType.Int,6,0}
+          } ;
+          Object[] prmT000434 ;
+          prmT000434 = new Object[] {
+          } ;
+          Object[] prmT000435 ;
+          prmT000435 = new Object[] {
+          new Object[] {"@InvoiceId",SqlDbType.Int,6,0} ,
+          new Object[] {"@InvoiceDetailId",SqlDbType.SmallInt,2,0}
+          } ;
+          Object[] prmT00045 ;
+          prmT00045 = new Object[] {
+          new Object[] {"@ProductId",SqlDbType.Int,6,0}
+          } ;
+          Object[] prmT000436 ;
+          prmT000436 = new Object[] {
+          new Object[] {"@ProductId",SqlDbType.Int,6,0}
+          } ;
+          Object[] prmT000437 ;
+          prmT000437 = new Object[] {
           new Object[] {"@InvoiceId",SqlDbType.Int,6,0} ,
           new Object[] {"@InvoiceDetailId",SqlDbType.SmallInt,2,0}
           } ;
@@ -4007,66 +4692,89 @@ namespace GeneXus.Programs {
           new Object[] {"@InvoiceId",SqlDbType.Int,6,0} ,
           new Object[] {"@InvoiceDetailId",SqlDbType.SmallInt,2,0}
           } ;
-          Object[] prmT000423 ;
-          prmT000423 = new Object[] {
+          Object[] prmT00044 ;
+          prmT00044 = new Object[] {
+          new Object[] {"@ProductId",SqlDbType.Int,6,0}
+          } ;
+          Object[] prmT000438 ;
+          prmT000438 = new Object[] {
           new Object[] {"@InvoiceId",SqlDbType.Int,6,0} ,
           new Object[] {"@InvoiceDetailId",SqlDbType.SmallInt,2,0} ,
           new Object[] {"@InvoiceDetailQuantiity",SqlDbType.SmallInt,3,0} ,
-          new Object[] {"@InvoiceDetailAmount",SqlDbType.Decimal,9,2} ,
           new Object[] {"@ProductId",SqlDbType.Int,6,0}
           } ;
-          Object[] prmT000424 ;
-          prmT000424 = new Object[] {
+          Object[] prmT000439 ;
+          prmT000439 = new Object[] {
           new Object[] {"@InvoiceDetailQuantiity",SqlDbType.SmallInt,3,0} ,
-          new Object[] {"@InvoiceDetailAmount",SqlDbType.Decimal,9,2} ,
           new Object[] {"@ProductId",SqlDbType.Int,6,0} ,
           new Object[] {"@InvoiceId",SqlDbType.Int,6,0} ,
           new Object[] {"@InvoiceDetailId",SqlDbType.SmallInt,2,0}
           } ;
-          Object[] prmT000425 ;
-          prmT000425 = new Object[] {
+          Object[] prmT000440 ;
+          prmT000440 = new Object[] {
           new Object[] {"@InvoiceId",SqlDbType.Int,6,0} ,
           new Object[] {"@InvoiceDetailId",SqlDbType.SmallInt,2,0}
           } ;
-          Object[] prmT000427 ;
-          prmT000427 = new Object[] {
+          Object[] prmT000442 ;
+          prmT000442 = new Object[] {
+          new Object[] {"@ProductStock",SqlDbType.SmallInt,4,0} ,
+          new Object[] {"@ProductId",SqlDbType.Int,6,0}
+          } ;
+          Object[] prmT000443 ;
+          prmT000443 = new Object[] {
           new Object[] {"@InvoiceId",SqlDbType.Int,6,0}
           } ;
-          Object[] prmT000418 ;
-          prmT000418 = new Object[] {
+          Object[] prmT000430 ;
+          prmT000430 = new Object[] {
+          new Object[] {"@InvoiceId",SqlDbType.Int,6,0}
+          } ;
+          Object[] prmT000432 ;
+          prmT000432 = new Object[] {
+          new Object[] {"@InvoiceId",SqlDbType.Int,6,0}
+          } ;
+          Object[] prmT000433 ;
+          prmT000433 = new Object[] {
           new Object[] {"@CustomerId",SqlDbType.Int,6,0}
           } ;
-          Object[] prmT000426 ;
-          prmT000426 = new Object[] {
+          Object[] prmT000441 ;
+          prmT000441 = new Object[] {
           new Object[] {"@ProductId",SqlDbType.Int,6,0}
           } ;
           def= new CursorDef[] {
-              new CursorDef("T00042", "SELECT [InvoiceId], [InvoiceDetailId], [InvoiceDetailQuantiity], [InvoiceDetailAmount], [ProductId] FROM [InvoiceDetail] WITH (UPDLOCK) WHERE [InvoiceId] = @InvoiceId AND [InvoiceDetailId] = @InvoiceDetailId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00042,1,0,true,false )
-             ,new CursorDef("T00043", "SELECT [InvoiceId], [InvoiceDetailId], [InvoiceDetailQuantiity], [InvoiceDetailAmount], [ProductId] FROM [InvoiceDetail] WITH (NOLOCK) WHERE [InvoiceId] = @InvoiceId AND [InvoiceDetailId] = @InvoiceDetailId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00043,1,0,true,false )
-             ,new CursorDef("T00044", "SELECT [ProductDescription], [ProductStock], [ProductPrice] FROM [Product] WITH (NOLOCK) WHERE [ProductId] = @ProductId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00044,1,0,true,false )
-             ,new CursorDef("T00045", "SELECT [InvoiceId], [InvoiceDate], [InvoiceAmount], [CustomerId] FROM [Invoice] WITH (UPDLOCK) WHERE [InvoiceId] = @InvoiceId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00045,1,0,true,false )
-             ,new CursorDef("T00046", "SELECT [InvoiceId], [InvoiceDate], [InvoiceAmount], [CustomerId] FROM [Invoice] WITH (NOLOCK) WHERE [InvoiceId] = @InvoiceId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00046,1,0,true,false )
-             ,new CursorDef("T00047", "SELECT [CustomerName], [CustomerTotalPurchases] FROM [Customer] WITH (NOLOCK) WHERE [CustomerId] = @CustomerId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00047,1,0,true,false )
-             ,new CursorDef("T00048", "SELECT TM1.[InvoiceId], TM1.[InvoiceDate], T2.[CustomerName], T2.[CustomerTotalPurchases], TM1.[InvoiceAmount], TM1.[CustomerId] FROM ([Invoice] TM1 WITH (NOLOCK) INNER JOIN [Customer] T2 WITH (NOLOCK) ON T2.[CustomerId] = TM1.[CustomerId]) WHERE TM1.[InvoiceId] = @InvoiceId ORDER BY TM1.[InvoiceId]  OPTION (FAST 100)",true, GxErrorMask.GX_NOMASK, false, this,prmT00048,100,0,true,false )
-             ,new CursorDef("T00049", "SELECT [CustomerName], [CustomerTotalPurchases] FROM [Customer] WITH (NOLOCK) WHERE [CustomerId] = @CustomerId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00049,1,0,true,false )
-             ,new CursorDef("T000410", "SELECT [InvoiceId] FROM [Invoice] WITH (NOLOCK) WHERE [InvoiceId] = @InvoiceId  OPTION (FAST 1)",true, GxErrorMask.GX_NOMASK, false, this,prmT000410,1,0,true,false )
-             ,new CursorDef("T000411", "SELECT TOP 1 [InvoiceId] FROM [Invoice] WITH (NOLOCK) WHERE ( [InvoiceId] > @InvoiceId) ORDER BY [InvoiceId]  OPTION (FAST 1)",true, GxErrorMask.GX_NOMASK, false, this,prmT000411,1,0,true,true )
-             ,new CursorDef("T000412", "SELECT TOP 1 [InvoiceId] FROM [Invoice] WITH (NOLOCK) WHERE ( [InvoiceId] < @InvoiceId) ORDER BY [InvoiceId] DESC  OPTION (FAST 1)",true, GxErrorMask.GX_NOMASK, false, this,prmT000412,1,0,true,true )
-             ,new CursorDef("T000413", "SELECT [InvoiceId], [InvoiceDate], [InvoiceAmount], [CustomerId] FROM [Invoice] WITH (UPDLOCK) WHERE [InvoiceId] = @InvoiceId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000413,1,0,true,false )
-             ,new CursorDef("T000414", "INSERT INTO [Invoice] ([InvoiceDate], [InvoiceAmount], [CustomerId]) VALUES (@InvoiceDate, @InvoiceAmount, @CustomerId)", GxErrorMask.GX_NOMASK,prmT000414)
-             ,new CursorDef("T000415", "SELECT Ident_Current('[Invoice]') ",true, GxErrorMask.GX_NOMASK, false, this,prmT000415,1,0,true,false )
-             ,new CursorDef("T000416", "UPDATE [Invoice] SET [InvoiceDate]=@InvoiceDate, [InvoiceAmount]=@InvoiceAmount, [CustomerId]=@CustomerId  WHERE [InvoiceId] = @InvoiceId", GxErrorMask.GX_NOMASK,prmT000416)
-             ,new CursorDef("T000417", "DELETE FROM [Invoice]  WHERE [InvoiceId] = @InvoiceId", GxErrorMask.GX_NOMASK,prmT000417)
-             ,new CursorDef("T000418", "SELECT [CustomerName], [CustomerTotalPurchases] FROM [Customer] WITH (NOLOCK) WHERE [CustomerId] = @CustomerId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000418,1,0,true,false )
-             ,new CursorDef("T000419", "SELECT [InvoiceId] FROM [Invoice] WITH (NOLOCK) ORDER BY [InvoiceId]  OPTION (FAST 100)",true, GxErrorMask.GX_NOMASK, false, this,prmT000419,100,0,true,false )
-             ,new CursorDef("T000420", "SELECT T1.[InvoiceId], T1.[InvoiceDetailId], T2.[ProductDescription], T2.[ProductStock], T2.[ProductPrice], T1.[InvoiceDetailQuantiity], T1.[InvoiceDetailAmount], T1.[ProductId] FROM ([InvoiceDetail] T1 WITH (NOLOCK) INNER JOIN [Product] T2 WITH (NOLOCK) ON T2.[ProductId] = T1.[ProductId]) WHERE T1.[InvoiceId] = @InvoiceId and T1.[InvoiceDetailId] = @InvoiceDetailId ORDER BY T1.[InvoiceId], T1.[InvoiceDetailId] ",true, GxErrorMask.GX_NOMASK, false, this,prmT000420,11,0,true,false )
-             ,new CursorDef("T000421", "SELECT [ProductDescription], [ProductStock], [ProductPrice] FROM [Product] WITH (NOLOCK) WHERE [ProductId] = @ProductId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000421,1,0,true,false )
-             ,new CursorDef("T000422", "SELECT [InvoiceId], [InvoiceDetailId] FROM [InvoiceDetail] WITH (NOLOCK) WHERE [InvoiceId] = @InvoiceId AND [InvoiceDetailId] = @InvoiceDetailId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000422,1,0,true,false )
-             ,new CursorDef("T000423", "INSERT INTO [InvoiceDetail] ([InvoiceId], [InvoiceDetailId], [InvoiceDetailQuantiity], [InvoiceDetailAmount], [ProductId]) VALUES (@InvoiceId, @InvoiceDetailId, @InvoiceDetailQuantiity, @InvoiceDetailAmount, @ProductId)", GxErrorMask.GX_NOMASK,prmT000423)
-             ,new CursorDef("T000424", "UPDATE [InvoiceDetail] SET [InvoiceDetailQuantiity]=@InvoiceDetailQuantiity, [InvoiceDetailAmount]=@InvoiceDetailAmount, [ProductId]=@ProductId  WHERE [InvoiceId] = @InvoiceId AND [InvoiceDetailId] = @InvoiceDetailId", GxErrorMask.GX_NOMASK,prmT000424)
-             ,new CursorDef("T000425", "DELETE FROM [InvoiceDetail]  WHERE [InvoiceId] = @InvoiceId AND [InvoiceDetailId] = @InvoiceDetailId", GxErrorMask.GX_NOMASK,prmT000425)
-             ,new CursorDef("T000426", "SELECT [ProductDescription], [ProductStock], [ProductPrice] FROM [Product] WITH (NOLOCK) WHERE [ProductId] = @ProductId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000426,1,0,true,false )
-             ,new CursorDef("T000427", "SELECT [InvoiceId], [InvoiceDetailId] FROM [InvoiceDetail] WITH (NOLOCK) WHERE [InvoiceId] = @InvoiceId ORDER BY [InvoiceId], [InvoiceDetailId] ",true, GxErrorMask.GX_NOMASK, false, this,prmT000427,11,0,true,false )
+              new CursorDef("T00042", "SELECT [InvoiceId], [InvoiceDetailId], [InvoiceDetailQuantiity], [ProductId] FROM [InvoiceDetail] WITH (UPDLOCK) WHERE [InvoiceId] = @InvoiceId AND [InvoiceDetailId] = @InvoiceDetailId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00042,1,0,true,false )
+             ,new CursorDef("T00043", "SELECT [InvoiceId], [InvoiceDetailId], [InvoiceDetailQuantiity], [ProductId] FROM [InvoiceDetail] WITH (NOLOCK) WHERE [InvoiceId] = @InvoiceId AND [InvoiceDetailId] = @InvoiceDetailId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00043,1,0,true,false )
+             ,new CursorDef("T00044", "SELECT [ProductStock], [ProductDescription], [ProductPrice] FROM [Product] WITH (UPDLOCK) WHERE [ProductId] = @ProductId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00044,1,0,true,false )
+             ,new CursorDef("T00045", "SELECT [ProductStock], [ProductDescription], [ProductPrice] FROM [Product] WITH (NOLOCK) WHERE [ProductId] = @ProductId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00045,1,0,true,false )
+             ,new CursorDef("T00046", "SELECT [InvoiceId], [InvoiceDate], [CustomerId] FROM [Invoice] WITH (UPDLOCK) WHERE [InvoiceId] = @InvoiceId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00046,1,0,true,false )
+             ,new CursorDef("T00047", "SELECT [InvoiceId], [InvoiceDate], [CustomerId] FROM [Invoice] WITH (NOLOCK) WHERE [InvoiceId] = @InvoiceId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00047,1,0,true,false )
+             ,new CursorDef("T00048", "SELECT [CustomerName], [CustomerTotalPurchases] FROM [Customer] WITH (NOLOCK) WHERE [CustomerId] = @CustomerId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00048,1,0,true,false )
+             ,new CursorDef("T000410", "SELECT COALESCE( T1.[InvoiceLastLineId], 0) AS InvoiceLastLineId FROM (SELECT COUNT(*) AS InvoiceLastLineId, [InvoiceId] FROM [InvoiceDetail] WITH (UPDLOCK) GROUP BY [InvoiceId] ) T1 WHERE T1.[InvoiceId] = @InvoiceId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000410,1,0,true,false )
+             ,new CursorDef("T000412", "SELECT COALESCE( T1.[InvoiceAmount], 0) AS InvoiceAmount FROM (SELECT SUM(T3.[ProductPrice] * CAST(T2.[InvoiceDetailQuantiity] AS decimal( 14, 5))) AS InvoiceAmount, T2.[InvoiceId] FROM ([InvoiceDetail] T2 WITH (UPDLOCK) INNER JOIN [Product] T3 WITH (UPDLOCK) ON T3.[ProductId] = T2.[ProductId]) GROUP BY T2.[InvoiceId] ) T1 WHERE T1.[InvoiceId] = @InvoiceId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000412,1,0,true,false )
+             ,new CursorDef("T000415", "SELECT TM1.[InvoiceId], TM1.[InvoiceDate], T4.[CustomerName], T4.[CustomerTotalPurchases], TM1.[CustomerId], COALESCE( T2.[InvoiceLastLineId], 0) AS InvoiceLastLineId, COALESCE( T3.[InvoiceAmount], 0) AS InvoiceAmount FROM ((([Invoice] TM1 WITH (NOLOCK) LEFT JOIN (SELECT COUNT(*) AS InvoiceLastLineId, [InvoiceId] FROM [InvoiceDetail] WITH (NOLOCK) GROUP BY [InvoiceId] ) T2 ON T2.[InvoiceId] = TM1.[InvoiceId]) LEFT JOIN (SELECT SUM(T6.[ProductPrice] * CAST(T5.[InvoiceDetailQuantiity] AS decimal( 14, 5))) AS InvoiceAmount, T5.[InvoiceId] FROM ([InvoiceDetail] T5 WITH (NOLOCK) INNER JOIN [Product] T6 WITH (NOLOCK) ON T6.[ProductId] = T5.[ProductId]) GROUP BY T5.[InvoiceId] ) T3 ON T3.[InvoiceId] = TM1.[InvoiceId]) INNER JOIN [Customer] T4 WITH (NOLOCK) ON T4.[CustomerId] = TM1.[CustomerId]) WHERE TM1.[InvoiceId] = @InvoiceId ORDER BY TM1.[InvoiceId]  OPTION (FAST 100)",true, GxErrorMask.GX_NOMASK, false, this,prmT000415,100,0,true,false )
+             ,new CursorDef("T000417", "SELECT COALESCE( T1.[InvoiceLastLineId], 0) AS InvoiceLastLineId FROM (SELECT COUNT(*) AS InvoiceLastLineId, [InvoiceId] FROM [InvoiceDetail] WITH (UPDLOCK) GROUP BY [InvoiceId] ) T1 WHERE T1.[InvoiceId] = @InvoiceId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000417,1,0,true,false )
+             ,new CursorDef("T000419", "SELECT COALESCE( T1.[InvoiceAmount], 0) AS InvoiceAmount FROM (SELECT SUM(T3.[ProductPrice] * CAST(T2.[InvoiceDetailQuantiity] AS decimal( 14, 5))) AS InvoiceAmount, T2.[InvoiceId] FROM ([InvoiceDetail] T2 WITH (UPDLOCK) INNER JOIN [Product] T3 WITH (UPDLOCK) ON T3.[ProductId] = T2.[ProductId]) GROUP BY T2.[InvoiceId] ) T1 WHERE T1.[InvoiceId] = @InvoiceId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000419,1,0,true,false )
+             ,new CursorDef("T000420", "SELECT [CustomerName], [CustomerTotalPurchases] FROM [Customer] WITH (NOLOCK) WHERE [CustomerId] = @CustomerId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000420,1,0,true,false )
+             ,new CursorDef("T000421", "SELECT [InvoiceId] FROM [Invoice] WITH (NOLOCK) WHERE [InvoiceId] = @InvoiceId  OPTION (FAST 1)",true, GxErrorMask.GX_NOMASK, false, this,prmT000421,1,0,true,false )
+             ,new CursorDef("T000422", "SELECT TOP 1 [InvoiceId] FROM [Invoice] WITH (NOLOCK) WHERE ( [InvoiceId] > @InvoiceId) ORDER BY [InvoiceId]  OPTION (FAST 1)",true, GxErrorMask.GX_NOMASK, false, this,prmT000422,1,0,true,true )
+             ,new CursorDef("T000423", "SELECT TOP 1 [InvoiceId] FROM [Invoice] WITH (NOLOCK) WHERE ( [InvoiceId] < @InvoiceId) ORDER BY [InvoiceId] DESC  OPTION (FAST 1)",true, GxErrorMask.GX_NOMASK, false, this,prmT000423,1,0,true,true )
+             ,new CursorDef("T000424", "SELECT [InvoiceId], [InvoiceDate], [CustomerId] FROM [Invoice] WITH (UPDLOCK) WHERE [InvoiceId] = @InvoiceId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000424,1,0,true,false )
+             ,new CursorDef("T000425", "INSERT INTO [Invoice] ([InvoiceDate], [CustomerId]) VALUES (@InvoiceDate, @CustomerId)", GxErrorMask.GX_NOMASK,prmT000425)
+             ,new CursorDef("T000426", "SELECT Ident_Current('[Invoice]') ",true, GxErrorMask.GX_NOMASK, false, this,prmT000426,1,0,true,false )
+             ,new CursorDef("T000427", "UPDATE [Invoice] SET [InvoiceDate]=@InvoiceDate, [CustomerId]=@CustomerId  WHERE [InvoiceId] = @InvoiceId", GxErrorMask.GX_NOMASK,prmT000427)
+             ,new CursorDef("T000428", "DELETE FROM [Invoice]  WHERE [InvoiceId] = @InvoiceId", GxErrorMask.GX_NOMASK,prmT000428)
+             ,new CursorDef("T000430", "SELECT COALESCE( T1.[InvoiceLastLineId], 0) AS InvoiceLastLineId FROM (SELECT COUNT(*) AS InvoiceLastLineId, [InvoiceId] FROM [InvoiceDetail] WITH (UPDLOCK) GROUP BY [InvoiceId] ) T1 WHERE T1.[InvoiceId] = @InvoiceId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000430,1,0,true,false )
+             ,new CursorDef("T000432", "SELECT COALESCE( T1.[InvoiceAmount], 0) AS InvoiceAmount FROM (SELECT SUM(T3.[ProductPrice] * CAST(T2.[InvoiceDetailQuantiity] AS decimal( 14, 5))) AS InvoiceAmount, T2.[InvoiceId] FROM ([InvoiceDetail] T2 WITH (UPDLOCK) INNER JOIN [Product] T3 WITH (UPDLOCK) ON T3.[ProductId] = T2.[ProductId]) GROUP BY T2.[InvoiceId] ) T1 WHERE T1.[InvoiceId] = @InvoiceId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000432,1,0,true,false )
+             ,new CursorDef("T000433", "SELECT [CustomerName], [CustomerTotalPurchases] FROM [Customer] WITH (NOLOCK) WHERE [CustomerId] = @CustomerId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000433,1,0,true,false )
+             ,new CursorDef("T000434", "SELECT [InvoiceId] FROM [Invoice] WITH (NOLOCK) ORDER BY [InvoiceId]  OPTION (FAST 100)",true, GxErrorMask.GX_NOMASK, false, this,prmT000434,100,0,true,false )
+             ,new CursorDef("T000435", "SELECT T1.[InvoiceId], T1.[InvoiceDetailId], T2.[ProductStock], T2.[ProductDescription], T2.[ProductPrice], T1.[InvoiceDetailQuantiity], T1.[ProductId] FROM ([InvoiceDetail] T1 WITH (NOLOCK) INNER JOIN [Product] T2 WITH (NOLOCK) ON T2.[ProductId] = T1.[ProductId]) WHERE T1.[InvoiceId] = @InvoiceId and T1.[InvoiceDetailId] = @InvoiceDetailId ORDER BY T1.[InvoiceId], T1.[InvoiceDetailId] ",true, GxErrorMask.GX_NOMASK, false, this,prmT000435,11,0,true,false )
+             ,new CursorDef("T000436", "SELECT [ProductStock], [ProductDescription], [ProductPrice] FROM [Product] WITH (NOLOCK) WHERE [ProductId] = @ProductId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000436,1,0,true,false )
+             ,new CursorDef("T000437", "SELECT [InvoiceId], [InvoiceDetailId] FROM [InvoiceDetail] WITH (NOLOCK) WHERE [InvoiceId] = @InvoiceId AND [InvoiceDetailId] = @InvoiceDetailId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000437,1,0,true,false )
+             ,new CursorDef("T000438", "INSERT INTO [InvoiceDetail] ([InvoiceId], [InvoiceDetailId], [InvoiceDetailQuantiity], [ProductId]) VALUES (@InvoiceId, @InvoiceDetailId, @InvoiceDetailQuantiity, @ProductId)", GxErrorMask.GX_NOMASK,prmT000438)
+             ,new CursorDef("T000439", "UPDATE [InvoiceDetail] SET [InvoiceDetailQuantiity]=@InvoiceDetailQuantiity, [ProductId]=@ProductId  WHERE [InvoiceId] = @InvoiceId AND [InvoiceDetailId] = @InvoiceDetailId", GxErrorMask.GX_NOMASK,prmT000439)
+             ,new CursorDef("T000440", "DELETE FROM [InvoiceDetail]  WHERE [InvoiceId] = @InvoiceId AND [InvoiceDetailId] = @InvoiceDetailId", GxErrorMask.GX_NOMASK,prmT000440)
+             ,new CursorDef("T000441", "SELECT [ProductStock], [ProductDescription], [ProductPrice] FROM [Product] WITH (NOLOCK) WHERE [ProductId] = @ProductId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000441,1,0,true,false )
+             ,new CursorDef("T000442", "UPDATE [Product] SET [ProductStock]=@ProductStock  WHERE [ProductId] = @ProductId", GxErrorMask.GX_NOMASK,prmT000442)
+             ,new CursorDef("T000443", "SELECT [InvoiceId], [InvoiceDetailId] FROM [InvoiceDetail] WITH (NOLOCK) WHERE [InvoiceId] = @InvoiceId ORDER BY [InvoiceId], [InvoiceDetailId] ",true, GxErrorMask.GX_NOMASK, false, this,prmT000443,11,0,true,false )
           };
        }
     }
@@ -4081,99 +4789,125 @@ namespace GeneXus.Programs {
                 ((int[]) buf[0])[0] = rslt.getInt(1) ;
                 ((short[]) buf[1])[0] = rslt.getShort(2) ;
                 ((short[]) buf[2])[0] = rslt.getShort(3) ;
-                ((decimal[]) buf[3])[0] = rslt.getDecimal(4) ;
-                ((int[]) buf[4])[0] = rslt.getInt(5) ;
+                ((int[]) buf[3])[0] = rslt.getInt(4) ;
                 break;
              case 1 :
                 ((int[]) buf[0])[0] = rslt.getInt(1) ;
                 ((short[]) buf[1])[0] = rslt.getShort(2) ;
                 ((short[]) buf[2])[0] = rslt.getShort(3) ;
-                ((decimal[]) buf[3])[0] = rslt.getDecimal(4) ;
-                ((int[]) buf[4])[0] = rslt.getInt(5) ;
+                ((int[]) buf[3])[0] = rslt.getInt(4) ;
                 break;
              case 2 :
-                ((String[]) buf[0])[0] = rslt.getString(1, 30) ;
-                ((short[]) buf[1])[0] = rslt.getShort(2) ;
+                ((short[]) buf[0])[0] = rslt.getShort(1) ;
+                ((String[]) buf[1])[0] = rslt.getString(2, 30) ;
                 ((decimal[]) buf[2])[0] = rslt.getDecimal(3) ;
                 break;
              case 3 :
-                ((int[]) buf[0])[0] = rslt.getInt(1) ;
-                ((DateTime[]) buf[1])[0] = rslt.getGXDate(2) ;
+                ((short[]) buf[0])[0] = rslt.getShort(1) ;
+                ((String[]) buf[1])[0] = rslt.getString(2, 30) ;
                 ((decimal[]) buf[2])[0] = rslt.getDecimal(3) ;
-                ((int[]) buf[3])[0] = rslt.getInt(4) ;
                 break;
              case 4 :
                 ((int[]) buf[0])[0] = rslt.getInt(1) ;
                 ((DateTime[]) buf[1])[0] = rslt.getGXDate(2) ;
-                ((decimal[]) buf[2])[0] = rslt.getDecimal(3) ;
-                ((int[]) buf[3])[0] = rslt.getInt(4) ;
+                ((int[]) buf[2])[0] = rslt.getInt(3) ;
                 break;
              case 5 :
+                ((int[]) buf[0])[0] = rslt.getInt(1) ;
+                ((DateTime[]) buf[1])[0] = rslt.getGXDate(2) ;
+                ((int[]) buf[2])[0] = rslt.getInt(3) ;
+                break;
+             case 6 :
                 ((String[]) buf[0])[0] = rslt.getString(1, 30) ;
                 ((decimal[]) buf[1])[0] = rslt.getDecimal(2) ;
                 break;
-             case 6 :
+             case 7 :
+                ((short[]) buf[0])[0] = rslt.getShort(1) ;
+                ((bool[]) buf[1])[0] = rslt.wasNull(1);
+                break;
+             case 8 :
+                ((decimal[]) buf[0])[0] = rslt.getDecimal(1) ;
+                ((bool[]) buf[1])[0] = rslt.wasNull(1);
+                break;
+             case 9 :
                 ((int[]) buf[0])[0] = rslt.getInt(1) ;
                 ((DateTime[]) buf[1])[0] = rslt.getGXDate(2) ;
                 ((String[]) buf[2])[0] = rslt.getString(3, 30) ;
                 ((decimal[]) buf[3])[0] = rslt.getDecimal(4) ;
-                ((decimal[]) buf[4])[0] = rslt.getDecimal(5) ;
-                ((int[]) buf[5])[0] = rslt.getInt(6) ;
-                break;
-             case 7 :
-                ((String[]) buf[0])[0] = rslt.getString(1, 30) ;
-                ((decimal[]) buf[1])[0] = rslt.getDecimal(2) ;
-                break;
-             case 8 :
-                ((int[]) buf[0])[0] = rslt.getInt(1) ;
-                break;
-             case 9 :
-                ((int[]) buf[0])[0] = rslt.getInt(1) ;
+                ((int[]) buf[4])[0] = rslt.getInt(5) ;
+                ((short[]) buf[5])[0] = rslt.getShort(6) ;
+                ((bool[]) buf[6])[0] = rslt.wasNull(6);
+                ((decimal[]) buf[7])[0] = rslt.getDecimal(7) ;
+                ((bool[]) buf[8])[0] = rslt.wasNull(7);
                 break;
              case 10 :
-                ((int[]) buf[0])[0] = rslt.getInt(1) ;
+                ((short[]) buf[0])[0] = rslt.getShort(1) ;
+                ((bool[]) buf[1])[0] = rslt.wasNull(1);
                 break;
              case 11 :
-                ((int[]) buf[0])[0] = rslt.getInt(1) ;
-                ((DateTime[]) buf[1])[0] = rslt.getGXDate(2) ;
-                ((decimal[]) buf[2])[0] = rslt.getDecimal(3) ;
-                ((int[]) buf[3])[0] = rslt.getInt(4) ;
+                ((decimal[]) buf[0])[0] = rslt.getDecimal(1) ;
+                ((bool[]) buf[1])[0] = rslt.wasNull(1);
+                break;
+             case 12 :
+                ((String[]) buf[0])[0] = rslt.getString(1, 30) ;
+                ((decimal[]) buf[1])[0] = rslt.getDecimal(2) ;
                 break;
              case 13 :
                 ((int[]) buf[0])[0] = rslt.getInt(1) ;
                 break;
-             case 16 :
-                ((String[]) buf[0])[0] = rslt.getString(1, 30) ;
-                ((decimal[]) buf[1])[0] = rslt.getDecimal(2) ;
-                break;
-             case 17 :
+             case 14 :
                 ((int[]) buf[0])[0] = rslt.getInt(1) ;
+                break;
+             case 15 :
+                ((int[]) buf[0])[0] = rslt.getInt(1) ;
+                break;
+             case 16 :
+                ((int[]) buf[0])[0] = rslt.getInt(1) ;
+                ((DateTime[]) buf[1])[0] = rslt.getGXDate(2) ;
+                ((int[]) buf[2])[0] = rslt.getInt(3) ;
                 break;
              case 18 :
                 ((int[]) buf[0])[0] = rslt.getInt(1) ;
+                break;
+             case 21 :
+                ((short[]) buf[0])[0] = rslt.getShort(1) ;
+                ((bool[]) buf[1])[0] = rslt.wasNull(1);
+                break;
+             case 22 :
+                ((decimal[]) buf[0])[0] = rslt.getDecimal(1) ;
+                ((bool[]) buf[1])[0] = rslt.wasNull(1);
+                break;
+             case 23 :
+                ((String[]) buf[0])[0] = rslt.getString(1, 30) ;
+                ((decimal[]) buf[1])[0] = rslt.getDecimal(2) ;
+                break;
+             case 24 :
+                ((int[]) buf[0])[0] = rslt.getInt(1) ;
+                break;
+             case 25 :
+                ((int[]) buf[0])[0] = rslt.getInt(1) ;
                 ((short[]) buf[1])[0] = rslt.getShort(2) ;
-                ((String[]) buf[2])[0] = rslt.getString(3, 30) ;
-                ((short[]) buf[3])[0] = rslt.getShort(4) ;
+                ((short[]) buf[2])[0] = rslt.getShort(3) ;
+                ((String[]) buf[3])[0] = rslt.getString(4, 30) ;
                 ((decimal[]) buf[4])[0] = rslt.getDecimal(5) ;
                 ((short[]) buf[5])[0] = rslt.getShort(6) ;
-                ((decimal[]) buf[6])[0] = rslt.getDecimal(7) ;
-                ((int[]) buf[7])[0] = rslt.getInt(8) ;
+                ((int[]) buf[6])[0] = rslt.getInt(7) ;
                 break;
-             case 19 :
-                ((String[]) buf[0])[0] = rslt.getString(1, 30) ;
-                ((short[]) buf[1])[0] = rslt.getShort(2) ;
+             case 26 :
+                ((short[]) buf[0])[0] = rslt.getShort(1) ;
+                ((String[]) buf[1])[0] = rslt.getString(2, 30) ;
                 ((decimal[]) buf[2])[0] = rslt.getDecimal(3) ;
                 break;
-             case 20 :
+             case 27 :
                 ((int[]) buf[0])[0] = rslt.getInt(1) ;
                 ((short[]) buf[1])[0] = rslt.getShort(2) ;
                 break;
-             case 24 :
-                ((String[]) buf[0])[0] = rslt.getString(1, 30) ;
-                ((short[]) buf[1])[0] = rslt.getShort(2) ;
+             case 31 :
+                ((short[]) buf[0])[0] = rslt.getShort(1) ;
+                ((String[]) buf[1])[0] = rslt.getString(2, 30) ;
                 ((decimal[]) buf[2])[0] = rslt.getDecimal(3) ;
                 break;
-             case 25 :
+             case 33 :
                 ((int[]) buf[0])[0] = rslt.getInt(1) ;
                 ((short[]) buf[1])[0] = rslt.getShort(2) ;
                 break;
@@ -4225,15 +4959,13 @@ namespace GeneXus.Programs {
                 stmt.SetParameter(1, (int)parms[0]);
                 break;
              case 12 :
-                stmt.SetParameter(1, (DateTime)parms[0]);
-                stmt.SetParameter(2, (decimal)parms[1]);
-                stmt.SetParameter(3, (int)parms[2]);
+                stmt.SetParameter(1, (int)parms[0]);
+                break;
+             case 13 :
+                stmt.SetParameter(1, (int)parms[0]);
                 break;
              case 14 :
-                stmt.SetParameter(1, (DateTime)parms[0]);
-                stmt.SetParameter(2, (decimal)parms[1]);
-                stmt.SetParameter(3, (int)parms[2]);
-                stmt.SetParameter(4, (int)parms[3]);
+                stmt.SetParameter(1, (int)parms[0]);
                 break;
              case 15 :
                 stmt.SetParameter(1, (int)parms[0]);
@@ -4241,39 +4973,62 @@ namespace GeneXus.Programs {
              case 16 :
                 stmt.SetParameter(1, (int)parms[0]);
                 break;
-             case 18 :
-                stmt.SetParameter(1, (int)parms[0]);
-                stmt.SetParameter(2, (short)parms[1]);
+             case 17 :
+                stmt.SetParameter(1, (DateTime)parms[0]);
+                stmt.SetParameter(2, (int)parms[1]);
                 break;
              case 19 :
-                stmt.SetParameter(1, (int)parms[0]);
+                stmt.SetParameter(1, (DateTime)parms[0]);
+                stmt.SetParameter(2, (int)parms[1]);
+                stmt.SetParameter(3, (int)parms[2]);
                 break;
              case 20 :
                 stmt.SetParameter(1, (int)parms[0]);
-                stmt.SetParameter(2, (short)parms[1]);
                 break;
              case 21 :
                 stmt.SetParameter(1, (int)parms[0]);
-                stmt.SetParameter(2, (short)parms[1]);
-                stmt.SetParameter(3, (short)parms[2]);
-                stmt.SetParameter(4, (decimal)parms[3]);
-                stmt.SetParameter(5, (int)parms[4]);
                 break;
              case 22 :
-                stmt.SetParameter(1, (short)parms[0]);
-                stmt.SetParameter(2, (decimal)parms[1]);
-                stmt.SetParameter(3, (int)parms[2]);
-                stmt.SetParameter(4, (int)parms[3]);
-                stmt.SetParameter(5, (short)parms[4]);
+                stmt.SetParameter(1, (int)parms[0]);
                 break;
              case 23 :
                 stmt.SetParameter(1, (int)parms[0]);
-                stmt.SetParameter(2, (short)parms[1]);
-                break;
-             case 24 :
-                stmt.SetParameter(1, (int)parms[0]);
                 break;
              case 25 :
+                stmt.SetParameter(1, (int)parms[0]);
+                stmt.SetParameter(2, (short)parms[1]);
+                break;
+             case 26 :
+                stmt.SetParameter(1, (int)parms[0]);
+                break;
+             case 27 :
+                stmt.SetParameter(1, (int)parms[0]);
+                stmt.SetParameter(2, (short)parms[1]);
+                break;
+             case 28 :
+                stmt.SetParameter(1, (int)parms[0]);
+                stmt.SetParameter(2, (short)parms[1]);
+                stmt.SetParameter(3, (short)parms[2]);
+                stmt.SetParameter(4, (int)parms[3]);
+                break;
+             case 29 :
+                stmt.SetParameter(1, (short)parms[0]);
+                stmt.SetParameter(2, (int)parms[1]);
+                stmt.SetParameter(3, (int)parms[2]);
+                stmt.SetParameter(4, (short)parms[3]);
+                break;
+             case 30 :
+                stmt.SetParameter(1, (int)parms[0]);
+                stmt.SetParameter(2, (short)parms[1]);
+                break;
+             case 31 :
+                stmt.SetParameter(1, (int)parms[0]);
+                break;
+             case 32 :
+                stmt.SetParameter(1, (short)parms[0]);
+                stmt.SetParameter(2, (int)parms[1]);
+                break;
+             case 33 :
                 stmt.SetParameter(1, (int)parms[0]);
                 break;
        }

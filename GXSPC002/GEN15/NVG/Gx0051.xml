@@ -113,16 +113,27 @@
 <VarId>Cinvoicedetailquantiity</VarId>
 <VarName>&amp;cInvoiceDetailQuantiity</VarName></Variable></Condition>
 <Condition>
+<Token>(</Token>
+<Sp></Sp>
 <Attribute>
-<AttriId>19</AttriId>
-<AttriName>InvoiceDetailAmount</AttriName>
-<Description>Invoice Detail Amount</Description></Attribute>
+<AttriId>13</AttriId>
+<AttriName>ProductPrice</AttriName>
+<Description>Product Price</Description></Attribute>
+<Sp></Sp>
+<Token>*</Token>
+<Sp></Sp>
+<Attribute>
+<AttriId>18</AttriId>
+<AttriName>InvoiceDetailQuantiity</AttriName>
+<Description>Invoice Detail Quantiity</Description></Attribute>
+<Token>)</Token>
 <Sp></Sp>
 <Token>&gt;=</Token>
 <Sp></Sp>
 <Variable>
 <VarId>Cinvoicedetailamount</VarId>
 <VarName>&amp;cInvoiceDetailAmount</VarName></Variable></Condition></NonOptimizedWhere>
+<JoinLocation>1</JoinLocation>
 <NavigationTree>
 <Table>
 <TableId>5</TableId>
@@ -138,7 +149,18 @@
 <AttriId>17</AttriId>
 <AttriName>InvoiceDetailId</AttriName>
 <Description>Detail Identifier</Description></Attribute></KeyAttributes>
-<Tables></Tables></Table></NavigationTree>
+<Tables>
+<Table>
+<TableId>3</TableId>
+<TableName>Product</TableName>
+<Description>Product</Description>
+<RecordsToRead>one</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>10</AttriId>
+<AttriName>ProductId</AttriName>
+<Description>Product Identifier</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table></Tables></Table></NavigationTree>
 <TablesToUpdate></TablesToUpdate>
 <Formulas>
 <VerticalFormulas></VerticalFormulas>

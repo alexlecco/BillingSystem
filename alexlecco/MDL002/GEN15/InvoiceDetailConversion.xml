@@ -6,16 +6,27 @@
 <TableName>InvoiceDetail</TableName>
 <Description>Detail</Description></Table>
 <ReorgCls>c</ReorgCls>
-<ReorgCode>new</ReorgCode>
-<ReorgMsg>InvoiceDetail is new</ReorgMsg>
-<ReorgAction>*</ReorgAction>
+<ReorgCode>pk</ReorgCode>
+<ReorgMsg>InvoiceDetail needs conversion</ReorgMsg>
+<ReorgAction>#</ReorgAction>
 <TableAttributes>
 <AttrisInTable>
 <Attribute>
 <AttriId>14</AttriId>
 <AttriName>InvoiceId</AttriName>
 <Description>Invoice Id</Description>
-<TakesValueFrom></TakesValueFrom>
+<TakesValueFrom>
+<Table>
+<TableId>5</TableId>
+<TableName>InvoiceDetail</TableName>
+<Description>Detail</Description></Table>
+<FromValue>
+<Token>.</Token>
+<Sp></Sp>
+<Attribute>
+<AttriId>14</AttriId>
+<AttriName>InvoiceId</AttriName>
+<Description>Invoice Id</Description></Attribute></FromValue></TakesValueFrom>
 <OnPrimaryKey>Yes</OnPrimaryKey>
 <AttriType>
 <DataType>N</DataType>
@@ -35,7 +46,18 @@
 <AttriId>17</AttriId>
 <AttriName>InvoiceDetailId</AttriName>
 <Description>Detail Identifier</Description>
-<TakesValueFrom></TakesValueFrom>
+<TakesValueFrom>
+<Table>
+<TableId>5</TableId>
+<TableName>InvoiceDetail</TableName>
+<Description>Detail</Description></Table>
+<FromValue>
+<Token>.</Token>
+<Sp></Sp>
+<Attribute>
+<AttriId>17</AttriId>
+<AttriName>InvoiceDetailId</AttriName>
+<Description>Detail Identifier</Description></Attribute></FromValue></TakesValueFrom>
 <OnPrimaryKey>Yes</OnPrimaryKey>
 <AttriType>
 <DataType>N</DataType>
@@ -55,7 +77,18 @@
 <AttriId>10</AttriId>
 <AttriName>ProductId</AttriName>
 <Description>Product Identifier</Description>
-<TakesValueFrom></TakesValueFrom>
+<TakesValueFrom>
+<Table>
+<TableId>5</TableId>
+<TableName>InvoiceDetail</TableName>
+<Description>Detail</Description></Table>
+<FromValue>
+<Token>.</Token>
+<Sp></Sp>
+<Attribute>
+<AttriId>10</AttriId>
+<AttriName>ProductId</AttriName>
+<Description>Product Identifier</Description></Attribute></FromValue></TakesValueFrom>
 <AttriType>
 <DataType>N</DataType>
 <Presicion>6</Presicion>
@@ -74,7 +107,18 @@
 <AttriId>18</AttriId>
 <AttriName>InvoiceDetailQuantiity</AttriName>
 <Description>Invoice Detail Quantiity</Description>
-<TakesValueFrom></TakesValueFrom>
+<TakesValueFrom>
+<Table>
+<TableId>5</TableId>
+<TableName>InvoiceDetail</TableName>
+<Description>Detail</Description></Table>
+<FromValue>
+<Token>.</Token>
+<Sp></Sp>
+<Attribute>
+<AttriId>18</AttriId>
+<AttriName>InvoiceDetailQuantiity</AttriName>
+<Description>Invoice Detail Quantiity</Description></Attribute></FromValue></TakesValueFrom>
 <AttriType>
 <DataType>N</DataType>
 <Presicion>3</Presicion>
@@ -88,12 +132,12 @@
 <Value>No</Value></Property>
 <Property>
 <Name>AllowNulls</Name>
-<Value>No</Value></Property></Properties></AttriType></Attribute>
+<Value>No</Value></Property></Properties></AttriType></Attribute></AttrisInTable>
+<AttrisNoLongerInTable>
 <Attribute>
 <AttriId>19</AttriId>
 <AttriName>InvoiceDetailAmount</AttriName>
 <Description>Invoice Detail Amount</Description>
-<TakesValueFrom></TakesValueFrom>
 <AttriType>
 <DataType>N</DataType>
 <Presicion>9</Presicion>
@@ -107,9 +151,26 @@
 <Value>No</Value></Property>
 <Property>
 <Name>AllowNulls</Name>
-<Value>No</Value></Property></Properties></AttriType></Attribute></AttrisInTable>
-<AttrisNoLongerInTable></AttrisNoLongerInTable>
+<Value>No</Value></Property></Properties></AttriType>
+<AttriChangeType>del</AttriChangeType></Attribute></AttrisNoLongerInTable>
 <AttrisInManyTables></AttrisInManyTables></TableAttributes>
+<NavigationTree>
+<Table>
+<TableId>5</TableId>
+<TableName>InvoiceDetail</TableName>
+<Description>Detail</Description>
+<RecordsToRead>many</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>14</AttriId>
+<AttriName>InvoiceId</AttriName>
+<Description>Invoice Id</Description></Attribute>
+<Attribute>
+<AttriId>17</AttriId>
+<AttriName>InvoiceDetailId</AttriName>
+<Description>Detail Identifier</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table></NavigationTree>
+<TablesToUpdate></TablesToUpdate>
 <TableIndices>
 <Indices>
 <Index>
@@ -160,10 +221,7 @@
 <AttriName>InvoiceId</AttriName>
 <Description>Invoice Id</Description></Attribute></Attributes></FKConstraint></FKConstraints>
 <Statements>
-<Statement>CREATE TABLE [InvoiceDetail] ([InvoiceId] int NOT NULL , [InvoiceDetailId] smallint NOT NULL , [ProductId] int NOT NULL , [InvoiceDetailQuantiity] smallint NOT NULL , [InvoiceDetailAmount] money NOT NULL , PRIMARY KEY([InvoiceId], [InvoiceDetailId])) </Statement>
-<Statement>CREATE NONCLUSTERED INDEX [IINVOICEDETAIL1] ON [InvoiceDetail] ([ProductId] )</Statement>
-<Statement>ALTER TABLE [InvoiceDetail] ADD CONSTRAINT [IINVOICEDETAIL2] FOREIGN KEY ([InvoiceId]) REFERENCES [Invoice] ([InvoiceId])</Statement>
-<Statement>ALTER TABLE [InvoiceDetail] ADD CONSTRAINT [IINVOICEDETAIL1] FOREIGN KEY ([ProductId]) REFERENCES [Product] ([ProductId])</Statement></Statements>
+<Statement>ALTER TABLE [InvoiceDetail] DROP COLUMN [InvoiceDetailAmount]</Statement></Statements>
 <NeedReorganizationProgram>False</NeedReorganizationProgram>
 <Warnings></Warnings>
 <Errors></Errors></ReorgSpec>

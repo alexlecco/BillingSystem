@@ -6,16 +6,27 @@
 <TableName>Invoice</TableName>
 <Description>Invoice</Description></Table>
 <ReorgCls>c</ReorgCls>
-<ReorgCode>new</ReorgCode>
-<ReorgMsg>Invoice is new</ReorgMsg>
-<ReorgAction>*</ReorgAction>
+<ReorgCode>pk</ReorgCode>
+<ReorgMsg>Invoice needs conversion</ReorgMsg>
+<ReorgAction>#</ReorgAction>
 <TableAttributes>
 <AttrisInTable>
 <Attribute>
 <AttriId>14</AttriId>
 <AttriName>InvoiceId</AttriName>
 <Description>Invoice Id</Description>
-<TakesValueFrom></TakesValueFrom>
+<TakesValueFrom>
+<Table>
+<TableId>4</TableId>
+<TableName>Invoice</TableName>
+<Description>Invoice</Description></Table>
+<FromValue>
+<Token>.</Token>
+<Sp></Sp>
+<Attribute>
+<AttriId>14</AttriId>
+<AttriName>InvoiceId</AttriName>
+<Description>Invoice Id</Description></Attribute></FromValue></TakesValueFrom>
 <OnPrimaryKey>Yes</OnPrimaryKey>
 <AttriType>
 <DataType>N</DataType>
@@ -35,7 +46,18 @@
 <AttriId>15</AttriId>
 <AttriName>InvoiceDate</AttriName>
 <Description>Invoice Date</Description>
-<TakesValueFrom></TakesValueFrom>
+<TakesValueFrom>
+<Table>
+<TableId>4</TableId>
+<TableName>Invoice</TableName>
+<Description>Invoice</Description></Table>
+<FromValue>
+<Token>.</Token>
+<Sp></Sp>
+<Attribute>
+<AttriId>15</AttriId>
+<AttriName>InvoiceDate</AttriName>
+<Description>Invoice Date</Description></Attribute></FromValue></TakesValueFrom>
 <AttriType>
 <DataType>D</DataType>
 <Presicion>8</Presicion>
@@ -54,7 +76,18 @@
 <AttriId>3</AttriId>
 <AttriName>CustomerId</AttriName>
 <Description>Customer Id</Description>
-<TakesValueFrom></TakesValueFrom>
+<TakesValueFrom>
+<Table>
+<TableId>4</TableId>
+<TableName>Invoice</TableName>
+<Description>Invoice</Description></Table>
+<FromValue>
+<Token>.</Token>
+<Sp></Sp>
+<Attribute>
+<AttriId>3</AttriId>
+<AttriName>CustomerId</AttriName>
+<Description>Customer Id</Description></Attribute></FromValue></TakesValueFrom>
 <AttriType>
 <DataType>N</DataType>
 <Presicion>6</Presicion>
@@ -68,12 +101,12 @@
 <Value>No</Value></Property>
 <Property>
 <Name>AllowNulls</Name>
-<Value>No</Value></Property></Properties></AttriType></Attribute>
+<Value>No</Value></Property></Properties></AttriType></Attribute></AttrisInTable>
+<AttrisNoLongerInTable>
 <Attribute>
 <AttriId>16</AttriId>
 <AttriName>InvoiceAmount</AttriName>
 <Description>Invoice Amount</Description>
-<TakesValueFrom></TakesValueFrom>
 <AttriType>
 <DataType>N</DataType>
 <Presicion>9</Presicion>
@@ -87,9 +120,22 @@
 <Value>No</Value></Property>
 <Property>
 <Name>AllowNulls</Name>
-<Value>No</Value></Property></Properties></AttriType></Attribute></AttrisInTable>
-<AttrisNoLongerInTable></AttrisNoLongerInTable>
+<Value>No</Value></Property></Properties></AttriType>
+<AttriChangeType>del</AttriChangeType></Attribute></AttrisNoLongerInTable>
 <AttrisInManyTables></AttrisInManyTables></TableAttributes>
+<NavigationTree>
+<Table>
+<TableId>4</TableId>
+<TableName>Invoice</TableName>
+<Description>Invoice</Description>
+<RecordsToRead>many</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>14</AttriId>
+<AttriName>InvoiceId</AttriName>
+<Description>Invoice Id</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table></NavigationTree>
+<TablesToUpdate></TablesToUpdate>
 <TableIndices>
 <Indices>
 <Index>
@@ -125,9 +171,7 @@
 <AttriName>CustomerId</AttriName>
 <Description>Customer Id</Description></Attribute></Attributes></FKConstraint></FKConstraints>
 <Statements>
-<Statement>CREATE TABLE [Invoice] ([InvoiceId] int NOT NULL  IDENTITY(1,1), [InvoiceDate] datetime NOT NULL , [CustomerId] int NOT NULL , [InvoiceAmount] money NOT NULL , PRIMARY KEY([InvoiceId])) </Statement>
-<Statement>CREATE NONCLUSTERED INDEX [IINVOICE1] ON [Invoice] ([CustomerId] )</Statement>
-<Statement>ALTER TABLE [Invoice] ADD CONSTRAINT [IINVOICE1] FOREIGN KEY ([CustomerId]) REFERENCES [Customer] ([CustomerId])</Statement></Statements>
+<Statement>ALTER TABLE [Invoice] DROP COLUMN [InvoiceAmount]</Statement></Statements>
 <NeedReorganizationProgram>False</NeedReorganizationProgram>
 <Warnings></Warnings>
 <Errors></Errors></ReorgSpec>

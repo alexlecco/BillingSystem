@@ -1,13 +1,13 @@
 spec_i([ trn,4,'Invoice','Invoice',[],eng,'10_1_6-46473' ]).
  
 struct_i(4,0,[],[]).
-struct_i(5,4,[ 14 ],[]).
+struct_i(5,4,[ 14,20,16,'GxBScreen' ],[ 20,16 ]).
  
 level_i(5,[ 5,[ [ 5,many ],[ 3,one ] ],[ 14,17 ],[],[],[],[ 14,17 ],'IINVOICEDETAIL',[ 5,[ [ [],14,14 ] ] ],[] ]).
-level_i(4,[ 4,[ [ 4,many ],[ 2,one ] ],[ 14 ],[],[],[],[ 14 ],'IINVOICE',[ 4,[] ],[] ]).
+level_i(4,[ 4,[ [ 4,many ],[ 2,one ],[ 2000,one ],[ 2001,one ] ],[ 14 ],[],[],[],[ 14 ],'IINVOICE',[ 4,[] ],[] ]).
  
 tw_i(5,[ [ 3,[ [ 5,10,10 ] ] ] ]).
-tw_i(4,[ [ 2,[ [ 4,3,3 ] ] ] ]).
+tw_i(4,[ [ 2,[ [ 4,3,3 ] ] ],[ 2000,[ [ 4,oe([ t(14,2) ]),14 ] ] ],[ 2001,[ [ 4,oe([ t(14,2) ]),14 ] ] ] ]).
  
 lwi_i(5,[ [] ]).
 lwi_i(4,[ [] ]).
@@ -15,14 +15,14 @@ lwi_i(4,[ [] ]).
  
  
  
-ta_i(5,[ [ [ 5,14 ],[ 5,17 ],[ 3,11 ],[ 3,12 ],[ 3,13 ],[ 5,18 ],[ 5,19 ],[ 5,10 ] ] ]).
-ta_i(4,[ [ [ 4,14 ],[ 4,15 ],[ 2,4 ],[ 2,7 ],[ 4,16 ],[ 4,3 ] ] ]).
+ta_i(5,[ [ [ 5,14 ],[ 5,17 ],[ 3,12 ],[ 3,11 ],[ 3,13 ],[ 5,18 ],[ 5,10 ] ] ]).
+ta_i(4,[ [ [ 4,14 ],[ 4,15 ],[ 2,4 ],[ 2,7 ],[ 4,3 ],[ 2000,se(20,[ [ 2000,20 ] ],[ t('coalesce(',1),t(20,2),t(',',7),t('0',3),t(')',4) ]) ],[ 2001,se(16,[ [ 2001,16 ] ],[ t('coalesce(',1),t(16,2),t(',',7),t('0',3),t(')',4) ]) ] ] ]).
  
-las_i(5,[ [ 14,17,10,11,12,13,18,19 ] ]).
-las_i(4,[ [ 14,'GxBScreen','Today',15,3,4,7,16 ] ]).
+las_i(5,[ [ 14,17,20,19,12,16,'GxBScreen',10,11,13,18 ] ]).
+las_i(4,[ [ 14,'GxBScreen','Today',15,3,4,7,20,16 ] ]).
  
-lac_i(5,[ [ 17,10,18,19 ] ]).
-lac_i(4,[ [ 14,15,3,16 ] ]).
+lac_i(5,[ [ 17,10,18 ] ]).
+lac_i(4,[ [ 14,15,3 ] ]).
  
  
 lits_i('Id',5,10).
@@ -188,24 +188,40 @@ rule_i(4,prompt([ 2,[ [ 4,3,3 ] ],[ 3 ],[ 3 ],[ t(o(13,'Gx0020'),28),t(3,2) ],[]
 rule_i(4,rule([ a(23,[ [ 3 ],[ t(o(13,'Gx0020'),28),t(3,2) ] ]) ],[],[],[ 3 ])).
 rule_i(4,prompt([ 4,[ [ [],14,14 ] ],[],[],[ t(o(13,'Gx0040'),28),t(14,2) ],[],n,[] ])).
 rule_i(4,rule([ a(23,[ [ 14 ],[ t(o(13,'Gx0040'),28),t(14,2) ] ]) ],[],[],[ 14 ])).
+rule_i(5,rule([ a(3,[ t(10,2) ]) ],[ t(update,1) ],[ update ],[ 10 ])).
 rule_i(0,rule([ a(22,[ 'Dlt','"Delete"','' ]) ],[],[],[])).
 rule_i(0,maingen(15)).
+rule_i(0,macro(17,serial(20,[ t('1',3) ]))).
 rule_i(4,rule([ a(1,msg([ t('"Field Invoice Date is out of range"',3) ],[ t('OutOfRange',3) ])) ],[ t('NOT',8),t('(',0),t('null(',1),t(15,2),t(')',4),t('.OR.',9),t(15,2),t(>=,10),t('ymdtod(',1),t('1753',3),t(',',7),t('01',3),t(',',7),t('01',3),t(')',4),t(')',4) ],[ insert,update ],[ 15 ])).
+rule_i(4,rule([ a(99,[ [ oe([ t(14,2) ]) ] ]) ],[],[ insert,update,delete ],[ oe([ t(14,2) ]) ])).
+rule_i(4,rule([ a(99,[ [ oe([ t(14,2) ]) ] ]) ],[],[ insert,update,delete ],[ oe([ t(14,2) ]) ])).
 rule_i(4,rule([ a(1,[ t('''No se permiten FACTURAS sin FECHA''',3) ]) ],[ t('null(',1),t(15,2),t(')',4) ],[ insert,update,delete ],[ 15 ])).
 rule_i(4,rule([ a(1,[ t('''La fecha es mayor a la del dia de hoy''',3) ]) ],[ t(15,2),t(>,10),t('Today',23) ],[ insert,update,delete ],[ 15,'Today' ])).
+rule_i(4,rule([ a(3,[ t(20,2) ]) ],[],[ insert,update,delete ],[ 20 ])).
 rule_i(4,rule([ a(19,[ [ 3 ],msg([ t('"No matching ''Customer''."',3) ],[ t('ForeignKeyNotFound',3) ]) ]) ],[],[ insert,update,delete ],[ 3 ])).
+rule_i(5,rule([ a(3,[ t(20,2) ]) ],[],[ insert,update,delete ],[ 20 ])).
 rule_i(5,rule([ a(19,[ [ 10 ],msg([ t('"No matching ''Product''."',3) ],[ t('ForeignKeyNotFound',3) ]) ]) ],[],[ insert,update,delete ],[ 10 ])).
  
 a_i(1,4,b,0,[],[ [],[ a(1,msg([ t('"Field Invoice Date is out of range"',3) ],[ t('OutOfRange',3) ])) ],[ t('NOT',8),t('(',0),t('null(',1),t(15,2),t(')',4),t('.OR.',9),t(15,2),t(>=,10),t('ymdtod(',1),t('1753',3),t(',',7),t('01',3),t(',',7),t('01',3),t(')',4),t(')',4) ] ]).
 a_i(2,4,f,15,[],[ [ insert ],[ t('Today',23),t('IF',17),t(insert,1),t('AND',9),t('null1(',1),t(15,2),t(')',4),t('AND',9),t('GxBScreen',23),t(=,10),t(0,3),t(';',18) ] ]).
 a_i(3,4,b,2,[],[ [],[ a(1,[ t('''No se permiten FACTURAS sin FECHA''',3) ]) ],[ t('null(',1),t(15,2),t(')',4) ] ]).
 a_i(4,4,b,3,[],[ [],[ a(1,[ t('''La fecha es mayor a la del dia de hoy''',3) ]) ],[ t(15,2),t(>,10),t('Today',23) ] ]).
-a_i(5,4,t,4,[],[ [ [ [],14,14 ] ],'IINVOICE',[] ]).
-a_i(6,4,r,2,[],[ [ [ 4,3,3 ] ],'ICUSTOMER',[] ]).
-a_i(7,5,t,5,[],[ [ [ [],14,14 ],[ [],17,17 ] ],'IINVOICEDETAIL',[] ]).
-a_i(8,5,r,3,[],[ [ [ 5,10,10 ] ],'IPRODUCT',[] ]).
-a_i(9,4,f,'GxBScreen',[],[ [],[ t('0',3) ] ]).
-a_i(10,4,f,'Today',[],[ [],[ t('today(',1),t(')',4) ] ]).
+a_i(5,5,f,16,[],[ [ insert,update,delete ],[ t('old(',1),t(16,2),t(')',4),t(+,5),t(19,2),t('IF',17),t(insert,1),t(';',18),t('old(',1),t(16,2),t(')',4),t(+,5),t(19,2),t(-,5),t('old(',1),t(19,2),t(')',4),t('IF',17),t(update,1),t(';',18),t('old(',1),t(16,2),t(')',4),t(-,5),t('old(',1),t(19,2),t(')',4),t('IF',17),t(delete,1),t(';',18) ] ]).
+a_i(6,5,f,19,[],[ [],[ t(13,2),t(*,6),t(18,2) ] ]).
+a_i(7,5,f,20,[],[ [ insert,update,delete ],[ t('old(',1),t(20,2),t(')',4),t(+,5),t('1',3),t('IF',17),t(insert,1),t(';',18),t('old(',1),t(20,2),t(')',4),t('IF',17),t(update,1),t(';',18),t('old(',1),t(20,2),t(')',4),t(-,5),t('1',3),t('IF',17),t(delete,1),t(';',18) ] ]).
+a_i(8,5,f,20,[],[ [ insert ],[ t('old(',1),t(20,2),t(')',4),t(+,5),t('1',3),t('IF',17),t(insert,1),t(';',18) ] ]).
+a_i(9,5,f,17,[],[ [ insert ],[ t(20,2),t('IF',17),t(insert,1),t('AND',9),t('GxBScreen',23),t(=,10),t(1,3),t(';',18) ] ]).
+a_i(10,5,f,19,[],[ [],[ t(13,2),t(*,6),t(18,2),t(';',18) ] ]).
+a_i(11,5,f,12,[],[ [],[ t('old(',1),t(12,2),t(')',4),t(-,5),t(18,2),t('IF',17),t(12,2),t(-,5),t(18,2),t(>=,10),t('0',3),t(';',18) ] ]).
+a_i(12,5,b,0,[],[ [ update ],[ a(3,[ t(10,2) ]) ],[ t(update,1) ] ]).
+a_i(13,4,t,4,[],[ [ [ [],14,14 ] ],'IINVOICE',[] ]).
+a_i(14,4,r,2,[],[ [ [ 4,3,3 ] ],'ICUSTOMER',[] ]).
+a_i(15,4,r,2000,[],[ [ [ 4,oe([ t(14,2) ]),14 ] ],'IINVOICE',[] ]).
+a_i(16,4,r,2001,[],[ [ [ 4,oe([ t(14,2) ]),14 ] ],'IINVOICE',[] ]).
+a_i(17,5,t,5,[],[ [ [ [],14,14 ],[ [],17,17 ] ],'IINVOICEDETAIL',[] ]).
+a_i(18,5,r,3,[],[ [ [ 5,10,10 ] ],'IPRODUCT',[] ]).
+a_i(19,4,f,'GxBScreen',[],[ [],[ t('0',3) ] ]).
+a_i(20,4,f,'Today',[],[ [],[ t('today(',1),t(')',4) ] ]).
  
 v_i(b,i,1,15).
 v_i(b,o,1,[]).
@@ -217,41 +233,68 @@ v_i(b,o,3,[]).
 v_i(b,i,4,15).
 v_i(b,i,4,'Today').
 v_i(b,o,4,[]).
-v_i(t,i,5,14).
-v_i(t,o,5,15).
-v_i(t,o,5,16).
-v_i(t,o,5,3).
-v_i(r,i,6,3).
-v_i(r,o,6,4).
-v_i(r,o,6,7).
-v_i(t,i,7,14).
-v_i(t,i,7,17).
-v_i(t,o,7,18).
-v_i(t,o,7,19).
-v_i(t,o,7,10).
-v_i(r,i,8,10).
-v_i(r,o,8,11).
-v_i(r,o,8,12).
-v_i(r,o,8,13).
-v_i(f,i,9,[]).
-v_i(f,o,9,'GxBScreen').
-v_i(f,i,10,[]).
-v_i(f,o,10,'Today').
+v_i(f,i,5,19).
+v_i(f,o,5,16).
+v_i(f,i,6,13).
+v_i(f,i,6,18).
+v_i(f,o,6,19).
+v_i(f,i,7,18).
+v_i(f,o,7,20).
+v_i(f,o,8,20).
+v_i(f,i,9,20).
+v_i(f,i,9,'GxBScreen').
+v_i(f,o,9,17).
+v_i(f,i,10,13).
+v_i(f,i,10,18).
+v_i(f,o,10,19).
+v_i(f,i,11,12).
+v_i(f,i,11,18).
+v_i(f,o,11,12).
+v_i(b,i,12,[]).
+v_i(b,o,12,[]).
+v_i(t,i,13,14).
+v_i(t,o,13,15).
+v_i(t,o,13,3).
+v_i(r,i,14,3).
+v_i(r,o,14,4).
+v_i(r,o,14,7).
+v_i(r,i,15,14).
+v_i(r,o,15,20).
+v_i(r,i,16,14).
+v_i(r,o,16,16).
+v_i(t,i,17,14).
+v_i(t,i,17,17).
+v_i(t,o,17,18).
+v_i(t,o,17,10).
+v_i(r,i,18,10).
+v_i(r,o,18,12).
+v_i(r,o,18,11).
+v_i(r,o,18,13).
+v_i(f,i,8,[]).
+v_i(f,i,19,[]).
+v_i(f,o,19,'GxBScreen').
+v_i(f,i,20,[]).
+v_i(f,o,20,'Today').
  
+ca_i(11,12).
+ca_i(8,20).
+ca_i(7,20).
+ca_i(5,16).
 ca_i(2,15).
  
 tbl_to_delete_i(4,[ 5,[ [ 4,14,14 ] ],d,'IINVOICEDETAIL',[ [ 5,14 ],[ 5,17 ] ],[ 14,17 ] ]).
  
  
  
+attri_i(19,[ 'InvoiceDetailAmount',int,9,2,'ZZZZZ9.99',0,'Invoice Detail Amount','',0 ]).
 attri_i(13,[ 'ProductPrice',int,9,2,'ZZZZZ9.99',0,'Product Price','',0 ]).
 attri_i(12,[ 'ProductStock',int,4,0,'ZZZ9',0,'Product Stock','',0 ]).
 attri_i(11,[ 'ProductDescription',char,30,0,'',0,'Product Description','',0 ]).
-attri_i(19,[ 'InvoiceDetailAmount',int,9,2,'ZZZZZ9.99',0,'Invoice Detail Amount','',0 ]).
 attri_i(18,[ 'InvoiceDetailQuantiity',int,3,0,'ZZ9',0,'Invoice Detail Quantiity','',0 ]).
 attri_i(10,[ 'ProductId',int,6,0,'ZZZZZ9',0,'Product Identifier','',0 ]).
 attri_i(17,[ 'InvoiceDetailId',int,2,0,'Z9',0,'Detail Identifier','',0 ]).
 attri_i(16,[ 'InvoiceAmount',int,9,2,'ZZZZZ9.99',0,'Invoice Amount','',0 ]).
+attri_i(20,[ 'InvoiceLastLineId',int,4,0,'ZZZ9',0,'Invoice Last Line Id','',0 ]).
 attri_i(7,[ 'CustomerTotalPurchases',int,9,2,'ZZZZZ9.99',0,'Customer Total Purchases','',0 ]).
 attri_i(4,[ 'CustomerName',char,30,0,'',0,'Customer Name','',0 ]).
 attri_i(3,[ 'CustomerId',int,6,0,'ZZZZZ9',0,'Customer Id','',0 ]).
@@ -262,31 +305,53 @@ attri_i('Today',[ 'Gx_date',date,8,0,'99/99/99',1,'','',6 ]).
 attri_i('Gxremove',[ 'GxRemove',int,1,0,'9',0,'Gx Remove','',5 ]).
 attri_i('Mode',[ 'Gx_mode',char,3,0,'@!',1,'','',2 ]).
  
+table_i(2001,[ 'Invoice',[ 16,14 ],'Invoice','Invoice' ]).
+table_i(2000,[ 'Invoice',[ 20,14 ],'Invoice','Invoice' ]).
 table_i(2,[ 'Customer',[ 3,4,7 ],'Customer','Customer' ]).
-table_i(4,[ 'Invoice',[ 14,15,3,16 ],'Invoice','Invoice' ]).
+table_i(4,[ 'Invoice',[ 14,15,3 ],'Invoice','Invoice' ]).
 table_i(3,[ 'Product',[ 10,11,12,13 ],'Product','Product' ]).
-table_i(5,[ 'InvoiceDetail',[ 14,17,10,18,19 ],'Detail','InvoiceDetail' ]).
+table_i(5,[ 'InvoiceDetail',[ 14,17,10,18 ],'Detail','InvoiceDetail' ]).
  
-index_i(4,[ 'IINVOICE',u,[ 14 ],'IInvoice' ]).
-index_i(2,[ 'ICUSTOMER',u,[ 3 ],'ICustomer' ]).
 index_i(5,[ 'IINVOICEDETAIL',u,[ 14,17 ],'IInvoiceDetail' ]).
 index_i(3,[ 'IPRODUCT',u,[ 10 ],'IProduct' ]).
+index_i(4,[ 'IINVOICE',u,[ 14 ],'IInvoice' ]).
+index_i(2,[ 'ICUSTOMER',u,[ 3 ],'ICustomer' ]).
+index_i(2000,[ 'IINVOICE',u,[ 14 ],'IInvoice' ]).
+index_i(2001,[ 'IINVOICE',u,[ 14 ],'IInvoice' ]).
+ 
+lv_i(2,2000,4).
+lv_i(2,2001,4).
+ 
+ 
+function_i(5,12,no,old,'old(',[ 12 ],0,12,[ 2 ]).
+function_i(5,20,no,old,'old(',[ 20 ],2,20,[ 2 ]).
+function_i(5,20,no,old,'old(',[ 20 ],1,20,[ 2 ]).
+function_i(5,20,no,old,'old(',[ 20 ],0,20,[ 2 ]).
+function_i(5,16,no,old,'old(',[ 19 ],4,19,[ 2 ]).
+function_i(5,16,no,old,'old(',[ 16 ],3,16,[ 2 ]).
+function_i(5,16,no,old,'old(',[ 19 ],2,19,[ 2 ]).
+function_i(5,16,no,old,'old(',[ 16 ],1,16,[ 2 ]).
+function_i(5,16,no,old,'old(',[ 16 ],0,16,[ 2 ]).
+ 
+ 
+nav_view_i(2000,[ 20 ],[ 14 ],[ 14 ],[ [ 2000,[ [ 4,oe([ t(14,2) ]),14 ] ] ] ],[ [ [ 5,[ 'count(',18 ] ],[ 5,14 ] ],n,[ [ 5,many ] ],[],[],[ none ],[],[ 14 ],[] ]).
+nav_view_i(2001,[ 16 ],[ 14 ],[ 14 ],[ [ 2001,[ [ 4,oe([ t(14,2) ]),14 ] ] ] ],[ [ [ 5,[ 'sum(',se(19,[ [ 3,13 ],[ 5,18 ] ],[ t(13,2),t(*,6),t(18,2) ]) ] ],[ 5,14 ] ],n,[ [ 5,many ],[ 3,one ] ],[ [ 3,[ [ 5,10,10 ] ] ] ],[],[ none ],[],[ 14 ],[] ]).
+ 
+agg_def_i(20,[ t('0',3) ]).
+agg_def_i(16,[ t('0',3) ]).
+ 
+for_ver_i(4,5,20,'count(',[ t(18,2) ],[],[ t('0',3) ]).
+for_ver_i(4,5,16,'sum(',[ t(19,2) ],[],[ t('0',3) ]).
  
  
  
- 
- 
- 
- 
- 
- 
- 
-upd_i(4,4,i,[ [ 15,16,3 ],[],'IINVOICE',[ [ [],14,14 ] ] ]).
-upd_i(4,4,u,[ [ 15,16,3 ],[],'IINVOICE',[] ]).
+upd_i(4,4,i,[ [ 15,3 ],[],'IINVOICE',[ [ [],14,14 ] ] ]).
+upd_i(4,4,u,[ [ 15,3 ],[],'IINVOICE',[] ]).
 upd_i(4,4,d,[ [],[],'IINVOICE',[] ]).
-upd_i(5,5,i,[ [ 14,17,18,19,10 ],[],'IINVOICEDETAIL',[ [ [],14,14 ],[ [],17,17 ] ] ]).
-upd_i(5,5,u,[ [ 18,19,10 ],[],'IINVOICEDETAIL',[] ]).
+upd_i(5,5,i,[ [ 14,17,18,10 ],[],'IINVOICEDETAIL',[ [ [],14,14 ],[ [],17,17 ] ] ]).
+upd_i(5,5,u,[ [ 18,10 ],[],'IINVOICEDETAIL',[] ]).
 upd_i(5,5,d,[ [],[],'IINVOICEDETAIL',[] ]).
+upd_i(5,3,u,[ [ 12 ],[],'IPRODUCT',[ [ 5,10,10 ] ] ]).
  
  
  
@@ -970,7 +1035,7 @@ html_comp_i(66,'Coltitlefont',font('Arial',10,[ bold ]),d,[ font ]).
 html_comp_i(66,'Coltitlecolor',rgb(255,255,255),d,[ color ]).
 html_comp_i(66,'Horizontalalignment',right,d,[ str ]).
 html_comp_i(66,'Gxformat',0,d,[ num ]).
-html_comp_i(66,'Colvisible',-1,d,[ bool ]).
+html_comp_i(66,'Colvisible',-1,v,[ bool ]).
 html_comp_i(66,'Title','',d,[ str ]).
 html_comp_i(67,'Colattid',10,v,[ num ]).
 html_comp_i(67,'Controlname','Productid',d,[ str ]).
@@ -1166,6 +1231,7 @@ html_comp_i(81,'Buttonborderstyle',rounded,d,[ str ]).
  
  
  
+warn_gen_i(msg([],spc0033,[ '',att(2,10),' will be read-only in update mode.' ])).
  
 lit_i(8,1,bitmap('9fb193d9-64a4-4d30-b129-ff7c76830f7e-42'),[ ctlname('Btn_first') ]).
 lit_i(9,1,bitmap('9fb193d9-64a4-4d30-b129-ff7c76830f7e-60'),[ ctlname('Btn_first_separator') ]).
@@ -1269,6 +1335,14 @@ att_prop_i(2,7,'ATT_INITIAL_VALUE','',d).
 att_prop_i(2,7,'AttRegEx','',d).
 att_prop_i(2,7,'AttValidationFailedMsg','',d).
 att_prop_i(2,7,'FullName','CustomerTotalPurchases',v).
+att_prop_i(2,20,'ExternalName','InvoiceLastLineId',d).
+att_prop_i(2,20,'ExternalNamespace','BillingSystem',d).
+att_prop_i(2,20,'EmptyAsNull','Yes',v).
+att_prop_i(2,20,'AUTONUMBER','0',d).
+att_prop_i(2,20,'ATT_INITIAL_VALUE','',d).
+att_prop_i(2,20,'AttRegEx','',d).
+att_prop_i(2,20,'AttValidationFailedMsg','',d).
+att_prop_i(2,20,'FullName','InvoiceLastLineId',v).
 att_prop_i(2,16,'ExternalName','InvoiceAmount',d).
 att_prop_i(2,16,'ExternalNamespace','BillingSystem',d).
 att_prop_i(2,16,'EmptyAsNull','Yes',d).
@@ -1337,39 +1411,49 @@ att_prop_i(2,19,'AttRegEx','',d).
 att_prop_i(2,19,'AttValidationFailedMsg','',d).
 att_prop_i(2,19,'FullName','InvoiceDetailAmount',v).
  
-tbl_prop_i(2,5,'AllDirSuper',[ [ 3,[ 10 ] ],[ 4,[ 14 ] ] ],v).
 tbl_prop_i(2,4,'AllDirSuper',[ [ 2,[ 3 ] ] ],v).
-tbl_prop_i(2,3,'DirSubor',[ [ 5,[ 10 ] ] ],v).
+tbl_prop_i(2,5,'AllDirSuper',[ [ 3,[ 10 ] ],[ 4,[ 14 ] ] ],v).
+tbl_prop_i(2,2001,'DirSubor',[ [ 5,[ 14 ] ] ],v).
+tbl_prop_i(2,2000,'DirSubor',[ [ 5,[ 14 ] ] ],v).
 tbl_prop_i(2,2,'DirSubor',[ [ 4,[ 3 ] ] ],v).
 tbl_prop_i(2,4,'DirSubor',[ [ 5,[ 14 ] ] ],v).
-tbl_prop_i(2,5,'DirSuper',[ [ 3,[ 10 ] ],[ 4,[ 14 ] ] ],v).
+tbl_prop_i(2,3,'DirSubor',[ [ 5,[ 10 ] ] ],v).
+tbl_prop_i(2,2001,'DirSuper',[ [ 2,[ 3 ] ] ],v).
+tbl_prop_i(2,2000,'DirSuper',[ [ 2,[ 3 ] ] ],v).
 tbl_prop_i(2,4,'DirSuper',[ [ 2,[ 3 ] ] ],v).
+tbl_prop_i(2,5,'DirSuper',[ [ 3,[ 10 ] ],[ 4,[ 14 ] ] ],v).
  
 tbl_att_prop_i(2,4,14,'AllowNulls',n).
 tbl_att_prop_i(2,4,14,'AUTONUMBER',y).
 tbl_att_prop_i(2,4,15,'AllowNulls',n).
 tbl_att_prop_i(2,4,3,'AllowNulls',n).
-tbl_att_prop_i(2,4,16,'AllowNulls',n).
 tbl_att_prop_i(2,5,17,'AllowNulls',n).
 tbl_att_prop_i(2,5,10,'AllowNulls',n).
 tbl_att_prop_i(2,5,18,'AllowNulls',n).
-tbl_att_prop_i(2,5,19,'AllowNulls',n).
 tbl_att_prop_i(2,5,14,'AllowNulls',n).
-tbl_att_prop_i(2,2,3,'AllowNulls',n).
-tbl_att_prop_i(2,2,3,'AUTONUMBER',y).
-tbl_att_prop_i(2,2,4,'AllowNulls',n).
-tbl_att_prop_i(2,2,7,'AllowNulls',n).
+tbl_att_prop_i(2,3,13,'AllowNulls',n).
 tbl_att_prop_i(2,3,10,'AllowNulls',n).
 tbl_att_prop_i(2,3,10,'AUTONUMBER',y).
 tbl_att_prop_i(2,3,11,'AllowNulls',n).
 tbl_att_prop_i(2,3,12,'AllowNulls',n).
-tbl_att_prop_i(2,3,13,'AllowNulls',n).
+tbl_att_prop_i(2,2,3,'AllowNulls',n).
+tbl_att_prop_i(2,2,3,'AUTONUMBER',y).
+tbl_att_prop_i(2,2,4,'AllowNulls',n).
+tbl_att_prop_i(2,2,7,'AllowNulls',n).
+tbl_att_prop_i(2,2000,14,'AllowNulls',n).
+tbl_att_prop_i(2,2000,14,'AUTONUMBER',y).
+tbl_att_prop_i(2,2001,14,'AllowNulls',n).
+tbl_att_prop_i(2,2001,14,'AUTONUMBER',y).
  
  
  
  
+a_alias_i([ 'count(',18 ],'InvoiceLastLineId').
+a_alias_i(se(20,[ [ 2000,20 ] ],[ t('coalesce(',1),t(20,2),t(',',7),t('0',3),t(')',4) ]),'InvoiceLastLineId').
+a_alias_i([ 'sum(',se(19,[ [ 3,13 ],[ 5,18 ] ],[ t(13,2),t(*,6),t(18,2) ]) ],'InvoiceAmount').
+a_alias_i(se(16,[ [ 2001,16 ] ],[ t('coalesce(',1),t(16,2),t(',',7),t('0',3),t(')',4) ]),'InvoiceAmount').
  
-trn_level_i(4,[ [ 14,15,3,4,7,16 ],'Invoice','Invoice','Invoice','',15 ]).
+trn_level_i(4,[ [ 14,15,3,4,7,20,16 ],'Invoice','Invoice','Invoice','',15 ]).
 trn_level_i(5,[ [ 17,10,11,12,13,18,19 ],'Detail','Detail','Detail','',11 ]).
  
  
@@ -1377,9 +1461,9 @@ trn_level_i(5,[ [ 17,10,11,12,13,18,19 ],'Detail','Detail','Detail','',11 ]).
  
  
  
-pgm_parm_i(web,0,'GX0040',[ [ int,6,0,0 ] ],[ [ 'V14',out,[] ] ]).
+pgm_parm_i(web,7,'GX0040',[ [ int,6,0,0 ] ],[ [ pInvoiceId,out,[] ] ]).
 pgm_parm_i(web,5,'GX0020',[ [ int,6,0,0 ] ],[ [ pCustomerId,out,[] ] ]).
-pgm_parm_i(web,0,'GX0051',[ [ int,6,0,0 ],[ int,2,0,0 ] ],[ [ 'InvoiceId',in,[] ],[ 'V17',out,[] ] ]).
+pgm_parm_i(web,8,'GX0051',[ [ int,6,0,0 ],[ int,2,0,0 ] ],[ [ pInvoiceId,in,[] ],[ pInvoiceDetailId,out,[] ] ]).
 pgm_parm_i(web,6,'GX0030',[ [ int,6,0,0 ] ],[ [ pProductId,out,[] ] ]).
  
  
