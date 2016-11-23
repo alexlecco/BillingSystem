@@ -1,3 +1,4 @@
+reorg_i.
  
  
  
@@ -82,5 +83,5 @@ lng_prop_i(1,'LangDateFormat','ENG',v).
 lng_prop_i(1,'LangTimeFormat','12',v).
 lng_prop_i(1,'LangDecimalPoint','.',v).
  
-ver_stamp('20161114.210142').
+ver_stamp('20161117.040016').
  
