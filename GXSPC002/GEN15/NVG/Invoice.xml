@@ -15,6 +15,15 @@
 <Message>
 <Token></Token>
 <Attribute>
+<AttriId>3</AttriId>
+<AttriName>CustomerId</AttriName>
+<Description>Customer Id</Description></Attribute>
+<Token> will be read-only in update mode.</Token></Message></Warning>
+<Warning>
+<MsgCode>spc0033</MsgCode>
+<Message>
+<Token></Token>
+<Attribute>
 <AttriId>10</AttriId>
 <AttriName>ProductId</AttriName>
 <Description>Product Identifier</Description></Attribute>
@@ -51,6 +60,7 @@
 <TableId>2</TableId>
 <TableName>Customer</TableName>
 <Description>Customer</Description>
+<Updated>Yes</Updated>
 <RecordsToRead>one</RecordsToRead>
 <KeyAttributes>
 <Attribute>
@@ -149,7 +159,18 @@
 <TableName>Invoice</TableName>
 <Description>Invoice</Description></Table>
 <TableAction>delete</TableAction>
-<AttrisToUpdate></AttrisToUpdate></TableToUpdate></TablesToUpdate>
+<AttrisToUpdate></AttrisToUpdate></TableToUpdate>
+<TableToUpdate>
+<Table>
+<TableId>2</TableId>
+<TableName>Customer</TableName>
+<Description>Customer</Description></Table>
+<TableAction>update</TableAction>
+<AttrisToUpdate>
+<Attribute>
+<AttriId>7</AttriId>
+<AttriName>CustomerTotalPurchases</AttriName>
+<Description>Customer Total Purchases</Description></Attribute></AttrisToUpdate></TableToUpdate></TablesToUpdate>
 <AfterInsertRules></AfterInsertRules>
 <AfterUpdateRules></AfterUpdateRules>
 <AfterDeleteRules></AfterDeleteRules>
