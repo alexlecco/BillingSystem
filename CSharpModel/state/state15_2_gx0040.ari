@@ -1,0 +1,17 @@
+current_obj_i(2,web,7).
+ 
+called_tree_i(13,7,13,3).
+ 
+ 
+ 
+ 
+ 
+ 
+ij_object_dependency(gx0040,[],[],[],7).
+ 
+ 
+obj_parms_i([ 'int aP0_pInvoiceId' ],[ [ 'Pinvoiceid',out ] ]).
+ 
+ 
+ 
+ 

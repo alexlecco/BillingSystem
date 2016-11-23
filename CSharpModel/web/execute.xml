@@ -13,4 +13,16 @@
     <ObjDesc>Customer</ObjDesc>
     <ObjLink>customer.aspx</ObjLink>
   </Object>
+  <Object>
+    <ObjCls>0</ObjCls>
+    <ObjName>Product</ObjName>
+    <ObjDesc>Product</ObjDesc>
+    <ObjLink>product.aspx</ObjLink>
+  </Object>
+  <Object>
+    <ObjCls>0</ObjCls>
+    <ObjName>Invoice</ObjName>
+    <ObjDesc>Invoice</ObjDesc>
+    <ObjLink>invoice.aspx</ObjLink>
+  </Object>
 </Objects>

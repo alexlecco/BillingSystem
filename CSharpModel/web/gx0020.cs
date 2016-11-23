@@ -2,7 +2,7 @@
                File: Gx0020
         Description: Selection List Customer
              Author: GeneXus C# Generator version 10_1_6-46473
-       Generated on: 11/16/2016 14:0:18.5
+       Generated on: 11/23/2016 16:35:42.22
        Program type: Callable routine
           Main DBMS: sqlserver
 */
@@ -496,6 +496,7 @@ namespace GeneXus.Programs {
                               A7CustomerTotalPurchases = context.localUtil.CToN( cgiGet( edtCustomerTotalPurchases_Internalname), ".", ",") ;
                               context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A7CustomerTotalPurchases", StringUtil.LTrim( StringUtil.Str( A7CustomerTotalPurchases, 9, 2)));
                               A1CountryId = (int)(context.localUtil.CToN( cgiGet( edtCountryId_Internalname), ".", ",")) ;
+                              n1CountryId = false ;
                               context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A1CountryId", StringUtil.LTrim( StringUtil.Str( (decimal)(A1CountryId), 6, 0)));
                               sEvtType = StringUtil.Right( sEvt, 1) ;
                               if ( StringUtil.StrCmp(sEvtType, ".") == 0 )
@@ -716,6 +717,7 @@ namespace GeneXus.Programs {
                context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A9CustomerBalance", StringUtil.LTrim( StringUtil.Str( A9CustomerBalance, 9, 2)));
                A1CountryId = H00052_A1CountryId[0] ;
                context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A1CountryId", StringUtil.LTrim( StringUtil.Str( (decimal)(A1CountryId), 6, 0)));
+               n1CountryId = H00052_n1CountryId[0] ;
                A7CustomerTotalPurchases = H00052_A7CustomerTotalPurchases[0] ;
                context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A7CustomerTotalPurchases", StringUtil.LTrim( StringUtil.Str( A7CustomerTotalPurchases, 9, 2)));
                A6CustomerGender = H00052_A6CustomerGender[0] ;
@@ -1416,7 +1418,7 @@ namespace GeneXus.Programs {
          idxLst = 1 ;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( Form.Jscriptsrc.Item(idxLst)), "?1401849");
+            context.AddJavascriptSource(StringUtil.RTrim( Form.Jscriptsrc.Item(idxLst)), "?16354273");
             idxLst = (int)(idxLst+1) ;
          }
          /* End function define_styles */
@@ -1425,7 +1427,7 @@ namespace GeneXus.Programs {
       protected void include_jscripts( )
       {
          context.AddJavascriptSource("messages.eng.js", "?46473");
-         context.AddJavascriptSource("gx0020.js", "?1401849");
+         context.AddJavascriptSource("gx0020.js", "?16354273");
          /* End function include_jscripts */
       }
 
@@ -1685,6 +1687,7 @@ namespace GeneXus.Programs {
          H00052_A8CustomerTotalPayments = new decimal[1] ;
          H00052_A9CustomerBalance = new decimal[1] ;
          H00052_A1CountryId = new int[1] ;
+         H00052_n1CountryId = new bool[] {false} ;
          H00052_A7CustomerTotalPurchases = new decimal[1] ;
          H00052_A6CustomerGender = new String[] {""} ;
          H00052_A5CustomerAddress = new String[] {""} ;
@@ -1720,7 +1723,7 @@ namespace GeneXus.Programs {
          pr_default = new DataStoreProvider(context, new GeneXus.Programs.gx0020__default(),
             new Object[][] {
                 new Object[] {
-               H00052_A8CustomerTotalPayments, H00052_A9CustomerBalance, H00052_A1CountryId, H00052_A7CustomerTotalPurchases, H00052_A6CustomerGender, H00052_A5CustomerAddress, H00052_A4CustomerName, H00052_A3CustomerId
+               H00052_A8CustomerTotalPayments, H00052_A9CustomerBalance, H00052_A1CountryId, H00052_n1CountryId, H00052_A7CustomerTotalPurchases, H00052_A6CustomerGender, H00052_A5CustomerAddress, H00052_A4CustomerName, H00052_A3CustomerId
                }
                , new Object[] {
                H00053_AGRID1_nRecordCount
@@ -1859,6 +1862,7 @@ namespace GeneXus.Programs {
       private bool wbLoad ;
       private bool Rfr0gs ;
       private bool wbErr ;
+      private bool n1CountryId ;
       private bool returnInSub ;
       private String AV5LinkSelection ;
       private GXMasterPage MasterPageObj ;
@@ -1872,6 +1876,7 @@ namespace GeneXus.Programs {
       private decimal[] H00052_A8CustomerTotalPayments ;
       private decimal[] H00052_A9CustomerBalance ;
       private int[] H00052_A1CountryId ;
+      private bool[] H00052_n1CountryId ;
       private decimal[] H00052_A7CustomerTotalPurchases ;
       private String[] H00052_A6CustomerGender ;
       private String[] H00052_A5CustomerAddress ;
@@ -1937,11 +1942,12 @@ namespace GeneXus.Programs {
                 ((decimal[]) buf[0])[0] = rslt.getDecimal(1) ;
                 ((decimal[]) buf[1])[0] = rslt.getDecimal(2) ;
                 ((int[]) buf[2])[0] = rslt.getInt(3) ;
-                ((decimal[]) buf[3])[0] = rslt.getDecimal(4) ;
-                ((String[]) buf[4])[0] = rslt.getString(5, 1) ;
-                ((String[]) buf[5])[0] = rslt.getString(6, 30) ;
-                ((String[]) buf[6])[0] = rslt.getString(7, 30) ;
-                ((int[]) buf[7])[0] = rslt.getInt(8) ;
+                ((bool[]) buf[3])[0] = rslt.wasNull(3);
+                ((decimal[]) buf[4])[0] = rslt.getDecimal(4) ;
+                ((String[]) buf[5])[0] = rslt.getString(5, 1) ;
+                ((String[]) buf[6])[0] = rslt.getString(6, 30) ;
+                ((String[]) buf[7])[0] = rslt.getString(7, 30) ;
+                ((int[]) buf[8])[0] = rslt.getInt(8) ;
                 break;
              case 1 :
                 ((int[]) buf[0])[0] = rslt.getInt(1) ;

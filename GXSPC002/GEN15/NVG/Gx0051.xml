@@ -1,0 +1,148 @@
+
+<ObjectSpec>
+<SpecVersion>10_1_6-46473</SpecVersion>
+<Object>
+<ObjCls>13</ObjCls>
+<ObjId>8</ObjId>
+<ObjName>Gx0051</ObjName>
+<ObjDesc>Selection List Detail</ObjDesc>
+<ObjPgmName>Gx0051</ObjPgmName>
+<ObjClsName>Web Panel</ObjClsName></Object>
+<Result>genreq</Result>
+<Warnings></Warnings>
+<Errors></Errors>
+<Generator>
+<GenId>15</GenId>
+<GenName>Default (C#)</GenName></Generator>
+<FormClass>HTML</FormClass>
+<Parameters>
+<Parameter>
+<IO>in</IO>
+<Variable>
+<VarId>Pinvoiceid</VarId>
+<VarName>&amp;pInvoiceId</VarName></Variable></Parameter>
+<Parameter>
+<IO>out</IO>
+<Variable>
+<VarId>Pinvoicedetailid</VarId>
+<VarName>&amp;pInvoiceDetailId</VarName></Variable></Parameter></Parameters>
+<StandAloneRules></StandAloneRules>
+<Event>
+<EventName>Start</EventName></Event>
+<Event>
+<EventName>Load</EventName>
+<LoadMethod>Auto</LoadMethod>
+<ImplicitForEach>
+<LevelType>For Each</LevelType>
+<LevelBeginRow>1</LevelBeginRow>
+<BaseTable>
+<Table>
+<TableId>5</TableId>
+<TableName>InvoiceDetail</TableName>
+<Description>Detail</Description></Table></BaseTable>
+<Order>
+<Attribute>
+<AttriId>14</AttriId>
+<AttriName>InvoiceId</AttriName>
+<Description>Invoice Id</Description></Attribute>
+<Token>,</Token>
+<Attribute>
+<AttriId>17</AttriId>
+<AttriName>InvoiceDetailId</AttriName>
+<Description>Detail Identifier</Description></Attribute></Order>
+<Condition></Condition>
+<IndexName>IINVOICEDETAIL</IndexName>
+<LevelOptions></LevelOptions>
+<OptimizedWhere>
+<StartFrom>
+<Condition>
+<Attribute>
+<AttriId>14</AttriId>
+<AttriName>InvoiceId</AttriName>
+<Description>Invoice Id</Description></Attribute>
+<Sp></Sp>
+<Token>=</Token>
+<Sp></Sp>
+<Variable>
+<VarId>Pinvoiceid</VarId>
+<VarName>&amp;pInvoiceId</VarName></Variable></Condition>
+<Condition>
+<Attribute>
+<AttriId>17</AttriId>
+<AttriName>InvoiceDetailId</AttriName>
+<Description>Detail Identifier</Description></Attribute>
+<Sp></Sp>
+<Token>&gt;=</Token>
+<Sp></Sp>
+<Variable>
+<VarId>Cinvoicedetailid</VarId>
+<VarName>&amp;cInvoiceDetailId</VarName></Variable></Condition></StartFrom>
+<LoopWhile>
+<Condition>
+<Attribute>
+<AttriId>14</AttriId>
+<AttriName>InvoiceId</AttriName>
+<Description>Invoice Id</Description></Attribute>
+<Sp></Sp>
+<Token>=</Token>
+<Sp></Sp>
+<Variable>
+<VarId>Pinvoiceid</VarId>
+<VarName>&amp;pInvoiceId</VarName></Variable></Condition></LoopWhile></OptimizedWhere>
+<NonOptimizedWhere>
+<Condition>
+<Attribute>
+<AttriId>10</AttriId>
+<AttriName>ProductId</AttriName>
+<Description>Product Identifier</Description></Attribute>
+<Sp></Sp>
+<Token>&gt;=</Token>
+<Sp></Sp>
+<Variable>
+<VarId>Cproductid</VarId>
+<VarName>&amp;cProductId</VarName></Variable></Condition>
+<Condition>
+<Attribute>
+<AttriId>18</AttriId>
+<AttriName>InvoiceDetailQuantiity</AttriName>
+<Description>Invoice Detail Quantiity</Description></Attribute>
+<Sp></Sp>
+<Token>&gt;=</Token>
+<Sp></Sp>
+<Variable>
+<VarId>Cinvoicedetailquantiity</VarId>
+<VarName>&amp;cInvoiceDetailQuantiity</VarName></Variable></Condition>
+<Condition>
+<Attribute>
+<AttriId>19</AttriId>
+<AttriName>InvoiceDetailAmount</AttriName>
+<Description>Invoice Detail Amount</Description></Attribute>
+<Sp></Sp>
+<Token>&gt;=</Token>
+<Sp></Sp>
+<Variable>
+<VarId>Cinvoicedetailamount</VarId>
+<VarName>&amp;cInvoiceDetailAmount</VarName></Variable></Condition></NonOptimizedWhere>
+<NavigationTree>
+<Table>
+<TableId>5</TableId>
+<TableName>InvoiceDetail</TableName>
+<Description>Detail</Description>
+<RecordsToRead>many</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>14</AttriId>
+<AttriName>InvoiceId</AttriName>
+<Description>Invoice Id</Description></Attribute>
+<Attribute>
+<AttriId>17</AttriId>
+<AttriName>InvoiceDetailId</AttriName>
+<Description>Detail Identifier</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table></NavigationTree>
+<TablesToUpdate></TablesToUpdate>
+<Formulas>
+<VerticalFormulas></VerticalFormulas>
+<AggSelFormulas></AggSelFormulas></Formulas></ImplicitForEach></Event>
+<Event>
+<EventName>Enter</EventName></Event>
+<Suggests></Suggests></ObjectSpec>

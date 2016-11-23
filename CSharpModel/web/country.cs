@@ -2,7 +2,7 @@
                File: Country
         Description: Country
              Author: GeneXus C# Generator version 10_1_6-46473
-       Generated on: 11/16/2016 14:0:15.27
+       Generated on: 11/23/2016 16:35:43.81
        Program type: Callable routine
           Main DBMS: sqlserver
 */
@@ -479,11 +479,13 @@ namespace GeneXus.Programs {
                   context.httpAjaxContext.ajax_rsp_assign_attri("", false, "GX_FocusControl", GX_FocusControl);
                   wbErr = true ;
                   A1CountryId = 0 ;
+                  n1CountryId = false ;
                   context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A1CountryId", StringUtil.LTrim( StringUtil.Str( (decimal)(A1CountryId), 6, 0)));
                }
                else
                {
                   A1CountryId = (int)(context.localUtil.CToN( cgiGet( edtCountryId_Internalname), ".", ",")) ;
+                  n1CountryId = false ;
                   context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A1CountryId", StringUtil.LTrim( StringUtil.Str( (decimal)(A1CountryId), 6, 0)));
                }
                A2CountryName = cgiGet( edtCountryName_Internalname) ;
@@ -507,6 +509,7 @@ namespace GeneXus.Programs {
                   Gx_mode = "DSP" ;
                   context.httpAjaxContext.ajax_rsp_assign_attri("", false, "Gx_mode", Gx_mode);
                   A1CountryId = (int)(NumberUtil.Val( GetNextPar( ), ".")) ;
+                  n1CountryId = false ;
                   context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A1CountryId", StringUtil.LTrim( StringUtil.Str( (decimal)(A1CountryId), 6, 0)));
                   getEqualNoModal( ) ;
                   Gx_mode = "DSP" ;
@@ -738,7 +741,7 @@ namespace GeneXus.Programs {
       protected void Load011( )
       {
          /* Using cursor T00014 */
-         pr_default.execute(2, new Object[] {A1CountryId});
+         pr_default.execute(2, new Object[] {n1CountryId, A1CountryId});
          if ( (pr_default.getStatus(2) != 101) )
          {
             RcdFound1 = 1 ;
@@ -760,7 +763,7 @@ namespace GeneXus.Programs {
          standaloneModal( ) ;
          if ( String.IsNullOrEmpty(StringUtil.RTrim( A2CountryName)) )
          {
-            GX_msglist.addItem("No se permiten paises sin nombre", 1, "");
+            GX_msglist.addItem("No se permiten PAISES sin NOMBRE", 1, "");
             AnyError = 1 ;
          }
       }
@@ -786,7 +789,7 @@ namespace GeneXus.Programs {
       protected void GetKey011( )
       {
          /* Using cursor T00015 */
-         pr_default.execute(3, new Object[] {A1CountryId});
+         pr_default.execute(3, new Object[] {n1CountryId, A1CountryId});
          if ( (pr_default.getStatus(3) != 101) )
          {
             RcdFound1 = 1 ;
@@ -801,13 +804,14 @@ namespace GeneXus.Programs {
       protected void getByPrimaryKey( )
       {
          /* Using cursor T00013 */
-         pr_default.execute(1, new Object[] {A1CountryId});
+         pr_default.execute(1, new Object[] {n1CountryId, A1CountryId});
          if ( (pr_default.getStatus(1) != 101) )
          {
             ZM011( 2) ;
             RcdFound1 = 1 ;
             A1CountryId = T00013_A1CountryId[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A1CountryId", StringUtil.LTrim( StringUtil.Str( (decimal)(A1CountryId), 6, 0)));
+            n1CountryId = T00013_n1CountryId[0] ;
             A2CountryName = T00013_A2CountryName[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A2CountryName", A2CountryName);
             Z1CountryId = A1CountryId ;
@@ -853,7 +857,7 @@ namespace GeneXus.Programs {
       {
          RcdFound1 = 0 ;
          /* Using cursor T00016 */
-         pr_default.execute(4, new Object[] {A1CountryId});
+         pr_default.execute(4, new Object[] {n1CountryId, A1CountryId});
          if ( (pr_default.getStatus(4) != 101) )
          {
             while ( (pr_default.getStatus(4) != 101) && ( ( T00016_A1CountryId[0] < A1CountryId ) ) )
@@ -864,6 +868,7 @@ namespace GeneXus.Programs {
             {
                A1CountryId = T00016_A1CountryId[0] ;
                context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A1CountryId", StringUtil.LTrim( StringUtil.Str( (decimal)(A1CountryId), 6, 0)));
+               n1CountryId = T00016_n1CountryId[0] ;
                RcdFound1 = 1 ;
             }
          }
@@ -874,7 +879,7 @@ namespace GeneXus.Programs {
       {
          RcdFound1 = 0 ;
          /* Using cursor T00017 */
-         pr_default.execute(5, new Object[] {A1CountryId});
+         pr_default.execute(5, new Object[] {n1CountryId, A1CountryId});
          if ( (pr_default.getStatus(5) != 101) )
          {
             while ( (pr_default.getStatus(5) != 101) && ( ( T00017_A1CountryId[0] > A1CountryId ) ) )
@@ -885,6 +890,7 @@ namespace GeneXus.Programs {
             {
                A1CountryId = T00017_A1CountryId[0] ;
                context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A1CountryId", StringUtil.LTrim( StringUtil.Str( (decimal)(A1CountryId), 6, 0)));
+               n1CountryId = T00017_n1CountryId[0] ;
                RcdFound1 = 1 ;
             }
          }
@@ -907,6 +913,7 @@ namespace GeneXus.Programs {
             else if ( A1CountryId != Z1CountryId )
             {
                A1CountryId = Z1CountryId ;
+               n1CountryId = false ;
                context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A1CountryId", StringUtil.LTrim( StringUtil.Str( (decimal)(A1CountryId), 6, 0)));
                GX_msglist.addItem(context.GetMessage( "GXM_getbeforeupd"), "CandidateKeyNotFound", 1, "COUNTRYID");
                AnyError = 1 ;
@@ -979,6 +986,7 @@ namespace GeneXus.Programs {
          if ( A1CountryId != Z1CountryId )
          {
             A1CountryId = Z1CountryId ;
+            n1CountryId = false ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A1CountryId", StringUtil.LTrim( StringUtil.Str( (decimal)(A1CountryId), 6, 0)));
             GX_msglist.addItem(context.GetMessage( "GXM_getbeforedlt"), 1, "COUNTRYID");
             AnyError = 1 ;
@@ -1117,7 +1125,7 @@ namespace GeneXus.Programs {
          if ( StringUtil.StrCmp(Gx_mode, "INS") != 0 )
          {
             /* Using cursor T00018 */
-            pr_default.execute(6, new Object[] {A1CountryId});
+            pr_default.execute(6, new Object[] {n1CountryId, A1CountryId});
             if ( (pr_default.getStatus(6) == 103) )
             {
                GX_msglist.addItem(context.GetMessage( "GXM_lock", new   object[]  {"Country"}), "RecordIsLocked", 1, "");
@@ -1160,6 +1168,7 @@ namespace GeneXus.Programs {
                      pr_default.execute(8);
                      A1CountryId = T000110_A1CountryId[0] ;
                      context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A1CountryId", StringUtil.LTrim( StringUtil.Str( (decimal)(A1CountryId), 6, 0)));
+                     n1CountryId = T000110_n1CountryId[0] ;
                      pr_default.close(8);
                      if ( AnyError == 0 )
                      {
@@ -1208,7 +1217,7 @@ namespace GeneXus.Programs {
                   if ( AnyError == 0 )
                   {
                      /* Using cursor T000111 */
-                     pr_default.execute(9, new Object[] {A2CountryName, A1CountryId});
+                     pr_default.execute(9, new Object[] {A2CountryName, n1CountryId, A1CountryId});
                      pr_default.close(9);
                      if ( (pr_default.getStatus(9) == 103) )
                      {
@@ -1264,7 +1273,7 @@ namespace GeneXus.Programs {
                {
                   /* No cascading delete specified. */
                   /* Using cursor T000112 */
-                  pr_default.execute(10, new Object[] {A1CountryId});
+                  pr_default.execute(10, new Object[] {n1CountryId, A1CountryId});
                   pr_default.close(10);
                   if ( AnyError == 0 )
                   {
@@ -1312,7 +1321,7 @@ namespace GeneXus.Programs {
          if ( AnyError == 0 )
          {
             /* Using cursor T000113 */
-            pr_default.execute(11, new Object[] {A1CountryId});
+            pr_default.execute(11, new Object[] {n1CountryId, A1CountryId});
             if ( (pr_default.getStatus(11) != 101) )
             {
                GX_msglist.addItem(context.GetMessage( "GXM_del", new   object[]  {"Customer"}), "CannotDeleteReferencedRecord", 1, "");
@@ -1369,6 +1378,7 @@ namespace GeneXus.Programs {
             RcdFound1 = 1 ;
             A1CountryId = T000114_A1CountryId[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A1CountryId", StringUtil.LTrim( StringUtil.Str( (decimal)(A1CountryId), 6, 0)));
+            n1CountryId = T000114_n1CountryId[0] ;
          }
          /* Load Subordinate Levels */
       }
@@ -1382,6 +1392,7 @@ namespace GeneXus.Programs {
             RcdFound1 = 1 ;
             A1CountryId = T000114_A1CountryId[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A1CountryId", StringUtil.LTrim( StringUtil.Str( (decimal)(A1CountryId), 6, 0)));
+            n1CountryId = T000114_n1CountryId[0] ;
          }
       }
 
@@ -1555,6 +1566,7 @@ namespace GeneXus.Programs {
       protected void InitAll011( )
       {
          A1CountryId = 0 ;
+         n1CountryId = false ;
          context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A1CountryId", StringUtil.LTrim( StringUtil.Str( (decimal)(A1CountryId), 6, 0)));
          InitializeNonKey011( ) ;
       }
@@ -1569,7 +1581,7 @@ namespace GeneXus.Programs {
          idxLst = 1 ;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( Form.Jscriptsrc.Item(idxLst)), "?1401587");
+            context.AddJavascriptSource(StringUtil.RTrim( Form.Jscriptsrc.Item(idxLst)), "?16354445");
             idxLst = (int)(idxLst+1) ;
          }
          /* End function define_styles */
@@ -1578,7 +1590,7 @@ namespace GeneXus.Programs {
       protected void include_jscripts( )
       {
          context.AddJavascriptSource("messages.eng.js", "?46473");
-         context.AddJavascriptSource("country.js", "?1401587");
+         context.AddJavascriptSource("country.js", "?16354445");
          /* End function include_jscripts */
       }
 
@@ -1670,6 +1682,7 @@ namespace GeneXus.Programs {
                                    String GX_Parm2 )
       {
          A1CountryId = GX_Parm1 ;
+         n1CountryId = false ;
          A2CountryName = GX_Parm2 ;
          context.wbHandled = 1 ;
          AfterKeyLoadScreen( ) ;
@@ -1747,18 +1760,26 @@ namespace GeneXus.Programs {
          EvtRowId = "" ;
          sEvtType = "" ;
          T00014_A1CountryId = new int[1] ;
+         T00014_n1CountryId = new bool[] {false} ;
          T00014_A2CountryName = new String[] {""} ;
          T00015_A1CountryId = new int[1] ;
+         T00015_n1CountryId = new bool[] {false} ;
          T00013_A1CountryId = new int[1] ;
+         T00013_n1CountryId = new bool[] {false} ;
          T00013_A2CountryName = new String[] {""} ;
          sMode1 = "" ;
          T00016_A1CountryId = new int[1] ;
+         T00016_n1CountryId = new bool[] {false} ;
          T00017_A1CountryId = new int[1] ;
+         T00017_n1CountryId = new bool[] {false} ;
          T00018_A1CountryId = new int[1] ;
+         T00018_n1CountryId = new bool[] {false} ;
          T00018_A2CountryName = new String[] {""} ;
          T000110_A1CountryId = new int[1] ;
+         T000110_n1CountryId = new bool[] {false} ;
          T000113_A3CustomerId = new int[1] ;
          T000114_A1CountryId = new int[1] ;
+         T000114_n1CountryId = new bool[] {false} ;
          sDynURL = "" ;
          FormProcess = "" ;
          GXt_char2 = "" ;
@@ -1921,22 +1942,31 @@ namespace GeneXus.Programs {
       private String GXt_char3 ;
       private bool entryPointCalled ;
       private bool wbErr ;
+      private bool n1CountryId ;
       private GxUnknownObjectCollection isValidOutput ;
       private GXMasterPage MasterPageObj ;
       private IGxDataStore dsDefault ;
       private IDataStoreProvider pr_default ;
       private int[] T00014_A1CountryId ;
+      private bool[] T00014_n1CountryId ;
       private String[] T00014_A2CountryName ;
       private int[] T00015_A1CountryId ;
+      private bool[] T00015_n1CountryId ;
       private int[] T00013_A1CountryId ;
+      private bool[] T00013_n1CountryId ;
       private String[] T00013_A2CountryName ;
       private int[] T00016_A1CountryId ;
+      private bool[] T00016_n1CountryId ;
       private int[] T00017_A1CountryId ;
+      private bool[] T00017_n1CountryId ;
       private int[] T00018_A1CountryId ;
+      private bool[] T00018_n1CountryId ;
       private String[] T00018_A2CountryName ;
       private int[] T000110_A1CountryId ;
+      private bool[] T000110_n1CountryId ;
       private int[] T000113_A3CustomerId ;
       private int[] T000114_A1CountryId ;
+      private bool[] T000114_n1CountryId ;
       private int[] T00012_A1CountryId ;
       private String[] T00012_A2CountryName ;
       private GXWebForm Form ;
@@ -2088,38 +2118,108 @@ namespace GeneXus.Programs {
        switch ( cursor )
        {
              case 0 :
-                stmt.SetParameter(1, (int)parms[0]);
+                if ( (bool)parms[0] )
+                {
+                   stmt.setNull( 1 , SqlDbType.Int );
+                }
+                else
+                {
+                   stmt.SetParameter(1, (int)parms[1]);
+                }
                 break;
              case 1 :
-                stmt.SetParameter(1, (int)parms[0]);
+                if ( (bool)parms[0] )
+                {
+                   stmt.setNull( 1 , SqlDbType.Int );
+                }
+                else
+                {
+                   stmt.SetParameter(1, (int)parms[1]);
+                }
                 break;
              case 2 :
-                stmt.SetParameter(1, (int)parms[0]);
+                if ( (bool)parms[0] )
+                {
+                   stmt.setNull( 1 , SqlDbType.Int );
+                }
+                else
+                {
+                   stmt.SetParameter(1, (int)parms[1]);
+                }
                 break;
              case 3 :
-                stmt.SetParameter(1, (int)parms[0]);
+                if ( (bool)parms[0] )
+                {
+                   stmt.setNull( 1 , SqlDbType.Int );
+                }
+                else
+                {
+                   stmt.SetParameter(1, (int)parms[1]);
+                }
                 break;
              case 4 :
-                stmt.SetParameter(1, (int)parms[0]);
+                if ( (bool)parms[0] )
+                {
+                   stmt.setNull( 1 , SqlDbType.Int );
+                }
+                else
+                {
+                   stmt.SetParameter(1, (int)parms[1]);
+                }
                 break;
              case 5 :
-                stmt.SetParameter(1, (int)parms[0]);
+                if ( (bool)parms[0] )
+                {
+                   stmt.setNull( 1 , SqlDbType.Int );
+                }
+                else
+                {
+                   stmt.SetParameter(1, (int)parms[1]);
+                }
                 break;
              case 6 :
-                stmt.SetParameter(1, (int)parms[0]);
+                if ( (bool)parms[0] )
+                {
+                   stmt.setNull( 1 , SqlDbType.Int );
+                }
+                else
+                {
+                   stmt.SetParameter(1, (int)parms[1]);
+                }
                 break;
              case 7 :
                 stmt.SetParameter(1, (String)parms[0]);
                 break;
              case 9 :
                 stmt.SetParameter(1, (String)parms[0]);
-                stmt.SetParameter(2, (int)parms[1]);
+                if ( (bool)parms[1] )
+                {
+                   stmt.setNull( 2 , SqlDbType.Int );
+                }
+                else
+                {
+                   stmt.SetParameter(2, (int)parms[2]);
+                }
                 break;
              case 10 :
-                stmt.SetParameter(1, (int)parms[0]);
+                if ( (bool)parms[0] )
+                {
+                   stmt.setNull( 1 , SqlDbType.Int );
+                }
+                else
+                {
+                   stmt.SetParameter(1, (int)parms[1]);
+                }
                 break;
              case 11 :
-                stmt.SetParameter(1, (int)parms[0]);
+                if ( (bool)parms[0] )
+                {
+                   stmt.setNull( 1 , SqlDbType.Int );
+                }
+                else
+                {
+                   stmt.SetParameter(1, (int)parms[1]);
+                }
                 break;
        }
     }

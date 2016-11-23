@@ -1,0 +1,114 @@
+
+<ObjectSpec>
+<SpecVersion>10_1_6-46473</SpecVersion>
+<Object>
+<ObjCls>13</ObjCls>
+<ObjId>6</ObjId>
+<ObjName>Gx0030</ObjName>
+<ObjDesc>Selection List Product</ObjDesc>
+<ObjPgmName>Gx0030</ObjPgmName>
+<ObjClsName>Web Panel</ObjClsName></Object>
+<Result>genreq</Result>
+<Warnings></Warnings>
+<Errors></Errors>
+<Generator>
+<GenId>15</GenId>
+<GenName>Default (C#)</GenName></Generator>
+<FormClass>HTML</FormClass>
+<Parameters>
+<Parameter>
+<IO>out</IO>
+<Variable>
+<VarId>Pproductid</VarId>
+<VarName>&amp;pProductId</VarName></Variable></Parameter></Parameters>
+<StandAloneRules></StandAloneRules>
+<Event>
+<EventName>Start</EventName></Event>
+<Event>
+<EventName>Load</EventName>
+<LoadMethod>Auto</LoadMethod>
+<ImplicitForEach>
+<LevelType>For Each</LevelType>
+<LevelBeginRow>1</LevelBeginRow>
+<BaseTable>
+<Table>
+<TableId>3</TableId>
+<TableName>Product</TableName>
+<Description>Product</Description></Table></BaseTable>
+<Order>
+<Attribute>
+<AttriId>10</AttriId>
+<AttriName>ProductId</AttriName>
+<Description>Product Identifier</Description></Attribute></Order>
+<Condition></Condition>
+<IndexName>IPRODUCT</IndexName>
+<LevelOptions></LevelOptions>
+<OptimizedWhere>
+<StartFrom>
+<Condition>
+<Attribute>
+<AttriId>10</AttriId>
+<AttriName>ProductId</AttriName>
+<Description>Product Identifier</Description></Attribute>
+<Sp></Sp>
+<Token>&gt;=</Token>
+<Sp></Sp>
+<Variable>
+<VarId>Cproductid</VarId>
+<VarName>&amp;cProductId</VarName></Variable></Condition></StartFrom>
+<LoopWhile>
+<Condition>
+<Token>NotEndOfTable</Token></Condition></LoopWhile></OptimizedWhere>
+<NonOptimizedWhere>
+<Condition>
+<Attribute>
+<AttriId>11</AttriId>
+<AttriName>ProductDescription</AttriName>
+<Description>Product Description</Description></Attribute>
+<Sp></Sp>
+<Token>like</Token>
+<Sp></Sp>
+<Variable>
+<VarId>Cproductdescription</VarId>
+<VarName>&amp;cProductDescription</VarName></Variable></Condition>
+<Condition>
+<Attribute>
+<AttriId>12</AttriId>
+<AttriName>ProductStock</AttriName>
+<Description>Product Stock</Description></Attribute>
+<Sp></Sp>
+<Token>&gt;=</Token>
+<Sp></Sp>
+<Variable>
+<VarId>Cproductstock</VarId>
+<VarName>&amp;cProductStock</VarName></Variable></Condition>
+<Condition>
+<Attribute>
+<AttriId>13</AttriId>
+<AttriName>ProductPrice</AttriName>
+<Description>Product Price</Description></Attribute>
+<Sp></Sp>
+<Token>&gt;=</Token>
+<Sp></Sp>
+<Variable>
+<VarId>Cproductprice</VarId>
+<VarName>&amp;cProductPrice</VarName></Variable></Condition></NonOptimizedWhere>
+<NavigationTree>
+<Table>
+<TableId>3</TableId>
+<TableName>Product</TableName>
+<Description>Product</Description>
+<RecordsToRead>many</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>10</AttriId>
+<AttriName>ProductId</AttriName>
+<Description>Product Identifier</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table></NavigationTree>
+<TablesToUpdate></TablesToUpdate>
+<Formulas>
+<VerticalFormulas></VerticalFormulas>
+<AggSelFormulas></AggSelFormulas></Formulas></ImplicitForEach></Event>
+<Event>
+<EventName>Enter</EventName></Event>
+<Suggests></Suggests></ObjectSpec>

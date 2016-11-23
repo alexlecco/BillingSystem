@@ -48,6 +48,7 @@
 <AttriId>1</AttriId>
 <AttriName>CountryId</AttriName>
 <Description>Country Id</Description></Attribute></KeyAttributes>
+<JoinType>Outer</JoinType>
 <Tables></Tables></Table></Tables></Table></NavigationTree>
 <Formulas>
 <VerticalFormulas></VerticalFormulas>
@@ -137,7 +138,17 @@
 <AfterInsertRules></AfterInsertRules>
 <AfterUpdateRules></AfterUpdateRules>
 <AfterDeleteRules></AfterDeleteRules>
-<TablesToControlOnDelete></TablesToControlOnDelete>
+<TablesToControlOnDelete>
+<Table>
+<TableId>4</TableId>
+<TableName>Invoice</TableName>
+<Description>Invoice</Description>
+<RecordsToRead>one</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>3</AttriId>
+<AttriName>CustomerId</AttriName>
+<Description>Customer Id</Description></Attribute></KeyAttributes></Table></TablesToControlOnDelete>
 <Levels></Levels>
 <AfterTrnRules></AfterTrnRules>
 <AfterLevelRules></AfterLevelRules></Level></Levels>

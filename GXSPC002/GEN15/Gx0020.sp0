@@ -937,7 +937,6 @@ tbl_att_prop_i(2,2,6,'AllowNulls',n).
 tbl_att_prop_i(2,2,7,'AllowNulls',n).
 tbl_att_prop_i(2,2,8,'AllowNulls',n).
 tbl_att_prop_i(2,2,9,'AllowNulls',n).
-tbl_att_prop_i(2,2,1,'AllowNulls',n).
  
  
  

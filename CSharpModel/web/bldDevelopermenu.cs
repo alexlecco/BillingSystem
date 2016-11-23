@@ -42,11 +42,16 @@ public class bldDevelopermenu : GxBaseBuilder
    public override ItemCollection GetRuntimeBuildList( )
    {
       ItemCollection sc = new ItemCollection() ;
+      sc.Add( @"bin\gx0051.dll", cs_path + @"\gx0051.rsp");
+      sc.Add( @"bin\gx0040.dll", cs_path + @"\gx0040.rsp");
+      sc.Add( @"bin\gx0030.dll", cs_path + @"\gx0030.rsp");
       sc.Add( @"bin\gx0020.dll", cs_path + @"\gx0020.rsp");
       sc.Add( @"bin\gx0010.dll", cs_path + @"\gx0010.rsp");
       sc.Add( @"bin\promptmasterpage.dll", cs_path + @"\promptmasterpage.rsp");
       sc.Add( @"bin\recentlinks.dll", cs_path + @"\recentlinks.rsp");
       sc.Add( @"bin\appmasterpage.dll", cs_path + @"\appmasterpage.rsp");
+      sc.Add( @"bin\invoice.dll", cs_path + @"\invoice.rsp");
+      sc.Add( @"bin\product.dll", cs_path + @"\product.rsp");
       sc.Add( @"bin\customer.dll", cs_path + @"\customer.rsp");
       sc.Add( @"bin\country.dll", cs_path + @"\country.rsp");
       return sc ;

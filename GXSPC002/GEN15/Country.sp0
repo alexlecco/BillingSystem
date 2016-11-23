@@ -159,9 +159,9 @@ rule_i(1,prompt([ 1,[ [ [],1,1 ] ],[],[],[ t(o(13,'Gx0010'),28),t(1,2) ],[],n,[]
 rule_i(1,rule([ a(23,[ [ 1 ],[ t(o(13,'Gx0010'),28),t(1,2) ] ]) ],[],[],[ 1 ])).
 rule_i(0,rule([ a(22,[ 'Dlt','"Delete"','' ]) ],[],[],[])).
 rule_i(0,maingen(15)).
-rule_i(1,rule([ a(1,[ t('''No se permiten paises sin nombre''',3) ]) ],[ t('null(',1),t(2,2),t(')',4) ],[ insert,update,delete ],[ 2 ])).
+rule_i(1,rule([ a(1,[ t('''No se permiten PAISES sin NOMBRE''',3) ]) ],[ t('null(',1),t(2,2),t(')',4) ],[ insert,update,delete ],[ 2 ])).
  
-a_i(1,1,b,1,[],[ [],[ a(1,[ t('''No se permiten paises sin nombre''',3) ]) ],[ t('null(',1),t(2,2),t(')',4) ] ]).
+a_i(1,1,b,1,[],[ [],[ a(1,[ t('''No se permiten PAISES sin NOMBRE''',3) ]) ],[ t('null(',1),t(2,2),t(')',4) ] ]).
 a_i(2,1,t,1,[],[ [ [ [],1,1 ] ],'ICOUNTRY',[] ]).
  
 v_i(b,i,1,2).
@@ -779,6 +779,7 @@ att_prop_i(2,3,'AttValidationFailedMsg','',d).
 att_prop_i(2,3,'FullName','CustomerId',v).
  
 tbl_prop_i(2,2,'AllDirSuper',[ [ 1,[ 1 ] ] ],v).
+tbl_prop_i(2,2,'DirSuperNull',[ [ 1,[ 1 ] ] ],v).
 tbl_prop_i(2,1,'DirSubor',[ [ 2,[ 1 ] ] ],v).
 tbl_prop_i(2,2,'DirSuper',[ [ 1,[ 1 ] ] ],v).
  
@@ -787,7 +788,6 @@ tbl_att_prop_i(2,1,1,'AUTONUMBER',y).
 tbl_att_prop_i(2,1,2,'AllowNulls',n).
 tbl_att_prop_i(2,2,3,'AllowNulls',n).
 tbl_att_prop_i(2,2,3,'AUTONUMBER',y).
-tbl_att_prop_i(2,2,1,'AllowNulls',n).
  
  
  
@@ -800,7 +800,7 @@ trn_level_i(1,[ [ 1,2 ],'Country','Country','Country','',2 ]).
  
  
  
-pgm_parm_i(web,0,'GX0010',[ [ int,6,0,0 ] ],[ [ 'V1',out,[] ] ]).
+pgm_parm_i(web,4,'GX0010',[ [ int,6,0,0 ] ],[ [ pCountryId,out,[] ] ]).
  
  
  

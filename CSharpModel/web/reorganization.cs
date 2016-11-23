@@ -52,11 +52,6 @@ namespace GeneXus.Programs {
          execute();
       }
 
-      public override bool GetCreateDataBase( )
-      {
-         return true;
-      }
-
    }
 
 }

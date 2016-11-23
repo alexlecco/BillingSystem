@@ -1,7 +1,17 @@
-CREATE TABLE [Customer] ([CustomerId] int NOT NULL  IDENTITY(1,1), [CustomerName] char(30) NOT NULL , [CustomerAddress] char(30) NOT NULL , [CustomerGender] char(1) NOT NULL , [CustomerTotalPurchases] money NOT NULL , [CustomerTotalPayments] money NOT NULL , [CustomerBalance] money NOT NULL , [CountryId] int NOT NULL , PRIMARY KEY([CustomerId]))
+DROP INDEX [ICUSTOMER1] ON [Customer]
+ALTER TABLE [Customer] ALTER COLUMN [CountryId] int NULL
 CREATE NONCLUSTERED INDEX [ICUSTOMER1] ON [Customer] ([CountryId] )
 
-CREATE TABLE [Country] ([CountryId] int NOT NULL  IDENTITY(1,1), [CountryName] char(30) NOT NULL , PRIMARY KEY([CountryId]))
+CREATE TABLE [Invoice] ([InvoiceId] int NOT NULL  IDENTITY(1,1), [InvoiceDate] datetime NOT NULL , [CustomerId] int NOT NULL , [InvoiceAmount] money NOT NULL , PRIMARY KEY([InvoiceId]))
+CREATE NONCLUSTERED INDEX [IINVOICE1] ON [Invoice] ([CustomerId] )
 
-ALTER TABLE [Customer] ADD CONSTRAINT [ICUSTOMER1] FOREIGN KEY ([CountryId]) REFERENCES [Country] ([CountryId])
+CREATE TABLE [Product] ([ProductId] int NOT NULL  IDENTITY(1,1), [ProductDescription] char(30) NOT NULL , [ProductStock] smallint NOT NULL , [ProductPrice] money NOT NULL , PRIMARY KEY([ProductId]))
+
+CREATE TABLE [InvoiceDetail] ([InvoiceId] int NOT NULL , [InvoiceDetailId] smallint NOT NULL , [ProductId] int NOT NULL , [InvoiceDetailQuantiity] smallint NOT NULL , [InvoiceDetailAmount] money NOT NULL , PRIMARY KEY([InvoiceId], [InvoiceDetailId]))
+CREATE NONCLUSTERED INDEX [IINVOICEDETAIL1] ON [InvoiceDetail] ([ProductId] )
+
+ALTER TABLE [Invoice] ADD CONSTRAINT [IINVOICE1] FOREIGN KEY ([CustomerId]) REFERENCES [Customer] ([CustomerId])
+
+ALTER TABLE [InvoiceDetail] ADD CONSTRAINT [IINVOICEDETAIL2] FOREIGN KEY ([InvoiceId]) REFERENCES [Invoice] ([InvoiceId])
+ALTER TABLE [InvoiceDetail] ADD CONSTRAINT [IINVOICEDETAIL1] FOREIGN KEY ([ProductId]) REFERENCES [Product] ([ProductId])
 

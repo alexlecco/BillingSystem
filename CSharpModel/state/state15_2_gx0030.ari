@@ -1,0 +1,17 @@
+current_obj_i(2,web,6).
+ 
+called_tree_i(13,6,13,3).
+ 
+ 
+ 
+ 
+ 
+ 
+ij_object_dependency(gx0030,[],[],[],6).
+ 
+ 
+obj_parms_i([ 'int aP0_pProductId' ],[ [ 'Pproductid',out ] ]).
+ 
+ 
+ 
+ 

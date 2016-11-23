@@ -98,7 +98,12 @@
 <TableId>1</TableId>
 <TableName>Country</TableName>
 <Description>Country</Description></Table>
-<Token>Gx0010</Token>
+<Object>
+<ObjCls>13</ObjCls>
+<ObjId>4</ObjId>
+<ObjName>Gx0010</ObjName>
+<ObjPgmName>Gx0010</ObjPgmName>
+<ObjClsName>Web Panel</ObjClsName></Object>
 <InputParameters></InputParameters>
 <OutputParameters>
 <Attribute>
