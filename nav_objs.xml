@@ -1,5 +1,23 @@
 
 <Object>
+<ObjCls>13</ObjCls>
+<ObjId>5</ObjId>
+<ObjName>Gx0020</ObjName>
+<ObjStatus>nogenreq</ObjStatus>
+<ObjNavig>GXSPC002\GEN15\NVG\Gx0020.xml</ObjNavig></Object>
+<Object>
+<ObjCls>13</ObjCls>
+<ObjId>7</ObjId>
+<ObjName>Gx0040</ObjName>
+<ObjStatus>nogenreq</ObjStatus>
+<ObjNavig>GXSPC002\GEN15\NVG\Gx0040.xml</ObjNavig></Object>
+<Object>
+<ObjCls>0</ObjCls>
+<ObjId>2</ObjId>
+<ObjName>Customer</ObjName>
+<ObjStatus>nogenreq</ObjStatus>
+<ObjNavig>GXSPC002\GEN15\NVG\Customer.xml</ObjNavig></Object>
+<Object>
 <ObjCls>0</ObjCls>
 <ObjId>4</ObjId>
 <ObjName>Invoice</ObjName>

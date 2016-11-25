@@ -67,7 +67,19 @@
 <AttriId>3</AttriId>
 <AttriName>CustomerId</AttriName>
 <Description>Customer Id</Description></Attribute></KeyAttributes>
-<Tables></Tables></Table>
+<Tables>
+<Table>
+<TableId>1</TableId>
+<TableName>Country</TableName>
+<Description>Country</Description>
+<RecordsToRead>one</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>1</AttriId>
+<AttriName>CountryId</AttriName>
+<Description>Country Id</Description></Attribute></KeyAttributes>
+<JoinType>Outer</JoinType>
+<Tables></Tables></Table></Tables></Table>
 <Table>
 <TableId>4</TableId>
 <TableName>InvoiceLastLineId navigation</TableName>
