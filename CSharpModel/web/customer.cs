@@ -2,7 +2,7 @@
                File: Customer
         Description: Customer
              Author: GeneXus C# Generator version 10_1_6-46473
-       Generated on: 11/23/2016 18:3:42.64
+       Generated on: 11/25/2016 14:44:21.49
        Program type: Callable routine
           Main DBMS: sqlserver
 */
@@ -57,7 +57,22 @@ namespace GeneXus.Programs {
             dyncall( GetNextPar( )) ;
             return  ;
          }
-         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_9") == 0 )
+         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxHideCode"+"_"+"COUNTRYID") == 0 )
+         {
+            A1CountryId = (int)(NumberUtil.Val( GetNextPar( ), ".")) ;
+            n1CountryId = false ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A1CountryId", StringUtil.LTrim( StringUtil.Str( (decimal)(A1CountryId), 6, 0)));
+            h1CountryId = GetNextPar( ) ;
+            setAjaxCallMode();
+            if ( ! IsValidAjaxCall( true) )
+            {
+               GxWebError = 1 ;
+               return  ;
+            }
+            GXHCACOUNTRYID022( A1CountryId, h1CountryId) ;
+            return  ;
+         }
+         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_10") == 0 )
          {
             A1CountryId = (int)(NumberUtil.Val( GetNextPar( ), ".")) ;
             n1CountryId = false ;
@@ -68,7 +83,7 @@ namespace GeneXus.Programs {
                GxWebError = 1 ;
                return  ;
             }
-            gxLoad_9( A1CountryId) ;
+            gxLoad_10( A1CountryId) ;
             return  ;
          }
          else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxEvt") == 0 )
@@ -430,11 +445,7 @@ namespace GeneXus.Programs {
             TempTags = "  onfocus=\"gx.evt.onfocus(this, 73,'',false,'',0)\"" ;
             ClassString = "Attribute" ;
             StyleString = "" ;
-            GxWebStd.gx_single_line_edit( context, edtCountryId_Internalname, StringUtil.LTrim( StringUtil.NToC( (decimal)(A1CountryId), 6, 0, ".", "")), "", 6, "chr", 1, "row", 6, 1, edtCountryId_Enabled, 0, 0, 0, "", "", StyleString, ClassString, "", context.localUtil.Format( (decimal)(A1CountryId), "ZZZZZ9"), TempTags+" onchange=\"gx.evt.onchange(this)\" "+" onblur=\""+"gx.num.valid_integer( this,',');"+";gx.evt.onblur(73);\"", 0, edtCountryId_Jsonclick, "", 0, 1, -1, true, "right", "HLP_Customer.htm");
-            /* Static images/pictures */
-            ClassString = "Image" ;
-            StyleString = "" ;
-            GxWebStd.gx_bitmap( context, imgprompt_1_Internalname, "", "prompt.gif", "GeneXusX", imgprompt_1_Visible, 1, "", "", 0, 0, 0, "", 0, "", 0, 0, imgprompt_1_Link, "", 0, "", "", StyleString, ClassString, "", "", "''", "", "HLP_Customer.htm");
+            GxWebStd.gx_single_line_edit( context, edtCountryId_Internalname, StringUtil.RTrim( h1CountryId), "", 30, "chr", 1, "row", 30, 1, edtCountryId_Enabled, 0, 0, 0, "", "", StyleString, ClassString, "", StringUtil.RTrim( context.localUtil.Format( h1CountryId, "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")), TempTags+" onchange=\"gx.evt.onchange(this)\" "+" onblur=\""+""+";gx.evt.onblur(73);\"", 0, edtCountryId_Jsonclick, "", 0, 1, -1, true, "left", "HLP_Customer.htm");
             context.WriteHtmlText( "</td>") ;
             context.WriteHtmlText( "</tr>") ;
             context.WriteHtmlText( "<tr>") ;
@@ -636,24 +647,7 @@ namespace GeneXus.Programs {
                }
                A9CustomerBalance = context.localUtil.CToN( cgiGet( edtCustomerBalance_Internalname), ".", ",") ;
                context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A9CustomerBalance", StringUtil.LTrim( StringUtil.Str( A9CustomerBalance, 9, 2)));
-               if ( ( ( context.localUtil.CToN( cgiGet( edtCountryId_Internalname), ".", ",") < Convert.ToDecimal( 0 )) ) || ( ( context.localUtil.CToN( cgiGet( edtCountryId_Internalname), ".", ",") > Convert.ToDecimal( 999999 )) ) )
-               {
-                  GX_msglist.addItem(context.GetMessage( "GXM_badnum"), 1, "COUNTRYID");
-                  AnyError = 1 ;
-                  GX_FocusControl = edtCountryId_Internalname ;
-                  context.httpAjaxContext.ajax_rsp_assign_attri("", false, "GX_FocusControl", GX_FocusControl);
-                  wbErr = true ;
-                  A1CountryId = 0 ;
-                  n1CountryId = false ;
-                  context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A1CountryId", StringUtil.LTrim( StringUtil.Str( (decimal)(A1CountryId), 6, 0)));
-               }
-               else
-               {
-                  A1CountryId = (int)(context.localUtil.CToN( cgiGet( edtCountryId_Internalname), ".", ",")) ;
-                  n1CountryId = false ;
-                  context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A1CountryId", StringUtil.LTrim( StringUtil.Str( (decimal)(A1CountryId), 6, 0)));
-               }
-               n1CountryId = ((0==A1CountryId) ? true : false) ;
+               h1CountryId = cgiGet( edtCountryId_Internalname) ;
                A2CountryName = cgiGet( edtCountryName_Internalname) ;
                context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A2CountryName", A2CountryName);
                /* Read saved values. */
@@ -668,6 +662,7 @@ namespace GeneXus.Programs {
                IsModified = (short)(context.localUtil.CToN( cgiGet( "IsModified"), ".", ",")) ;
                Gx_mode = cgiGet( "Mode") ;
                Gx_BScreen = (short)(context.localUtil.CToN( cgiGet( "vGXBSCREEN"), ".", ",")) ;
+               A1CountryId = (int)(context.localUtil.CToN( cgiGet( "GXHCCOUNTRYID"), ".", ",")) ;
                Gx_mode = cgiGet( "vMODE") ;
                /* Read subfile selected row values. */
                /* Read hidden variables. */
@@ -873,7 +868,7 @@ namespace GeneXus.Programs {
 
       protected void ZM022( short GX_JID )
       {
-         if ( ( GX_JID == 8 ) || ( GX_JID == 0 ) )
+         if ( ( GX_JID == 9 ) || ( GX_JID == 0 ) )
          {
             if ( StringUtil.StrCmp(Gx_mode, "INS") != 0 )
             {
@@ -894,7 +889,7 @@ namespace GeneXus.Programs {
                Z1CountryId = A1CountryId ;
             }
          }
-         if ( GX_JID == -8 )
+         if ( GX_JID == -9 )
          {
             Z3CustomerId = A3CustomerId ;
             Z4CustomerName = A4CustomerName ;
@@ -915,7 +910,6 @@ namespace GeneXus.Programs {
          context.httpAjaxContext.ajax_rsp_assign_prop("", false, edtCustomerBalance_Internalname, "Enabled", StringUtil.LTrim( StringUtil.Str( (decimal)(edtCustomerBalance_Enabled), 5, 0)));
          Gx_BScreen = 0 ;
          context.httpAjaxContext.ajax_rsp_assign_attri("", false, "Gx_BScreen", StringUtil.Str( (decimal)(Gx_BScreen), 1, 0));
-         imgprompt_1_Link = ((StringUtil.StrCmp(Gx_mode, "DSP")==0) ? "" : "javascript:"+"gx.popup.openPrompt('"+"gx0010.aspx"+"',["+"{Ctrl:gx.dom.el('"+"COUNTRYID"+"'), id:'"+"COUNTRYID"+"'"+",isOut:true,isKey:false,isLastKey:false}"+"],"+"null"+","+"'', false"+","+"false"+");") ;
          edtCustomerTotalPurchases_Enabled = 0 ;
          context.httpAjaxContext.ajax_rsp_assign_prop("", false, edtCustomerTotalPurchases_Internalname, "Enabled", StringUtil.LTrim( StringUtil.Str( (decimal)(edtCustomerTotalPurchases_Enabled), 5, 0)));
          edtCustomerBalance_Enabled = 0 ;
@@ -963,7 +957,7 @@ namespace GeneXus.Programs {
             A1CountryId = T00025_A1CountryId[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A1CountryId", StringUtil.LTrim( StringUtil.Str( (decimal)(A1CountryId), 6, 0)));
             n1CountryId = T00025_n1CountryId[0] ;
-            ZM022( -8) ;
+            ZM022( -9) ;
          }
          pr_default.close(3);
          OnLoadActions022( ) ;
@@ -973,6 +967,8 @@ namespace GeneXus.Programs {
       {
          A9CustomerBalance = (decimal)(A7CustomerTotalPurchases-A8CustomerTotalPayments) ;
          context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A9CustomerBalance", StringUtil.LTrim( StringUtil.Str( A9CustomerBalance, 9, 2)));
+         h1CountryId = A2CountryName ;
+         context.httpAjaxContext.ajax_rsp_assign_attri("", false, "h1CountryId", h1CountryId);
       }
 
       protected void CheckExtendedTable022( )
@@ -980,6 +976,43 @@ namespace GeneXus.Programs {
          Gx_BScreen = 1 ;
          context.httpAjaxContext.ajax_rsp_assign_attri("", false, "Gx_BScreen", StringUtil.Str( (decimal)(Gx_BScreen), 1, 0));
          standaloneModal( ) ;
+         if ( String.IsNullOrEmpty(StringUtil.RTrim( h1CountryId)) )
+         {
+            A1CountryId = 0 ;
+            n1CountryId = false ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A1CountryId", StringUtil.LTrim( StringUtil.Str( (decimal)(A1CountryId), 6, 0)));
+            n1CountryId = ((0==A1CountryId) ? true : false) ;
+         }
+         else
+         {
+            A2CountryName = h1CountryId ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A2CountryName", A2CountryName);
+            /* Using cursor T00026 */
+            pr_default.execute(4, new Object[] {A2CountryName});
+            A1CountryId = T00026_A1CountryId[0] ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A1CountryId", StringUtil.LTrim( StringUtil.Str( (decimal)(A1CountryId), 6, 0)));
+            n1CountryId = T00026_n1CountryId[0] ;
+            A1CountryId = T00026_A1CountryId[0] ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A1CountryId", StringUtil.LTrim( StringUtil.Str( (decimal)(A1CountryId), 6, 0)));
+            n1CountryId = T00026_n1CountryId[0] ;
+            if ( ! ( (pr_default.getStatus(4) == 101) ) )
+            {
+               pr_default.readNext(4);
+               if ( ! ( (pr_default.getStatus(4) == 101) ) )
+               {
+                  GX_msglist.addItem(context.GetMessage( "GXM_ambiguousck", new   object[]  {"Country Name"}), 1, "COUNTRYID");
+                  AnyError = 1 ;
+                  GX_FocusControl = edtCountryId_Internalname ;
+                  context.httpAjaxContext.ajax_rsp_assign_attri("", false, "GX_FocusControl", GX_FocusControl);
+               }
+            }
+            else
+            {
+               n1CountryId = ((0==A1CountryId) ? true : false) ;
+            }
+            pr_default.close(4);
+         }
+         context.httpAjaxContext.ajax_rsp_assign_attri("", false, "h1CountryId", h1CountryId);
          if ( String.IsNullOrEmpty(StringUtil.RTrim( A4CustomerName)) )
          {
             GX_msglist.addItem("No se permiten CLIENTES sin NOMBRE", 1, "");
@@ -992,11 +1025,48 @@ namespace GeneXus.Programs {
          }
          A9CustomerBalance = (decimal)(A7CustomerTotalPurchases-A8CustomerTotalPayments) ;
          context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A9CustomerBalance", StringUtil.LTrim( StringUtil.Str( A9CustomerBalance, 9, 2)));
+         if ( String.IsNullOrEmpty(StringUtil.RTrim( h1CountryId)) )
+         {
+            A1CountryId = 0 ;
+            n1CountryId = false ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A1CountryId", StringUtil.LTrim( StringUtil.Str( (decimal)(A1CountryId), 6, 0)));
+            n1CountryId = ((0==A1CountryId) ? true : false) ;
+         }
+         else
+         {
+            A2CountryName = h1CountryId ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A2CountryName", A2CountryName);
+            /* Using cursor T00027 */
+            pr_default.execute(5, new Object[] {A2CountryName});
+            A1CountryId = T00027_A1CountryId[0] ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A1CountryId", StringUtil.LTrim( StringUtil.Str( (decimal)(A1CountryId), 6, 0)));
+            n1CountryId = T00027_n1CountryId[0] ;
+            A1CountryId = T00027_A1CountryId[0] ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A1CountryId", StringUtil.LTrim( StringUtil.Str( (decimal)(A1CountryId), 6, 0)));
+            n1CountryId = T00027_n1CountryId[0] ;
+            if ( ! ( (pr_default.getStatus(5) == 101) ) )
+            {
+               pr_default.readNext(5);
+               if ( ! ( (pr_default.getStatus(5) == 101) ) )
+               {
+                  GX_msglist.addItem(context.GetMessage( "GXM_ambiguousck", new   object[]  {"Country Name"}), 1, "COUNTRYID");
+                  AnyError = 1 ;
+                  GX_FocusControl = edtCountryId_Internalname ;
+                  context.httpAjaxContext.ajax_rsp_assign_attri("", false, "GX_FocusControl", GX_FocusControl);
+               }
+            }
+            else
+            {
+               n1CountryId = ((0==A1CountryId) ? true : false) ;
+            }
+            pr_default.close(5);
+         }
+         context.httpAjaxContext.ajax_rsp_assign_attri("", false, "h1CountryId", h1CountryId);
          /* Using cursor T00024 */
          pr_default.execute(2, new Object[] {n1CountryId, A1CountryId});
          if ( (pr_default.getStatus(2) == 101) )
          {
-            if ( ! ( (0==A1CountryId) ) )
+            if ( ! ( (0==A1CountryId) && n1CountryId && String.IsNullOrEmpty(StringUtil.RTrim( A2CountryName)) ) )
             {
                GX_msglist.addItem("No matching 'Country'.", "ForeignKeyNotFound", 1, "COUNTRYID");
                AnyError = 1 ;
@@ -1031,13 +1101,13 @@ namespace GeneXus.Programs {
          }
       }
 
-      protected void gxLoad_9( int A1CountryId )
+      protected void gxLoad_10( int A1CountryId )
       {
-         /* Using cursor T00026 */
-         pr_default.execute(4, new Object[] {n1CountryId, A1CountryId});
-         if ( (pr_default.getStatus(4) == 101) )
+         /* Using cursor T00028 */
+         pr_default.execute(6, new Object[] {n1CountryId, A1CountryId});
+         if ( (pr_default.getStatus(6) == 101) )
          {
-            if ( ! ( (0==A1CountryId) ) )
+            if ( ! ( (0==A1CountryId) && n1CountryId && String.IsNullOrEmpty(StringUtil.RTrim( A2CountryName)) ) )
             {
                GX_msglist.addItem("No matching 'Country'.", "ForeignKeyNotFound", 1, "COUNTRYID");
                AnyError = 1 ;
@@ -1047,27 +1117,27 @@ namespace GeneXus.Programs {
          }
          if ( AnyError == 0 )
          {
-            A2CountryName = T00026_A2CountryName[0] ;
+            A2CountryName = T00028_A2CountryName[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A2CountryName", A2CountryName);
          }
          GxWebStd.set_html_headers( context, 0, "", "");
          context.GX_webresponse.AddString("new Array( new Array(");
          context.GX_webresponse.AddString("\""+GXUtil.EncodeJSConstant( StringUtil.RTrim( A2CountryName))+"\"");
          context.GX_webresponse.AddString(")");
-         if ( (pr_default.getStatus(4) == 101) )
+         if ( (pr_default.getStatus(6) == 101) )
          {
             context.GX_webresponse.AddString(",");
             context.GX_webresponse.AddString("101");
          }
          context.GX_webresponse.AddString(")");
-         pr_default.close(4);
+         pr_default.close(6);
       }
 
       protected void GetKey022( )
       {
-         /* Using cursor T00027 */
-         pr_default.execute(5, new Object[] {A3CustomerId});
-         if ( (pr_default.getStatus(5) != 101) )
+         /* Using cursor T00029 */
+         pr_default.execute(7, new Object[] {A3CustomerId});
+         if ( (pr_default.getStatus(7) != 101) )
          {
             RcdFound2 = 1 ;
          }
@@ -1075,7 +1145,7 @@ namespace GeneXus.Programs {
          {
             RcdFound2 = 0 ;
          }
-         pr_default.close(5);
+         pr_default.close(7);
       }
 
       protected void getByPrimaryKey( )
@@ -1084,7 +1154,7 @@ namespace GeneXus.Programs {
          pr_default.execute(1, new Object[] {A3CustomerId});
          if ( (pr_default.getStatus(1) != 101) )
          {
-            ZM022( 8) ;
+            ZM022( 9) ;
             RcdFound2 = 1 ;
             A3CustomerId = T00023_A3CustomerId[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A3CustomerId", StringUtil.LTrim( StringUtil.Str( (decimal)(A3CustomerId), 6, 0)));
@@ -1143,17 +1213,17 @@ namespace GeneXus.Programs {
       protected void move_next( )
       {
          RcdFound2 = 0 ;
-         /* Using cursor T00028 */
-         pr_default.execute(6, new Object[] {A3CustomerId});
-         if ( (pr_default.getStatus(6) != 101) )
+         /* Using cursor T000210 */
+         pr_default.execute(8, new Object[] {A3CustomerId});
+         if ( (pr_default.getStatus(8) != 101) )
          {
-            while ( (pr_default.getStatus(6) != 101) && ( ( T00028_A3CustomerId[0] < A3CustomerId ) ) )
+            while ( (pr_default.getStatus(8) != 101) && ( ( T000210_A3CustomerId[0] < A3CustomerId ) ) )
             {
-               pr_default.readNext(6);
+               pr_default.readNext(8);
             }
-            if ( (pr_default.getStatus(6) != 101) && ( ( T00028_A3CustomerId[0] > A3CustomerId ) ) )
+            if ( (pr_default.getStatus(8) != 101) && ( ( T000210_A3CustomerId[0] > A3CustomerId ) ) )
             {
-               A3CustomerId = T00028_A3CustomerId[0] ;
+               A3CustomerId = T000210_A3CustomerId[0] ;
                context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A3CustomerId", StringUtil.LTrim( StringUtil.Str( (decimal)(A3CustomerId), 6, 0)));
                RcdFound2 = 1 ;
             }
@@ -1164,17 +1234,17 @@ namespace GeneXus.Programs {
       protected void move_previous( )
       {
          RcdFound2 = 0 ;
-         /* Using cursor T00029 */
-         pr_default.execute(7, new Object[] {A3CustomerId});
-         if ( (pr_default.getStatus(7) != 101) )
+         /* Using cursor T000211 */
+         pr_default.execute(9, new Object[] {A3CustomerId});
+         if ( (pr_default.getStatus(9) != 101) )
          {
-            while ( (pr_default.getStatus(7) != 101) && ( ( T00029_A3CustomerId[0] > A3CustomerId ) ) )
+            while ( (pr_default.getStatus(9) != 101) && ( ( T000211_A3CustomerId[0] > A3CustomerId ) ) )
             {
-               pr_default.readNext(7);
+               pr_default.readNext(9);
             }
-            if ( (pr_default.getStatus(7) != 101) && ( ( T00029_A3CustomerId[0] < A3CustomerId ) ) )
+            if ( (pr_default.getStatus(9) != 101) && ( ( T000211_A3CustomerId[0] < A3CustomerId ) ) )
             {
-               A3CustomerId = T00029_A3CustomerId[0] ;
+               A3CustomerId = T000211_A3CustomerId[0] ;
                context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A3CustomerId", StringUtil.LTrim( StringUtil.Str( (decimal)(A3CustomerId), 6, 0)));
                RcdFound2 = 1 ;
             }
@@ -1405,22 +1475,62 @@ namespace GeneXus.Programs {
 
       protected void CheckOptimisticConcurrency022( )
       {
+         if ( StringUtil.StrCmp(Gx_mode, "DLT") == 0 )
+         {
+            if ( String.IsNullOrEmpty(StringUtil.RTrim( h1CountryId)) )
+            {
+               A1CountryId = 0 ;
+               n1CountryId = false ;
+               context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A1CountryId", StringUtil.LTrim( StringUtil.Str( (decimal)(A1CountryId), 6, 0)));
+               n1CountryId = ((0==A1CountryId) ? true : false) ;
+            }
+            else
+            {
+               A2CountryName = h1CountryId ;
+               context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A2CountryName", A2CountryName);
+               /* Using cursor T000212 */
+               pr_default.execute(10, new Object[] {A2CountryName});
+               A1CountryId = T000212_A1CountryId[0] ;
+               context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A1CountryId", StringUtil.LTrim( StringUtil.Str( (decimal)(A1CountryId), 6, 0)));
+               n1CountryId = T000212_n1CountryId[0] ;
+               A1CountryId = T000212_A1CountryId[0] ;
+               context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A1CountryId", StringUtil.LTrim( StringUtil.Str( (decimal)(A1CountryId), 6, 0)));
+               n1CountryId = T000212_n1CountryId[0] ;
+               if ( ! ( (pr_default.getStatus(10) == 101) ) )
+               {
+                  pr_default.readNext(10);
+                  if ( ! ( (pr_default.getStatus(10) == 101) ) )
+                  {
+                     GX_msglist.addItem(context.GetMessage( "GXM_ambiguousck", new   object[]  {"Country Name"}), 1, "COUNTRYID");
+                     AnyError = 1 ;
+                     GX_FocusControl = edtCountryId_Internalname ;
+                     context.httpAjaxContext.ajax_rsp_assign_attri("", false, "GX_FocusControl", GX_FocusControl);
+                  }
+               }
+               else
+               {
+                  n1CountryId = ((0==A1CountryId) ? true : false) ;
+               }
+               pr_default.close(10);
+            }
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "h1CountryId", h1CountryId);
+         }
          if ( StringUtil.StrCmp(Gx_mode, "INS") != 0 )
          {
-            /* Using cursor T000210 */
-            pr_default.execute(8, new Object[] {A3CustomerId});
-            if ( (pr_default.getStatus(8) == 103) )
+            /* Using cursor T000213 */
+            pr_default.execute(11, new Object[] {A3CustomerId});
+            if ( (pr_default.getStatus(11) == 103) )
             {
                GX_msglist.addItem(context.GetMessage( "GXM_lock", new   object[]  {"Customer"}), "RecordIsLocked", 1, "");
                AnyError = 1 ;
                return  ;
             }
             Gx_longc = false ;
-            if ( (pr_default.getStatus(8) == 101) || ( StringUtil.StrCmp(Z4CustomerName, T000210_A4CustomerName[0]) != 0 ) || ( StringUtil.StrCmp(Z5CustomerAddress, T000210_A5CustomerAddress[0]) != 0 ) || ( StringUtil.StrCmp(Z6CustomerGender, T000210_A6CustomerGender[0]) != 0 ) || ( Z7CustomerTotalPurchases != T000210_A7CustomerTotalPurchases[0] ) || ( Z8CustomerTotalPayments != T000210_A8CustomerTotalPayments[0] ) )
+            if ( (pr_default.getStatus(11) == 101) || ( StringUtil.StrCmp(Z4CustomerName, T000213_A4CustomerName[0]) != 0 ) || ( StringUtil.StrCmp(Z5CustomerAddress, T000213_A5CustomerAddress[0]) != 0 ) || ( StringUtil.StrCmp(Z6CustomerGender, T000213_A6CustomerGender[0]) != 0 ) || ( Z7CustomerTotalPurchases != T000213_A7CustomerTotalPurchases[0] ) || ( Z8CustomerTotalPayments != T000213_A8CustomerTotalPayments[0] ) )
             {
                Gx_longc = true ;
             }
-            if ( Gx_longc || ( Z1CountryId != T000210_A1CountryId[0] ) )
+            if ( Gx_longc || ( Z1CountryId != T000213_A1CountryId[0] ) )
             {
                GX_msglist.addItem(context.GetMessage( "GXM_waschg", new   object[]  {"Customer"}), "RecordWasChanged", 1, "");
                AnyError = 1 ;
@@ -1448,15 +1558,15 @@ namespace GeneXus.Programs {
                   BeforeInsert022( ) ;
                   if ( AnyError == 0 )
                   {
-                     /* Using cursor T000211 */
-                     pr_default.execute(9, new Object[] {A4CustomerName, A5CustomerAddress, A6CustomerGender, A7CustomerTotalPurchases, A8CustomerTotalPayments, n1CountryId, A1CountryId});
-                     pr_default.close(9);
+                     /* Using cursor T000214 */
+                     pr_default.execute(12, new Object[] {A4CustomerName, A5CustomerAddress, A6CustomerGender, A7CustomerTotalPurchases, A8CustomerTotalPayments, n1CountryId, A1CountryId});
+                     pr_default.close(12);
                      /* Retrieving last key number assigned */
-                     /* Using cursor T000212 */
-                     pr_default.execute(10);
-                     A3CustomerId = T000212_A3CustomerId[0] ;
+                     /* Using cursor T000215 */
+                     pr_default.execute(13);
+                     A3CustomerId = T000215_A3CustomerId[0] ;
                      context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A3CustomerId", StringUtil.LTrim( StringUtil.Str( (decimal)(A3CustomerId), 6, 0)));
-                     pr_default.close(10);
+                     pr_default.close(13);
                      if ( AnyError == 0 )
                      {
                         /* Start of After( Insert) rules */
@@ -1503,10 +1613,10 @@ namespace GeneXus.Programs {
                   BeforeUpdate022( ) ;
                   if ( AnyError == 0 )
                   {
-                     /* Using cursor T000213 */
-                     pr_default.execute(11, new Object[] {A4CustomerName, A5CustomerAddress, A6CustomerGender, A7CustomerTotalPurchases, A8CustomerTotalPayments, n1CountryId, A1CountryId, A3CustomerId});
-                     pr_default.close(11);
-                     if ( (pr_default.getStatus(11) == 103) )
+                     /* Using cursor T000216 */
+                     pr_default.execute(14, new Object[] {A4CustomerName, A5CustomerAddress, A6CustomerGender, A7CustomerTotalPurchases, A8CustomerTotalPayments, n1CountryId, A1CountryId, A3CustomerId});
+                     pr_default.close(14);
+                     if ( (pr_default.getStatus(14) == 103) )
                      {
                         GX_msglist.addItem(context.GetMessage( "GXM_lock", new   object[]  {"Customer"}), "RecordIsLocked", 1, "");
                         AnyError = 1 ;
@@ -1559,9 +1669,9 @@ namespace GeneXus.Programs {
                if ( AnyError == 0 )
                {
                   /* No cascading delete specified. */
-                  /* Using cursor T000214 */
-                  pr_default.execute(12, new Object[] {A3CustomerId});
-                  pr_default.close(12);
+                  /* Using cursor T000217 */
+                  pr_default.execute(15, new Object[] {A3CustomerId});
+                  pr_default.close(15);
                   if ( AnyError == 0 )
                   {
                      /* Start of After( delete) rules */
@@ -1607,24 +1717,24 @@ namespace GeneXus.Programs {
          if ( AnyError == 0 )
          {
             /* Delete mode formulas */
-            /* Using cursor T000215 */
-            pr_default.execute(13, new Object[] {n1CountryId, A1CountryId});
-            A2CountryName = T000215_A2CountryName[0] ;
+            /* Using cursor T000218 */
+            pr_default.execute(16, new Object[] {n1CountryId, A1CountryId});
+            A2CountryName = T000218_A2CountryName[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A2CountryName", A2CountryName);
-            pr_default.close(13);
+            pr_default.close(16);
             A9CustomerBalance = (decimal)(A7CustomerTotalPurchases-A8CustomerTotalPayments) ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A9CustomerBalance", StringUtil.LTrim( StringUtil.Str( A9CustomerBalance, 9, 2)));
          }
          if ( AnyError == 0 )
          {
-            /* Using cursor T000216 */
-            pr_default.execute(14, new Object[] {A3CustomerId});
-            if ( (pr_default.getStatus(14) != 101) )
+            /* Using cursor T000219 */
+            pr_default.execute(17, new Object[] {A3CustomerId});
+            if ( (pr_default.getStatus(17) != 101) )
             {
                GX_msglist.addItem(context.GetMessage( "GXM_del", new   object[]  {"Invoice"}), "CannotDeleteReferencedRecord", 1, "");
                AnyError = 1 ;
             }
-            pr_default.close(14);
+            pr_default.close(17);
          }
       }
 
@@ -1632,7 +1742,7 @@ namespace GeneXus.Programs {
       {
          if ( StringUtil.StrCmp(Gx_mode, "INS") != 0 )
          {
-            pr_default.close(8);
+            pr_default.close(11);
          }
          if ( AnyError == 0 )
          {
@@ -1640,9 +1750,9 @@ namespace GeneXus.Programs {
          }
          if ( AnyError == 0 )
          {
-            pr_default.close(7);
-            pr_default.close(6);
-            pr_default.close(13);
+            pr_default.close(9);
+            pr_default.close(8);
+            pr_default.close(16);
             context.CommitDataStores("Customer");
             if ( AnyError == 0 )
             {
@@ -1654,9 +1764,9 @@ namespace GeneXus.Programs {
          }
          else
          {
-            pr_default.close(7);
-            pr_default.close(6);
-            pr_default.close(13);
+            pr_default.close(9);
+            pr_default.close(8);
+            pr_default.close(16);
             context.RollbackDataStores("Customer");
          }
          IsModified = 0 ;
@@ -1669,13 +1779,13 @@ namespace GeneXus.Programs {
 
       protected void ScanStart022( )
       {
-         /* Using cursor T000217 */
-         pr_default.execute(15);
+         /* Using cursor T000220 */
+         pr_default.execute(18);
          RcdFound2 = 0 ;
-         if ( (pr_default.getStatus(15) != 101) )
+         if ( (pr_default.getStatus(18) != 101) )
          {
             RcdFound2 = 1 ;
-            A3CustomerId = T000217_A3CustomerId[0] ;
+            A3CustomerId = T000220_A3CustomerId[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A3CustomerId", StringUtil.LTrim( StringUtil.Str( (decimal)(A3CustomerId), 6, 0)));
          }
          /* Load Subordinate Levels */
@@ -1683,12 +1793,12 @@ namespace GeneXus.Programs {
 
       protected void ScanNext022( )
       {
-         pr_default.readNext(15);
+         pr_default.readNext(18);
          RcdFound2 = 0 ;
-         if ( (pr_default.getStatus(15) != 101) )
+         if ( (pr_default.getStatus(18) != 101) )
          {
             RcdFound2 = 1 ;
-            A3CustomerId = T000217_A3CustomerId[0] ;
+            A3CustomerId = T000220_A3CustomerId[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A3CustomerId", StringUtil.LTrim( StringUtil.Str( (decimal)(A3CustomerId), 6, 0)));
          }
       }
@@ -1822,6 +1932,7 @@ namespace GeneXus.Programs {
          GxWebStd.gx_hidden_field( context, "IsModified", StringUtil.LTrim( StringUtil.NToC( (decimal)(IsModified), 4, 0, ".", "")));
          GxWebStd.gx_hidden_field( context, "Mode", StringUtil.RTrim( Gx_mode));
          GxWebStd.gx_hidden_field( context, "vGXBSCREEN", StringUtil.LTrim( StringUtil.NToC( (decimal)(Gx_BScreen), 1, 0, ".", "")));
+         GxWebStd.gx_hidden_field( context, "GXHCCOUNTRYID", StringUtil.LTrim( StringUtil.NToC( (decimal)(A1CountryId), 6, 0, ".", "")));
          GxWebStd.gx_hidden_field( context, "vMODE", StringUtil.RTrim( Gx_mode));
          GxWebStd.gx_hidden_field( context, "GX_FocusControl", GX_FocusControl);
          SendAjaxEncryptionKey();
@@ -1892,6 +2003,8 @@ namespace GeneXus.Programs {
          n1CountryId = ((0==A1CountryId) ? true : false) ;
          A2CountryName = "" ;
          context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A2CountryName", A2CountryName);
+         h1CountryId = A2CountryName ;
+         context.httpAjaxContext.ajax_rsp_assign_attri("", false, "h1CountryId", h1CountryId);
          A6CustomerGender = "F" ;
          context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A6CustomerGender", A6CustomerGender);
       }
@@ -1915,7 +2028,7 @@ namespace GeneXus.Programs {
          idxLst = 1 ;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( Form.Jscriptsrc.Item(idxLst)), "?1834589");
+            context.AddJavascriptSource(StringUtil.RTrim( Form.Jscriptsrc.Item(idxLst)), "?14442263");
             idxLst = (int)(idxLst+1) ;
          }
          /* End function define_styles */
@@ -1924,7 +2037,7 @@ namespace GeneXus.Programs {
       protected void include_jscripts( )
       {
          context.AddJavascriptSource("messages.eng.js", "?46473");
-         context.AddJavascriptSource("customer.js", "?1834590");
+         context.AddJavascriptSource("customer.js", "?14442263");
          /* End function include_jscripts */
       }
 
@@ -1973,7 +2086,6 @@ namespace GeneXus.Programs {
          grpGroupdata_Internalname = "GROUPDATA" ;
          tblTablemain_Internalname = "TABLEMAIN" ;
          Form.Internalname = "FORM" ;
-         imgprompt_1_Internalname = "PROMPT_1" ;
       }
 
       public override void initialize_properties( )
@@ -2003,8 +2115,6 @@ namespace GeneXus.Programs {
          imgBtn_first_Visible = 1 ;
          edtCountryName_Jsonclick = "" ;
          edtCountryName_Enabled = 0 ;
-         imgprompt_1_Visible = 1 ;
-         imgprompt_1_Link = "" ;
          edtCountryId_Jsonclick = "" ;
          edtCountryId_Enabled = 1 ;
          edtCustomerBalance_Jsonclick = "" ;
@@ -2032,6 +2142,44 @@ namespace GeneXus.Programs {
          /* End function dynload_actions */
       }
 
+      protected void GXHCACOUNTRYID022( int A1CountryId ,
+                                        String A2CountryName )
+      {
+         /* Using cursor T000221 */
+         pr_default.execute(19, new Object[] {A2CountryName});
+         gxhchits = 0 ;
+         while ( (pr_default.getStatus(19) != 101) )
+         {
+            gxhchits = (short)(gxhchits+1) ;
+            if ( gxhchits > 1 )
+            {
+               if (true) break;
+            }
+            A2CountryName = T000221_A2CountryName[0] ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A2CountryName", A2CountryName);
+            A1CountryId = T000221_A1CountryId[0] ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A1CountryId", StringUtil.LTrim( StringUtil.Str( (decimal)(A1CountryId), 6, 0)));
+            n1CountryId = T000221_n1CountryId[0] ;
+            pr_default.readNext(19);
+         }
+         GxWebStd.set_html_headers( context, 0, "", "");
+         context.GX_webresponse.AddString("new Array( new Array(");
+         context.GX_webresponse.AddString("\""+GXUtil.EncodeJSConstant( StringUtil.LTrim( StringUtil.NToC( (decimal)(A1CountryId), 6, 0, ".", "")))+"\"");
+         context.GX_webresponse.AddString(")");
+         if ( gxhchits > 1 )
+         {
+            context.GX_webresponse.AddString(",");
+            context.GX_webresponse.AddString("\"ambiguousck\"");
+         }
+         if ( gxhchits == 0 )
+         {
+            context.GX_webresponse.AddString(",");
+            context.GX_webresponse.AddString("101");
+         }
+         context.GX_webresponse.AddString(")");
+         pr_default.close(19);
+      }
+
       protected void AfterKeyLoadScreen( )
       {
          IsConfirmed = 0 ;
@@ -2043,21 +2191,23 @@ namespace GeneXus.Programs {
          /* End function AfterKeyLoadScreen */
       }
 
-      public void Valid_Customerid( int GX_Parm1 ,
-                                    String GX_Parm2 ,
+      public void Valid_Customerid( String GX_Parm1 ,
+                                    int GX_Parm2 ,
                                     String GX_Parm3 ,
                                     String GX_Parm4 ,
-                                    decimal GX_Parm5 ,
+                                    String GX_Parm5 ,
                                     decimal GX_Parm6 ,
-                                    int GX_Parm7 )
+                                    decimal GX_Parm7 ,
+                                    int GX_Parm8 )
       {
-         A3CustomerId = GX_Parm1 ;
-         A4CustomerName = GX_Parm2 ;
-         A5CustomerAddress = GX_Parm3 ;
-         A6CustomerGender = GX_Parm4 ;
-         A7CustomerTotalPurchases = GX_Parm5 ;
-         A8CustomerTotalPayments = GX_Parm6 ;
-         A1CountryId = GX_Parm7 ;
+         h1CountryId = GX_Parm1 ;
+         A3CustomerId = GX_Parm2 ;
+         A4CustomerName = GX_Parm3 ;
+         A5CustomerAddress = GX_Parm4 ;
+         A6CustomerGender = GX_Parm5 ;
+         A7CustomerTotalPurchases = GX_Parm6 ;
+         A8CustomerTotalPayments = GX_Parm7 ;
+         A1CountryId = GX_Parm8 ;
          n1CountryId = false ;
          context.wbHandled = 1 ;
          AfterKeyLoadScreen( ) ;
@@ -2086,21 +2236,56 @@ namespace GeneXus.Programs {
          isValidOutput.Add((Object)(StringUtil.LTrim( StringUtil.NToC( Z9CustomerBalance, 9, 2, ".", ""))));
          isValidOutput.Add((Object)(StringUtil.RTrim( Z2CountryName)));
          isValidOutput.Add((Object)(imgBtn_enter2_Enabled));
+         isValidOutput.Add((Object)(StringUtil.RTrim( h1CountryId)));
          isValidOutput.Add((Object)(context.GX_msglist.ToJavascriptSource()));
          context.GX_webresponse.AddString(isValidOutput.ToJSonString());
       }
 
-      public void Valid_Countryid( int GX_Parm1 ,
-                                   String GX_Parm2 )
+      public void Valid_Countryid( String GX_Parm1 ,
+                                   int GX_Parm2 ,
+                                   String GX_Parm3 )
       {
-         A1CountryId = GX_Parm1 ;
+         h1CountryId = GX_Parm1 ;
+         A1CountryId = GX_Parm2 ;
          n1CountryId = false ;
-         A2CountryName = GX_Parm2 ;
-         /* Using cursor T000215 */
-         pr_default.execute(13, new Object[] {n1CountryId, A1CountryId});
-         if ( (pr_default.getStatus(13) == 101) )
+         A2CountryName = GX_Parm3 ;
+         if ( String.IsNullOrEmpty(StringUtil.RTrim( h1CountryId)) )
          {
-            if ( ! ( (0==A1CountryId) ) )
+            A1CountryId = 0 ;
+            n1CountryId = false ;
+            n1CountryId = ((0==A1CountryId) ? true : false) ;
+         }
+         else
+         {
+            A2CountryName = h1CountryId ;
+            /* Using cursor T000222 */
+            pr_default.execute(20, new Object[] {A2CountryName});
+            A1CountryId = T000222_A1CountryId[0] ;
+            n1CountryId = T000222_n1CountryId[0] ;
+            A1CountryId = T000222_A1CountryId[0] ;
+            n1CountryId = T000222_n1CountryId[0] ;
+            if ( ! ( (pr_default.getStatus(20) == 101) ) )
+            {
+               pr_default.readNext(20);
+               if ( ! ( (pr_default.getStatus(20) == 101) ) )
+               {
+                  GX_msglist.addItem(context.GetMessage( "GXM_ambiguousck", new   object[]  {"Country Name"}), 1, "COUNTRYID");
+                  AnyError = 1 ;
+                  GX_FocusControl = edtCountryId_Internalname ;
+               }
+            }
+            else
+            {
+               n1CountryId = ((0==A1CountryId) ? true : false) ;
+            }
+            pr_default.close(20);
+         }
+         context.httpAjaxContext.ajax_rsp_assign_attri("", false, "h1CountryId", h1CountryId);
+         /* Using cursor T000223 */
+         pr_default.execute(21, new Object[] {n1CountryId, A1CountryId});
+         if ( (pr_default.getStatus(21) == 101) )
+         {
+            if ( ! ( (0==A1CountryId) && n1CountryId && String.IsNullOrEmpty(StringUtil.RTrim( A2CountryName)) ) )
             {
                GX_msglist.addItem("No matching 'Country'.", "ForeignKeyNotFound", 1, "COUNTRYID");
                AnyError = 1 ;
@@ -2109,15 +2294,17 @@ namespace GeneXus.Programs {
          }
          if ( AnyError == 0 )
          {
-            A2CountryName = T000215_A2CountryName[0] ;
+            A2CountryName = T000223_A2CountryName[0] ;
          }
-         pr_default.close(13);
+         pr_default.close(21);
          dynload_actions( ) ;
          if ( AnyError == 1 )
          {
             A2CountryName = "" ;
          }
+         isValidOutput.Add((Object)(StringUtil.LTrim( StringUtil.NToC( (decimal)(A1CountryId), 6, 0, ".", ""))));
          isValidOutput.Add((Object)(StringUtil.RTrim( A2CountryName)));
+         isValidOutput.Add((Object)(StringUtil.RTrim( h1CountryId)));
          isValidOutput.Add((Object)(context.GX_msglist.ToJavascriptSource()));
          context.GX_webresponse.AddString(isValidOutput.ToJSonString());
       }
@@ -2134,10 +2321,11 @@ namespace GeneXus.Programs {
 
       protected void CloseOpenCursors( )
       {
-         pr_default.close(15);
-         pr_default.close(7);
-         pr_default.close(6);
-         pr_default.close(13);
+         pr_default.close(18);
+         pr_default.close(9);
+         pr_default.close(8);
+         pr_default.close(21);
+         pr_default.close(16);
       }
 
       public override void initialize( )
@@ -2146,6 +2334,7 @@ namespace GeneXus.Programs {
          scmdbuf = "" ;
          gxfirstwebparm = "" ;
          gxfirstwebparm_bkp = "" ;
+         h1CountryId = "" ;
          PreviousTooltip = "" ;
          PreviousCaption = "" ;
          Form = new GXWebForm();
@@ -2204,9 +2393,15 @@ namespace GeneXus.Programs {
          T00025_A2CountryName = new String[] {""} ;
          T00025_A1CountryId = new int[1] ;
          T00025_n1CountryId = new bool[] {false} ;
-         T00024_A2CountryName = new String[] {""} ;
          T00026_A2CountryName = new String[] {""} ;
-         T00027_A3CustomerId = new int[1] ;
+         T00026_A1CountryId = new int[1] ;
+         T00026_n1CountryId = new bool[] {false} ;
+         T00027_A2CountryName = new String[] {""} ;
+         T00027_A1CountryId = new int[1] ;
+         T00027_n1CountryId = new bool[] {false} ;
+         T00024_A2CountryName = new String[] {""} ;
+         T00028_A2CountryName = new String[] {""} ;
+         T00029_A3CustomerId = new int[1] ;
          T00023_A3CustomerId = new int[1] ;
          T00023_A4CustomerName = new String[] {""} ;
          T00023_A5CustomerAddress = new String[] {""} ;
@@ -2216,27 +2411,40 @@ namespace GeneXus.Programs {
          T00023_A1CountryId = new int[1] ;
          T00023_n1CountryId = new bool[] {false} ;
          sMode2 = "" ;
-         T00028_A3CustomerId = new int[1] ;
-         T00029_A3CustomerId = new int[1] ;
          T000210_A3CustomerId = new int[1] ;
-         T000210_A4CustomerName = new String[] {""} ;
-         T000210_A5CustomerAddress = new String[] {""} ;
-         T000210_A6CustomerGender = new String[] {""} ;
-         T000210_A7CustomerTotalPurchases = new decimal[1] ;
-         T000210_A8CustomerTotalPayments = new decimal[1] ;
-         T000210_A1CountryId = new int[1] ;
-         T000210_n1CountryId = new bool[] {false} ;
-         T000212_A3CustomerId = new int[1] ;
-         T000215_A2CountryName = new String[] {""} ;
-         T000216_A14InvoiceId = new int[1] ;
-         T000217_A3CustomerId = new int[1] ;
+         T000211_A3CustomerId = new int[1] ;
+         T000212_A2CountryName = new String[] {""} ;
+         T000212_A1CountryId = new int[1] ;
+         T000212_n1CountryId = new bool[] {false} ;
+         T000213_A3CustomerId = new int[1] ;
+         T000213_A4CustomerName = new String[] {""} ;
+         T000213_A5CustomerAddress = new String[] {""} ;
+         T000213_A6CustomerGender = new String[] {""} ;
+         T000213_A7CustomerTotalPurchases = new decimal[1] ;
+         T000213_A8CustomerTotalPayments = new decimal[1] ;
+         T000213_A1CountryId = new int[1] ;
+         T000213_n1CountryId = new bool[] {false} ;
+         T000215_A3CustomerId = new int[1] ;
+         T000218_A2CountryName = new String[] {""} ;
+         T000219_A14InvoiceId = new int[1] ;
+         T000220_A3CustomerId = new int[1] ;
          sDynURL = "" ;
          FormProcess = "" ;
          GXt_char2 = "" ;
          GXt_char1 = "" ;
-         GXt_char3 = "" ;
          i6CustomerGender = "" ;
+         gxdynajaxctrlcodr = new GeneXus.Utils.GxStringCollection();
+         gxdynajaxctrldescr = new GeneXus.Utils.GxStringCollection();
+         gxwrpcisep = "" ;
+         T000221_A2CountryName = new String[] {""} ;
+         T000221_A1CountryId = new int[1] ;
+         T000221_n1CountryId = new bool[] {false} ;
+         GXt_char3 = "" ;
          isValidOutput = new GxUnknownObjectCollection();
+         T000222_A2CountryName = new String[] {""} ;
+         T000222_A1CountryId = new int[1] ;
+         T000222_n1CountryId = new bool[] {false} ;
+         T000223_A2CountryName = new String[] {""} ;
          pr_default = new DataStoreProvider(context, new GeneXus.Programs.customer__default(),
             new Object[][] {
                 new Object[] {
@@ -2252,37 +2460,55 @@ namespace GeneXus.Programs {
                T00025_A3CustomerId, T00025_A4CustomerName, T00025_A5CustomerAddress, T00025_A6CustomerGender, T00025_A7CustomerTotalPurchases, T00025_A8CustomerTotalPayments, T00025_A2CountryName, T00025_A1CountryId, T00025_n1CountryId
                }
                , new Object[] {
-               T00026_A2CountryName
+               T00026_A2CountryName, T00026_A1CountryId
                }
                , new Object[] {
-               T00027_A3CustomerId
+               T00027_A2CountryName, T00027_A1CountryId
                }
                , new Object[] {
-               T00028_A3CustomerId
+               T00028_A2CountryName
                }
                , new Object[] {
                T00029_A3CustomerId
                }
                , new Object[] {
-               T000210_A3CustomerId, T000210_A4CustomerName, T000210_A5CustomerAddress, T000210_A6CustomerGender, T000210_A7CustomerTotalPurchases, T000210_A8CustomerTotalPayments, T000210_A1CountryId, T000210_n1CountryId
+               T000210_A3CustomerId
+               }
+               , new Object[] {
+               T000211_A3CustomerId
+               }
+               , new Object[] {
+               T000212_A2CountryName, T000212_A1CountryId
+               }
+               , new Object[] {
+               T000213_A3CustomerId, T000213_A4CustomerName, T000213_A5CustomerAddress, T000213_A6CustomerGender, T000213_A7CustomerTotalPurchases, T000213_A8CustomerTotalPayments, T000213_A1CountryId, T000213_n1CountryId
                }
                , new Object[] {
                }
                , new Object[] {
-               T000212_A3CustomerId
+               T000215_A3CustomerId
                }
                , new Object[] {
                }
                , new Object[] {
                }
                , new Object[] {
-               T000215_A2CountryName
+               T000218_A2CountryName
                }
                , new Object[] {
-               T000216_A14InvoiceId
+               T000219_A14InvoiceId
                }
                , new Object[] {
-               T000217_A3CustomerId
+               T000220_A3CustomerId
+               }
+               , new Object[] {
+               T000221_A2CountryName, T000221_A1CountryId
+               }
+               , new Object[] {
+               T000222_A2CountryName, T000222_A1CountryId
+               }
+               , new Object[] {
+               T000223_A2CountryName
                }
             }
          );
@@ -2299,6 +2525,7 @@ namespace GeneXus.Programs {
       private short Gx_BScreen ;
       private short GX_JID ;
       private short gxajaxcallmode ;
+      private short gxhchits ;
       private int A1CountryId ;
       private int trnEnded ;
       private int bttBtn_enter_Visible ;
@@ -2312,7 +2539,6 @@ namespace GeneXus.Programs {
       private int edtCustomerTotalPayments_Enabled ;
       private int edtCustomerBalance_Enabled ;
       private int edtCountryId_Enabled ;
-      private int imgprompt_1_Visible ;
       private int edtCountryName_Enabled ;
       private int imgBtn_first_Visible ;
       private int imgBtn_first_separator_Visible ;
@@ -2335,6 +2561,7 @@ namespace GeneXus.Programs {
       private int Z3CustomerId ;
       private int Z1CountryId ;
       private int idxLst ;
+      private int gxdynajaxindex ;
       private decimal A7CustomerTotalPurchases ;
       private decimal A8CustomerTotalPayments ;
       private decimal A9CustomerBalance ;
@@ -2345,6 +2572,7 @@ namespace GeneXus.Programs {
       private String scmdbuf ;
       private String gxfirstwebparm ;
       private String gxfirstwebparm_bkp ;
+      private String h1CountryId ;
       private String PreviousTooltip ;
       private String PreviousCaption ;
       private String GX_FocusControl ;
@@ -2397,8 +2625,6 @@ namespace GeneXus.Programs {
       private String lblTextblockcountryid_Jsonclick ;
       private String edtCountryId_Internalname ;
       private String edtCountryId_Jsonclick ;
-      private String imgprompt_1_Internalname ;
-      private String imgprompt_1_Link ;
       private String lblTextblockcountryname_Internalname ;
       private String lblTextblockcountryname_Jsonclick ;
       private String edtCountryName_Internalname ;
@@ -2451,12 +2677,15 @@ namespace GeneXus.Programs {
       private String FormProcess ;
       private String GXt_char2 ;
       private String GXt_char1 ;
-      private String GXt_char3 ;
       private String i6CustomerGender ;
+      private String gxwrpcisep ;
+      private String GXt_char3 ;
       private bool entryPointCalled ;
       private bool n1CountryId ;
       private bool wbErr ;
       private bool Gx_longc ;
+      private GeneXus.Utils.GxStringCollection gxdynajaxctrlcodr ;
+      private GeneXus.Utils.GxStringCollection gxdynajaxctrldescr ;
       private GxUnknownObjectCollection isValidOutput ;
       private GXMasterPage MasterPageObj ;
       private IGxDataStore dsDefault ;
@@ -2471,9 +2700,15 @@ namespace GeneXus.Programs {
       private String[] T00025_A2CountryName ;
       private int[] T00025_A1CountryId ;
       private bool[] T00025_n1CountryId ;
-      private String[] T00024_A2CountryName ;
       private String[] T00026_A2CountryName ;
-      private int[] T00027_A3CustomerId ;
+      private int[] T00026_A1CountryId ;
+      private bool[] T00026_n1CountryId ;
+      private String[] T00027_A2CountryName ;
+      private int[] T00027_A1CountryId ;
+      private bool[] T00027_n1CountryId ;
+      private String[] T00024_A2CountryName ;
+      private String[] T00028_A2CountryName ;
+      private int[] T00029_A3CustomerId ;
       private int[] T00023_A3CustomerId ;
       private String[] T00023_A4CustomerName ;
       private String[] T00023_A5CustomerAddress ;
@@ -2482,20 +2717,30 @@ namespace GeneXus.Programs {
       private decimal[] T00023_A8CustomerTotalPayments ;
       private int[] T00023_A1CountryId ;
       private bool[] T00023_n1CountryId ;
-      private int[] T00028_A3CustomerId ;
-      private int[] T00029_A3CustomerId ;
       private int[] T000210_A3CustomerId ;
-      private String[] T000210_A4CustomerName ;
-      private String[] T000210_A5CustomerAddress ;
-      private String[] T000210_A6CustomerGender ;
-      private decimal[] T000210_A7CustomerTotalPurchases ;
-      private decimal[] T000210_A8CustomerTotalPayments ;
-      private int[] T000210_A1CountryId ;
-      private bool[] T000210_n1CountryId ;
-      private int[] T000212_A3CustomerId ;
-      private String[] T000215_A2CountryName ;
-      private int[] T000216_A14InvoiceId ;
-      private int[] T000217_A3CustomerId ;
+      private int[] T000211_A3CustomerId ;
+      private String[] T000212_A2CountryName ;
+      private int[] T000212_A1CountryId ;
+      private bool[] T000212_n1CountryId ;
+      private int[] T000213_A3CustomerId ;
+      private String[] T000213_A4CustomerName ;
+      private String[] T000213_A5CustomerAddress ;
+      private String[] T000213_A6CustomerGender ;
+      private decimal[] T000213_A7CustomerTotalPurchases ;
+      private decimal[] T000213_A8CustomerTotalPayments ;
+      private int[] T000213_A1CountryId ;
+      private bool[] T000213_n1CountryId ;
+      private int[] T000215_A3CustomerId ;
+      private String[] T000218_A2CountryName ;
+      private int[] T000219_A14InvoiceId ;
+      private int[] T000220_A3CustomerId ;
+      private String[] T000221_A2CountryName ;
+      private int[] T000221_A1CountryId ;
+      private bool[] T000221_n1CountryId ;
+      private String[] T000222_A2CountryName ;
+      private int[] T000222_A1CountryId ;
+      private bool[] T000222_n1CountryId ;
+      private String[] T000223_A2CountryName ;
       private int[] T00022_A3CustomerId ;
       private String[] T00022_A4CustomerName ;
       private String[] T00022_A5CustomerAddress ;
@@ -2522,13 +2767,19 @@ namespace GeneXus.Programs {
          ,new ForEachCursor(def[6])
          ,new ForEachCursor(def[7])
          ,new ForEachCursor(def[8])
-         ,new UpdateCursor(def[9])
+         ,new ForEachCursor(def[9])
          ,new ForEachCursor(def[10])
-         ,new UpdateCursor(def[11])
+         ,new ForEachCursor(def[11])
          ,new UpdateCursor(def[12])
          ,new ForEachCursor(def[13])
-         ,new ForEachCursor(def[14])
-         ,new ForEachCursor(def[15])
+         ,new UpdateCursor(def[14])
+         ,new UpdateCursor(def[15])
+         ,new ForEachCursor(def[16])
+         ,new ForEachCursor(def[17])
+         ,new ForEachCursor(def[18])
+         ,new ForEachCursor(def[19])
+         ,new ForEachCursor(def[20])
+         ,new ForEachCursor(def[21])
        };
     }
 
@@ -2545,28 +2796,28 @@ namespace GeneXus.Programs {
           prmT00025 = new Object[] {
           new Object[] {"@CustomerId",SqlDbType.Int,6,0}
           } ;
+          Object[] prmT00026 ;
+          prmT00026 = new Object[] {
+          new Object[] {"@CountryName",SqlDbType.Char,30,0}
+          } ;
+          Object[] prmT00027 ;
+          prmT00027 = new Object[] {
+          new Object[] {"@CountryName",SqlDbType.Char,30,0}
+          } ;
           Object[] prmT00024 ;
           prmT00024 = new Object[] {
           new Object[] {"@CountryId",SqlDbType.Int,6,0}
           } ;
-          Object[] prmT00026 ;
-          prmT00026 = new Object[] {
+          Object[] prmT00028 ;
+          prmT00028 = new Object[] {
           new Object[] {"@CountryId",SqlDbType.Int,6,0}
           } ;
-          Object[] prmT00027 ;
-          prmT00027 = new Object[] {
+          Object[] prmT00029 ;
+          prmT00029 = new Object[] {
           new Object[] {"@CustomerId",SqlDbType.Int,6,0}
           } ;
           Object[] prmT00023 ;
           prmT00023 = new Object[] {
-          new Object[] {"@CustomerId",SqlDbType.Int,6,0}
-          } ;
-          Object[] prmT00028 ;
-          prmT00028 = new Object[] {
-          new Object[] {"@CustomerId",SqlDbType.Int,6,0}
-          } ;
-          Object[] prmT00029 ;
-          prmT00029 = new Object[] {
           new Object[] {"@CustomerId",SqlDbType.Int,6,0}
           } ;
           Object[] prmT000210 ;
@@ -2575,6 +2826,18 @@ namespace GeneXus.Programs {
           } ;
           Object[] prmT000211 ;
           prmT000211 = new Object[] {
+          new Object[] {"@CustomerId",SqlDbType.Int,6,0}
+          } ;
+          Object[] prmT000212 ;
+          prmT000212 = new Object[] {
+          new Object[] {"@CountryName",SqlDbType.Char,30,0}
+          } ;
+          Object[] prmT000213 ;
+          prmT000213 = new Object[] {
+          new Object[] {"@CustomerId",SqlDbType.Int,6,0}
+          } ;
+          Object[] prmT000214 ;
+          prmT000214 = new Object[] {
           new Object[] {"@CustomerName",SqlDbType.Char,30,0} ,
           new Object[] {"@CustomerAddress",SqlDbType.Char,30,0} ,
           new Object[] {"@CustomerGender",SqlDbType.Char,1,0} ,
@@ -2582,11 +2845,11 @@ namespace GeneXus.Programs {
           new Object[] {"@CustomerTotalPayments",SqlDbType.Decimal,9,2} ,
           new Object[] {"@CountryId",SqlDbType.Int,6,0}
           } ;
-          Object[] prmT000212 ;
-          prmT000212 = new Object[] {
+          Object[] prmT000215 ;
+          prmT000215 = new Object[] {
           } ;
-          Object[] prmT000213 ;
-          prmT000213 = new Object[] {
+          Object[] prmT000216 ;
+          prmT000216 = new Object[] {
           new Object[] {"@CustomerName",SqlDbType.Char,30,0} ,
           new Object[] {"@CustomerAddress",SqlDbType.Char,30,0} ,
           new Object[] {"@CustomerGender",SqlDbType.Char,1,0} ,
@@ -2595,19 +2858,31 @@ namespace GeneXus.Programs {
           new Object[] {"@CountryId",SqlDbType.Int,6,0} ,
           new Object[] {"@CustomerId",SqlDbType.Int,6,0}
           } ;
-          Object[] prmT000214 ;
-          prmT000214 = new Object[] {
-          new Object[] {"@CustomerId",SqlDbType.Int,6,0}
-          } ;
-          Object[] prmT000216 ;
-          prmT000216 = new Object[] {
-          new Object[] {"@CustomerId",SqlDbType.Int,6,0}
-          } ;
           Object[] prmT000217 ;
           prmT000217 = new Object[] {
+          new Object[] {"@CustomerId",SqlDbType.Int,6,0}
           } ;
-          Object[] prmT000215 ;
-          prmT000215 = new Object[] {
+          Object[] prmT000218 ;
+          prmT000218 = new Object[] {
+          new Object[] {"@CountryId",SqlDbType.Int,6,0}
+          } ;
+          Object[] prmT000219 ;
+          prmT000219 = new Object[] {
+          new Object[] {"@CustomerId",SqlDbType.Int,6,0}
+          } ;
+          Object[] prmT000220 ;
+          prmT000220 = new Object[] {
+          } ;
+          Object[] prmT000221 ;
+          prmT000221 = new Object[] {
+          new Object[] {"@CountryName",SqlDbType.Char,30,0}
+          } ;
+          Object[] prmT000222 ;
+          prmT000222 = new Object[] {
+          new Object[] {"@CountryName",SqlDbType.Char,30,0}
+          } ;
+          Object[] prmT000223 ;
+          prmT000223 = new Object[] {
           new Object[] {"@CountryId",SqlDbType.Int,6,0}
           } ;
           def= new CursorDef[] {
@@ -2615,18 +2890,24 @@ namespace GeneXus.Programs {
              ,new CursorDef("T00023", "SELECT [CustomerId], [CustomerName], [CustomerAddress], [CustomerGender], [CustomerTotalPurchases], [CustomerTotalPayments], [CountryId] FROM [Customer] WITH (NOLOCK) WHERE [CustomerId] = @CustomerId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00023,1,0,true,false )
              ,new CursorDef("T00024", "SELECT [CountryName] FROM [Country] WITH (NOLOCK) WHERE [CountryId] = @CountryId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00024,1,0,true,false )
              ,new CursorDef("T00025", "SELECT TM1.[CustomerId], TM1.[CustomerName], TM1.[CustomerAddress], TM1.[CustomerGender], TM1.[CustomerTotalPurchases], TM1.[CustomerTotalPayments], T2.[CountryName], TM1.[CountryId] FROM ([Customer] TM1 WITH (NOLOCK) LEFT JOIN [Country] T2 WITH (NOLOCK) ON T2.[CountryId] = TM1.[CountryId]) WHERE TM1.[CustomerId] = @CustomerId ORDER BY TM1.[CustomerId]  OPTION (FAST 100)",true, GxErrorMask.GX_NOMASK, false, this,prmT00025,100,0,true,false )
-             ,new CursorDef("T00026", "SELECT [CountryName] FROM [Country] WITH (NOLOCK) WHERE [CountryId] = @CountryId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00026,1,0,true,false )
-             ,new CursorDef("T00027", "SELECT [CustomerId] FROM [Customer] WITH (NOLOCK) WHERE [CustomerId] = @CustomerId  OPTION (FAST 1)",true, GxErrorMask.GX_NOMASK, false, this,prmT00027,1,0,true,false )
-             ,new CursorDef("T00028", "SELECT TOP 1 [CustomerId] FROM [Customer] WITH (NOLOCK) WHERE ( [CustomerId] > @CustomerId) ORDER BY [CustomerId]  OPTION (FAST 1)",true, GxErrorMask.GX_NOMASK, false, this,prmT00028,1,0,true,true )
-             ,new CursorDef("T00029", "SELECT TOP 1 [CustomerId] FROM [Customer] WITH (NOLOCK) WHERE ( [CustomerId] < @CustomerId) ORDER BY [CustomerId] DESC  OPTION (FAST 1)",true, GxErrorMask.GX_NOMASK, false, this,prmT00029,1,0,true,true )
-             ,new CursorDef("T000210", "SELECT [CustomerId], [CustomerName], [CustomerAddress], [CustomerGender], [CustomerTotalPurchases], [CustomerTotalPayments], [CountryId] FROM [Customer] WITH (UPDLOCK) WHERE [CustomerId] = @CustomerId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000210,1,0,true,false )
-             ,new CursorDef("T000211", "INSERT INTO [Customer] ([CustomerName], [CustomerAddress], [CustomerGender], [CustomerTotalPurchases], [CustomerTotalPayments], [CountryId]) VALUES (@CustomerName, @CustomerAddress, @CustomerGender, @CustomerTotalPurchases, @CustomerTotalPayments, @CountryId)", GxErrorMask.GX_NOMASK,prmT000211)
-             ,new CursorDef("T000212", "SELECT Ident_Current('[Customer]') ",true, GxErrorMask.GX_NOMASK, false, this,prmT000212,1,0,true,false )
-             ,new CursorDef("T000213", "UPDATE [Customer] SET [CustomerName]=@CustomerName, [CustomerAddress]=@CustomerAddress, [CustomerGender]=@CustomerGender, [CustomerTotalPurchases]=@CustomerTotalPurchases, [CustomerTotalPayments]=@CustomerTotalPayments, [CountryId]=@CountryId  WHERE [CustomerId] = @CustomerId", GxErrorMask.GX_NOMASK,prmT000213)
-             ,new CursorDef("T000214", "DELETE FROM [Customer]  WHERE [CustomerId] = @CustomerId", GxErrorMask.GX_NOMASK,prmT000214)
-             ,new CursorDef("T000215", "SELECT [CountryName] FROM [Country] WITH (NOLOCK) WHERE [CountryId] = @CountryId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000215,1,0,true,false )
-             ,new CursorDef("T000216", "SELECT TOP 1 [InvoiceId] FROM [Invoice] WITH (NOLOCK) WHERE [CustomerId] = @CustomerId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000216,1,0,true,true )
-             ,new CursorDef("T000217", "SELECT [CustomerId] FROM [Customer] WITH (NOLOCK) ORDER BY [CustomerId]  OPTION (FAST 100)",true, GxErrorMask.GX_NOMASK, false, this,prmT000217,100,0,true,false )
+             ,new CursorDef("T00026", "SELECT [CountryName], [CountryId] FROM [Country] WITH (NOLOCK) WHERE [CountryName] = @CountryName  OPTION (FAST 0)",true, GxErrorMask.GX_NOMASK, false, this,prmT00026,0,0,true,false )
+             ,new CursorDef("T00027", "SELECT [CountryName], [CountryId] FROM [Country] WITH (NOLOCK) WHERE [CountryName] = @CountryName  OPTION (FAST 0)",true, GxErrorMask.GX_NOMASK, false, this,prmT00027,0,0,true,false )
+             ,new CursorDef("T00028", "SELECT [CountryName] FROM [Country] WITH (NOLOCK) WHERE [CountryId] = @CountryId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00028,1,0,true,false )
+             ,new CursorDef("T00029", "SELECT [CustomerId] FROM [Customer] WITH (NOLOCK) WHERE [CustomerId] = @CustomerId  OPTION (FAST 1)",true, GxErrorMask.GX_NOMASK, false, this,prmT00029,1,0,true,false )
+             ,new CursorDef("T000210", "SELECT TOP 1 [CustomerId] FROM [Customer] WITH (NOLOCK) WHERE ( [CustomerId] > @CustomerId) ORDER BY [CustomerId]  OPTION (FAST 1)",true, GxErrorMask.GX_NOMASK, false, this,prmT000210,1,0,true,true )
+             ,new CursorDef("T000211", "SELECT TOP 1 [CustomerId] FROM [Customer] WITH (NOLOCK) WHERE ( [CustomerId] < @CustomerId) ORDER BY [CustomerId] DESC  OPTION (FAST 1)",true, GxErrorMask.GX_NOMASK, false, this,prmT000211,1,0,true,true )
+             ,new CursorDef("T000212", "SELECT [CountryName], [CountryId] FROM [Country] WITH (NOLOCK) WHERE [CountryName] = @CountryName  OPTION (FAST 0)",true, GxErrorMask.GX_NOMASK, false, this,prmT000212,0,0,true,false )
+             ,new CursorDef("T000213", "SELECT [CustomerId], [CustomerName], [CustomerAddress], [CustomerGender], [CustomerTotalPurchases], [CustomerTotalPayments], [CountryId] FROM [Customer] WITH (UPDLOCK) WHERE [CustomerId] = @CustomerId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000213,1,0,true,false )
+             ,new CursorDef("T000214", "INSERT INTO [Customer] ([CustomerName], [CustomerAddress], [CustomerGender], [CustomerTotalPurchases], [CustomerTotalPayments], [CountryId]) VALUES (@CustomerName, @CustomerAddress, @CustomerGender, @CustomerTotalPurchases, @CustomerTotalPayments, @CountryId)", GxErrorMask.GX_NOMASK,prmT000214)
+             ,new CursorDef("T000215", "SELECT Ident_Current('[Customer]') ",true, GxErrorMask.GX_NOMASK, false, this,prmT000215,1,0,true,false )
+             ,new CursorDef("T000216", "UPDATE [Customer] SET [CustomerName]=@CustomerName, [CustomerAddress]=@CustomerAddress, [CustomerGender]=@CustomerGender, [CustomerTotalPurchases]=@CustomerTotalPurchases, [CustomerTotalPayments]=@CustomerTotalPayments, [CountryId]=@CountryId  WHERE [CustomerId] = @CustomerId", GxErrorMask.GX_NOMASK,prmT000216)
+             ,new CursorDef("T000217", "DELETE FROM [Customer]  WHERE [CustomerId] = @CustomerId", GxErrorMask.GX_NOMASK,prmT000217)
+             ,new CursorDef("T000218", "SELECT [CountryName] FROM [Country] WITH (NOLOCK) WHERE [CountryId] = @CountryId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000218,1,0,true,false )
+             ,new CursorDef("T000219", "SELECT TOP 1 [InvoiceId] FROM [Invoice] WITH (NOLOCK) WHERE [CustomerId] = @CustomerId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000219,1,0,true,true )
+             ,new CursorDef("T000220", "SELECT [CustomerId] FROM [Customer] WITH (NOLOCK) ORDER BY [CustomerId]  OPTION (FAST 100)",true, GxErrorMask.GX_NOMASK, false, this,prmT000220,100,0,true,false )
+             ,new CursorDef("T000221", "SELECT [CountryName], [CountryId] FROM [Country] WITH (NOLOCK) WHERE [CountryName] = @CountryName ",true, GxErrorMask.GX_NOMASK, false, this,prmT000221,0,0,true,false )
+             ,new CursorDef("T000222", "SELECT [CountryName], [CountryId] FROM [Country] WITH (NOLOCK) WHERE [CountryName] = @CountryName  OPTION (FAST 0)",true, GxErrorMask.GX_NOMASK, false, this,prmT000222,0,0,true,false )
+             ,new CursorDef("T000223", "SELECT [CountryName] FROM [Country] WITH (NOLOCK) WHERE [CountryId] = @CountryId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000223,1,0,true,false )
           };
        }
     }
@@ -2673,17 +2954,29 @@ namespace GeneXus.Programs {
                 break;
              case 4 :
                 ((String[]) buf[0])[0] = rslt.getString(1, 30) ;
+                ((int[]) buf[1])[0] = rslt.getInt(2) ;
                 break;
              case 5 :
-                ((int[]) buf[0])[0] = rslt.getInt(1) ;
+                ((String[]) buf[0])[0] = rslt.getString(1, 30) ;
+                ((int[]) buf[1])[0] = rslt.getInt(2) ;
                 break;
              case 6 :
-                ((int[]) buf[0])[0] = rslt.getInt(1) ;
+                ((String[]) buf[0])[0] = rslt.getString(1, 30) ;
                 break;
              case 7 :
                 ((int[]) buf[0])[0] = rslt.getInt(1) ;
                 break;
              case 8 :
+                ((int[]) buf[0])[0] = rslt.getInt(1) ;
+                break;
+             case 9 :
+                ((int[]) buf[0])[0] = rslt.getInt(1) ;
+                break;
+             case 10 :
+                ((String[]) buf[0])[0] = rslt.getString(1, 30) ;
+                ((int[]) buf[1])[0] = rslt.getInt(2) ;
+                break;
+             case 11 :
                 ((int[]) buf[0])[0] = rslt.getInt(1) ;
                 ((String[]) buf[1])[0] = rslt.getString(2, 30) ;
                 ((String[]) buf[2])[0] = rslt.getString(3, 30) ;
@@ -2693,17 +2986,28 @@ namespace GeneXus.Programs {
                 ((int[]) buf[6])[0] = rslt.getInt(7) ;
                 ((bool[]) buf[7])[0] = rslt.wasNull(7);
                 break;
-             case 10 :
+             case 13 :
                 ((int[]) buf[0])[0] = rslt.getInt(1) ;
                 break;
-             case 13 :
+             case 16 :
                 ((String[]) buf[0])[0] = rslt.getString(1, 30) ;
                 break;
-             case 14 :
+             case 17 :
                 ((int[]) buf[0])[0] = rslt.getInt(1) ;
                 break;
-             case 15 :
+             case 18 :
                 ((int[]) buf[0])[0] = rslt.getInt(1) ;
+                break;
+             case 19 :
+                ((String[]) buf[0])[0] = rslt.getString(1, 30) ;
+                ((int[]) buf[1])[0] = rslt.getInt(2) ;
+                break;
+             case 20 :
+                ((String[]) buf[0])[0] = rslt.getString(1, 30) ;
+                ((int[]) buf[1])[0] = rslt.getInt(2) ;
+                break;
+             case 21 :
+                ((String[]) buf[0])[0] = rslt.getString(1, 30) ;
                 break;
        }
     }
@@ -2734,6 +3038,12 @@ namespace GeneXus.Programs {
                 stmt.SetParameter(1, (int)parms[0]);
                 break;
              case 4 :
+                stmt.SetParameter(1, (String)parms[0]);
+                break;
+             case 5 :
+                stmt.SetParameter(1, (String)parms[0]);
+                break;
+             case 6 :
                 if ( (bool)parms[0] )
                 {
                    stmt.setNull( 1 , SqlDbType.Int );
@@ -2743,12 +3053,6 @@ namespace GeneXus.Programs {
                    stmt.SetParameter(1, (int)parms[1]);
                 }
                 break;
-             case 5 :
-                stmt.SetParameter(1, (int)parms[0]);
-                break;
-             case 6 :
-                stmt.SetParameter(1, (int)parms[0]);
-                break;
              case 7 :
                 stmt.SetParameter(1, (int)parms[0]);
                 break;
@@ -2756,6 +3060,15 @@ namespace GeneXus.Programs {
                 stmt.SetParameter(1, (int)parms[0]);
                 break;
              case 9 :
+                stmt.SetParameter(1, (int)parms[0]);
+                break;
+             case 10 :
+                stmt.SetParameter(1, (String)parms[0]);
+                break;
+             case 11 :
+                stmt.SetParameter(1, (int)parms[0]);
+                break;
+             case 12 :
                 stmt.SetParameter(1, (String)parms[0]);
                 stmt.SetParameter(2, (String)parms[1]);
                 stmt.SetParameter(3, (String)parms[2]);
@@ -2770,7 +3083,7 @@ namespace GeneXus.Programs {
                    stmt.SetParameter(6, (int)parms[6]);
                 }
                 break;
-             case 11 :
+             case 14 :
                 stmt.SetParameter(1, (String)parms[0]);
                 stmt.SetParameter(2, (String)parms[1]);
                 stmt.SetParameter(3, (String)parms[2]);
@@ -2786,10 +3099,10 @@ namespace GeneXus.Programs {
                 }
                 stmt.SetParameter(7, (int)parms[7]);
                 break;
-             case 12 :
+             case 15 :
                 stmt.SetParameter(1, (int)parms[0]);
                 break;
-             case 13 :
+             case 16 :
                 if ( (bool)parms[0] )
                 {
                    stmt.setNull( 1 , SqlDbType.Int );
@@ -2799,8 +3112,24 @@ namespace GeneXus.Programs {
                    stmt.SetParameter(1, (int)parms[1]);
                 }
                 break;
-             case 14 :
+             case 17 :
                 stmt.SetParameter(1, (int)parms[0]);
+                break;
+             case 19 :
+                stmt.SetParameter(1, (String)parms[0]);
+                break;
+             case 20 :
+                stmt.SetParameter(1, (String)parms[0]);
+                break;
+             case 21 :
+                if ( (bool)parms[0] )
+                {
+                   stmt.setNull( 1 , SqlDbType.Int );
+                }
+                else
+                {
+                   stmt.SetParameter(1, (int)parms[1]);
+                }
                 break;
        }
     }

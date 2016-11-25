@@ -27,7 +27,26 @@
 <AttriId>10</AttriId>
 <AttriName>ProductId</AttriName>
 <Description>Product Identifier</Description></Attribute>
-<Token> will be read-only in update mode.</Token></Message></Warning></Warnings>
+<Token> will be read-only in update mode.</Token></Message></Warning>
+<Warning>
+<MsgCode>spc0170</MsgCode>
+<Message>
+<Token>Attribute </Token>
+<Attribute>
+<AttriId>1</AttriId>
+<AttriName>CountryId</AttriName>
+<Description>Country Id</Description></Attribute>
+<Token> will be empty when the value of description attribute </Token>
+<Attribute>
+<AttriId>2</AttriId>
+<AttriName>CountryName</AttriName>
+<Description>Country Name</Description></Attribute>
+<Token> does not exist in table </Token>
+<Table>
+<TableId>1</TableId>
+<TableName>Country</TableName>
+<Description>Country</Description></Table>
+<Token>.</Token></Message></Warning></Warnings>
 <Errors></Errors>
 <Generator>
 <GenId>15</GenId>
@@ -374,4 +393,56 @@
 <AttriName>InvoiceId</AttriName>
 <Description>Invoice Id</Description></Attribute></OutputParameters>
 <PromptType>System</PromptType></Prompt></Prompts>
-<Suggests></Suggests></ObjectSpec>
+<Suggests>
+<Suggest>
+<ControlName>
+<Attribute>
+<AttriId>1</AttriId>
+<AttriName>CountryId</AttriName>
+<Description>Country Id</Description></Attribute></ControlName>
+<SuggestType>1</SuggestType>
+<Navigation>
+<NavigationTree>
+<Table>
+<TableId>1</TableId>
+<TableName>Country</TableName>
+<Description>Country</Description>
+<RecordsToRead>many</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>1</AttriId>
+<AttriName>CountryId</AttriName>
+<Description>Country Id</Description></Attribute></KeyAttributes>
+<Into>
+<Attribute>
+<AttriId>2</AttriId>
+<AttriName>CountryName</AttriName>
+<Description>Country Name</Description></Attribute></Into>
+<Tables></Tables></Table></NavigationTree>
+<TablesToUpdate></TablesToUpdate>
+<NavigationConditions>
+<Condition>
+<Attribute>
+<AttriId>2</AttriId>
+<AttriName>CountryName</AttriName>
+<Description>Country Name</Description></Attribute>
+<Token>.</Token>
+<Token>toupper(</Token>
+<Token>)</Token>
+<Sp></Sp>
+<Token>like</Token>
+<Sp></Sp>
+<Attribute>
+<AttriId>2</AttriId>
+<AttriName>@CountryName</AttriName>
+<Description>Country Name</Description></Attribute>
+<Token>.</Token>
+<Token>toupper(</Token>
+<Token>)</Token></Condition></NavigationConditions>
+<NavigationOrder>
+<Order>
+<Attribute>
+<AttriId>2</AttriId>
+<AttriName>CountryName</AttriName>
+<Description>Country Name</Description></Attribute></Order>
+<Condition></Condition></NavigationOrder></Navigation></Suggest></Suggests></ObjectSpec>

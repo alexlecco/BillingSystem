@@ -170,8 +170,6 @@ rule_i(0,prop(idBC,'0')).
 rule_i(0,prop('Folder',o(8,'Objects'))).
 rule_i(0,prop('ObjDesc','Customer')).
 rule_i(0,prop('ObjName','Customer')).
-rule_i(2,prompt([ 1,[ [ 2,1,1 ] ],[ 1 ],[ 1 ],[ t(o(13,'Gx0010'),28),t(1,2) ],[],n,[] ])).
-rule_i(2,rule([ a(23,[ [ 1 ],[ t(o(13,'Gx0010'),28),t(1,2) ] ]) ],[],[],[ 1 ])).
 rule_i(2,prompt([ 2,[ [ [],3,3 ] ],[],[],[ t(o(13,'Gx0020'),28),t(3,2) ],[],n,[] ])).
 rule_i(2,rule([ a(23,[ [ 3 ],[ t(o(13,'Gx0020'),28),t(3,2) ] ]) ],[],[],[ 3 ])).
 rule_i(0,rule([ a(22,[ 'Dlt','"Delete"','' ]) ],[],[],[])).
@@ -188,11 +186,12 @@ a_i(2,2,f,9,[],[ [],[ t(7,2),t(-,5),t(8,2),t(';',18) ] ]).
 a_i(3,2,f,[ t(7,2),t('Enabled',3) ],[],[ [],[ t(0,3),t(';',18) ] ]).
 a_i(4,2,f,[ t(9,2),t('Enabled',3) ],[],[ [],[ t(0,3),t(';',18) ] ]).
 a_i(5,2,f,6,[],[ [ insert ],[ t('''F''',3),t('IF',17),t(insert,1),t('AND',9),t('null1(',1),t(6,2),t(')',4),t('AND',9),t('GxBScreen',23),t(=,10),t(0,3),t(';',18) ] ]).
-a_i(6,2,b,1,[],[ [],[ a(1,[ t('''No se permiten CLIENTES sin NOMBRE''',3) ]) ],[ t('null(',1),t(4,2),t(')',4) ] ]).
-a_i(7,2,b,2,[],[ [],[ a(1,[ t('''No se ingresó DIRECCIÓN para el CLIENTE''',3) ]) ],[ t('null(',1),t(5,2),t(')',4) ] ]).
-a_i(8,2,t,2,[],[ [ [ [],3,3 ] ],'ICUSTOMER',[] ]).
-a_i(9,2,r,1,[],[ [ [ 2,1,1 ] ],'ICOUNTRY',[] ]).
-a_i(10,2,f,'GxBScreen',[],[ [],[ t('0',3) ] ]).
+a_i(6,2,h,1,[],[ [ 1 ],[ 2 ],[ [ [ 1,2 ],[ 1,1 ] ],n,[ [ 1,many ] ],[],[ c([ t(2,2),t(=,10),t(2,23) ],[ 2 ]) ],[],[],[],[] ] ]).
+a_i(7,2,b,1,[],[ [],[ a(1,[ t('''No se permiten CLIENTES sin NOMBRE''',3) ]) ],[ t('null(',1),t(4,2),t(')',4) ] ]).
+a_i(8,2,b,2,[],[ [],[ a(1,[ t('''No se ingresó DIRECCIÓN para el CLIENTE''',3) ]) ],[ t('null(',1),t(5,2),t(')',4) ] ]).
+a_i(9,2,t,2,[],[ [ [ [],3,3 ] ],'ICUSTOMER',[] ]).
+a_i(10,2,r,1,[],[ [ [ 2,1,1 ] ],'ICOUNTRY',[] ]).
+a_i(11,2,f,'GxBScreen',[],[ [],[ t('0',3) ] ]).
  
 v_i(f,i,1,7).
 v_i(f,i,1,16).
@@ -206,21 +205,23 @@ v_i(f,i,4,[]).
 v_i(f,o,4,[ t(9,2),t('Enabled',3) ]).
 v_i(f,i,5,'GxBScreen').
 v_i(f,o,5,6).
-v_i(b,i,6,4).
-v_i(b,o,6,[]).
-v_i(b,i,7,5).
+v_i(h,i,6,1).
+v_i(h,o,6,1).
+v_i(b,i,7,4).
 v_i(b,o,7,[]).
-v_i(t,i,8,3).
-v_i(t,o,8,4).
-v_i(t,o,8,5).
-v_i(t,o,8,6).
-v_i(t,o,8,7).
-v_i(t,o,8,8).
-v_i(t,o,8,1).
-v_i(r,i,9,1).
-v_i(r,o,9,2).
-v_i(f,i,10,[]).
-v_i(f,o,10,'GxBScreen').
+v_i(b,i,8,5).
+v_i(b,o,8,[]).
+v_i(t,i,9,3).
+v_i(t,o,9,4).
+v_i(t,o,9,5).
+v_i(t,o,9,6).
+v_i(t,o,9,7).
+v_i(t,o,9,8).
+v_i(t,o,9,1).
+v_i(r,i,10,1).
+v_i(r,o,10,2).
+v_i(f,i,11,[]).
+v_i(f,o,11,'GxBScreen').
  
 ca_i(5,6).
  
@@ -295,14 +296,14 @@ b_group_i(2,1,lit,0,1,0).
  
 html_i(2,table(2)).
  
-html_sub_i(2,0,html_i(0,html('<tbody>'))).
+html_sub_i(2,0,html_i(0,html('<TBODY>'))).
 html_sub_i(2,3,html_i(1,row(3))).
 html_sub_i(3,4,html_i(0,cell(4))).
 html_sub_i(4,5,html_i(0,table(5))).
-html_sub_i(5,0,html_i(0,html('<tbody>'))).
+html_sub_i(5,0,html_i(0,html('<TBODY>'))).
 html_sub_i(5,6,html_i(1,row(6))).
 html_sub_i(6,7,html_i(0,cell(7))).
-html_sub_i(7,0,html_i(0,html('<div style="WHITE-SPACE: nowrap" class="ToolbarMain">'))).
+html_sub_i(7,0,html_i(0,html('<DIV style="WHITE-SPACE: nowrap" class="ToolbarMain">'))).
 html_sub_i(7,8,html_i(1,bitmap('9fb193d9-64a4-4d30-b129-ff7c76830f7e-42'))).
 html_sub_i(7,9,html_i(2,bitmap('9fb193d9-64a4-4d30-b129-ff7c76830f7e-60'))).
 html_sub_i(7,10,html_i(3,bitmap('9fb193d9-64a4-4d30-b129-ff7c76830f7e-48'))).
@@ -319,20 +320,20 @@ html_sub_i(7,20,html_i(13,bitmap('9fb193d9-64a4-4d30-b129-ff7c76830f7e-40'))).
 html_sub_i(7,21,html_i(14,bitmap('9fb193d9-64a4-4d30-b129-ff7c76830f7e-60'))).
 html_sub_i(7,22,html_i(15,bitmap('9fb193d9-64a4-4d30-b129-ff7c76830f7e-28'))).
 html_sub_i(7,23,html_i(16,bitmap('9fb193d9-64a4-4d30-b129-ff7c76830f7e-60'))).
-html_sub_i(7,0,html_i(17,html('</div>'))).
+html_sub_i(7,0,html_i(17,html('</DIV>'))).
 html_sub_i(5,24,html_i(2,row(24))).
 html_sub_i(24,25,html_i(0,cell(25))).
-html_sub_i(5,0,html_i(3,html('</tbody>'))).
+html_sub_i(5,0,html_i(3,html('</TBODY>'))).
 html_sub_i(4,26,html_i(1,group(26))).
 html_sub_i(26,27,html_i(0,table(27))).
-html_sub_i(27,0,html_i(0,html('<tbody>'))).
+html_sub_i(27,0,html_i(0,html('<TBODY>'))).
 html_sub_i(27,28,html_i(1,row(28))).
 html_sub_i(28,29,html_i(0,cell(29))).
 html_sub_i(29,30,html_i(0,comp(errview))).
 html_sub_i(27,31,html_i(2,row(31))).
 html_sub_i(31,32,html_i(0,cell(32))).
 html_sub_i(32,33,html_i(0,table(33))).
-html_sub_i(33,0,html_i(0,html('<tbody>'))).
+html_sub_i(33,0,html_i(0,html('<TBODY>'))).
 html_sub_i(33,34,html_i(1,row(34))).
 html_sub_i(34,35,html_i(0,cell(35))).
 html_sub_i(35,36,html_i(0,t('Id',3))).
@@ -378,14 +379,14 @@ html_sub_i(74,75,html_i(0,cell(75))).
 html_sub_i(75,76,html_i(0,t('Country Name',3))).
 html_sub_i(74,77,html_i(1,cell(77))).
 html_sub_i(77,78,html_i(0,t(2,2))).
-html_sub_i(33,0,html_i(10,html('</tbody>'))).
+html_sub_i(33,0,html_i(10,html('</TBODY>'))).
 html_sub_i(27,79,html_i(3,row(79))).
 html_sub_i(79,80,html_i(0,cell(80))).
 html_sub_i(80,81,html_i(0,button('Enter'))).
 html_sub_i(80,82,html_i(1,button('Cancel'))).
 html_sub_i(80,83,html_i(2,button('Delete'))).
-html_sub_i(27,0,html_i(4,html('</tbody>'))).
-html_sub_i(2,0,html_i(2,html('</tbody>'))).
+html_sub_i(27,0,html_i(4,html('</TBODY>'))).
+html_sub_i(2,0,html_i(2,html('</TBODY>'))).
  
 html_tags_i(1,'Class','Form').
  
@@ -427,7 +428,7 @@ html_comp_i(8,'Width',measure(0,px),d,[ measure ]).
 html_comp_i(8,'Border','0',d,[ str ]).
 html_comp_i(8,'Alt','',d,[ str ]).
 html_comp_i(8,'Title','First',v,[ str ]).
-html_comp_i(8,'Hspace',0,d,[ num ]).
+html_comp_i(8,'Hspace',0,v,[ num ]).
 html_comp_i(8,'Vspace',0,d,[ num ]).
 html_comp_i(8,'Align',left,d,[ str ]).
 html_comp_i(8,'Usemap','',d,[ str ]).
@@ -442,7 +443,7 @@ html_comp_i(9,'Width',measure(0,px),d,[ measure ]).
 html_comp_i(9,'Border','0',d,[ str ]).
 html_comp_i(9,'Alt','',d,[ str ]).
 html_comp_i(9,'Title','',d,[ str ]).
-html_comp_i(9,'Hspace',0,d,[ num ]).
+html_comp_i(9,'Hspace',0,v,[ num ]).
 html_comp_i(9,'Vspace',0,d,[ num ]).
 html_comp_i(9,'Align',left,d,[ str ]).
 html_comp_i(9,'Usemap','',d,[ str ]).
@@ -457,7 +458,7 @@ html_comp_i(10,'Width',measure(0,px),d,[ measure ]).
 html_comp_i(10,'Border','0',d,[ str ]).
 html_comp_i(10,'Alt','',d,[ str ]).
 html_comp_i(10,'Title','Previous',v,[ str ]).
-html_comp_i(10,'Hspace',0,d,[ num ]).
+html_comp_i(10,'Hspace',0,v,[ num ]).
 html_comp_i(10,'Vspace',0,d,[ num ]).
 html_comp_i(10,'Align',left,d,[ str ]).
 html_comp_i(10,'Usemap','',d,[ str ]).
@@ -472,7 +473,7 @@ html_comp_i(11,'Width',measure(0,px),d,[ measure ]).
 html_comp_i(11,'Border','0',d,[ str ]).
 html_comp_i(11,'Alt','',d,[ str ]).
 html_comp_i(11,'Title','',d,[ str ]).
-html_comp_i(11,'Hspace',0,d,[ num ]).
+html_comp_i(11,'Hspace',0,v,[ num ]).
 html_comp_i(11,'Vspace',0,d,[ num ]).
 html_comp_i(11,'Align',left,d,[ str ]).
 html_comp_i(11,'Usemap','',d,[ str ]).
@@ -487,7 +488,7 @@ html_comp_i(12,'Width',measure(0,px),d,[ measure ]).
 html_comp_i(12,'Border','0',d,[ str ]).
 html_comp_i(12,'Alt','',d,[ str ]).
 html_comp_i(12,'Title','Next',v,[ str ]).
-html_comp_i(12,'Hspace',0,d,[ num ]).
+html_comp_i(12,'Hspace',0,v,[ num ]).
 html_comp_i(12,'Vspace',0,d,[ num ]).
 html_comp_i(12,'Align',left,d,[ str ]).
 html_comp_i(12,'Usemap','',d,[ str ]).
@@ -502,7 +503,7 @@ html_comp_i(13,'Width',measure(0,px),d,[ measure ]).
 html_comp_i(13,'Border','0',d,[ str ]).
 html_comp_i(13,'Alt','',d,[ str ]).
 html_comp_i(13,'Title','',d,[ str ]).
-html_comp_i(13,'Hspace',0,d,[ num ]).
+html_comp_i(13,'Hspace',0,v,[ num ]).
 html_comp_i(13,'Vspace',0,d,[ num ]).
 html_comp_i(13,'Align',left,d,[ str ]).
 html_comp_i(13,'Usemap','',d,[ str ]).
@@ -517,7 +518,7 @@ html_comp_i(14,'Width',measure(0,px),d,[ measure ]).
 html_comp_i(14,'Border','0',d,[ str ]).
 html_comp_i(14,'Alt','',d,[ str ]).
 html_comp_i(14,'Title','Last',v,[ str ]).
-html_comp_i(14,'Hspace',0,d,[ num ]).
+html_comp_i(14,'Hspace',0,v,[ num ]).
 html_comp_i(14,'Vspace',0,d,[ num ]).
 html_comp_i(14,'Align',left,d,[ str ]).
 html_comp_i(14,'Usemap','',d,[ str ]).
@@ -532,7 +533,7 @@ html_comp_i(15,'Width',measure(0,px),d,[ measure ]).
 html_comp_i(15,'Border','0',d,[ str ]).
 html_comp_i(15,'Alt','',d,[ str ]).
 html_comp_i(15,'Title','',d,[ str ]).
-html_comp_i(15,'Hspace',0,d,[ num ]).
+html_comp_i(15,'Hspace',0,v,[ num ]).
 html_comp_i(15,'Vspace',0,d,[ num ]).
 html_comp_i(15,'Align',left,d,[ str ]).
 html_comp_i(15,'Usemap','',d,[ str ]).
@@ -547,7 +548,7 @@ html_comp_i(16,'Width',measure(0,px),d,[ measure ]).
 html_comp_i(16,'Border','0',d,[ str ]).
 html_comp_i(16,'Alt','',d,[ str ]).
 html_comp_i(16,'Title','Select',v,[ str ]).
-html_comp_i(16,'Hspace',0,d,[ num ]).
+html_comp_i(16,'Hspace',0,v,[ num ]).
 html_comp_i(16,'Vspace',0,d,[ num ]).
 html_comp_i(16,'Align',left,d,[ str ]).
 html_comp_i(16,'Usemap','',d,[ str ]).
@@ -562,7 +563,7 @@ html_comp_i(17,'Width',measure(0,px),d,[ measure ]).
 html_comp_i(17,'Border','0',d,[ str ]).
 html_comp_i(17,'Alt','',d,[ str ]).
 html_comp_i(17,'Title','',d,[ str ]).
-html_comp_i(17,'Hspace',0,d,[ num ]).
+html_comp_i(17,'Hspace',0,v,[ num ]).
 html_comp_i(17,'Vspace',0,d,[ num ]).
 html_comp_i(17,'Align',left,d,[ str ]).
 html_comp_i(17,'Usemap','',d,[ str ]).
@@ -577,7 +578,7 @@ html_comp_i(18,'Width',measure(0,px),d,[ measure ]).
 html_comp_i(18,'Border','0',d,[ str ]).
 html_comp_i(18,'Alt','',d,[ str ]).
 html_comp_i(18,'Title','Confirm',v,[ str ]).
-html_comp_i(18,'Hspace',0,d,[ num ]).
+html_comp_i(18,'Hspace',0,v,[ num ]).
 html_comp_i(18,'Vspace',0,d,[ num ]).
 html_comp_i(18,'Align',left,d,[ str ]).
 html_comp_i(18,'Usemap','',d,[ str ]).
@@ -592,7 +593,7 @@ html_comp_i(19,'Width',measure(0,px),d,[ measure ]).
 html_comp_i(19,'Border','0',d,[ str ]).
 html_comp_i(19,'Alt','',d,[ str ]).
 html_comp_i(19,'Title','',d,[ str ]).
-html_comp_i(19,'Hspace',0,d,[ num ]).
+html_comp_i(19,'Hspace',0,v,[ num ]).
 html_comp_i(19,'Vspace',0,d,[ num ]).
 html_comp_i(19,'Align',left,d,[ str ]).
 html_comp_i(19,'Usemap','',d,[ str ]).
@@ -607,7 +608,7 @@ html_comp_i(20,'Width',measure(0,px),d,[ measure ]).
 html_comp_i(20,'Border','0',d,[ str ]).
 html_comp_i(20,'Alt','',d,[ str ]).
 html_comp_i(20,'Title','Cancel',v,[ str ]).
-html_comp_i(20,'Hspace',0,d,[ num ]).
+html_comp_i(20,'Hspace',0,v,[ num ]).
 html_comp_i(20,'Vspace',0,d,[ num ]).
 html_comp_i(20,'Align',left,d,[ str ]).
 html_comp_i(20,'Usemap','',d,[ str ]).
@@ -622,7 +623,7 @@ html_comp_i(21,'Width',measure(0,px),d,[ measure ]).
 html_comp_i(21,'Border','0',d,[ str ]).
 html_comp_i(21,'Alt','',d,[ str ]).
 html_comp_i(21,'Title','',d,[ str ]).
-html_comp_i(21,'Hspace',0,d,[ num ]).
+html_comp_i(21,'Hspace',0,v,[ num ]).
 html_comp_i(21,'Vspace',0,d,[ num ]).
 html_comp_i(21,'Align',left,d,[ str ]).
 html_comp_i(21,'Usemap','',d,[ str ]).
@@ -637,7 +638,7 @@ html_comp_i(22,'Width',measure(0,px),d,[ measure ]).
 html_comp_i(22,'Border','0',d,[ str ]).
 html_comp_i(22,'Alt','',d,[ str ]).
 html_comp_i(22,'Title','Delete',v,[ str ]).
-html_comp_i(22,'Hspace',0,d,[ num ]).
+html_comp_i(22,'Hspace',0,v,[ num ]).
 html_comp_i(22,'Vspace',0,d,[ num ]).
 html_comp_i(22,'Align',left,d,[ str ]).
 html_comp_i(22,'Usemap','',d,[ str ]).
@@ -652,11 +653,11 @@ html_comp_i(23,'Width',measure(0,px),d,[ measure ]).
 html_comp_i(23,'Border','0',d,[ str ]).
 html_comp_i(23,'Alt','',d,[ str ]).
 html_comp_i(23,'Title','',d,[ str ]).
-html_comp_i(23,'Hspace',0,d,[ num ]).
+html_comp_i(23,'Hspace',0,v,[ num ]).
 html_comp_i(23,'Vspace',0,d,[ num ]).
 html_comp_i(23,'Align',left,d,[ str ]).
 html_comp_i(23,'Usemap','',d,[ str ]).
-html_comp_i(26,'Class','Group',d,[ str ]).
+html_comp_i(26,'Class','Group',v,[ str ]).
 html_comp_i(26,'Caption','Customer',d,[ str ]).
 html_comp_i(26,'Id','Groupdata',v,[ str ]).
 html_comp_i(26,'Height',measure(0,px),d,[ measure ]).
@@ -956,21 +957,26 @@ html_comp_i(73,'Class','Attribute',d,[ str ]).
 html_comp_i(73,'Controlname','Countryid',d,[ str ]).
 html_comp_i(73,'Returnonclick',0,d,[ bool ]).
 html_comp_i(73,'Controltype',2,d,[ num ]).
-html_comp_i(73,'Inputtype',0,d,[ num ]).
+html_comp_i(73,'Inputtype',1,v,[ num ]).
+html_comp_i(73,'Controlitemvalues',1,d,[ num ]).
+html_comp_i(73,'Controlitemdescription',2,v,[ num ]).
+html_comp_i(73,'Editautocomplete',0,d,[ num ]).
+html_comp_i(73,'Controlwhere','',d,[ str ]).
+html_comp_i(73,'Controlrestrictedby','',d,[ str ]).
 html_comp_i(73,'Notifycontextchange',0,d,[ bool ]).
 html_comp_i(73,'Emptyasnull','Yes',d,[ str ]).
 html_comp_i(73,'Readonly',0,d,[ bool ]).
 html_comp_i(73,'Autocomplete',-1,d,[ bool ]).
 html_comp_i(73,'Ispassword',0,d,[ bool ]).
 html_comp_i(73,'Autoresize',-1,d,[ bool ]).
-html_comp_i(73,'Gxwidth',measure(6,chr),d,[ measure ]).
+html_comp_i(73,'Gxwidth',measure(30,chr),d,[ measure ]).
 html_comp_i(73,'Gxheight',measure(1,row),d,[ measure ]).
 html_comp_i(73,'Ismultiline',0,d,[ bool ]).
 html_comp_i(73,'Fill',-1,d,[ bool ]).
 html_comp_i(73,'Backcolor',rgb(255,255,255),d,[ color ]).
 html_comp_i(73,'Forecolor',rgb(51,51,51),d,[ color ]).
 html_comp_i(73,'Font',font('Arial',9,[]),d,[ font ]).
-html_comp_i(73,'Horizontalalignment',right,d,[ str ]).
+html_comp_i(73,'Horizontalalignment',left,d,[ str ]).
 html_comp_i(73,'Gxformat',0,d,[ num ]).
 html_comp_i(73,'Title','',d,[ str ]).
 html_comp_i(75,'Valign',top,v,[ str ]).
@@ -1230,12 +1236,12 @@ trn_level_i(2,[ [ 3,4,5,6,7,8,9,1,2 ],'Customer','Customer','Customer','',4 ]).
  
  
 pgm_parm_i(web,5,'GX0020',[ [ int,6,0,0 ] ],[ [ pCustomerId,out,[] ] ]).
-pgm_parm_i(web,4,'GX0010',[ [ int,6,0,0 ] ],[ [ pCountryId,out,[] ] ]).
  
  
  
  
  
+hc_i(1,2,t(1,2),[ 1 ]).
  
  
  

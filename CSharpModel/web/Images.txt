@@ -61,6 +61,7 @@ b640d5ed-d7c8-4373-8420-517d778694fa=toolbarbg
 ea7811ba-4fa2-42da-8591-e6cb10669f1f=toolbarseparator
 caf107ad-650e-4e3c-a4ba-1196d220603b=topL
 c7e6c81f-bebf-4d28-b5cd-decdcb627b0a=topR
+ee2902f8-fadd-43f8-bdba-9c24c220a598=billingsystemlogo
 [Location]
 90274dae-49c6-47ae-98c4-7a8f5eb82c12=English,GeneXusX,I,GeneXusX/PageFirst.gif
 eb16c005-5a7d-48a8-a16c-d7dcc1909b6e=English,GeneXusX,I,GeneXusX/PageLast.gif
@@ -124,3 +125,4 @@ b640d5ed-d7c8-4373-8420-517d778694fa=English,GeneXusX,I,GeneXusX/toolbarbg.gif
 ea7811ba-4fa2-42da-8591-e6cb10669f1f=English,GeneXusX,I,GeneXusX/toolbarseparator.gif
 caf107ad-650e-4e3c-a4ba-1196d220603b=English,GeneXusX,I,GeneXusX/topL.gif
 c7e6c81f-bebf-4d28-b5cd-decdcb627b0a=English,GeneXusX,I,GeneXusX/topR.gif
+ee2902f8-fadd-43f8-bdba-9c24c220a598=English,GeneXusX,I,billingsystemlogo.png
