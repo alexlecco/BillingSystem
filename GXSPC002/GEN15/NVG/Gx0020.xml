@@ -126,6 +126,7 @@
 <Variable>
 <VarId>Ccustomerbalance</VarId>
 <VarName>&amp;cCustomerBalance</VarName></Variable></Condition></NonOptimizedWhere>
+<JoinLocation>1</JoinLocation>
 <NavigationTree>
 <Table>
 <TableId>2</TableId>
@@ -137,7 +138,64 @@
 <AttriId>3</AttriId>
 <AttriName>CustomerId</AttriName>
 <Description>Customer Id</Description></Attribute></KeyAttributes>
-<Tables></Tables></Table></NavigationTree>
+<Tables>
+<Table>
+<TableId>4</TableId>
+<TableName>CustomerBalance navigation</TableName>
+<Description>Invoice</Description>
+<RecordsToRead>one</RecordsToRead>
+<Tables>
+<Table>
+<TableId>4</TableId>
+<TableName>Invoice</TableName>
+<Description>Invoice</Description>
+<RecordsToRead>many</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>3</AttriId>
+<AttriName>CustomerId</AttriName>
+<Description>Customer Id</Description></Attribute></KeyAttributes>
+<Tables>
+<Table>
+<TableId>2</TableId>
+<TableName>Customer</TableName>
+<Description>Customer</Description>
+<RecordsToRead>one</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>3</AttriId>
+<AttriName>CustomerId</AttriName>
+<Description>Customer Id</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table>
+<Table>
+<TableId>4</TableId>
+<TableName>InvoiceAmount navigation</TableName>
+<Description>Invoice</Description>
+<RecordsToRead>one</RecordsToRead>
+<JoinType>Outer</JoinType>
+<Tables>
+<Table>
+<TableId>5</TableId>
+<TableName>InvoiceDetail</TableName>
+<Description>Detail</Description>
+<RecordsToRead>many</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>14</AttriId>
+<AttriName>InvoiceId</AttriName>
+<Description>Invoice Id</Description></Attribute></KeyAttributes>
+<Tables>
+<Table>
+<TableId>3</TableId>
+<TableName>Product</TableName>
+<Description>Product</Description>
+<RecordsToRead>one</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>10</AttriId>
+<AttriName>ProductId</AttriName>
+<Description>Product Identifier</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table></Tables></Table></Tables></Table></Tables></Table></Tables></Table></Tables></Table></NavigationTree>
 <TablesToUpdate></TablesToUpdate>
 <Formulas>
 <VerticalFormulas></VerticalFormulas>

@@ -2,7 +2,7 @@
                File: reorg
         Description: Table Manager
              Author: GeneXus C# Generator version 10_1_6-46473
-       Generated on: 11/23/2016 17:25:18.43
+       Generated on: 11/23/2016 18:3:24.7
        Program type: Callable routine
           Main DBMS: sqlserver
 */
@@ -70,23 +70,11 @@ namespace GeneXus.Programs {
          /* Load data into tables. */
       }
 
-      public void ReorganizeInvoice( )
+      public void ReorganizeCustomer( )
       {
          String cmdBuffer ;
-         /* Indices for table Invoice */
-         cmdBuffer=" ALTER TABLE [Invoice] DROP COLUMN [InvoiceAmount] "
-         ;
-         RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
-         RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
-         RGZ.ExecuteStmt() ;
-         RGZ.Drop();
-      }
-
-      public void ReorganizeInvoiceDetail( )
-      {
-         String cmdBuffer ;
-         /* Indices for table InvoiceDetail */
-         cmdBuffer=" ALTER TABLE [InvoiceDetail] DROP COLUMN [InvoiceDetailAmount] "
+         /* Indices for table Customer */
+         cmdBuffer=" ALTER TABLE [Customer] DROP COLUMN [CustomerBalance] "
          ;
          RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
          RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
@@ -100,14 +88,9 @@ namespace GeneXus.Programs {
          {
             /* Using cursor P00012 */
             pr_default.execute(0);
-            InvoiceCount = P00012_AInvoiceCount[0] ;
+            CustomerCount = P00012_ACustomerCount[0] ;
             pr_default.close(0);
-            PrintRecordCount ( "Invoice" ,  InvoiceCount );
-            /* Using cursor P00023 */
-            pr_default.execute(1);
-            InvoiceDetailCount = P00023_AInvoiceDetailCount[0] ;
-            pr_default.close(1);
-            PrintRecordCount ( "InvoiceDetail" ,  InvoiceDetailCount );
+            PrintRecordCount ( "Customer" ,  CustomerCount );
          }
       }
 
@@ -127,6 +110,18 @@ namespace GeneXus.Programs {
          }
          if ( GXUtil.IsSQLSERVER2005( context, "DEFAULT") )
          {
+            /* Using cursor P00023 */
+            pr_default.execute(1);
+            while ( (pr_default.getStatus(1) != 101) )
+            {
+               sSchemaVar = P00023_AsSchemaVar[0] ;
+               nsSchemaVar = P00023_nsSchemaVar[0] ;
+               pr_default.readNext(1);
+            }
+            pr_default.close(1);
+         }
+         else
+         {
             /* Using cursor P00034 */
             pr_default.execute(2);
             while ( (pr_default.getStatus(2) != 101) )
@@ -137,26 +132,9 @@ namespace GeneXus.Programs {
             }
             pr_default.close(2);
          }
-         else
+         if ( ! ColumnExist("Customer",sSchemaVar,"CustomerBalance") )
          {
-            /* Using cursor P00045 */
-            pr_default.execute(3);
-            while ( (pr_default.getStatus(3) != 101) )
-            {
-               sSchemaVar = P00045_AsSchemaVar[0] ;
-               nsSchemaVar = P00045_nsSchemaVar[0] ;
-               pr_default.readNext(3);
-            }
-            pr_default.close(3);
-         }
-         if ( ! ColumnExist("Invoice",sSchemaVar,"InvoiceAmount") )
-         {
-            SetCheckError ( GXResourceManager.GetMessage("GXM_column_not_exist", new   object[]  {"InvoiceAmount", "Invoice"}) );
-            return false;
-         }
-         if ( ! ColumnExist("InvoiceDetail",sSchemaVar,"InvoiceDetailAmount") )
-         {
-            SetCheckError ( GXResourceManager.GetMessage("GXM_column_not_exist", new   object[]  {"InvoiceDetailAmount", "InvoiceDetail"}) );
+            SetCheckError ( GXResourceManager.GetMessage("GXM_column_not_exist", new   object[]  {"CustomerBalance", "Customer"}) );
             return false;
          }
          return true ;
@@ -168,27 +146,26 @@ namespace GeneXus.Programs {
       {
          bool result ;
          result = false ;
-         /* Using cursor P00056 */
-         pr_default.execute(4, new Object[] {sTableName, sMySchemaName, sMyColumnName});
-         while ( (pr_default.getStatus(4) != 101) )
+         /* Using cursor P00045 */
+         pr_default.execute(3, new Object[] {sTableName, sMySchemaName, sMyColumnName});
+         while ( (pr_default.getStatus(3) != 101) )
          {
-            tablename = P00056_Atablename[0] ;
-            ntablename = P00056_ntablename[0] ;
-            schemaname = P00056_Aschemaname[0] ;
-            nschemaname = P00056_nschemaname[0] ;
-            columnname = P00056_Acolumnname[0] ;
-            ncolumnname = P00056_ncolumnname[0] ;
+            tablename = P00045_Atablename[0] ;
+            ntablename = P00045_ntablename[0] ;
+            schemaname = P00045_Aschemaname[0] ;
+            nschemaname = P00045_nschemaname[0] ;
+            columnname = P00045_Acolumnname[0] ;
+            ncolumnname = P00045_ncolumnname[0] ;
             result = true ;
-            pr_default.readNext(4);
+            pr_default.readNext(3);
          }
-         pr_default.close(4);
+         pr_default.close(3);
          return result ;
       }
 
       private void ExecuteOnlyTablesReorganization( )
       {
-         ReorgExecute.RegisterBlockForSubmit( 1 ,  "ReorganizeInvoice" , new Object[]{ });
-         ReorgExecute.RegisterBlockForSubmit( 2 ,  "ReorganizeInvoiceDetail" , new Object[]{ });
+         ReorgExecute.RegisterBlockForSubmit( 1 ,  "ReorganizeCustomer" , new Object[]{ });
       }
 
       private void ExecuteOnlyRisReorganization( )
@@ -210,8 +187,7 @@ namespace GeneXus.Programs {
 
       private void SetPrecedencetables( )
       {
-         GXReorganization.SetMsg( 1 ,  GXResourceManager.GetMessage("GXM_fileupdate", new   object[]  {"Invoice", ""}) );
-         GXReorganization.SetMsg( 2 ,  GXResourceManager.GetMessage("GXM_fileupdate", new   object[]  {"InvoiceDetail", ""}) );
+         GXReorganization.SetMsg( 1 ,  GXResourceManager.GetMessage("GXM_fileupdate", new   object[]  {"Customer", ""}) );
       }
 
       private void SetPrecedenceris( )
@@ -249,14 +225,13 @@ namespace GeneXus.Programs {
       public override void initialize( )
       {
          scmdbuf = "" ;
-         P00012_AInvoiceCount = new int[1] ;
-         P00023_AInvoiceDetailCount = new int[1] ;
+         P00012_ACustomerCount = new int[1] ;
          sSchemaVar = "" ;
          nsSchemaVar = false ;
+         P00023_AsSchemaVar = new String[] {""} ;
+         P00023_nsSchemaVar = new bool[] {false} ;
          P00034_AsSchemaVar = new String[] {""} ;
          P00034_nsSchemaVar = new bool[] {false} ;
-         P00045_AsSchemaVar = new String[] {""} ;
-         P00045_nsSchemaVar = new bool[] {false} ;
          sTableName = "" ;
          sMySchemaName = "" ;
          sMyColumnName = "" ;
@@ -266,28 +241,25 @@ namespace GeneXus.Programs {
          nschemaname = false ;
          columnname = "" ;
          ncolumnname = false ;
-         P00056_Atablename = new String[] {""} ;
-         P00056_ntablename = new bool[] {false} ;
-         P00056_Aschemaname = new String[] {""} ;
-         P00056_nschemaname = new bool[] {false} ;
-         P00056_Acolumnname = new String[] {""} ;
-         P00056_ncolumnname = new bool[] {false} ;
+         P00045_Atablename = new String[] {""} ;
+         P00045_ntablename = new bool[] {false} ;
+         P00045_Aschemaname = new String[] {""} ;
+         P00045_nschemaname = new bool[] {false} ;
+         P00045_Acolumnname = new String[] {""} ;
+         P00045_ncolumnname = new bool[] {false} ;
          pr_default = new DataStoreProvider(context, new GeneXus.Programs.reorg__default(),
             new Object[][] {
                 new Object[] {
-               P00012_AInvoiceCount
+               P00012_ACustomerCount
                }
                , new Object[] {
-               P00023_AInvoiceDetailCount
+               P00023_AsSchemaVar
                }
                , new Object[] {
                P00034_AsSchemaVar
                }
                , new Object[] {
-               P00045_AsSchemaVar
-               }
-               , new Object[] {
-               P00056_Atablename, P00056_Aschemaname, P00056_Acolumnname
+               P00045_Atablename, P00045_Aschemaname, P00045_Acolumnname
                }
             }
          );
@@ -295,8 +267,7 @@ namespace GeneXus.Programs {
       }
 
       protected short ErrCode ;
-      protected int InvoiceCount ;
-      protected int InvoiceDetailCount ;
+      protected int CustomerCount ;
       protected String scmdbuf ;
       protected String sSchemaVar ;
       protected String sTableName ;
@@ -312,18 +283,17 @@ namespace GeneXus.Programs {
       protected IGxDataStore dsDefault ;
       protected GxCommand RGZ ;
       protected IDataStoreProvider pr_default ;
-      protected int[] P00012_AInvoiceCount ;
-      protected int[] P00023_AInvoiceDetailCount ;
+      protected int[] P00012_ACustomerCount ;
+      protected String[] P00023_AsSchemaVar ;
+      protected bool[] P00023_nsSchemaVar ;
       protected String[] P00034_AsSchemaVar ;
       protected bool[] P00034_nsSchemaVar ;
-      protected String[] P00045_AsSchemaVar ;
-      protected bool[] P00045_nsSchemaVar ;
-      protected String[] P00056_Atablename ;
-      protected bool[] P00056_ntablename ;
-      protected String[] P00056_Aschemaname ;
-      protected bool[] P00056_nschemaname ;
-      protected String[] P00056_Acolumnname ;
-      protected bool[] P00056_ncolumnname ;
+      protected String[] P00045_Atablename ;
+      protected bool[] P00045_ntablename ;
+      protected String[] P00045_Aschemaname ;
+      protected bool[] P00045_nschemaname ;
+      protected String[] P00045_Acolumnname ;
+      protected bool[] P00045_ncolumnname ;
    }
 
    public class reorg__default : DataStoreHelperBase, IDataStoreHelper
@@ -336,7 +306,6 @@ namespace GeneXus.Programs {
          ,new ForEachCursor(def[1])
          ,new ForEachCursor(def[2])
          ,new ForEachCursor(def[3])
-         ,new ForEachCursor(def[4])
        };
     }
 
@@ -356,19 +325,15 @@ namespace GeneXus.Programs {
           } ;
           Object[] prmP00045 ;
           prmP00045 = new Object[] {
-          } ;
-          Object[] prmP00056 ;
-          prmP00056 = new Object[] {
           new Object[] {"@sTableName",SqlDbType.Char,255,0} ,
           new Object[] {"@sMySchemaName",SqlDbType.Char,255,0} ,
           new Object[] {"@sMyColumnName",SqlDbType.Char,255,0}
           } ;
           def= new CursorDef[] {
-              new CursorDef("P00012", "SELECT COUNT(*) FROM [Invoice] ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00012,100,0,true,false )
-             ,new CursorDef("P00023", "SELECT COUNT(*) FROM [InvoiceDetail] ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00023,100,0,true,false )
-             ,new CursorDef("P00034", "SELECT SCHEMA_NAME() ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00034,100,0,true,false )
-             ,new CursorDef("P00045", "SELECT USER_NAME() ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00045,100,0,true,false )
-             ,new CursorDef("P00056", "SELECT [TABLE_NAME], [TABLE_SCHEMA], [COLUMN_NAME] FROM INFORMATION_SCHEMA.COLUMNS WHERE ([TABLE_NAME] = @sTableName) AND ([TABLE_SCHEMA] = @sMySchemaName) AND ([COLUMN_NAME] = @sMyColumnName) ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00056,100,0,true,false )
+              new CursorDef("P00012", "SELECT COUNT(*) FROM [Customer] ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00012,100,0,true,false )
+             ,new CursorDef("P00023", "SELECT SCHEMA_NAME() ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00023,100,0,true,false )
+             ,new CursorDef("P00034", "SELECT USER_NAME() ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00034,100,0,true,false )
+             ,new CursorDef("P00045", "SELECT [TABLE_NAME], [TABLE_SCHEMA], [COLUMN_NAME] FROM INFORMATION_SCHEMA.COLUMNS WHERE ([TABLE_NAME] = @sTableName) AND ([TABLE_SCHEMA] = @sMySchemaName) AND ([COLUMN_NAME] = @sMyColumnName) ",false, GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK, false, this,prmP00045,100,0,true,false )
           };
        }
     }
@@ -383,15 +348,12 @@ namespace GeneXus.Programs {
                 ((int[]) buf[0])[0] = rslt.getInt(1) ;
                 break;
              case 1 :
-                ((int[]) buf[0])[0] = rslt.getInt(1) ;
+                ((String[]) buf[0])[0] = rslt.getString(1, 255) ;
                 break;
              case 2 :
                 ((String[]) buf[0])[0] = rslt.getString(1, 255) ;
                 break;
              case 3 :
-                ((String[]) buf[0])[0] = rslt.getString(1, 255) ;
-                break;
-             case 4 :
                 ((String[]) buf[0])[0] = rslt.getVarchar(1) ;
                 ((String[]) buf[1])[0] = rslt.getVarchar(2) ;
                 ((String[]) buf[2])[0] = rslt.getVarchar(3) ;
@@ -405,7 +367,7 @@ namespace GeneXus.Programs {
     {
        switch ( cursor )
        {
-             case 4 :
+             case 3 :
                 stmt.SetParameter(1, (String)parms[0]);
                 stmt.SetParameter(2, (String)parms[1]);
                 stmt.SetParameter(3, (String)parms[2]);

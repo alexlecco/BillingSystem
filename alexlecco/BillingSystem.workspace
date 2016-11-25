@@ -9,19 +9,39 @@
     <Type>1db606f2-af09-4cf9-a3b5-b481519d28f6</Type>
     <Part>9b0a32a3-de6d-4be1-a4dd-1b85d3741534</Part>
   </Object>
+  <Object>
+    <Name>Product</Name>
+    <Type>1db606f2-af09-4cf9-a3b5-b481519d28f6</Type>
+    <Part>9b0a32a3-de6d-4be1-a4dd-1b85d3741534</Part>
+  </Object>
+  <Object>
+    <Name>Invoice</Name>
+    <Type>1db606f2-af09-4cf9-a3b5-b481519d28f6</Type>
+    <Part>d24a58ad-57ba-41b7-9e6e-eaca3543c778</Part>
+  </Object>
   <Recent>
     <RecentKBObjectsList>
       <MaximumItems>10</MaximumItems>
       <RecentKBObjects>
         <RecentKBObject>
+          <Key>857ca50e-7905-0000-0007-c5d9ff2975ec-2</Key>
+          <Name>Customer</Name>
+          <LastAccess>2016-11-23T17:02:46.6257959-03:00</LastAccess>
+        </RecentKBObject>
+        <RecentKBObject>
+          <Key>1db606f2-af09-4cf9-a3b5-b481519d28f6-4</Key>
+          <Name>Invoice</Name>
+          <LastAccess>2016-11-23T14:35:34.3307283-03:00</LastAccess>
+        </RecentKBObject>
+        <RecentKBObject>
+          <Key>857ca50e-7905-0000-0007-c5d9ff2975ec-1</Key>
+          <Name>Country</Name>
+          <LastAccess>2016-11-23T14:21:25.2228126-03:00</LastAccess>
+        </RecentKBObject>
+        <RecentKBObject>
           <Key>1db606f2-af09-4cf9-a3b5-b481519d28f6-1</Key>
           <Name>Country</Name>
           <LastAccess>2016-11-14T18:01:15.7510129-03:00</LastAccess>
-        </RecentKBObject>
-        <RecentKBObject>
-          <Key>1db606f2-af09-4cf9-a3b5-b481519d28f6-0</Key>
-          <Name>Transaction1</Name>
-          <LastAccess>2016-11-14T17:53:24.6273975-03:00</LastAccess>
         </RecentKBObject>
       </RecentKBObjects>
     </RecentKBObjectsList>

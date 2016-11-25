@@ -1,7 +1,7 @@
 spec_i([ trn,4,'Invoice','Invoice',[],eng,'10_1_6-46473' ]).
  
 struct_i(4,0,[],[]).
-struct_i(5,4,[ 14,20,16,'GxBScreen',7 ],[ 20,16,7 ]).
+struct_i(5,4,[ 14,20,9,16,'GxBScreen',7 ],[ 20,9,16,7 ]).
  
 level_i(5,[ 5,[ [ 5,many ],[ 3,one ] ],[ 14,17 ],[],[],[],[ 14,17 ],'IINVOICEDETAIL',[ 5,[ [ [],14,14 ] ] ],[] ]).
 level_i(4,[ 4,[ [ 4,many ],[ 2,one ],[ 2000,one ],[ 2001,one ] ],[ 14 ],[],[],[],[ 14 ],'IINVOICE',[ 4,[] ],[] ]).
@@ -18,8 +18,8 @@ lwi_i(4,[ [] ]).
 ta_i(5,[ [ [ 5,14 ],[ 5,17 ],[ 3,12 ],[ 3,11 ],[ 3,13 ],[ 5,18 ],[ 5,10 ] ] ]).
 ta_i(4,[ [ [ 4,14 ],[ 2,7 ],[ 4,15 ],[ 2,4 ],[ 4,3 ],[ 2000,se(20,[ [ 2000,20 ] ],[ t('coalesce(',1),t(20,2),t(',',7),t('0',3),t(')',4) ]) ],[ 2001,se(16,[ [ 2001,16 ] ],[ t('coalesce(',1),t(16,2),t(',',7),t('0',3),t(')',4) ]) ] ] ]).
  
-las_i(5,[ [ 14,17,20,19,12,16,'GxBScreen',10,11,13,18,7 ] ]).
-las_i(4,[ [ 14,7,'GxBScreen','Today',15,3,4,20,16 ] ]).
+las_i(5,[ [ 14,17,20,19,12,9,16,'GxBScreen',10,11,13,18,7 ] ]).
+las_i(4,[ [ 14,7,'GxBScreen','Today',9,15,3,4,20,16 ] ]).
  
 lac_i(5,[ [ 17,10,18 ] ]).
 lac_i(4,[ [ 14,15,3 ] ]).
@@ -30,6 +30,7 @@ lits_i('Date',5,10).
 lits_i('Customer Id',5,10).
 lits_i('Customer Name',5,10).
 lits_i('Customer Total Purchases',5,10).
+lits_i('Customer Balance',5,10).
 lits_i('Detail',5,10).
 lits_i('Amount',5,10).
  
@@ -40,6 +41,7 @@ pos_i(15,[ 0,0,0 ]).
 pos_i(3,[ 0,0,0 ]).
 pos_i(4,[ 0,0,0 ]).
 pos_i(7,[ 0,0,0 ]).
+pos_i(9,[ 0,0,0 ]).
 pos_i(17,[ 1,2,0 ]).
 pos_i(10,[ 1,2,3 ]).
 pos_i(11,[ 1,2,10 ]).
@@ -206,102 +208,110 @@ rule_i(5,rule([ a(3,[ t(7,2) ]) ],[],[ insert,update,delete ],[ 7 ])).
 rule_i(5,rule([ a(19,[ [ 10 ],msg([ t('"No matching ''Product''."',3) ],[ t('ForeignKeyNotFound',3) ]) ]) ],[],[ insert,update,delete ],[ 10 ])).
  
 a_i(1,4,b,0,[],[ [],[ a(1,msg([ t('"Field Invoice Date is out of range"',3) ],[ t('OutOfRange',3) ])) ],[ t('NOT',8),t('(',0),t('null(',1),t(15,2),t(')',4),t('.OR.',9),t(15,2),t(>=,10),t('ymdtod(',1),t('1753',3),t(',',7),t('01',3),t(',',7),t('01',3),t(')',4),t(')',4) ] ]).
-a_i(2,4,f,7,[],[ [ delete,insert,update,delete ],[ t('old(',1),t(7,2),t(')',4),t(-,5),t(16,2),t('IF',17),t(delete,1),t(';',18),t('old(',1),t(7,2),t(')',4),t(+,5),t(16,2),t(-,5),t('old(',1),t(16,2),t(')',4),t('IF',17),t('(',0),t(insert,1),t('.OR.',9),t(update,1),t('.OR.',9),t(delete,1),t(')',4),t(';',18) ] ]).
-a_i(3,4,f,[ t(7,2),t('Enabled',3) ],[],[ [],[ t(0,3),t(';',18) ] ]).
-a_i(4,4,f,15,[],[ [ insert ],[ t('Today',23),t('IF',17),t(insert,1),t('AND',9),t('null1(',1),t(15,2),t(')',4),t('AND',9),t('GxBScreen',23),t(=,10),t(0,3),t(';',18) ] ]).
-a_i(5,4,b,0,[],[ [ update ],[ a(3,[ t(3,2) ]) ],[ t(update,1) ] ]).
-a_i(6,4,b,2,[],[ [],[ a(1,[ t('''No se permiten FACTURAS sin FECHA''',3) ]) ],[ t('null(',1),t(15,2),t(')',4) ] ]).
-a_i(7,4,b,3,[],[ [],[ a(1,[ t('''La fecha es mayor a la del dia de hoy''',3) ]) ],[ t(15,2),t(>,10),t('Today',23) ] ]).
-a_i(8,5,f,16,[],[ [ insert,update,delete ],[ t('old(',1),t(16,2),t(')',4),t(+,5),t(19,2),t('IF',17),t(insert,1),t(';',18),t('old(',1),t(16,2),t(')',4),t(+,5),t(19,2),t(-,5),t('old(',1),t(19,2),t(')',4),t('IF',17),t(update,1),t(';',18),t('old(',1),t(16,2),t(')',4),t(-,5),t('old(',1),t(19,2),t(')',4),t('IF',17),t(delete,1),t(';',18) ] ]).
-a_i(9,5,f,19,[],[ [],[ t(13,2),t(*,6),t(18,2) ] ]).
-a_i(10,5,f,20,[],[ [ insert,update,delete ],[ t('old(',1),t(20,2),t(')',4),t(+,5),t('1',3),t('IF',17),t(insert,1),t(';',18),t('old(',1),t(20,2),t(')',4),t('IF',17),t(update,1),t(';',18),t('old(',1),t(20,2),t(')',4),t(-,5),t('1',3),t('IF',17),t(delete,1),t(';',18) ] ]).
-a_i(11,5,f,20,[],[ [ insert ],[ t('old(',1),t(20,2),t(')',4),t(+,5),t('1',3),t('IF',17),t(insert,1),t(';',18) ] ]).
-a_i(12,5,f,17,[],[ [ insert ],[ t(20,2),t('IF',17),t(insert,1),t('AND',9),t('GxBScreen',23),t(=,10),t(1,3),t(';',18) ] ]).
-a_i(13,5,f,19,[],[ [],[ t(13,2),t(*,6),t(18,2),t(';',18) ] ]).
-a_i(14,5,f,12,[],[ [],[ t('old(',1),t(12,2),t(')',4),t(-,5),t(18,2),t('IF',17),t(12,2),t(-,5),t(18,2),t(>=,10),t('0',3),t(';',18) ] ]).
-a_i(15,5,f,7,[],[ [ insert,update,delete ],[ t('old(',1),t(7,2),t(')',4),t(+,5),t(16,2),t(-,5),t('old(',1),t(16,2),t(')',4),t('IF',17),t('(',0),t(insert,1),t('.OR.',9),t(update,1),t('.OR.',9),t(delete,1),t(')',4),t(';',18) ] ]).
-a_i(16,5,f,[ t(7,2),t('Enabled',3) ],[],[ [],[ t(0,3),t(';',18) ] ]).
-a_i(17,5,b,0,[],[ [ update ],[ a(3,[ t(10,2) ]) ],[ t(update,1) ] ]).
-a_i(18,4,t,4,[],[ [ [ [],14,14 ] ],'IINVOICE',[] ]).
-a_i(19,4,r,2,[],[ [ [ 4,3,3 ] ],'ICUSTOMER',[] ]).
-a_i(20,4,r,2000,[],[ [ [ 4,oe([ t(14,2) ]),14 ] ],'IINVOICE',[] ]).
-a_i(21,4,r,2001,[],[ [ [ 4,oe([ t(14,2) ]),14 ] ],'IINVOICE',[] ]).
-a_i(22,5,t,5,[],[ [ [ [],14,14 ],[ [],17,17 ] ],'IINVOICEDETAIL',[] ]).
-a_i(23,5,r,3,[],[ [ [ 5,10,10 ] ],'IPRODUCT',[] ]).
-a_i(24,4,f,'GxBScreen',[],[ [],[ t('0',3) ] ]).
-a_i(25,4,f,'Today',[],[ [],[ t('today(',1),t(')',4) ] ]).
+a_i(2,4,f,9,[],[ [],[ t(7,2),t(-,5),t(16,2) ] ]).
+a_i(3,4,f,7,[],[ [ delete,insert,update,delete ],[ t('old(',1),t(7,2),t(')',4),t(-,5),t(16,2),t('IF',17),t(delete,1),t(';',18),t('old(',1),t(7,2),t(')',4),t(+,5),t(16,2),t(-,5),t('old(',1),t(16,2),t(')',4),t('IF',17),t('(',0),t(insert,1),t('.OR.',9),t(update,1),t('.OR.',9),t(delete,1),t(')',4),t(';',18) ] ]).
+a_i(4,4,f,[ t(7,2),t('Enabled',3) ],[],[ [],[ t(0,3),t(';',18) ] ]).
+a_i(5,4,f,15,[],[ [ insert ],[ t('Today',23),t('IF',17),t(insert,1),t('AND',9),t('null1(',1),t(15,2),t(')',4),t('AND',9),t('GxBScreen',23),t(=,10),t(0,3),t(';',18) ] ]).
+a_i(6,4,b,0,[],[ [ update ],[ a(3,[ t(3,2) ]) ],[ t(update,1) ] ]).
+a_i(7,4,b,2,[],[ [],[ a(1,[ t('''No se permiten FACTURAS sin FECHA''',3) ]) ],[ t('null(',1),t(15,2),t(')',4) ] ]).
+a_i(8,4,b,3,[],[ [],[ a(1,[ t('''La fecha es mayor a la del dia de hoy''',3) ]) ],[ t(15,2),t(>,10),t('Today',23) ] ]).
+a_i(9,5,f,16,[],[ [ insert,update,delete ],[ t('old(',1),t(16,2),t(')',4),t(+,5),t(19,2),t('IF',17),t(insert,1),t(';',18),t('old(',1),t(16,2),t(')',4),t(+,5),t(19,2),t(-,5),t('old(',1),t(19,2),t(')',4),t('IF',17),t(update,1),t(';',18),t('old(',1),t(16,2),t(')',4),t(-,5),t('old(',1),t(19,2),t(')',4),t('IF',17),t(delete,1),t(';',18) ] ]).
+a_i(10,5,f,9,[],[ [],[ t(7,2),t(-,5),t(16,2) ] ]).
+a_i(11,5,f,19,[],[ [],[ t(13,2),t(*,6),t(18,2) ] ]).
+a_i(12,5,f,20,[],[ [ insert,update,delete ],[ t('old(',1),t(20,2),t(')',4),t(+,5),t('1',3),t('IF',17),t(insert,1),t(';',18),t('old(',1),t(20,2),t(')',4),t('IF',17),t(update,1),t(';',18),t('old(',1),t(20,2),t(')',4),t(-,5),t('1',3),t('IF',17),t(delete,1),t(';',18) ] ]).
+a_i(13,5,f,20,[],[ [ insert ],[ t('old(',1),t(20,2),t(')',4),t(+,5),t('1',3),t('IF',17),t(insert,1),t(';',18) ] ]).
+a_i(14,5,f,17,[],[ [ insert ],[ t(20,2),t('IF',17),t(insert,1),t('AND',9),t('GxBScreen',23),t(=,10),t(1,3),t(';',18) ] ]).
+a_i(15,5,f,19,[],[ [],[ t(13,2),t(*,6),t(18,2),t(';',18) ] ]).
+a_i(16,5,f,12,[],[ [],[ t('old(',1),t(12,2),t(')',4),t(-,5),t(18,2),t('IF',17),t(12,2),t(-,5),t(18,2),t(>=,10),t('0',3),t(';',18) ] ]).
+a_i(17,5,f,7,[],[ [ insert,update,delete ],[ t('old(',1),t(7,2),t(')',4),t(+,5),t(16,2),t(-,5),t('old(',1),t(16,2),t(')',4),t('IF',17),t('(',0),t(insert,1),t('.OR.',9),t(update,1),t('.OR.',9),t(delete,1),t(')',4),t(';',18) ] ]).
+a_i(18,5,f,[ t(7,2),t('Enabled',3) ],[],[ [],[ t(0,3),t(';',18) ] ]).
+a_i(19,5,b,0,[],[ [ update ],[ a(3,[ t(10,2) ]) ],[ t(update,1) ] ]).
+a_i(20,4,t,4,[],[ [ [ [],14,14 ] ],'IINVOICE',[] ]).
+a_i(21,4,r,2,[],[ [ [ 4,3,3 ] ],'ICUSTOMER',[] ]).
+a_i(22,4,r,2000,[],[ [ [ 4,oe([ t(14,2) ]),14 ] ],'IINVOICE',[] ]).
+a_i(23,4,r,2001,[],[ [ [ 4,oe([ t(14,2) ]),14 ] ],'IINVOICE',[] ]).
+a_i(24,5,t,5,[],[ [ [ [],14,14 ],[ [],17,17 ] ],'IINVOICEDETAIL',[] ]).
+a_i(25,5,r,3,[],[ [ [ 5,10,10 ] ],'IPRODUCT',[] ]).
+a_i(26,4,f,'GxBScreen',[],[ [],[ t('0',3) ] ]).
+a_i(27,4,f,'Today',[],[ [],[ t('today(',1),t(')',4) ] ]).
  
 v_i(b,i,1,15).
 v_i(b,o,1,[]).
 v_i(f,i,2,7).
 v_i(f,i,2,16).
-v_i(f,o,2,7).
-v_i(f,i,3,[]).
-v_i(f,o,3,[ t(7,2),t('Enabled',3) ]).
-v_i(f,i,4,'Today').
-v_i(f,i,4,'GxBScreen').
-v_i(f,o,4,15).
-v_i(b,i,5,[]).
-v_i(b,o,5,[]).
-v_i(b,i,6,15).
+v_i(f,o,2,9).
+v_i(f,i,3,7).
+v_i(f,i,3,16).
+v_i(f,o,3,7).
+v_i(f,i,4,[]).
+v_i(f,o,4,[ t(7,2),t('Enabled',3) ]).
+v_i(f,i,5,'Today').
+v_i(f,i,5,'GxBScreen').
+v_i(f,o,5,15).
+v_i(b,i,6,[]).
 v_i(b,o,6,[]).
 v_i(b,i,7,15).
-v_i(b,i,7,'Today').
 v_i(b,o,7,[]).
-v_i(f,i,8,19).
-v_i(f,o,8,16).
-v_i(f,i,9,13).
-v_i(f,i,9,18).
-v_i(f,o,9,19).
-v_i(f,i,10,18).
-v_i(f,o,10,20).
-v_i(f,o,11,20).
-v_i(f,i,12,20).
-v_i(f,i,12,'GxBScreen').
-v_i(f,o,12,17).
-v_i(f,i,13,13).
-v_i(f,i,13,18).
-v_i(f,o,13,19).
-v_i(f,i,14,12).
-v_i(f,i,14,18).
-v_i(f,o,14,12).
-v_i(f,i,15,16).
-v_i(f,o,15,7).
-v_i(f,i,16,[]).
-v_i(f,o,16,[ t(7,2),t('Enabled',3) ]).
-v_i(b,i,17,[]).
-v_i(b,o,17,[]).
-v_i(t,i,18,14).
-v_i(t,o,18,15).
-v_i(t,o,18,3).
-v_i(r,i,19,3).
-v_i(r,o,19,7).
-v_i(r,o,19,4).
-v_i(r,i,20,14).
-v_i(r,o,20,20).
-v_i(r,i,21,14).
-v_i(r,o,21,16).
-v_i(t,i,22,14).
-v_i(t,i,22,17).
-v_i(t,o,22,18).
-v_i(t,o,22,10).
-v_i(r,i,23,10).
-v_i(r,o,23,12).
-v_i(r,o,23,11).
-v_i(r,o,23,13).
-v_i(f,i,11,[]).
-v_i(f,i,24,[]).
-v_i(f,o,24,'GxBScreen').
-v_i(f,i,25,[]).
-v_i(f,o,25,'Today').
+v_i(b,i,8,15).
+v_i(b,i,8,'Today').
+v_i(b,o,8,[]).
+v_i(f,i,9,19).
+v_i(f,o,9,16).
+v_i(f,i,10,7).
+v_i(f,i,10,16).
+v_i(f,o,10,9).
+v_i(f,i,11,13).
+v_i(f,i,11,18).
+v_i(f,o,11,19).
+v_i(f,i,12,18).
+v_i(f,o,12,20).
+v_i(f,o,13,20).
+v_i(f,i,14,20).
+v_i(f,i,14,'GxBScreen').
+v_i(f,o,14,17).
+v_i(f,i,15,13).
+v_i(f,i,15,18).
+v_i(f,o,15,19).
+v_i(f,i,16,12).
+v_i(f,i,16,18).
+v_i(f,o,16,12).
+v_i(f,i,17,16).
+v_i(f,o,17,7).
+v_i(f,i,18,[]).
+v_i(f,o,18,[ t(7,2),t('Enabled',3) ]).
+v_i(b,i,19,[]).
+v_i(b,o,19,[]).
+v_i(t,i,20,14).
+v_i(t,o,20,15).
+v_i(t,o,20,3).
+v_i(r,i,21,3).
+v_i(r,o,21,7).
+v_i(r,o,21,4).
+v_i(r,i,22,14).
+v_i(r,o,22,20).
+v_i(r,i,23,14).
+v_i(r,o,23,16).
+v_i(t,i,24,14).
+v_i(t,i,24,17).
+v_i(t,o,24,18).
+v_i(t,o,24,10).
+v_i(r,i,25,10).
+v_i(r,o,25,12).
+v_i(r,o,25,11).
+v_i(r,o,25,13).
+v_i(f,i,13,[]).
+v_i(f,i,26,[]).
+v_i(f,o,26,'GxBScreen').
+v_i(f,i,27,[]).
+v_i(f,o,27,'Today').
  
-ca_i(15,7).
-ca_i(14,12).
-ca_i(11,20).
-ca_i(10,20).
-ca_i(8,16).
-ca_i(4,15).
-ca_i(2,7).
+ca_i(17,7).
+ca_i(16,12).
+ca_i(13,20).
+ca_i(12,20).
+ca_i(9,16).
+ca_i(5,15).
+ca_i(3,7).
  
 tbl_to_delete_i(4,[ 5,[ [ 4,14,14 ] ],d,'IINVOICEDETAIL',[ [ 5,14 ],[ 5,17 ] ],[ 14,17 ] ]).
  
@@ -321,6 +331,7 @@ attri_i(3,[ 'CustomerId',int,6,0,'ZZZZZ9',0,'Customer Id','',0 ]).
 attri_i(15,[ 'InvoiceDate',date,8,0,'99/99/99',0,'Invoice Date','',0 ]).
 attri_i(7,[ 'CustomerTotalPurchases',int,9,2,'ZZZZZ9.99',0,'Customer Total Purchases','',0 ]).
 attri_i(14,[ 'InvoiceId',int,6,0,'ZZZZZ9',0,'Invoice Id','',0 ]).
+attri_i(9,[ 'CustomerBalance',int,9,2,'ZZZZZ9.99',0,'Customer Balance','',0 ]).
 attri_i('GxBScreen',[ 'Gx_BScreen',int,1,0,'',0,'','',7 ]).
 attri_i('Today',[ 'Gx_date',date,8,0,'99/99/99',1,'','',6 ]).
 attri_i('Gxremove',[ 'GxRemove',int,1,0,'9',0,'Gx Remove','',5 ]).
@@ -399,7 +410,7 @@ break_i(2,nvg,1,[],[ [],[],[] ]).
 b_group_i(2,1,lit,0,1,0).
  
  
-sf_break_i(65,5).
+sf_break_i(70,5).
  
  
  
@@ -479,26 +490,31 @@ html_sub_i(54,57,html_i(1,cell(57))).
 html_sub_i(57,58,html_i(0,t(7,2))).
 html_sub_i(33,59,html_i(6,row(59))).
 html_sub_i(59,60,html_i(0,cell(60))).
-html_sub_i(60,0,html_i(0,html('<BR/>'))).
-html_sub_i(60,61,html_i(1,table(61))).
-html_sub_i(61,0,html_i(0,html('<TBODY>'))).
-html_sub_i(61,62,html_i(1,row(62))).
-html_sub_i(62,63,html_i(0,cell(63))).
-html_sub_i(63,64,html_i(0,t('Detail',3))).
-html_sub_i(61,0,html_i(2,html('</TBODY>'))).
-html_sub_i(60,0,html_i(2,html('<HR class="HRDefault"/>'))).
-html_sub_i(60,65,html_i(3,s(65))).
-html_sub_i(33,72,html_i(7,row(72))).
-html_sub_i(72,73,html_i(0,cell(73))).
-html_sub_i(73,74,html_i(0,t('Amount',3))).
-html_sub_i(72,75,html_i(1,cell(75))).
-html_sub_i(75,76,html_i(0,t(16,2))).
-html_sub_i(33,0,html_i(8,html('</TBODY>'))).
-html_sub_i(27,77,html_i(3,row(77))).
+html_sub_i(60,61,html_i(0,t('Customer Balance',3))).
+html_sub_i(59,62,html_i(1,cell(62))).
+html_sub_i(62,63,html_i(0,t(9,2))).
+html_sub_i(33,64,html_i(7,row(64))).
+html_sub_i(64,65,html_i(0,cell(65))).
+html_sub_i(65,0,html_i(0,html('<BR/>'))).
+html_sub_i(65,66,html_i(1,table(66))).
+html_sub_i(66,0,html_i(0,html('<TBODY>'))).
+html_sub_i(66,67,html_i(1,row(67))).
+html_sub_i(67,68,html_i(0,cell(68))).
+html_sub_i(68,69,html_i(0,t('Detail',3))).
+html_sub_i(66,0,html_i(2,html('</TBODY>'))).
+html_sub_i(65,0,html_i(2,html('<HR class="HRDefault"/>'))).
+html_sub_i(65,70,html_i(3,s(70))).
+html_sub_i(33,77,html_i(8,row(77))).
 html_sub_i(77,78,html_i(0,cell(78))).
-html_sub_i(78,79,html_i(0,button('Enter'))).
-html_sub_i(78,80,html_i(1,button('Cancel'))).
-html_sub_i(78,81,html_i(2,button('Delete'))).
+html_sub_i(78,79,html_i(0,t('Amount',3))).
+html_sub_i(77,80,html_i(1,cell(80))).
+html_sub_i(80,81,html_i(0,t(16,2))).
+html_sub_i(33,0,html_i(9,html('</TBODY>'))).
+html_sub_i(27,82,html_i(3,row(82))).
+html_sub_i(82,83,html_i(0,cell(83))).
+html_sub_i(83,84,html_i(0,button('Enter'))).
+html_sub_i(83,85,html_i(1,button('Cancel'))).
+html_sub_i(83,86,html_i(2,button('Delete'))).
 html_sub_i(27,0,html_i(4,html('</TBODY>'))).
 html_sub_i(2,0,html_i(2,html('</TBODY>'))).
  
@@ -953,6 +969,7 @@ html_comp_i(53,'Gxformat',0,d,[ num ]).
 html_comp_i(53,'Title','',d,[ str ]).
 html_comp_i(55,'Valign',top,v,[ str ]).
 html_comp_i(55,'Class',td5,v,[ str ]).
+html_comp_i(55,'Height',measure(23,px),v,[ measure ]).
 html_comp_i(56,'Caption','Customer Total Purchases',d,[ str ]).
 html_comp_i(56,'Id','Textblockcustomertotalpurchases',v,[ str ]).
 html_comp_i(56,'Class','TextBlock',d,[ str ]).
@@ -986,179 +1003,96 @@ html_comp_i(58,'Font',font('Arial',9,[]),d,[ font ]).
 html_comp_i(58,'Horizontalalignment',right,d,[ str ]).
 html_comp_i(58,'Gxformat',0,d,[ num ]).
 html_comp_i(58,'Title','',d,[ str ]).
-html_comp_i(60,'Height',measure(197,px),v,[ measure ]).
-html_comp_i(60,'Colspan',2,v,[ num ]).
-html_comp_i(61,'Id','Table3',v,[ str ]).
-html_comp_i(61,'Class','Table95',v,[ str ]).
+html_comp_i(61,'Caption','Customer Balance',d,[ str ]).
+html_comp_i(61,'Id','Textblockcustomertotalpurchases2',v,[ str ]).
+html_comp_i(61,'Class','TextBlock',d,[ str ]).
+html_comp_i(61,'Event','',d,[ str ]).
+html_comp_i(61,'Returnonclick',0,d,[ bool ]).
+html_comp_i(61,'Gxformat',0,d,[ num ]).
 html_comp_i(61,'Title','',d,[ str ]).
-html_comp_i(61,'Align',left,d,[ str ]).
-html_comp_i(61,'Backgroundgx','',d,[ str ]).
-html_comp_i(61,'Bgcolor',rgb(0,0,0),d,[ color ]).
-html_comp_i(61,'Border','0',d,[ str ]).
-html_comp_i(61,'Bordercolor',rgb(0,0,0),d,[ color ]).
-html_comp_i(61,'Cellpadding','1',d,[ str ]).
-html_comp_i(61,'Cellspacing','2',d,[ str ]).
-html_comp_i(61,'Height',measure(0,px),d,[ measure ]).
-html_comp_i(61,'Width',measure(0,px),d,[ measure ]).
-html_comp_i(61,'Rules',none,d,[ str ]).
-html_comp_i(63,'Class','SubTitle',v,[ str ]).
-html_comp_i(64,'Caption','Detail',d,[ str ]).
-html_comp_i(64,'Id','Titledetail',v,[ str ]).
-html_comp_i(64,'Event','',d,[ str ]).
-html_comp_i(64,'Returnonclick',0,d,[ bool ]).
-html_comp_i(64,'Gxformat',0,d,[ num ]).
-html_comp_i(64,'Title','',d,[ str ]).
-html_comp_i(64,'Fill',-1,d,[ bool ]).
-html_comp_i(64,'Backcolor',rgb(255,255,255),d,[ color ]).
-html_comp_i(64,'Forecolor',rgb(0,0,0),d,[ color ]).
-html_comp_i(64,'Font','',d,[ str ]).
-html_comp_i(65,'Controlname','Gridinvoice_detail',v,[ str ]).
-html_comp_i(65,'Iddataselector','',d,[ str ]).
-html_comp_i(65,'Rules',none,d,[ str ]).
-html_comp_i(65,'Sflrender','',d,[ str ]).
-html_comp_i(65,'Class','Grid',d,[ str ]).
-html_comp_i(65,'Autoresize',-1,d,[ bool ]).
-html_comp_i(65,'Gxwidth',measure(0,px),d,[ measure ]).
-html_comp_i(65,'Gxheight',measure(0,px),d,[ measure ]).
-html_comp_i(65,'Backgroundgx','',d,[ str ]).
-html_comp_i(65,'Border','0',d,[ str ]).
-html_comp_i(65,'Backcolorstyle',2,v,[ num ]).
-html_comp_i(65,'Bordercolor',rgb(255,255,255),d,[ color ]).
-html_comp_i(65,'Maxrows',5,d,[ num ]).
-html_comp_i(65,'Title','',d,[ str ]).
-html_comp_i(65,'Linescolor',rgb(0,0,0),d,[ color ]).
-html_comp_i(65,'Linesbackcolor',rgb(240,240,240),d,[ color ]).
-html_comp_i(65,'Linesfont',font('Microsoft Sans Serif',8,[]),d,[ font ]).
-html_comp_i(65,'Titlecolor',rgb(255,255,255),d,[ color ]).
-html_comp_i(65,'Titlebackcolor',rgb(157,31,31),d,[ color ]).
-html_comp_i(65,'Titlefont',font('Arial',10,[ bold ]),d,[ font ]).
-html_comp_i(65,'Align',left,d,[ str ]).
-html_comp_i(65,'Cellpadding','1',d,[ str ]).
-html_comp_i(65,'Cellspacing','2',d,[ str ]).
-html_comp_i(65,'Sortable',-1,d,[ bool ]).
-html_comp_i(65,'Allowdrop',0,d,[ bool ]).
-html_comp_i(65,'Allowdrag',0,d,[ bool ]).
-html_comp_i(65,'Notifycontextchange',0,d,[ bool ]).
-html_comp_i(65,'Allowcollapsing',0,d,[ bool ]).
-html_comp_i(65,'Allowselection',0,d,[ bool ]).
-html_comp_i(66,'Colattid',17,v,[ num ]).
-html_comp_i(66,'Controlname','Invoicedetailid',d,[ str ]).
-html_comp_i(66,'Class','Attribute',d,[ str ]).
-html_comp_i(66,'Returnonclick',0,d,[ bool ]).
-html_comp_i(66,'Controltype',2,d,[ num ]).
-html_comp_i(66,'Inputtype',0,d,[ num ]).
-html_comp_i(66,'Notifycontextchange',0,d,[ bool ]).
-html_comp_i(66,'Colreadonly',0,d,[ bool ]).
-html_comp_i(66,'Autocomplete',-1,d,[ bool ]).
-html_comp_i(66,'Emptyasnull','Yes',d,[ str ]).
-html_comp_i(66,'Ispassword',0,d,[ bool ]).
-html_comp_i(66,'Colautoresize',-1,d,[ bool ]).
-html_comp_i(66,'Colwidth',measure(0,px),d,[ measure ]).
-html_comp_i(66,'Height',measure(17,px),d,[ measure ]).
-html_comp_i(66,'Collinesfont',font('Microsoft Sans Serif',8,[]),d,[ font ]).
-html_comp_i(66,'Collinescolor',rgb(0,0,0),d,[ color ]).
-html_comp_i(66,'Coltitle','Identifier',d,[ str ]).
-html_comp_i(66,'Coltitlefont',font('Arial',10,[ bold ]),d,[ font ]).
-html_comp_i(66,'Coltitlecolor',rgb(255,255,255),d,[ color ]).
-html_comp_i(66,'Horizontalalignment',right,d,[ str ]).
-html_comp_i(66,'Gxformat',0,d,[ num ]).
-html_comp_i(66,'Colvisible',-1,v,[ bool ]).
+html_comp_i(61,'Fill',-1,d,[ bool ]).
+html_comp_i(61,'Backcolor',rgb(255,255,255),d,[ color ]).
+html_comp_i(61,'Forecolor',rgb(116,116,116),d,[ color ]).
+html_comp_i(61,'Font',font('Arial',9,[]),d,[ font ]).
+html_comp_i(63,'Attid',9,v,[ num ]).
+html_comp_i(63,'Class','Attribute',d,[ str ]).
+html_comp_i(63,'Controlname','Customerbalance',d,[ str ]).
+html_comp_i(63,'Returnonclick',0,d,[ bool ]).
+html_comp_i(63,'Controltype',2,d,[ num ]).
+html_comp_i(63,'Inputtype',0,d,[ num ]).
+html_comp_i(63,'Notifycontextchange',0,d,[ bool ]).
+html_comp_i(63,'Emptyasnull','Yes',d,[ str ]).
+html_comp_i(63,'Readonly',0,d,[ bool ]).
+html_comp_i(63,'Autocomplete',-1,d,[ bool ]).
+html_comp_i(63,'Ispassword',0,d,[ bool ]).
+html_comp_i(63,'Autoresize',-1,d,[ bool ]).
+html_comp_i(63,'Gxwidth',measure(9,chr),d,[ measure ]).
+html_comp_i(63,'Gxheight',measure(1,row),d,[ measure ]).
+html_comp_i(63,'Ismultiline',0,d,[ bool ]).
+html_comp_i(63,'Fill',-1,d,[ bool ]).
+html_comp_i(63,'Backcolor',rgb(255,255,255),d,[ color ]).
+html_comp_i(63,'Forecolor',rgb(51,51,51),d,[ color ]).
+html_comp_i(63,'Font',font('Arial',9,[]),d,[ font ]).
+html_comp_i(63,'Horizontalalignment',right,d,[ str ]).
+html_comp_i(63,'Gxformat',0,d,[ num ]).
+html_comp_i(63,'Title','',d,[ str ]).
+html_comp_i(65,'Height',measure(197,px),v,[ measure ]).
+html_comp_i(65,'Colspan',2,v,[ num ]).
+html_comp_i(66,'Id','Table3',v,[ str ]).
+html_comp_i(66,'Class','Table95',v,[ str ]).
 html_comp_i(66,'Title','',d,[ str ]).
-html_comp_i(67,'Colattid',10,v,[ num ]).
-html_comp_i(67,'Controlname','Productid',d,[ str ]).
-html_comp_i(67,'Class','Attribute',d,[ str ]).
-html_comp_i(67,'Returnonclick',0,d,[ bool ]).
-html_comp_i(67,'Controltype',2,d,[ num ]).
-html_comp_i(67,'Inputtype',0,d,[ num ]).
-html_comp_i(67,'Notifycontextchange',0,d,[ bool ]).
-html_comp_i(67,'Colreadonly',0,d,[ bool ]).
-html_comp_i(67,'Autocomplete',-1,d,[ bool ]).
-html_comp_i(67,'Emptyasnull','Yes',d,[ str ]).
-html_comp_i(67,'Ispassword',0,d,[ bool ]).
-html_comp_i(67,'Colautoresize',-1,d,[ bool ]).
-html_comp_i(67,'Colwidth',measure(0,px),d,[ measure ]).
-html_comp_i(67,'Height',measure(17,px),d,[ measure ]).
-html_comp_i(67,'Collinesfont',font('Microsoft Sans Serif',8,[]),d,[ font ]).
-html_comp_i(67,'Collinescolor',rgb(0,0,0),d,[ color ]).
-html_comp_i(67,'Coltitle','Product Identifier',d,[ str ]).
-html_comp_i(67,'Coltitlefont',font('Arial',10,[ bold ]),d,[ font ]).
-html_comp_i(67,'Coltitlecolor',rgb(255,255,255),d,[ color ]).
-html_comp_i(67,'Horizontalalignment',right,d,[ str ]).
-html_comp_i(67,'Gxformat',0,d,[ num ]).
-html_comp_i(67,'Colvisible',-1,d,[ bool ]).
-html_comp_i(67,'Title','',d,[ str ]).
-html_comp_i(68,'Colattid',11,v,[ num ]).
-html_comp_i(68,'Controlname','Productdescription',d,[ str ]).
-html_comp_i(68,'Class','Attribute',d,[ str ]).
-html_comp_i(68,'Returnonclick',0,d,[ bool ]).
-html_comp_i(68,'Controltype',2,d,[ num ]).
-html_comp_i(68,'Inputtype',0,d,[ num ]).
-html_comp_i(68,'Editautocomplete',0,d,[ num ]).
-html_comp_i(68,'Notifycontextchange',0,d,[ bool ]).
-html_comp_i(68,'Colreadonly',0,d,[ bool ]).
-html_comp_i(68,'Autocomplete',-1,d,[ bool ]).
-html_comp_i(68,'Emptyasnull','Yes',d,[ str ]).
-html_comp_i(68,'Ispassword',0,d,[ bool ]).
-html_comp_i(68,'Colautoresize',-1,d,[ bool ]).
-html_comp_i(68,'Colwidth',measure(0,px),d,[ measure ]).
-html_comp_i(68,'Height',measure(17,px),d,[ measure ]).
-html_comp_i(68,'Collinesfont',font('Microsoft Sans Serif',8,[]),d,[ font ]).
-html_comp_i(68,'Collinescolor',rgb(0,0,0),d,[ color ]).
-html_comp_i(68,'Coltitle','Product Description',d,[ str ]).
-html_comp_i(68,'Coltitlefont',font('Arial',10,[ bold ]),d,[ font ]).
-html_comp_i(68,'Coltitlecolor',rgb(255,255,255),d,[ color ]).
-html_comp_i(68,'Horizontalalignment',left,d,[ str ]).
-html_comp_i(68,'Gxformat',0,d,[ num ]).
-html_comp_i(68,'Colvisible',-1,d,[ bool ]).
-html_comp_i(68,'Title','',d,[ str ]).
-html_comp_i(69,'Colattid',13,v,[ num ]).
-html_comp_i(69,'Controlname','Productprice',d,[ str ]).
-html_comp_i(69,'Class','Attribute',d,[ str ]).
+html_comp_i(66,'Align',left,d,[ str ]).
+html_comp_i(66,'Backgroundgx','',d,[ str ]).
+html_comp_i(66,'Bgcolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(66,'Border','0',d,[ str ]).
+html_comp_i(66,'Bordercolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(66,'Cellpadding','1',d,[ str ]).
+html_comp_i(66,'Cellspacing','2',d,[ str ]).
+html_comp_i(66,'Height',measure(0,px),d,[ measure ]).
+html_comp_i(66,'Width',measure(0,px),d,[ measure ]).
+html_comp_i(66,'Rules',none,d,[ str ]).
+html_comp_i(68,'Class','SubTitle',v,[ str ]).
+html_comp_i(69,'Caption','Detail',d,[ str ]).
+html_comp_i(69,'Id','Titledetail',v,[ str ]).
+html_comp_i(69,'Event','',d,[ str ]).
 html_comp_i(69,'Returnonclick',0,d,[ bool ]).
-html_comp_i(69,'Controltype',2,d,[ num ]).
-html_comp_i(69,'Inputtype',0,d,[ num ]).
-html_comp_i(69,'Notifycontextchange',0,d,[ bool ]).
-html_comp_i(69,'Colreadonly',0,d,[ bool ]).
-html_comp_i(69,'Autocomplete',-1,d,[ bool ]).
-html_comp_i(69,'Emptyasnull','Yes',d,[ str ]).
-html_comp_i(69,'Ispassword',0,d,[ bool ]).
-html_comp_i(69,'Colautoresize',-1,d,[ bool ]).
-html_comp_i(69,'Colwidth',measure(0,px),d,[ measure ]).
-html_comp_i(69,'Height',measure(17,px),d,[ measure ]).
-html_comp_i(69,'Collinesfont',font('Microsoft Sans Serif',8,[]),d,[ font ]).
-html_comp_i(69,'Collinescolor',rgb(0,0,0),d,[ color ]).
-html_comp_i(69,'Coltitle','Product Price',d,[ str ]).
-html_comp_i(69,'Coltitlefont',font('Arial',10,[ bold ]),d,[ font ]).
-html_comp_i(69,'Coltitlecolor',rgb(255,255,255),d,[ color ]).
-html_comp_i(69,'Horizontalalignment',right,d,[ str ]).
 html_comp_i(69,'Gxformat',0,d,[ num ]).
-html_comp_i(69,'Colvisible',-1,d,[ bool ]).
 html_comp_i(69,'Title','',d,[ str ]).
-html_comp_i(70,'Colattid',18,v,[ num ]).
-html_comp_i(70,'Controlname','Invoicedetailquantiity',d,[ str ]).
-html_comp_i(70,'Class','Attribute',d,[ str ]).
-html_comp_i(70,'Returnonclick',0,d,[ bool ]).
-html_comp_i(70,'Controltype',2,d,[ num ]).
-html_comp_i(70,'Inputtype',0,d,[ num ]).
-html_comp_i(70,'Notifycontextchange',0,d,[ bool ]).
-html_comp_i(70,'Colreadonly',0,d,[ bool ]).
-html_comp_i(70,'Autocomplete',-1,d,[ bool ]).
-html_comp_i(70,'Emptyasnull','Yes',d,[ str ]).
-html_comp_i(70,'Ispassword',0,d,[ bool ]).
-html_comp_i(70,'Colautoresize',-1,d,[ bool ]).
-html_comp_i(70,'Colwidth',measure(0,px),d,[ measure ]).
-html_comp_i(70,'Height',measure(17,px),d,[ measure ]).
-html_comp_i(70,'Collinesfont',font('Microsoft Sans Serif',8,[]),d,[ font ]).
-html_comp_i(70,'Collinescolor',rgb(0,0,0),d,[ color ]).
-html_comp_i(70,'Coltitle','Detail Quantiity',d,[ str ]).
-html_comp_i(70,'Coltitlefont',font('Arial',10,[ bold ]),d,[ font ]).
-html_comp_i(70,'Coltitlecolor',rgb(255,255,255),d,[ color ]).
-html_comp_i(70,'Horizontalalignment',right,d,[ str ]).
-html_comp_i(70,'Gxformat',0,d,[ num ]).
-html_comp_i(70,'Colvisible',-1,d,[ bool ]).
+html_comp_i(69,'Fill',-1,d,[ bool ]).
+html_comp_i(69,'Backcolor',rgb(255,255,255),d,[ color ]).
+html_comp_i(69,'Forecolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(69,'Font','',d,[ str ]).
+html_comp_i(70,'Controlname','Gridinvoice_detail',v,[ str ]).
+html_comp_i(70,'Iddataselector','',d,[ str ]).
+html_comp_i(70,'Rules',none,d,[ str ]).
+html_comp_i(70,'Sflrender','',d,[ str ]).
+html_comp_i(70,'Class','Grid',d,[ str ]).
+html_comp_i(70,'Autoresize',-1,d,[ bool ]).
+html_comp_i(70,'Gxwidth',measure(0,px),d,[ measure ]).
+html_comp_i(70,'Gxheight',measure(0,px),d,[ measure ]).
+html_comp_i(70,'Backgroundgx','',d,[ str ]).
+html_comp_i(70,'Border','0',d,[ str ]).
+html_comp_i(70,'Backcolorstyle',2,v,[ num ]).
+html_comp_i(70,'Bordercolor',rgb(255,255,255),d,[ color ]).
+html_comp_i(70,'Maxrows',5,d,[ num ]).
 html_comp_i(70,'Title','',d,[ str ]).
-html_comp_i(71,'Colattid',19,v,[ num ]).
-html_comp_i(71,'Controlname','Invoicedetailamount',d,[ str ]).
+html_comp_i(70,'Linescolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(70,'Linesbackcolor',rgb(240,240,240),d,[ color ]).
+html_comp_i(70,'Linesfont',font('Microsoft Sans Serif',8,[]),d,[ font ]).
+html_comp_i(70,'Titlecolor',rgb(255,255,255),d,[ color ]).
+html_comp_i(70,'Titlebackcolor',rgb(157,31,31),d,[ color ]).
+html_comp_i(70,'Titlefont',font('Arial',10,[ bold ]),d,[ font ]).
+html_comp_i(70,'Align',left,d,[ str ]).
+html_comp_i(70,'Cellpadding','1',d,[ str ]).
+html_comp_i(70,'Cellspacing','2',d,[ str ]).
+html_comp_i(70,'Sortable',-1,d,[ bool ]).
+html_comp_i(70,'Allowdrop',0,d,[ bool ]).
+html_comp_i(70,'Allowdrag',0,d,[ bool ]).
+html_comp_i(70,'Notifycontextchange',0,d,[ bool ]).
+html_comp_i(70,'Allowcollapsing',0,d,[ bool ]).
+html_comp_i(70,'Allowselection',0,d,[ bool ]).
+html_comp_i(71,'Colattid',17,v,[ num ]).
+html_comp_i(71,'Controlname','Invoicedetailid',d,[ str ]).
 html_comp_i(71,'Class','Attribute',d,[ str ]).
 html_comp_i(71,'Returnonclick',0,d,[ bool ]).
 html_comp_i(71,'Controltype',2,d,[ num ]).
@@ -1173,85 +1107,201 @@ html_comp_i(71,'Colwidth',measure(0,px),d,[ measure ]).
 html_comp_i(71,'Height',measure(17,px),d,[ measure ]).
 html_comp_i(71,'Collinesfont',font('Microsoft Sans Serif',8,[]),d,[ font ]).
 html_comp_i(71,'Collinescolor',rgb(0,0,0),d,[ color ]).
-html_comp_i(71,'Coltitle','Detail Amount',d,[ str ]).
+html_comp_i(71,'Coltitle','Identifier',d,[ str ]).
 html_comp_i(71,'Coltitlefont',font('Arial',10,[ bold ]),d,[ font ]).
 html_comp_i(71,'Coltitlecolor',rgb(255,255,255),d,[ color ]).
 html_comp_i(71,'Horizontalalignment',right,d,[ str ]).
 html_comp_i(71,'Gxformat',0,d,[ num ]).
-html_comp_i(71,'Colvisible',-1,d,[ bool ]).
+html_comp_i(71,'Colvisible',-1,v,[ bool ]).
 html_comp_i(71,'Title','',d,[ str ]).
-html_comp_i(73,'Valign',top,v,[ str ]).
-html_comp_i(73,'Class',td5,v,[ str ]).
-html_comp_i(73,'Height',measure(23,px),v,[ measure ]).
-html_comp_i(74,'Caption','Amount',d,[ str ]).
-html_comp_i(74,'Id','Textblockinvoiceamount',v,[ str ]).
-html_comp_i(74,'Class','TextBlock',d,[ str ]).
-html_comp_i(74,'Event','',d,[ str ]).
+html_comp_i(72,'Colattid',10,v,[ num ]).
+html_comp_i(72,'Controlname','Productid',d,[ str ]).
+html_comp_i(72,'Class','Attribute',d,[ str ]).
+html_comp_i(72,'Returnonclick',0,d,[ bool ]).
+html_comp_i(72,'Controltype',2,d,[ num ]).
+html_comp_i(72,'Inputtype',0,d,[ num ]).
+html_comp_i(72,'Notifycontextchange',0,d,[ bool ]).
+html_comp_i(72,'Colreadonly',0,d,[ bool ]).
+html_comp_i(72,'Autocomplete',-1,d,[ bool ]).
+html_comp_i(72,'Emptyasnull','Yes',d,[ str ]).
+html_comp_i(72,'Ispassword',0,d,[ bool ]).
+html_comp_i(72,'Colautoresize',-1,d,[ bool ]).
+html_comp_i(72,'Colwidth',measure(0,px),d,[ measure ]).
+html_comp_i(72,'Height',measure(17,px),d,[ measure ]).
+html_comp_i(72,'Collinesfont',font('Microsoft Sans Serif',8,[]),d,[ font ]).
+html_comp_i(72,'Collinescolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(72,'Coltitle','Product Identifier',d,[ str ]).
+html_comp_i(72,'Coltitlefont',font('Arial',10,[ bold ]),d,[ font ]).
+html_comp_i(72,'Coltitlecolor',rgb(255,255,255),d,[ color ]).
+html_comp_i(72,'Horizontalalignment',right,d,[ str ]).
+html_comp_i(72,'Gxformat',0,d,[ num ]).
+html_comp_i(72,'Colvisible',-1,d,[ bool ]).
+html_comp_i(72,'Title','',d,[ str ]).
+html_comp_i(73,'Colattid',11,v,[ num ]).
+html_comp_i(73,'Controlname','Productdescription',d,[ str ]).
+html_comp_i(73,'Class','Attribute',d,[ str ]).
+html_comp_i(73,'Returnonclick',0,d,[ bool ]).
+html_comp_i(73,'Controltype',2,d,[ num ]).
+html_comp_i(73,'Inputtype',0,d,[ num ]).
+html_comp_i(73,'Editautocomplete',0,d,[ num ]).
+html_comp_i(73,'Notifycontextchange',0,d,[ bool ]).
+html_comp_i(73,'Colreadonly',0,d,[ bool ]).
+html_comp_i(73,'Autocomplete',-1,d,[ bool ]).
+html_comp_i(73,'Emptyasnull','Yes',d,[ str ]).
+html_comp_i(73,'Ispassword',0,d,[ bool ]).
+html_comp_i(73,'Colautoresize',-1,d,[ bool ]).
+html_comp_i(73,'Colwidth',measure(0,px),d,[ measure ]).
+html_comp_i(73,'Height',measure(17,px),d,[ measure ]).
+html_comp_i(73,'Collinesfont',font('Microsoft Sans Serif',8,[]),d,[ font ]).
+html_comp_i(73,'Collinescolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(73,'Coltitle','Product Description',d,[ str ]).
+html_comp_i(73,'Coltitlefont',font('Arial',10,[ bold ]),d,[ font ]).
+html_comp_i(73,'Coltitlecolor',rgb(255,255,255),d,[ color ]).
+html_comp_i(73,'Horizontalalignment',left,d,[ str ]).
+html_comp_i(73,'Gxformat',0,d,[ num ]).
+html_comp_i(73,'Colvisible',-1,d,[ bool ]).
+html_comp_i(73,'Title','',d,[ str ]).
+html_comp_i(74,'Colattid',13,v,[ num ]).
+html_comp_i(74,'Controlname','Productprice',d,[ str ]).
+html_comp_i(74,'Class','Attribute',d,[ str ]).
 html_comp_i(74,'Returnonclick',0,d,[ bool ]).
+html_comp_i(74,'Controltype',2,d,[ num ]).
+html_comp_i(74,'Inputtype',0,d,[ num ]).
+html_comp_i(74,'Notifycontextchange',0,d,[ bool ]).
+html_comp_i(74,'Colreadonly',0,d,[ bool ]).
+html_comp_i(74,'Autocomplete',-1,d,[ bool ]).
+html_comp_i(74,'Emptyasnull','Yes',d,[ str ]).
+html_comp_i(74,'Ispassword',0,d,[ bool ]).
+html_comp_i(74,'Colautoresize',-1,d,[ bool ]).
+html_comp_i(74,'Colwidth',measure(0,px),d,[ measure ]).
+html_comp_i(74,'Height',measure(17,px),d,[ measure ]).
+html_comp_i(74,'Collinesfont',font('Microsoft Sans Serif',8,[]),d,[ font ]).
+html_comp_i(74,'Collinescolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(74,'Coltitle','Product Price',d,[ str ]).
+html_comp_i(74,'Coltitlefont',font('Arial',10,[ bold ]),d,[ font ]).
+html_comp_i(74,'Coltitlecolor',rgb(255,255,255),d,[ color ]).
+html_comp_i(74,'Horizontalalignment',right,d,[ str ]).
 html_comp_i(74,'Gxformat',0,d,[ num ]).
+html_comp_i(74,'Colvisible',-1,d,[ bool ]).
 html_comp_i(74,'Title','',d,[ str ]).
-html_comp_i(74,'Fill',-1,d,[ bool ]).
-html_comp_i(74,'Backcolor',rgb(255,255,255),d,[ color ]).
-html_comp_i(74,'Forecolor',rgb(116,116,116),d,[ color ]).
-html_comp_i(74,'Font',font('Arial',9,[]),d,[ font ]).
-html_comp_i(76,'Attid',16,v,[ num ]).
+html_comp_i(75,'Colattid',18,v,[ num ]).
+html_comp_i(75,'Controlname','Invoicedetailquantiity',d,[ str ]).
+html_comp_i(75,'Class','Attribute',d,[ str ]).
+html_comp_i(75,'Returnonclick',0,d,[ bool ]).
+html_comp_i(75,'Controltype',2,d,[ num ]).
+html_comp_i(75,'Inputtype',0,d,[ num ]).
+html_comp_i(75,'Notifycontextchange',0,d,[ bool ]).
+html_comp_i(75,'Colreadonly',0,d,[ bool ]).
+html_comp_i(75,'Autocomplete',-1,d,[ bool ]).
+html_comp_i(75,'Emptyasnull','Yes',d,[ str ]).
+html_comp_i(75,'Ispassword',0,d,[ bool ]).
+html_comp_i(75,'Colautoresize',-1,d,[ bool ]).
+html_comp_i(75,'Colwidth',measure(0,px),d,[ measure ]).
+html_comp_i(75,'Height',measure(17,px),d,[ measure ]).
+html_comp_i(75,'Collinesfont',font('Microsoft Sans Serif',8,[]),d,[ font ]).
+html_comp_i(75,'Collinescolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(75,'Coltitle','Detail Quantiity',d,[ str ]).
+html_comp_i(75,'Coltitlefont',font('Arial',10,[ bold ]),d,[ font ]).
+html_comp_i(75,'Coltitlecolor',rgb(255,255,255),d,[ color ]).
+html_comp_i(75,'Horizontalalignment',right,d,[ str ]).
+html_comp_i(75,'Gxformat',0,d,[ num ]).
+html_comp_i(75,'Colvisible',-1,d,[ bool ]).
+html_comp_i(75,'Title','',d,[ str ]).
+html_comp_i(76,'Colattid',19,v,[ num ]).
+html_comp_i(76,'Controlname','Invoicedetailamount',d,[ str ]).
 html_comp_i(76,'Class','Attribute',d,[ str ]).
-html_comp_i(76,'Controlname','Invoiceamount',d,[ str ]).
 html_comp_i(76,'Returnonclick',0,d,[ bool ]).
 html_comp_i(76,'Controltype',2,d,[ num ]).
 html_comp_i(76,'Inputtype',0,d,[ num ]).
 html_comp_i(76,'Notifycontextchange',0,d,[ bool ]).
-html_comp_i(76,'Emptyasnull','Yes',d,[ str ]).
-html_comp_i(76,'Readonly',0,d,[ bool ]).
+html_comp_i(76,'Colreadonly',0,d,[ bool ]).
 html_comp_i(76,'Autocomplete',-1,d,[ bool ]).
+html_comp_i(76,'Emptyasnull','Yes',d,[ str ]).
 html_comp_i(76,'Ispassword',0,d,[ bool ]).
-html_comp_i(76,'Autoresize',-1,d,[ bool ]).
-html_comp_i(76,'Gxwidth',measure(9,chr),d,[ measure ]).
-html_comp_i(76,'Gxheight',measure(1,row),d,[ measure ]).
-html_comp_i(76,'Ismultiline',0,d,[ bool ]).
-html_comp_i(76,'Fill',-1,d,[ bool ]).
-html_comp_i(76,'Backcolor',rgb(255,255,255),d,[ color ]).
-html_comp_i(76,'Forecolor',rgb(51,51,51),d,[ color ]).
-html_comp_i(76,'Font',font('Arial',9,[]),d,[ font ]).
+html_comp_i(76,'Colautoresize',-1,d,[ bool ]).
+html_comp_i(76,'Colwidth',measure(0,px),d,[ measure ]).
+html_comp_i(76,'Height',measure(17,px),d,[ measure ]).
+html_comp_i(76,'Collinesfont',font('Microsoft Sans Serif',8,[]),d,[ font ]).
+html_comp_i(76,'Collinescolor',rgb(0,0,0),d,[ color ]).
+html_comp_i(76,'Coltitle','Detail Amount',d,[ str ]).
+html_comp_i(76,'Coltitlefont',font('Arial',10,[ bold ]),d,[ font ]).
+html_comp_i(76,'Coltitlecolor',rgb(255,255,255),d,[ color ]).
 html_comp_i(76,'Horizontalalignment',right,d,[ str ]).
 html_comp_i(76,'Gxformat',0,d,[ num ]).
+html_comp_i(76,'Colvisible',-1,d,[ bool ]).
 html_comp_i(76,'Title','',d,[ str ]).
-html_comp_i(79,'Controlname','Btn_enter',v,[ str ]).
-html_comp_i(79,'Class','BtnEnter',v,[ str ]).
-html_comp_i(79,'Event','Enter',v,[ str ]).
-html_comp_i(79,'Caption','Confirm',d,[ str ]).
-html_comp_i(79,'Title','Confirm',d,[ str ]).
-html_comp_i(79,'Type',0,d,[ num ]).
-html_comp_i(79,'Font',font('Verdana',8,[]),d,[ font ]).
-html_comp_i(79,'Forecolor',rgb(157,31,31),d,[ color ]).
-html_comp_i(79,'Backcolor',rgb(159,159,159),d,[ color ]).
-html_comp_i(79,'Border','0',d,[ str ]).
-html_comp_i(79,'Bordercolor',rgb(121,121,121),d,[ color ]).
-html_comp_i(79,'Buttonborderstyle',rounded,d,[ str ]).
-html_comp_i(80,'Controlname','Btn_cancel',v,[ str ]).
-html_comp_i(80,'Class','BtnCancel',v,[ str ]).
-html_comp_i(80,'Event','Cancel',v,[ str ]).
-html_comp_i(80,'Caption','Cancel',d,[ str ]).
-html_comp_i(80,'Title','Cancel',d,[ str ]).
-html_comp_i(80,'Type',0,d,[ num ]).
-html_comp_i(80,'Font',font('Verdana',8,[]),d,[ font ]).
-html_comp_i(80,'Forecolor',rgb(157,31,31),d,[ color ]).
-html_comp_i(80,'Backcolor',rgb(159,159,159),d,[ color ]).
-html_comp_i(80,'Border','0',d,[ str ]).
-html_comp_i(80,'Bordercolor',rgb(121,121,121),d,[ color ]).
-html_comp_i(80,'Buttonborderstyle',rounded,d,[ str ]).
-html_comp_i(81,'Controlname','Btn_delete',v,[ str ]).
-html_comp_i(81,'Class','BtnDelete',v,[ str ]).
-html_comp_i(81,'Event','Delete',v,[ str ]).
-html_comp_i(81,'Caption','Delete',d,[ str ]).
-html_comp_i(81,'Title','Delete',d,[ str ]).
-html_comp_i(81,'Type',0,d,[ num ]).
-html_comp_i(81,'Font',font('Verdana',8,[]),d,[ font ]).
-html_comp_i(81,'Forecolor',rgb(157,31,31),d,[ color ]).
-html_comp_i(81,'Backcolor',rgb(159,159,159),d,[ color ]).
-html_comp_i(81,'Border','0',d,[ str ]).
-html_comp_i(81,'Bordercolor',rgb(121,121,121),d,[ color ]).
-html_comp_i(81,'Buttonborderstyle',rounded,d,[ str ]).
+html_comp_i(78,'Valign',top,v,[ str ]).
+html_comp_i(78,'Class',td5,v,[ str ]).
+html_comp_i(78,'Height',measure(23,px),v,[ measure ]).
+html_comp_i(79,'Caption','Amount',d,[ str ]).
+html_comp_i(79,'Id','Textblockinvoiceamount',v,[ str ]).
+html_comp_i(79,'Class','TextBlock',d,[ str ]).
+html_comp_i(79,'Event','',d,[ str ]).
+html_comp_i(79,'Returnonclick',0,d,[ bool ]).
+html_comp_i(79,'Gxformat',0,d,[ num ]).
+html_comp_i(79,'Title','',d,[ str ]).
+html_comp_i(79,'Fill',-1,d,[ bool ]).
+html_comp_i(79,'Backcolor',rgb(255,255,255),d,[ color ]).
+html_comp_i(79,'Forecolor',rgb(116,116,116),d,[ color ]).
+html_comp_i(79,'Font',font('Arial',9,[]),d,[ font ]).
+html_comp_i(81,'Attid',16,v,[ num ]).
+html_comp_i(81,'Class','Attribute',d,[ str ]).
+html_comp_i(81,'Controlname','Invoiceamount',d,[ str ]).
+html_comp_i(81,'Returnonclick',0,d,[ bool ]).
+html_comp_i(81,'Controltype',2,d,[ num ]).
+html_comp_i(81,'Inputtype',0,d,[ num ]).
+html_comp_i(81,'Notifycontextchange',0,d,[ bool ]).
+html_comp_i(81,'Emptyasnull','Yes',d,[ str ]).
+html_comp_i(81,'Readonly',0,d,[ bool ]).
+html_comp_i(81,'Autocomplete',-1,d,[ bool ]).
+html_comp_i(81,'Ispassword',0,d,[ bool ]).
+html_comp_i(81,'Autoresize',-1,d,[ bool ]).
+html_comp_i(81,'Gxwidth',measure(9,chr),d,[ measure ]).
+html_comp_i(81,'Gxheight',measure(1,row),d,[ measure ]).
+html_comp_i(81,'Ismultiline',0,d,[ bool ]).
+html_comp_i(81,'Fill',-1,d,[ bool ]).
+html_comp_i(81,'Backcolor',rgb(255,255,255),d,[ color ]).
+html_comp_i(81,'Forecolor',rgb(51,51,51),d,[ color ]).
+html_comp_i(81,'Font',font('Arial',9,[]),d,[ font ]).
+html_comp_i(81,'Horizontalalignment',right,d,[ str ]).
+html_comp_i(81,'Gxformat',0,d,[ num ]).
+html_comp_i(81,'Title','',d,[ str ]).
+html_comp_i(84,'Controlname','Btn_enter',v,[ str ]).
+html_comp_i(84,'Class','BtnEnter',v,[ str ]).
+html_comp_i(84,'Event','Enter',v,[ str ]).
+html_comp_i(84,'Caption','Confirm',d,[ str ]).
+html_comp_i(84,'Title','Confirm',d,[ str ]).
+html_comp_i(84,'Type',0,d,[ num ]).
+html_comp_i(84,'Font',font('Verdana',8,[]),d,[ font ]).
+html_comp_i(84,'Forecolor',rgb(157,31,31),d,[ color ]).
+html_comp_i(84,'Backcolor',rgb(159,159,159),d,[ color ]).
+html_comp_i(84,'Border','0',d,[ str ]).
+html_comp_i(84,'Bordercolor',rgb(121,121,121),d,[ color ]).
+html_comp_i(84,'Buttonborderstyle',rounded,d,[ str ]).
+html_comp_i(85,'Controlname','Btn_cancel',v,[ str ]).
+html_comp_i(85,'Class','BtnCancel',v,[ str ]).
+html_comp_i(85,'Event','Cancel',v,[ str ]).
+html_comp_i(85,'Caption','Cancel',d,[ str ]).
+html_comp_i(85,'Title','Cancel',d,[ str ]).
+html_comp_i(85,'Type',0,d,[ num ]).
+html_comp_i(85,'Font',font('Verdana',8,[]),d,[ font ]).
+html_comp_i(85,'Forecolor',rgb(157,31,31),d,[ color ]).
+html_comp_i(85,'Backcolor',rgb(159,159,159),d,[ color ]).
+html_comp_i(85,'Border','0',d,[ str ]).
+html_comp_i(85,'Bordercolor',rgb(121,121,121),d,[ color ]).
+html_comp_i(85,'Buttonborderstyle',rounded,d,[ str ]).
+html_comp_i(86,'Controlname','Btn_delete',v,[ str ]).
+html_comp_i(86,'Class','BtnDelete',v,[ str ]).
+html_comp_i(86,'Event','Delete',v,[ str ]).
+html_comp_i(86,'Caption','Delete',d,[ str ]).
+html_comp_i(86,'Title','Delete',d,[ str ]).
+html_comp_i(86,'Type',0,d,[ num ]).
+html_comp_i(86,'Font',font('Verdana',8,[]),d,[ font ]).
+html_comp_i(86,'Forecolor',rgb(157,31,31),d,[ color ]).
+html_comp_i(86,'Backcolor',rgb(159,159,159),d,[ color ]).
+html_comp_i(86,'Border','0',d,[ str ]).
+html_comp_i(86,'Bordercolor',rgb(121,121,121),d,[ color ]).
+html_comp_i(86,'Buttonborderstyle',rounded,d,[ str ]).
  
  
  
@@ -1289,21 +1339,23 @@ lit_i(51,1,t('Customer Name',3),[ ctlname('Textblockcustomername') ]).
 lit_i(53,1,t(4,2),[ ctlname(4),ctrltype(edit,53),pos(53),ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
 lit_i(56,1,t('Customer Total Purchases',3),[ ctlname('Textblockcustomertotalpurchases') ]).
 lit_i(58,1,t(7,2),[ ctlname(7),ctrltype(edit,58),pos(58),ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
-lit_i(64,1,t('Detail',3),[ ctlname('Titledetail') ]).
-lit_i(61,1,table(61),[ ctlname('Table3') ]).
-lit_i(66,1,s(t(17,2),65),[ ctlname(17),ctrltype(edit,66),pos(66),ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
-lit_i(67,1,s(t(10,2),65),[ ctlname(10),ctrltype(edit,67),pos(67),ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
-lit_i(68,1,s(t(11,2),65),[ ctlname(11),ctrltype(edit,68),pos(68),ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
-lit_i(69,1,s(t(13,2),65),[ ctlname(13),ctrltype(edit,69),pos(69),ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
-lit_i(70,1,s(t(18,2),65),[ ctlname(18),ctrltype(edit,70),pos(70),ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
-lit_i(71,1,s(t(19,2),65),[ ctlname(19),ctrltype(edit,71),pos(71),ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
-lit_i(65,1,s(65),[ ctlname('Gridinvoice_detail'),el([ t(17,2),t(10,2),t(11,2),t(13,2),t(18,2),t(19,2) ]),width(0),rect(0,0,10,10),title('Nothing') ]).
-lit_i(74,1,t('Amount',3),[ ctlname('Textblockinvoiceamount') ]).
-lit_i(76,1,t(16,2),[ ctlname(16),ctrltype(edit,76),pos(76),ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
+lit_i(61,1,t('Customer Balance',3),[ ctlname('Textblockcustomertotalpurchases2') ]).
+lit_i(63,1,t(9,2),[ ctlname(9),ctrltype(edit,63),pos(63),ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
+lit_i(69,1,t('Detail',3),[ ctlname('Titledetail') ]).
+lit_i(66,1,table(66),[ ctlname('Table3') ]).
+lit_i(71,1,s(t(17,2),70),[ ctlname(17),ctrltype(edit,71),pos(71),ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
+lit_i(72,1,s(t(10,2),70),[ ctlname(10),ctrltype(edit,72),pos(72),ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
+lit_i(73,1,s(t(11,2),70),[ ctlname(11),ctrltype(edit,73),pos(73),ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
+lit_i(74,1,s(t(13,2),70),[ ctlname(13),ctrltype(edit,74),pos(74),ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
+lit_i(75,1,s(t(18,2),70),[ ctlname(18),ctrltype(edit,75),pos(75),ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
+lit_i(76,1,s(t(19,2),70),[ ctlname(19),ctrltype(edit,76),pos(76),ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
+lit_i(70,1,s(70),[ ctlname('Gridinvoice_detail'),el([ t(17,2),t(10,2),t(11,2),t(13,2),t(18,2),t(19,2) ]),width(0),rect(0,0,10,10),title('Nothing') ]).
+lit_i(79,1,t('Amount',3),[ ctlname('Textblockinvoiceamount') ]).
+lit_i(81,1,t(16,2),[ ctlname(16),ctrltype(edit,81),pos(81),ispwd(0),e2n(1),width(0),rect(0,0,10,10),title('Nothing') ]).
 lit_i(33,1,table(33),[ ctlname('Table2') ]).
-lit_i(79,1,button('Enter'),[ ctlname('Btn_enter'),width(0),rect(0,0,10,10),title('Nothing') ]).
-lit_i(80,1,button('Cancel'),[ ctlname('Btn_cancel'),width(0),rect(0,0,10,10),title('Nothing') ]).
-lit_i(81,1,button('Delete'),[ ctlname('Btn_delete'),width(0),rect(0,0,10,10),title('Nothing') ]).
+lit_i(84,1,button('Enter'),[ ctlname('Btn_enter'),width(0),rect(0,0,10,10),title('Nothing') ]).
+lit_i(85,1,button('Cancel'),[ ctlname('Btn_cancel'),width(0),rect(0,0,10,10),title('Nothing') ]).
+lit_i(86,1,button('Delete'),[ ctlname('Btn_delete'),width(0),rect(0,0,10,10),title('Nothing') ]).
 lit_i(27,1,table(27),[ ctlname('Table1') ]).
 lit_i(26,1,group(26),[ ctlname('Groupdata') ]).
 lit_i(2,1,table(2),[ ctlname('Tablemain') ]).
@@ -1363,6 +1415,14 @@ att_prop_i(2,7,'ATT_INITIAL_VALUE','',d).
 att_prop_i(2,7,'AttRegEx','',d).
 att_prop_i(2,7,'AttValidationFailedMsg','',d).
 att_prop_i(2,7,'FullName','CustomerTotalPurchases',v).
+att_prop_i(2,9,'ExternalName','CustomerBalance',d).
+att_prop_i(2,9,'ExternalNamespace','BillingSystem',d).
+att_prop_i(2,9,'EmptyAsNull','Yes',d).
+att_prop_i(2,9,'AUTONUMBER','0',d).
+att_prop_i(2,9,'ATT_INITIAL_VALUE','',d).
+att_prop_i(2,9,'AttRegEx','',d).
+att_prop_i(2,9,'AttValidationFailedMsg','',d).
+att_prop_i(2,9,'FullName','CustomerBalance',v).
 att_prop_i(2,20,'ExternalName','InvoiceLastLineId',d).
 att_prop_i(2,20,'ExternalNamespace','BillingSystem',d).
 att_prop_i(2,20,'EmptyAsNull','Yes',v).
@@ -1481,7 +1541,7 @@ a_alias_i(se(20,[ [ 2000,20 ] ],[ t('coalesce(',1),t(20,2),t(',',7),t('0',3),t('
 a_alias_i([ 'sum(',se(19,[ [ 3,13 ],[ 5,18 ] ],[ t(13,2),t(*,6),t(18,2) ]) ],'InvoiceAmount').
 a_alias_i(se(16,[ [ 2001,16 ] ],[ t('coalesce(',1),t(16,2),t(',',7),t('0',3),t(')',4) ]),'InvoiceAmount').
  
-trn_level_i(4,[ [ 14,15,3,4,7,20,16 ],'Invoice','Invoice','Invoice','',15 ]).
+trn_level_i(4,[ [ 14,15,3,4,7,9,20,16 ],'Invoice','Invoice','Invoice','',15 ]).
 trn_level_i(5,[ [ 17,10,11,12,13,18,19 ],'Detail','Detail','Detail','',11 ]).
  
  

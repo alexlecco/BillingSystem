@@ -8,7 +8,7 @@
 <ObjDesc>Customer</ObjDesc>
 <ObjPgmName>Customer</ObjPgmName>
 <ObjClsName>Transaction</ObjClsName></Object>
-<Result>nogenreq</Result>
+<Result>genreq</Result>
 <Warnings></Warnings>
 <Errors></Errors>
 <Generator>
@@ -66,10 +66,6 @@
 <TableAction>insert</TableAction>
 <AttrisToUpdate>
 <Attribute>
-<AttriId>9</AttriId>
-<AttriName>CustomerBalance</AttriName>
-<Description>Customer Balance</Description></Attribute>
-<Attribute>
 <AttriId>4</AttriId>
 <AttriName>CustomerName</AttriName>
 <Description>Customer Name</Description></Attribute>
@@ -100,10 +96,6 @@
 <Description>Customer</Description></Table>
 <TableAction>update</TableAction>
 <AttrisToUpdate>
-<Attribute>
-<AttriId>9</AttriId>
-<AttriName>CustomerBalance</AttriName>
-<Description>Customer Balance</Description></Attribute>
 <Attribute>
 <AttriId>4</AttriId>
 <AttriName>CustomerName</AttriName>

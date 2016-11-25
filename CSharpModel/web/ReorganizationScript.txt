@@ -1,4 +1,2 @@
-ALTER TABLE [Invoice] DROP COLUMN [InvoiceAmount]
-
-ALTER TABLE [InvoiceDetail] DROP COLUMN [InvoiceDetailAmount]
+ALTER TABLE [Customer] DROP COLUMN [CustomerBalance]
 

@@ -2,7 +2,7 @@
                File: Customer
         Description: Customer
              Author: GeneXus C# Generator version 10_1_6-46473
-       Generated on: 11/23/2016 16:35:44.87
+       Generated on: 11/23/2016 18:3:42.64
        Program type: Callable routine
           Main DBMS: sqlserver
 */
@@ -57,7 +57,7 @@ namespace GeneXus.Programs {
             dyncall( GetNextPar( )) ;
             return  ;
          }
-         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_8") == 0 )
+         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_9") == 0 )
          {
             A1CountryId = (int)(NumberUtil.Val( GetNextPar( ), ".")) ;
             n1CountryId = false ;
@@ -68,7 +68,7 @@ namespace GeneXus.Programs {
                GxWebError = 1 ;
                return  ;
             }
-            gxLoad_8( A1CountryId) ;
+            gxLoad_9( A1CountryId) ;
             return  ;
          }
          else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxEvt") == 0 )
@@ -658,7 +658,6 @@ namespace GeneXus.Programs {
                context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A2CountryName", A2CountryName);
                /* Read saved values. */
                Z3CustomerId = (int)(context.localUtil.CToN( cgiGet( "Z3CustomerId"), ".", ",")) ;
-               Z9CustomerBalance = context.localUtil.CToN( cgiGet( "Z9CustomerBalance"), ".", ",") ;
                Z4CustomerName = cgiGet( "Z4CustomerName") ;
                Z5CustomerAddress = cgiGet( "Z5CustomerAddress") ;
                Z6CustomerGender = cgiGet( "Z6CustomerGender") ;
@@ -874,11 +873,10 @@ namespace GeneXus.Programs {
 
       protected void ZM022( short GX_JID )
       {
-         if ( ( GX_JID == 7 ) || ( GX_JID == 0 ) )
+         if ( ( GX_JID == 8 ) || ( GX_JID == 0 ) )
          {
             if ( StringUtil.StrCmp(Gx_mode, "INS") != 0 )
             {
-               Z9CustomerBalance = T00023_A9CustomerBalance[0] ;
                Z4CustomerName = T00023_A4CustomerName[0] ;
                Z5CustomerAddress = T00023_A5CustomerAddress[0] ;
                Z6CustomerGender = T00023_A6CustomerGender[0] ;
@@ -888,7 +886,6 @@ namespace GeneXus.Programs {
             }
             else
             {
-               Z9CustomerBalance = A9CustomerBalance ;
                Z4CustomerName = A4CustomerName ;
                Z5CustomerAddress = A5CustomerAddress ;
                Z6CustomerGender = A6CustomerGender ;
@@ -897,10 +894,9 @@ namespace GeneXus.Programs {
                Z1CountryId = A1CountryId ;
             }
          }
-         if ( GX_JID == -7 )
+         if ( GX_JID == -8 )
          {
             Z3CustomerId = A3CustomerId ;
-            Z9CustomerBalance = A9CustomerBalance ;
             Z4CustomerName = A4CustomerName ;
             Z5CustomerAddress = A5CustomerAddress ;
             Z6CustomerGender = A6CustomerGender ;
@@ -952,8 +948,6 @@ namespace GeneXus.Programs {
          if ( (pr_default.getStatus(3) != 101) )
          {
             RcdFound2 = 1 ;
-            A9CustomerBalance = T00025_A9CustomerBalance[0] ;
-            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A9CustomerBalance", StringUtil.LTrim( StringUtil.Str( A9CustomerBalance, 9, 2)));
             A4CustomerName = T00025_A4CustomerName[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A4CustomerName", A4CustomerName);
             A5CustomerAddress = T00025_A5CustomerAddress[0] ;
@@ -969,7 +963,7 @@ namespace GeneXus.Programs {
             A1CountryId = T00025_A1CountryId[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A1CountryId", StringUtil.LTrim( StringUtil.Str( (decimal)(A1CountryId), 6, 0)));
             n1CountryId = T00025_n1CountryId[0] ;
-            ZM022( -7) ;
+            ZM022( -8) ;
          }
          pr_default.close(3);
          OnLoadActions022( ) ;
@@ -1037,7 +1031,7 @@ namespace GeneXus.Programs {
          }
       }
 
-      protected void gxLoad_8( int A1CountryId )
+      protected void gxLoad_9( int A1CountryId )
       {
          /* Using cursor T00026 */
          pr_default.execute(4, new Object[] {n1CountryId, A1CountryId});
@@ -1090,12 +1084,10 @@ namespace GeneXus.Programs {
          pr_default.execute(1, new Object[] {A3CustomerId});
          if ( (pr_default.getStatus(1) != 101) )
          {
-            ZM022( 7) ;
+            ZM022( 8) ;
             RcdFound2 = 1 ;
             A3CustomerId = T00023_A3CustomerId[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A3CustomerId", StringUtil.LTrim( StringUtil.Str( (decimal)(A3CustomerId), 6, 0)));
-            A9CustomerBalance = T00023_A9CustomerBalance[0] ;
-            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A9CustomerBalance", StringUtil.LTrim( StringUtil.Str( A9CustomerBalance, 9, 2)));
             A4CustomerName = T00023_A4CustomerName[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A4CustomerName", A4CustomerName);
             A5CustomerAddress = T00023_A5CustomerAddress[0] ;
@@ -1424,11 +1416,11 @@ namespace GeneXus.Programs {
                return  ;
             }
             Gx_longc = false ;
-            if ( (pr_default.getStatus(8) == 101) || ( Z9CustomerBalance != T000210_A9CustomerBalance[0] ) || ( StringUtil.StrCmp(Z4CustomerName, T000210_A4CustomerName[0]) != 0 ) || ( StringUtil.StrCmp(Z5CustomerAddress, T000210_A5CustomerAddress[0]) != 0 ) || ( StringUtil.StrCmp(Z6CustomerGender, T000210_A6CustomerGender[0]) != 0 ) || ( Z7CustomerTotalPurchases != T000210_A7CustomerTotalPurchases[0] ) )
+            if ( (pr_default.getStatus(8) == 101) || ( StringUtil.StrCmp(Z4CustomerName, T000210_A4CustomerName[0]) != 0 ) || ( StringUtil.StrCmp(Z5CustomerAddress, T000210_A5CustomerAddress[0]) != 0 ) || ( StringUtil.StrCmp(Z6CustomerGender, T000210_A6CustomerGender[0]) != 0 ) || ( Z7CustomerTotalPurchases != T000210_A7CustomerTotalPurchases[0] ) || ( Z8CustomerTotalPayments != T000210_A8CustomerTotalPayments[0] ) )
             {
                Gx_longc = true ;
             }
-            if ( Gx_longc || ( Z8CustomerTotalPayments != T000210_A8CustomerTotalPayments[0] ) || ( Z1CountryId != T000210_A1CountryId[0] ) )
+            if ( Gx_longc || ( Z1CountryId != T000210_A1CountryId[0] ) )
             {
                GX_msglist.addItem(context.GetMessage( "GXM_waschg", new   object[]  {"Customer"}), "RecordWasChanged", 1, "");
                AnyError = 1 ;
@@ -1457,7 +1449,7 @@ namespace GeneXus.Programs {
                   if ( AnyError == 0 )
                   {
                      /* Using cursor T000211 */
-                     pr_default.execute(9, new Object[] {A9CustomerBalance, A4CustomerName, A5CustomerAddress, A6CustomerGender, A7CustomerTotalPurchases, A8CustomerTotalPayments, n1CountryId, A1CountryId});
+                     pr_default.execute(9, new Object[] {A4CustomerName, A5CustomerAddress, A6CustomerGender, A7CustomerTotalPurchases, A8CustomerTotalPayments, n1CountryId, A1CountryId});
                      pr_default.close(9);
                      /* Retrieving last key number assigned */
                      /* Using cursor T000212 */
@@ -1512,7 +1504,7 @@ namespace GeneXus.Programs {
                   if ( AnyError == 0 )
                   {
                      /* Using cursor T000213 */
-                     pr_default.execute(11, new Object[] {A9CustomerBalance, A4CustomerName, A5CustomerAddress, A6CustomerGender, A7CustomerTotalPurchases, A8CustomerTotalPayments, n1CountryId, A1CountryId, A3CustomerId});
+                     pr_default.execute(11, new Object[] {A4CustomerName, A5CustomerAddress, A6CustomerGender, A7CustomerTotalPurchases, A8CustomerTotalPayments, n1CountryId, A1CountryId, A3CustomerId});
                      pr_default.close(11);
                      if ( (pr_default.getStatus(11) == 103) )
                      {
@@ -1620,6 +1612,8 @@ namespace GeneXus.Programs {
             A2CountryName = T000215_A2CountryName[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A2CountryName", A2CountryName);
             pr_default.close(13);
+            A9CustomerBalance = (decimal)(A7CustomerTotalPurchases-A8CustomerTotalPayments) ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A9CustomerBalance", StringUtil.LTrim( StringUtil.Str( A9CustomerBalance, 9, 2)));
          }
          if ( AnyError == 0 )
          {
@@ -1818,7 +1812,6 @@ namespace GeneXus.Programs {
          /* Send hidden variables. */
          /* Send saved values. */
          GxWebStd.gx_hidden_field( context, "Z3CustomerId", StringUtil.LTrim( StringUtil.NToC( (decimal)(Z3CustomerId), 6, 0, ".", "")));
-         GxWebStd.gx_hidden_field( context, "Z9CustomerBalance", StringUtil.LTrim( StringUtil.NToC( Z9CustomerBalance, 9, 2, ".", "")));
          GxWebStd.gx_hidden_field( context, "Z4CustomerName", StringUtil.RTrim( Z4CustomerName));
          GxWebStd.gx_hidden_field( context, "Z5CustomerAddress", StringUtil.RTrim( Z5CustomerAddress));
          GxWebStd.gx_hidden_field( context, "Z6CustomerGender", StringUtil.RTrim( Z6CustomerGender));
@@ -1922,7 +1915,7 @@ namespace GeneXus.Programs {
          idxLst = 1 ;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( Form.Jscriptsrc.Item(idxLst)), "?1635460");
+            context.AddJavascriptSource(StringUtil.RTrim( Form.Jscriptsrc.Item(idxLst)), "?1834589");
             idxLst = (int)(idxLst+1) ;
          }
          /* End function define_styles */
@@ -1931,7 +1924,7 @@ namespace GeneXus.Programs {
       protected void include_jscripts( )
       {
          context.AddJavascriptSource("messages.eng.js", "?46473");
-         context.AddJavascriptSource("customer.js", "?1635460");
+         context.AddJavascriptSource("customer.js", "?1834590");
          /* End function include_jscripts */
       }
 
@@ -2051,22 +2044,20 @@ namespace GeneXus.Programs {
       }
 
       public void Valid_Customerid( int GX_Parm1 ,
-                                    decimal GX_Parm2 ,
+                                    String GX_Parm2 ,
                                     String GX_Parm3 ,
                                     String GX_Parm4 ,
-                                    String GX_Parm5 ,
+                                    decimal GX_Parm5 ,
                                     decimal GX_Parm6 ,
-                                    decimal GX_Parm7 ,
-                                    int GX_Parm8 )
+                                    int GX_Parm7 )
       {
          A3CustomerId = GX_Parm1 ;
-         A9CustomerBalance = GX_Parm2 ;
-         A4CustomerName = GX_Parm3 ;
-         A5CustomerAddress = GX_Parm4 ;
-         A6CustomerGender = GX_Parm5 ;
-         A7CustomerTotalPurchases = GX_Parm6 ;
-         A8CustomerTotalPayments = GX_Parm7 ;
-         A1CountryId = GX_Parm8 ;
+         A4CustomerName = GX_Parm2 ;
+         A5CustomerAddress = GX_Parm3 ;
+         A6CustomerGender = GX_Parm4 ;
+         A7CustomerTotalPurchases = GX_Parm5 ;
+         A8CustomerTotalPayments = GX_Parm6 ;
+         A1CountryId = GX_Parm7 ;
          n1CountryId = false ;
          context.wbHandled = 1 ;
          AfterKeyLoadScreen( ) ;
@@ -2205,7 +2196,6 @@ namespace GeneXus.Programs {
          sEvtType = "" ;
          Z2CountryName = "" ;
          T00025_A3CustomerId = new int[1] ;
-         T00025_A9CustomerBalance = new decimal[1] ;
          T00025_A4CustomerName = new String[] {""} ;
          T00025_A5CustomerAddress = new String[] {""} ;
          T00025_A6CustomerGender = new String[] {""} ;
@@ -2218,7 +2208,6 @@ namespace GeneXus.Programs {
          T00026_A2CountryName = new String[] {""} ;
          T00027_A3CustomerId = new int[1] ;
          T00023_A3CustomerId = new int[1] ;
-         T00023_A9CustomerBalance = new decimal[1] ;
          T00023_A4CustomerName = new String[] {""} ;
          T00023_A5CustomerAddress = new String[] {""} ;
          T00023_A6CustomerGender = new String[] {""} ;
@@ -2230,7 +2219,6 @@ namespace GeneXus.Programs {
          T00028_A3CustomerId = new int[1] ;
          T00029_A3CustomerId = new int[1] ;
          T000210_A3CustomerId = new int[1] ;
-         T000210_A9CustomerBalance = new decimal[1] ;
          T000210_A4CustomerName = new String[] {""} ;
          T000210_A5CustomerAddress = new String[] {""} ;
          T000210_A6CustomerGender = new String[] {""} ;
@@ -2252,16 +2240,16 @@ namespace GeneXus.Programs {
          pr_default = new DataStoreProvider(context, new GeneXus.Programs.customer__default(),
             new Object[][] {
                 new Object[] {
-               T00022_A3CustomerId, T00022_A9CustomerBalance, T00022_A4CustomerName, T00022_A5CustomerAddress, T00022_A6CustomerGender, T00022_A7CustomerTotalPurchases, T00022_A8CustomerTotalPayments, T00022_A1CountryId, T00022_n1CountryId
+               T00022_A3CustomerId, T00022_A4CustomerName, T00022_A5CustomerAddress, T00022_A6CustomerGender, T00022_A7CustomerTotalPurchases, T00022_A8CustomerTotalPayments, T00022_A1CountryId, T00022_n1CountryId
                }
                , new Object[] {
-               T00023_A3CustomerId, T00023_A9CustomerBalance, T00023_A4CustomerName, T00023_A5CustomerAddress, T00023_A6CustomerGender, T00023_A7CustomerTotalPurchases, T00023_A8CustomerTotalPayments, T00023_A1CountryId, T00023_n1CountryId
+               T00023_A3CustomerId, T00023_A4CustomerName, T00023_A5CustomerAddress, T00023_A6CustomerGender, T00023_A7CustomerTotalPurchases, T00023_A8CustomerTotalPayments, T00023_A1CountryId, T00023_n1CountryId
                }
                , new Object[] {
                T00024_A2CountryName
                }
                , new Object[] {
-               T00025_A3CustomerId, T00025_A9CustomerBalance, T00025_A4CustomerName, T00025_A5CustomerAddress, T00025_A6CustomerGender, T00025_A7CustomerTotalPurchases, T00025_A8CustomerTotalPayments, T00025_A2CountryName, T00025_A1CountryId, T00025_n1CountryId
+               T00025_A3CustomerId, T00025_A4CustomerName, T00025_A5CustomerAddress, T00025_A6CustomerGender, T00025_A7CustomerTotalPurchases, T00025_A8CustomerTotalPayments, T00025_A2CountryName, T00025_A1CountryId, T00025_n1CountryId
                }
                , new Object[] {
                T00026_A2CountryName
@@ -2276,7 +2264,7 @@ namespace GeneXus.Programs {
                T00029_A3CustomerId
                }
                , new Object[] {
-               T000210_A3CustomerId, T000210_A9CustomerBalance, T000210_A4CustomerName, T000210_A5CustomerAddress, T000210_A6CustomerGender, T000210_A7CustomerTotalPurchases, T000210_A8CustomerTotalPayments, T000210_A1CountryId, T000210_n1CountryId
+               T000210_A3CustomerId, T000210_A4CustomerName, T000210_A5CustomerAddress, T000210_A6CustomerGender, T000210_A7CustomerTotalPurchases, T000210_A8CustomerTotalPayments, T000210_A1CountryId, T000210_n1CountryId
                }
                , new Object[] {
                }
@@ -2350,9 +2338,9 @@ namespace GeneXus.Programs {
       private decimal A7CustomerTotalPurchases ;
       private decimal A8CustomerTotalPayments ;
       private decimal A9CustomerBalance ;
-      private decimal Z9CustomerBalance ;
       private decimal Z7CustomerTotalPurchases ;
       private decimal Z8CustomerTotalPayments ;
+      private decimal Z9CustomerBalance ;
       private String sPrefix ;
       private String scmdbuf ;
       private String gxfirstwebparm ;
@@ -2475,7 +2463,6 @@ namespace GeneXus.Programs {
       private GXRadio radCustomerGender ;
       private IDataStoreProvider pr_default ;
       private int[] T00025_A3CustomerId ;
-      private decimal[] T00025_A9CustomerBalance ;
       private String[] T00025_A4CustomerName ;
       private String[] T00025_A5CustomerAddress ;
       private String[] T00025_A6CustomerGender ;
@@ -2488,7 +2475,6 @@ namespace GeneXus.Programs {
       private String[] T00026_A2CountryName ;
       private int[] T00027_A3CustomerId ;
       private int[] T00023_A3CustomerId ;
-      private decimal[] T00023_A9CustomerBalance ;
       private String[] T00023_A4CustomerName ;
       private String[] T00023_A5CustomerAddress ;
       private String[] T00023_A6CustomerGender ;
@@ -2499,7 +2485,6 @@ namespace GeneXus.Programs {
       private int[] T00028_A3CustomerId ;
       private int[] T00029_A3CustomerId ;
       private int[] T000210_A3CustomerId ;
-      private decimal[] T000210_A9CustomerBalance ;
       private String[] T000210_A4CustomerName ;
       private String[] T000210_A5CustomerAddress ;
       private String[] T000210_A6CustomerGender ;
@@ -2512,7 +2497,6 @@ namespace GeneXus.Programs {
       private int[] T000216_A14InvoiceId ;
       private int[] T000217_A3CustomerId ;
       private int[] T00022_A3CustomerId ;
-      private decimal[] T00022_A9CustomerBalance ;
       private String[] T00022_A4CustomerName ;
       private String[] T00022_A5CustomerAddress ;
       private String[] T00022_A6CustomerGender ;
@@ -2591,7 +2575,6 @@ namespace GeneXus.Programs {
           } ;
           Object[] prmT000211 ;
           prmT000211 = new Object[] {
-          new Object[] {"@CustomerBalance",SqlDbType.Decimal,9,2} ,
           new Object[] {"@CustomerName",SqlDbType.Char,30,0} ,
           new Object[] {"@CustomerAddress",SqlDbType.Char,30,0} ,
           new Object[] {"@CustomerGender",SqlDbType.Char,1,0} ,
@@ -2604,7 +2587,6 @@ namespace GeneXus.Programs {
           } ;
           Object[] prmT000213 ;
           prmT000213 = new Object[] {
-          new Object[] {"@CustomerBalance",SqlDbType.Decimal,9,2} ,
           new Object[] {"@CustomerName",SqlDbType.Char,30,0} ,
           new Object[] {"@CustomerAddress",SqlDbType.Char,30,0} ,
           new Object[] {"@CustomerGender",SqlDbType.Char,1,0} ,
@@ -2629,18 +2611,18 @@ namespace GeneXus.Programs {
           new Object[] {"@CountryId",SqlDbType.Int,6,0}
           } ;
           def= new CursorDef[] {
-              new CursorDef("T00022", "SELECT [CustomerId], [CustomerBalance], [CustomerName], [CustomerAddress], [CustomerGender], [CustomerTotalPurchases], [CustomerTotalPayments], [CountryId] FROM [Customer] WITH (UPDLOCK) WHERE [CustomerId] = @CustomerId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00022,1,0,true,false )
-             ,new CursorDef("T00023", "SELECT [CustomerId], [CustomerBalance], [CustomerName], [CustomerAddress], [CustomerGender], [CustomerTotalPurchases], [CustomerTotalPayments], [CountryId] FROM [Customer] WITH (NOLOCK) WHERE [CustomerId] = @CustomerId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00023,1,0,true,false )
+              new CursorDef("T00022", "SELECT [CustomerId], [CustomerName], [CustomerAddress], [CustomerGender], [CustomerTotalPurchases], [CustomerTotalPayments], [CountryId] FROM [Customer] WITH (UPDLOCK) WHERE [CustomerId] = @CustomerId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00022,1,0,true,false )
+             ,new CursorDef("T00023", "SELECT [CustomerId], [CustomerName], [CustomerAddress], [CustomerGender], [CustomerTotalPurchases], [CustomerTotalPayments], [CountryId] FROM [Customer] WITH (NOLOCK) WHERE [CustomerId] = @CustomerId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00023,1,0,true,false )
              ,new CursorDef("T00024", "SELECT [CountryName] FROM [Country] WITH (NOLOCK) WHERE [CountryId] = @CountryId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00024,1,0,true,false )
-             ,new CursorDef("T00025", "SELECT TM1.[CustomerId], TM1.[CustomerBalance], TM1.[CustomerName], TM1.[CustomerAddress], TM1.[CustomerGender], TM1.[CustomerTotalPurchases], TM1.[CustomerTotalPayments], T2.[CountryName], TM1.[CountryId] FROM ([Customer] TM1 WITH (NOLOCK) LEFT JOIN [Country] T2 WITH (NOLOCK) ON T2.[CountryId] = TM1.[CountryId]) WHERE TM1.[CustomerId] = @CustomerId ORDER BY TM1.[CustomerId]  OPTION (FAST 100)",true, GxErrorMask.GX_NOMASK, false, this,prmT00025,100,0,true,false )
+             ,new CursorDef("T00025", "SELECT TM1.[CustomerId], TM1.[CustomerName], TM1.[CustomerAddress], TM1.[CustomerGender], TM1.[CustomerTotalPurchases], TM1.[CustomerTotalPayments], T2.[CountryName], TM1.[CountryId] FROM ([Customer] TM1 WITH (NOLOCK) LEFT JOIN [Country] T2 WITH (NOLOCK) ON T2.[CountryId] = TM1.[CountryId]) WHERE TM1.[CustomerId] = @CustomerId ORDER BY TM1.[CustomerId]  OPTION (FAST 100)",true, GxErrorMask.GX_NOMASK, false, this,prmT00025,100,0,true,false )
              ,new CursorDef("T00026", "SELECT [CountryName] FROM [Country] WITH (NOLOCK) WHERE [CountryId] = @CountryId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00026,1,0,true,false )
              ,new CursorDef("T00027", "SELECT [CustomerId] FROM [Customer] WITH (NOLOCK) WHERE [CustomerId] = @CustomerId  OPTION (FAST 1)",true, GxErrorMask.GX_NOMASK, false, this,prmT00027,1,0,true,false )
              ,new CursorDef("T00028", "SELECT TOP 1 [CustomerId] FROM [Customer] WITH (NOLOCK) WHERE ( [CustomerId] > @CustomerId) ORDER BY [CustomerId]  OPTION (FAST 1)",true, GxErrorMask.GX_NOMASK, false, this,prmT00028,1,0,true,true )
              ,new CursorDef("T00029", "SELECT TOP 1 [CustomerId] FROM [Customer] WITH (NOLOCK) WHERE ( [CustomerId] < @CustomerId) ORDER BY [CustomerId] DESC  OPTION (FAST 1)",true, GxErrorMask.GX_NOMASK, false, this,prmT00029,1,0,true,true )
-             ,new CursorDef("T000210", "SELECT [CustomerId], [CustomerBalance], [CustomerName], [CustomerAddress], [CustomerGender], [CustomerTotalPurchases], [CustomerTotalPayments], [CountryId] FROM [Customer] WITH (UPDLOCK) WHERE [CustomerId] = @CustomerId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000210,1,0,true,false )
-             ,new CursorDef("T000211", "INSERT INTO [Customer] ([CustomerBalance], [CustomerName], [CustomerAddress], [CustomerGender], [CustomerTotalPurchases], [CustomerTotalPayments], [CountryId]) VALUES (@CustomerBalance, @CustomerName, @CustomerAddress, @CustomerGender, @CustomerTotalPurchases, @CustomerTotalPayments, @CountryId)", GxErrorMask.GX_NOMASK,prmT000211)
+             ,new CursorDef("T000210", "SELECT [CustomerId], [CustomerName], [CustomerAddress], [CustomerGender], [CustomerTotalPurchases], [CustomerTotalPayments], [CountryId] FROM [Customer] WITH (UPDLOCK) WHERE [CustomerId] = @CustomerId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000210,1,0,true,false )
+             ,new CursorDef("T000211", "INSERT INTO [Customer] ([CustomerName], [CustomerAddress], [CustomerGender], [CustomerTotalPurchases], [CustomerTotalPayments], [CountryId]) VALUES (@CustomerName, @CustomerAddress, @CustomerGender, @CustomerTotalPurchases, @CustomerTotalPayments, @CountryId)", GxErrorMask.GX_NOMASK,prmT000211)
              ,new CursorDef("T000212", "SELECT Ident_Current('[Customer]') ",true, GxErrorMask.GX_NOMASK, false, this,prmT000212,1,0,true,false )
-             ,new CursorDef("T000213", "UPDATE [Customer] SET [CustomerBalance]=@CustomerBalance, [CustomerName]=@CustomerName, [CustomerAddress]=@CustomerAddress, [CustomerGender]=@CustomerGender, [CustomerTotalPurchases]=@CustomerTotalPurchases, [CustomerTotalPayments]=@CustomerTotalPayments, [CountryId]=@CountryId  WHERE [CustomerId] = @CustomerId", GxErrorMask.GX_NOMASK,prmT000213)
+             ,new CursorDef("T000213", "UPDATE [Customer] SET [CustomerName]=@CustomerName, [CustomerAddress]=@CustomerAddress, [CustomerGender]=@CustomerGender, [CustomerTotalPurchases]=@CustomerTotalPurchases, [CustomerTotalPayments]=@CustomerTotalPayments, [CountryId]=@CountryId  WHERE [CustomerId] = @CustomerId", GxErrorMask.GX_NOMASK,prmT000213)
              ,new CursorDef("T000214", "DELETE FROM [Customer]  WHERE [CustomerId] = @CustomerId", GxErrorMask.GX_NOMASK,prmT000214)
              ,new CursorDef("T000215", "SELECT [CountryName] FROM [Country] WITH (NOLOCK) WHERE [CountryId] = @CountryId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000215,1,0,true,false )
              ,new CursorDef("T000216", "SELECT TOP 1 [InvoiceId] FROM [Invoice] WITH (NOLOCK) WHERE [CustomerId] = @CustomerId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000216,1,0,true,true )
@@ -2657,40 +2639,37 @@ namespace GeneXus.Programs {
        {
              case 0 :
                 ((int[]) buf[0])[0] = rslt.getInt(1) ;
-                ((decimal[]) buf[1])[0] = rslt.getDecimal(2) ;
+                ((String[]) buf[1])[0] = rslt.getString(2, 30) ;
                 ((String[]) buf[2])[0] = rslt.getString(3, 30) ;
-                ((String[]) buf[3])[0] = rslt.getString(4, 30) ;
-                ((String[]) buf[4])[0] = rslt.getString(5, 1) ;
+                ((String[]) buf[3])[0] = rslt.getString(4, 1) ;
+                ((decimal[]) buf[4])[0] = rslt.getDecimal(5) ;
                 ((decimal[]) buf[5])[0] = rslt.getDecimal(6) ;
-                ((decimal[]) buf[6])[0] = rslt.getDecimal(7) ;
-                ((int[]) buf[7])[0] = rslt.getInt(8) ;
-                ((bool[]) buf[8])[0] = rslt.wasNull(8);
+                ((int[]) buf[6])[0] = rslt.getInt(7) ;
+                ((bool[]) buf[7])[0] = rslt.wasNull(7);
                 break;
              case 1 :
                 ((int[]) buf[0])[0] = rslt.getInt(1) ;
-                ((decimal[]) buf[1])[0] = rslt.getDecimal(2) ;
+                ((String[]) buf[1])[0] = rslt.getString(2, 30) ;
                 ((String[]) buf[2])[0] = rslt.getString(3, 30) ;
-                ((String[]) buf[3])[0] = rslt.getString(4, 30) ;
-                ((String[]) buf[4])[0] = rslt.getString(5, 1) ;
+                ((String[]) buf[3])[0] = rslt.getString(4, 1) ;
+                ((decimal[]) buf[4])[0] = rslt.getDecimal(5) ;
                 ((decimal[]) buf[5])[0] = rslt.getDecimal(6) ;
-                ((decimal[]) buf[6])[0] = rslt.getDecimal(7) ;
-                ((int[]) buf[7])[0] = rslt.getInt(8) ;
-                ((bool[]) buf[8])[0] = rslt.wasNull(8);
+                ((int[]) buf[6])[0] = rslt.getInt(7) ;
+                ((bool[]) buf[7])[0] = rslt.wasNull(7);
                 break;
              case 2 :
                 ((String[]) buf[0])[0] = rslt.getString(1, 30) ;
                 break;
              case 3 :
                 ((int[]) buf[0])[0] = rslt.getInt(1) ;
-                ((decimal[]) buf[1])[0] = rslt.getDecimal(2) ;
+                ((String[]) buf[1])[0] = rslt.getString(2, 30) ;
                 ((String[]) buf[2])[0] = rslt.getString(3, 30) ;
-                ((String[]) buf[3])[0] = rslt.getString(4, 30) ;
-                ((String[]) buf[4])[0] = rslt.getString(5, 1) ;
+                ((String[]) buf[3])[0] = rslt.getString(4, 1) ;
+                ((decimal[]) buf[4])[0] = rslt.getDecimal(5) ;
                 ((decimal[]) buf[5])[0] = rslt.getDecimal(6) ;
-                ((decimal[]) buf[6])[0] = rslt.getDecimal(7) ;
-                ((String[]) buf[7])[0] = rslt.getString(8, 30) ;
-                ((int[]) buf[8])[0] = rslt.getInt(9) ;
-                ((bool[]) buf[9])[0] = rslt.wasNull(9);
+                ((String[]) buf[6])[0] = rslt.getString(7, 30) ;
+                ((int[]) buf[7])[0] = rslt.getInt(8) ;
+                ((bool[]) buf[8])[0] = rslt.wasNull(8);
                 break;
              case 4 :
                 ((String[]) buf[0])[0] = rslt.getString(1, 30) ;
@@ -2706,14 +2685,13 @@ namespace GeneXus.Programs {
                 break;
              case 8 :
                 ((int[]) buf[0])[0] = rslt.getInt(1) ;
-                ((decimal[]) buf[1])[0] = rslt.getDecimal(2) ;
+                ((String[]) buf[1])[0] = rslt.getString(2, 30) ;
                 ((String[]) buf[2])[0] = rslt.getString(3, 30) ;
-                ((String[]) buf[3])[0] = rslt.getString(4, 30) ;
-                ((String[]) buf[4])[0] = rslt.getString(5, 1) ;
+                ((String[]) buf[3])[0] = rslt.getString(4, 1) ;
+                ((decimal[]) buf[4])[0] = rslt.getDecimal(5) ;
                 ((decimal[]) buf[5])[0] = rslt.getDecimal(6) ;
-                ((decimal[]) buf[6])[0] = rslt.getDecimal(7) ;
-                ((int[]) buf[7])[0] = rslt.getInt(8) ;
-                ((bool[]) buf[8])[0] = rslt.wasNull(8);
+                ((int[]) buf[6])[0] = rslt.getInt(7) ;
+                ((bool[]) buf[7])[0] = rslt.wasNull(7);
                 break;
              case 10 :
                 ((int[]) buf[0])[0] = rslt.getInt(1) ;
@@ -2778,37 +2756,35 @@ namespace GeneXus.Programs {
                 stmt.SetParameter(1, (int)parms[0]);
                 break;
              case 9 :
-                stmt.SetParameter(1, (decimal)parms[0]);
+                stmt.SetParameter(1, (String)parms[0]);
                 stmt.SetParameter(2, (String)parms[1]);
                 stmt.SetParameter(3, (String)parms[2]);
-                stmt.SetParameter(4, (String)parms[3]);
+                stmt.SetParameter(4, (decimal)parms[3]);
                 stmt.SetParameter(5, (decimal)parms[4]);
-                stmt.SetParameter(6, (decimal)parms[5]);
-                if ( (bool)parms[6] )
+                if ( (bool)parms[5] )
                 {
-                   stmt.setNull( 7 , SqlDbType.Int );
+                   stmt.setNull( 6 , SqlDbType.Int );
                 }
                 else
                 {
-                   stmt.SetParameter(7, (int)parms[7]);
+                   stmt.SetParameter(6, (int)parms[6]);
                 }
                 break;
              case 11 :
-                stmt.SetParameter(1, (decimal)parms[0]);
+                stmt.SetParameter(1, (String)parms[0]);
                 stmt.SetParameter(2, (String)parms[1]);
                 stmt.SetParameter(3, (String)parms[2]);
-                stmt.SetParameter(4, (String)parms[3]);
+                stmt.SetParameter(4, (decimal)parms[3]);
                 stmt.SetParameter(5, (decimal)parms[4]);
-                stmt.SetParameter(6, (decimal)parms[5]);
-                if ( (bool)parms[6] )
+                if ( (bool)parms[5] )
                 {
-                   stmt.setNull( 7 , SqlDbType.Int );
+                   stmt.setNull( 6 , SqlDbType.Int );
                 }
                 else
                 {
-                   stmt.SetParameter(7, (int)parms[7]);
+                   stmt.SetParameter(6, (int)parms[6]);
                 }
-                stmt.SetParameter(8, (int)parms[8]);
+                stmt.SetParameter(7, (int)parms[7]);
                 break;
              case 12 :
                 stmt.SetParameter(1, (int)parms[0]);

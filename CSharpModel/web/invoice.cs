@@ -2,7 +2,7 @@
                File: Invoice
         Description: Invoice
              Author: GeneXus C# Generator version 10_1_6-46473
-       Generated on: 11/23/2016 17:38:4.28
+       Generated on: 11/23/2016 19:24:7.64
        Program type: Callable routine
           Main DBMS: sqlserver
 */
@@ -57,7 +57,7 @@ namespace GeneXus.Programs {
             dyncall( GetNextPar( )) ;
             return  ;
          }
-         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_20") == 0 )
+         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_22") == 0 )
          {
             A14InvoiceId = (int)(NumberUtil.Val( GetNextPar( ), ".")) ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A14InvoiceId", StringUtil.LTrim( StringUtil.Str( (decimal)(A14InvoiceId), 6, 0)));
@@ -67,23 +67,23 @@ namespace GeneXus.Programs {
                GxWebError = 1 ;
                return  ;
             }
-            gxLoad_20( A14InvoiceId) ;
+            gxLoad_22( A14InvoiceId) ;
+            return  ;
+         }
+         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_23") == 0 )
+         {
+            A14InvoiceId = (int)(NumberUtil.Val( GetNextPar( ), ".")) ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A14InvoiceId", StringUtil.LTrim( StringUtil.Str( (decimal)(A14InvoiceId), 6, 0)));
+            setAjaxCallMode();
+            if ( ! IsValidAjaxCall( true) )
+            {
+               GxWebError = 1 ;
+               return  ;
+            }
+            gxLoad_23( A14InvoiceId) ;
             return  ;
          }
          else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_21") == 0 )
-         {
-            A14InvoiceId = (int)(NumberUtil.Val( GetNextPar( ), ".")) ;
-            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A14InvoiceId", StringUtil.LTrim( StringUtil.Str( (decimal)(A14InvoiceId), 6, 0)));
-            setAjaxCallMode();
-            if ( ! IsValidAjaxCall( true) )
-            {
-               GxWebError = 1 ;
-               return  ;
-            }
-            gxLoad_21( A14InvoiceId) ;
-            return  ;
-         }
-         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_19") == 0 )
          {
             A3CustomerId = (int)(NumberUtil.Val( GetNextPar( ), ".")) ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A3CustomerId", StringUtil.LTrim( StringUtil.Str( (decimal)(A3CustomerId), 6, 0)));
@@ -93,10 +93,10 @@ namespace GeneXus.Programs {
                GxWebError = 1 ;
                return  ;
             }
-            gxLoad_19( A3CustomerId) ;
+            gxLoad_21( A3CustomerId) ;
             return  ;
          }
-         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_23") == 0 )
+         else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxExecAct_"+"gxLoad_25") == 0 )
          {
             A10ProductId = (int)(NumberUtil.Val( GetNextPar( ), ".")) ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A10ProductId", StringUtil.LTrim( StringUtil.Str( (decimal)(A10ProductId), 6, 0)));
@@ -106,7 +106,7 @@ namespace GeneXus.Programs {
                GxWebError = 1 ;
                return  ;
             }
-            gxLoad_23( A10ProductId) ;
+            gxLoad_25( A10ProductId) ;
             return  ;
          }
          else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxEvt") == 0 )
@@ -122,15 +122,15 @@ namespace GeneXus.Programs {
          else if ( StringUtil.StrCmp(gxfirstwebparm, "gxajaxNewRow_"+"Gridinvoice_detail") == 0 )
          {
             nRC_Gridinvoice_detail = (short)(NumberUtil.Val( GetNextPar( ), ".")) ;
-            nGXsfl_65_idx = (short)(NumberUtil.Val( GetNextPar( ), ".")) ;
-            sGXsfl_65_idx = GetNextPar( ) ;
+            nGXsfl_70_idx = (short)(NumberUtil.Val( GetNextPar( ), ".")) ;
+            sGXsfl_70_idx = GetNextPar( ) ;
             setAjaxCallMode();
             if ( ! IsValidAjaxCall( true) )
             {
                GxWebError = 1 ;
                return  ;
             }
-            gxnrGridinvoice_detail_newrow( nRC_Gridinvoice_detail, nGXsfl_65_idx, sGXsfl_65_idx) ;
+            gxnrGridinvoice_detail_newrow( nRC_Gridinvoice_detail, nGXsfl_70_idx, sGXsfl_70_idx) ;
             return  ;
          }
          else
@@ -329,15 +329,15 @@ namespace GeneXus.Programs {
             context.WriteHtmlText( "</tr>") ;
             context.WriteHtmlText( "<tr>") ;
             context.WriteHtmlText( "<td>") ;
-            TempTags = "  onfocus=\"gx.evt.onfocus(this, 79,'',false,'',0)\"" ;
+            TempTags = "  onfocus=\"gx.evt.onfocus(this, 84,'',false,'',0)\"" ;
             ClassString = "BtnEnter" ;
             StyleString = "" ;
             GxWebStd.gx_button_ctrl( context, context.GetButtonType( ), bttBtn_enter_Internalname, "Confirm", "Confirm", "", StyleString, ClassString, bttBtn_enter_Visible, 1, "rounded", 5, bttBtn_enter_Jsonclick, "EENTER.", TempTags, "", "", "HLP_Invoice.htm");
-            TempTags = "  onfocus=\"gx.evt.onfocus(this, 80,'',false,'',0)\"" ;
+            TempTags = "  onfocus=\"gx.evt.onfocus(this, 85,'',false,'',0)\"" ;
             ClassString = "BtnCancel" ;
             StyleString = "" ;
             GxWebStd.gx_button_ctrl( context, context.GetButtonType( ), bttBtn_cancel_Internalname, "Cancel", "Cancel", "", StyleString, ClassString, bttBtn_cancel_Visible, 1, "rounded", 1, bttBtn_cancel_Jsonclick, "ECANCEL.", TempTags, "", "", "HLP_Invoice.htm");
-            TempTags = "  onfocus=\"gx.evt.onfocus(this, 81,'',false,'',0)\"" ;
+            TempTags = "  onfocus=\"gx.evt.onfocus(this, 86,'',false,'',0)\"" ;
             ClassString = "BtnDelete" ;
             StyleString = "" ;
             GxWebStd.gx_button_ctrl( context, context.GetButtonType( ), bttBtn_delete_Internalname, "Delete", "Delete", "", StyleString, ClassString, bttBtn_delete_Visible, 1, "rounded", 5, bttBtn_delete_Jsonclick, "EDELETE.", TempTags, "", "", "HLP_Invoice.htm");
@@ -429,7 +429,7 @@ namespace GeneXus.Programs {
             context.WriteHtmlText( "</td>") ;
             context.WriteHtmlText( "</tr>") ;
             context.WriteHtmlText( "<tr>") ;
-            context.WriteHtmlText( "<td valign=\"top\" class=\"td5\" >") ;
+            context.WriteHtmlText( "<td valign=\"top\" class=\"td5\"  style=\"height:23px\">") ;
             /* Text block */
             ClassString = "TextBlock" ;
             StyleString = "" ;
@@ -443,14 +443,28 @@ namespace GeneXus.Programs {
             context.WriteHtmlText( "</td>") ;
             context.WriteHtmlText( "</tr>") ;
             context.WriteHtmlText( "<tr>") ;
+            context.WriteHtmlText( "<td>") ;
+            /* Text block */
+            ClassString = "TextBlock" ;
+            StyleString = "" ;
+            GxWebStd.gx_label_ctrl( context, lblTextblockcustomertotalpurchases2_Internalname, 1, 1, 0, "Customer Balance", "", "", "", 0, lblTextblockcustomertotalpurchases2_Jsonclick, "", StyleString, ClassString, "HLP_Invoice.htm");
+            context.WriteHtmlText( "</td>") ;
+            context.WriteHtmlText( "<td>") ;
+            /* Single line edit */
+            ClassString = "Attribute" ;
+            StyleString = "" ;
+            GxWebStd.gx_single_line_edit( context, edtCustomerBalance_Internalname, StringUtil.LTrim( StringUtil.NToC( A9CustomerBalance, 9, 2, ".", "")), "", 9, "chr", 1, "row", 9, 1, edtCustomerBalance_Enabled, 0, 0, 0, "", "", StyleString, ClassString, "", context.localUtil.Format( A9CustomerBalance, "ZZZZZ9.99"), "", 0, edtCustomerBalance_Jsonclick, "", 0, 1, -1, true, "right", "HLP_Invoice.htm");
+            context.WriteHtmlText( "</td>") ;
+            context.WriteHtmlText( "</tr>") ;
+            context.WriteHtmlText( "<tr>") ;
             context.WriteHtmlText( "<td colspan=\"2\"  style=\"height:197px\">") ;
             context.WriteHtmlText( "<br>") ;
-            wb_table5_61_044( true) ;
+            wb_table5_66_044( true) ;
          }
          return  ;
       }
 
-      protected void wb_table5_61_044e( bool wbgen )
+      protected void wb_table5_66_044e( bool wbgen )
       {
          if ( wbgen )
          {
@@ -492,7 +506,7 @@ namespace GeneXus.Programs {
             Gridinvoice_detailContainer.AddObjectProperty("Allowselection", "false");
             Gridinvoice_detailContainer.AddObjectProperty("Allowcollapsing", "false");
             Gridinvoice_detailContainer.AddObjectProperty("Collapsed", StringUtil.LTrim( StringUtil.NToC( (decimal)(subGridinvoice_detail_Collapsed), 9, 0, ".", "")));
-            nGXsfl_65_idx = 0 ;
+            nGXsfl_70_idx = 0 ;
             if ( ( nKeyPressed == 1 ) && ( AnyError == 0 ) )
             {
                /* Enter key processing. */
@@ -527,22 +541,22 @@ namespace GeneXus.Programs {
                standaloneNotModal045( ) ;
                standaloneModal045( ) ;
                sMode5 = Gx_mode ;
-               while ( nGXsfl_65_idx < nRC_Gridinvoice_detail )
+               while ( nGXsfl_70_idx < nRC_Gridinvoice_detail )
                {
                   ReadRow045( ) ;
-                  edtInvoiceDetailId_Enabled = (int)(context.localUtil.CToN( cgiGet( "INVOICEDETAILID_"+sGXsfl_65_idx+"Enabled"), ".", ",")) ;
+                  edtInvoiceDetailId_Enabled = (int)(context.localUtil.CToN( cgiGet( "INVOICEDETAILID_"+sGXsfl_70_idx+"Enabled"), ".", ",")) ;
                   context.httpAjaxContext.ajax_rsp_assign_prop("", false, edtInvoiceDetailId_Internalname, "Enabled", StringUtil.LTrim( StringUtil.Str( (decimal)(edtInvoiceDetailId_Enabled), 5, 0)));
-                  edtProductId_Enabled = (int)(context.localUtil.CToN( cgiGet( "PRODUCTID_"+sGXsfl_65_idx+"Enabled"), ".", ",")) ;
+                  edtProductId_Enabled = (int)(context.localUtil.CToN( cgiGet( "PRODUCTID_"+sGXsfl_70_idx+"Enabled"), ".", ",")) ;
                   context.httpAjaxContext.ajax_rsp_assign_prop("", false, edtProductId_Internalname, "Enabled", StringUtil.LTrim( StringUtil.Str( (decimal)(edtProductId_Enabled), 5, 0)));
-                  edtProductDescription_Enabled = (int)(context.localUtil.CToN( cgiGet( "PRODUCTDESCRIPTION_"+sGXsfl_65_idx+"Enabled"), ".", ",")) ;
+                  edtProductDescription_Enabled = (int)(context.localUtil.CToN( cgiGet( "PRODUCTDESCRIPTION_"+sGXsfl_70_idx+"Enabled"), ".", ",")) ;
                   context.httpAjaxContext.ajax_rsp_assign_prop("", false, edtProductDescription_Internalname, "Enabled", StringUtil.LTrim( StringUtil.Str( (decimal)(edtProductDescription_Enabled), 5, 0)));
-                  edtProductPrice_Enabled = (int)(context.localUtil.CToN( cgiGet( "PRODUCTPRICE_"+sGXsfl_65_idx+"Enabled"), ".", ",")) ;
+                  edtProductPrice_Enabled = (int)(context.localUtil.CToN( cgiGet( "PRODUCTPRICE_"+sGXsfl_70_idx+"Enabled"), ".", ",")) ;
                   context.httpAjaxContext.ajax_rsp_assign_prop("", false, edtProductPrice_Internalname, "Enabled", StringUtil.LTrim( StringUtil.Str( (decimal)(edtProductPrice_Enabled), 5, 0)));
-                  edtInvoiceDetailQuantiity_Enabled = (int)(context.localUtil.CToN( cgiGet( "INVOICEDETAILQUANTIITY_"+sGXsfl_65_idx+"Enabled"), ".", ",")) ;
+                  edtInvoiceDetailQuantiity_Enabled = (int)(context.localUtil.CToN( cgiGet( "INVOICEDETAILQUANTIITY_"+sGXsfl_70_idx+"Enabled"), ".", ",")) ;
                   context.httpAjaxContext.ajax_rsp_assign_prop("", false, edtInvoiceDetailQuantiity_Internalname, "Enabled", StringUtil.LTrim( StringUtil.Str( (decimal)(edtInvoiceDetailQuantiity_Enabled), 5, 0)));
-                  edtInvoiceDetailAmount_Enabled = (int)(context.localUtil.CToN( cgiGet( "INVOICEDETAILAMOUNT_"+sGXsfl_65_idx+"Enabled"), ".", ",")) ;
+                  edtInvoiceDetailAmount_Enabled = (int)(context.localUtil.CToN( cgiGet( "INVOICEDETAILAMOUNT_"+sGXsfl_70_idx+"Enabled"), ".", ",")) ;
                   context.httpAjaxContext.ajax_rsp_assign_prop("", false, edtInvoiceDetailAmount_Internalname, "Enabled", StringUtil.LTrim( StringUtil.Str( (decimal)(edtInvoiceDetailAmount_Enabled), 5, 0)));
-                  imgprompt_3_Link = cgiGet( "PROMPT_10_"+sGXsfl_65_idx+"Link") ;
+                  imgprompt_3_Link = cgiGet( "PROMPT_10_"+sGXsfl_70_idx+"Link") ;
                   if ( ( nRcdExists_5 == 0 ) && ( StringUtil.StrCmp(Gx_mode, "INS") != 0 ) )
                   {
                      Gx_mode = "INS" ;
@@ -660,7 +674,7 @@ namespace GeneXus.Programs {
          }
       }
 
-      protected void wb_table5_61_044( bool wbgen )
+      protected void wb_table5_66_044( bool wbgen )
       {
          if ( wbgen )
          {
@@ -679,11 +693,11 @@ namespace GeneXus.Programs {
             context.WriteHtmlText( "</tbody>") ;
             /* End of table */
             context.WriteHtmlText( "</table>") ;
-            wb_table5_61_044e( true) ;
+            wb_table5_66_044e( true) ;
          }
          else
          {
-            wb_table5_61_044e( false) ;
+            wb_table5_66_044e( false) ;
          }
       }
 
@@ -870,6 +884,8 @@ namespace GeneXus.Programs {
                context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A4CustomerName", A4CustomerName);
                A7CustomerTotalPurchases = context.localUtil.CToN( cgiGet( edtCustomerTotalPurchases_Internalname), ".", ",") ;
                context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A7CustomerTotalPurchases", StringUtil.LTrim( StringUtil.Str( A7CustomerTotalPurchases, 9, 2)));
+               A9CustomerBalance = context.localUtil.CToN( cgiGet( edtCustomerBalance_Internalname), ".", ",") ;
+               context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A9CustomerBalance", StringUtil.LTrim( StringUtil.Str( A9CustomerBalance, 9, 2)));
                A16InvoiceAmount = context.localUtil.CToN( cgiGet( edtInvoiceAmount_Internalname), ".", ",") ;
                n16InvoiceAmount = false ;
                context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
@@ -1101,8 +1117,10 @@ namespace GeneXus.Programs {
          s20InvoiceLastLineId = O20InvoiceLastLineId ;
          n20InvoiceLastLineId = false ;
          context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
-         nGXsfl_65_idx = 0 ;
-         while ( nGXsfl_65_idx < nRC_Gridinvoice_detail )
+         s9CustomerBalance = O9CustomerBalance ;
+         context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A9CustomerBalance", StringUtil.LTrim( StringUtil.Str( A9CustomerBalance, 9, 2)));
+         nGXsfl_70_idx = 0 ;
+         while ( nGXsfl_70_idx < nRC_Gridinvoice_detail )
          {
             ReadRow045( ) ;
             if ( ( nRcdExists_5 != 0 ) || ( nIsMod_5 != 0 ) )
@@ -1131,6 +1149,8 @@ namespace GeneXus.Programs {
                         O20InvoiceLastLineId = A20InvoiceLastLineId ;
                         n20InvoiceLastLineId = false ;
                         context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+                        O9CustomerBalance = A9CustomerBalance ;
+                        context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A9CustomerBalance", StringUtil.LTrim( StringUtil.Str( A9CustomerBalance, 9, 2)));
                      }
                   }
                   else
@@ -1163,6 +1183,8 @@ namespace GeneXus.Programs {
                            O20InvoiceLastLineId = A20InvoiceLastLineId ;
                            n20InvoiceLastLineId = false ;
                            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+                           O9CustomerBalance = A9CustomerBalance ;
+                           context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A9CustomerBalance", StringUtil.LTrim( StringUtil.Str( A9CustomerBalance, 9, 2)));
                         }
                      }
                      else
@@ -1188,6 +1210,8 @@ namespace GeneXus.Programs {
                               O20InvoiceLastLineId = A20InvoiceLastLineId ;
                               n20InvoiceLastLineId = false ;
                               context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+                              O9CustomerBalance = A9CustomerBalance ;
+                              context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A9CustomerBalance", StringUtil.LTrim( StringUtil.Str( A9CustomerBalance, 9, 2)));
                            }
                         }
                      }
@@ -1210,24 +1234,24 @@ namespace GeneXus.Programs {
             ChangePostValue( edtProductPrice_Internalname, StringUtil.LTrim( StringUtil.NToC( A13ProductPrice, 9, 2, ".", ""))) ;
             ChangePostValue( edtInvoiceDetailQuantiity_Internalname, StringUtil.LTrim( StringUtil.NToC( (decimal)(A18InvoiceDetailQuantiity), 3, 0, ".", ""))) ;
             ChangePostValue( edtInvoiceDetailAmount_Internalname, StringUtil.LTrim( StringUtil.NToC( A19InvoiceDetailAmount, 9, 2, ".", ""))) ;
-            ChangePostValue( "ZT_"+"Z17InvoiceDetailId_"+sGXsfl_65_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(Z17InvoiceDetailId), 2, 0, ".", ""))) ;
-            ChangePostValue( "ZT_"+"Z18InvoiceDetailQuantiity_"+sGXsfl_65_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(Z18InvoiceDetailQuantiity), 3, 0, ".", ""))) ;
-            ChangePostValue( "ZT_"+"Z10ProductId_"+sGXsfl_65_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(Z10ProductId), 6, 0, ".", ""))) ;
-            ChangePostValue( "ZT_"+"Z11ProductDescription_"+sGXsfl_65_idx, StringUtil.RTrim( Z11ProductDescription)) ;
-            ChangePostValue( "ZT_"+"Z13ProductPrice_"+sGXsfl_65_idx, StringUtil.LTrim( StringUtil.NToC( Z13ProductPrice, 9, 2, ".", ""))) ;
-            ChangePostValue( "T12ProductStock_"+sGXsfl_65_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(O12ProductStock), 4, 0, ".", ""))) ;
-            ChangePostValue( "T19InvoiceDetailAmount_"+sGXsfl_65_idx, StringUtil.LTrim( StringUtil.NToC( O19InvoiceDetailAmount, 9, 2, ".", ""))) ;
-            ChangePostValue( "nRcdDeleted_5_"+sGXsfl_65_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(nRcdDeleted_5), 4, 0, ".", ""))) ;
-            ChangePostValue( "nRcdExists_5_"+sGXsfl_65_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(nRcdExists_5), 4, 0, ".", ""))) ;
-            ChangePostValue( "nIsMod_5_"+sGXsfl_65_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(nIsMod_5), 4, 0, ".", ""))) ;
+            ChangePostValue( "ZT_"+"Z17InvoiceDetailId_"+sGXsfl_70_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(Z17InvoiceDetailId), 2, 0, ".", ""))) ;
+            ChangePostValue( "ZT_"+"Z18InvoiceDetailQuantiity_"+sGXsfl_70_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(Z18InvoiceDetailQuantiity), 3, 0, ".", ""))) ;
+            ChangePostValue( "ZT_"+"Z10ProductId_"+sGXsfl_70_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(Z10ProductId), 6, 0, ".", ""))) ;
+            ChangePostValue( "ZT_"+"Z11ProductDescription_"+sGXsfl_70_idx, StringUtil.RTrim( Z11ProductDescription)) ;
+            ChangePostValue( "ZT_"+"Z13ProductPrice_"+sGXsfl_70_idx, StringUtil.LTrim( StringUtil.NToC( Z13ProductPrice, 9, 2, ".", ""))) ;
+            ChangePostValue( "T12ProductStock_"+sGXsfl_70_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(O12ProductStock), 4, 0, ".", ""))) ;
+            ChangePostValue( "T19InvoiceDetailAmount_"+sGXsfl_70_idx, StringUtil.LTrim( StringUtil.NToC( O19InvoiceDetailAmount, 9, 2, ".", ""))) ;
+            ChangePostValue( "nRcdDeleted_5_"+sGXsfl_70_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(nRcdDeleted_5), 4, 0, ".", ""))) ;
+            ChangePostValue( "nRcdExists_5_"+sGXsfl_70_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(nRcdExists_5), 4, 0, ".", ""))) ;
+            ChangePostValue( "nIsMod_5_"+sGXsfl_70_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(nIsMod_5), 4, 0, ".", ""))) ;
             if ( nIsMod_5 != 0 )
             {
-               ChangePostValue( "INVOICEDETAILID_"+sGXsfl_65_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtInvoiceDetailId_Enabled), 5, 0, ".", ""))) ;
-               ChangePostValue( "PRODUCTID_"+sGXsfl_65_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtProductId_Enabled), 5, 0, ".", ""))) ;
-               ChangePostValue( "PRODUCTDESCRIPTION_"+sGXsfl_65_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtProductDescription_Enabled), 5, 0, ".", ""))) ;
-               ChangePostValue( "PRODUCTPRICE_"+sGXsfl_65_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtProductPrice_Enabled), 5, 0, ".", ""))) ;
-               ChangePostValue( "INVOICEDETAILQUANTIITY_"+sGXsfl_65_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtInvoiceDetailQuantiity_Enabled), 5, 0, ".", ""))) ;
-               ChangePostValue( "INVOICEDETAILAMOUNT_"+sGXsfl_65_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtInvoiceDetailAmount_Enabled), 5, 0, ".", ""))) ;
+               ChangePostValue( "INVOICEDETAILID_"+sGXsfl_70_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtInvoiceDetailId_Enabled), 5, 0, ".", ""))) ;
+               ChangePostValue( "PRODUCTID_"+sGXsfl_70_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtProductId_Enabled), 5, 0, ".", ""))) ;
+               ChangePostValue( "PRODUCTDESCRIPTION_"+sGXsfl_70_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtProductDescription_Enabled), 5, 0, ".", ""))) ;
+               ChangePostValue( "PRODUCTPRICE_"+sGXsfl_70_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtProductPrice_Enabled), 5, 0, ".", ""))) ;
+               ChangePostValue( "INVOICEDETAILQUANTIITY_"+sGXsfl_70_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtInvoiceDetailQuantiity_Enabled), 5, 0, ".", ""))) ;
+               ChangePostValue( "INVOICEDETAILAMOUNT_"+sGXsfl_70_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtInvoiceDetailAmount_Enabled), 5, 0, ".", ""))) ;
             }
          }
          O16InvoiceAmount = s16InvoiceAmount ;
@@ -1238,6 +1262,8 @@ namespace GeneXus.Programs {
          O20InvoiceLastLineId = s20InvoiceLastLineId ;
          n20InvoiceLastLineId = false ;
          context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+         O9CustomerBalance = s9CustomerBalance ;
+         context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A9CustomerBalance", StringUtil.LTrim( StringUtil.Str( A9CustomerBalance, 9, 2)));
          /* Start of After( level) rules */
          /* End of After( level) rules */
       }
@@ -1248,7 +1274,7 @@ namespace GeneXus.Programs {
 
       protected void ZM044( short GX_JID )
       {
-         if ( ( GX_JID == 18 ) || ( GX_JID == 0 ) )
+         if ( ( GX_JID == 20 ) || ( GX_JID == 0 ) )
          {
             if ( StringUtil.StrCmp(Gx_mode, "INS") != 0 )
             {
@@ -1261,11 +1287,11 @@ namespace GeneXus.Programs {
                Z3CustomerId = A3CustomerId ;
             }
          }
-         if ( ( GX_JID == 19 ) || ( GX_JID == 0 ) )
+         if ( ( GX_JID == 21 ) || ( GX_JID == 0 ) )
          {
             Z4CustomerName = T00049_A4CustomerName[0] ;
          }
-         if ( GX_JID == -18 )
+         if ( GX_JID == -20 )
          {
             Z14InvoiceId = A14InvoiceId ;
             Z15InvoiceDate = A15InvoiceDate ;
@@ -1338,7 +1364,7 @@ namespace GeneXus.Programs {
             A16InvoiceAmount = T000416_A16InvoiceAmount[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A16InvoiceAmount", StringUtil.LTrim( StringUtil.Str( A16InvoiceAmount, 9, 2)));
             n16InvoiceAmount = T000416_n16InvoiceAmount[0] ;
-            ZM044( -18) ;
+            ZM044( -20) ;
          }
          pr_default.close(10);
          OnLoadActions044( ) ;
@@ -1395,6 +1421,8 @@ namespace GeneXus.Programs {
                context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A7CustomerTotalPurchases", StringUtil.LTrim( StringUtil.Str( A7CustomerTotalPurchases, 9, 2)));
             }
          }
+         A9CustomerBalance = (decimal)(A7CustomerTotalPurchases-A16InvoiceAmount) ;
+         context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A9CustomerBalance", StringUtil.LTrim( StringUtil.Str( A9CustomerBalance, 9, 2)));
       }
 
       protected void CheckExtendedTable044( )
@@ -1474,6 +1502,8 @@ namespace GeneXus.Programs {
                context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A7CustomerTotalPurchases", StringUtil.LTrim( StringUtil.Str( A7CustomerTotalPurchases, 9, 2)));
             }
          }
+         A9CustomerBalance = (decimal)(A7CustomerTotalPurchases-A16InvoiceAmount) ;
+         context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A9CustomerBalance", StringUtil.LTrim( StringUtil.Str( A9CustomerBalance, 9, 2)));
          if ( A15InvoiceDate > Gx_date )
          {
             GX_msglist.addItem("La fecha es mayor a la del dia de hoy", 1, "");
@@ -1502,7 +1532,7 @@ namespace GeneXus.Programs {
          }
       }
 
-      protected void gxLoad_20( int A14InvoiceId )
+      protected void gxLoad_22( int A14InvoiceId )
       {
          /* Using cursor T000418 */
          pr_default.execute(11, new Object[] {A14InvoiceId});
@@ -1531,7 +1561,7 @@ namespace GeneXus.Programs {
          pr_default.close(11);
       }
 
-      protected void gxLoad_21( int A14InvoiceId )
+      protected void gxLoad_23( int A14InvoiceId )
       {
          /* Using cursor T000420 */
          pr_default.execute(12, new Object[] {A14InvoiceId});
@@ -1560,7 +1590,7 @@ namespace GeneXus.Programs {
          pr_default.close(12);
       }
 
-      protected void gxLoad_19( int A3CustomerId )
+      protected void gxLoad_21( int A3CustomerId )
       {
          /* Using cursor T000421 */
          pr_default.execute(13, new Object[] {A3CustomerId});
@@ -1614,7 +1644,7 @@ namespace GeneXus.Programs {
          pr_default.execute(5, new Object[] {A14InvoiceId});
          if ( (pr_default.getStatus(5) != 101) )
          {
-            ZM044( 18) ;
+            ZM044( 20) ;
             RcdFound4 = 1 ;
             A14InvoiceId = T00047_A14InvoiceId[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A14InvoiceId", StringUtil.LTrim( StringUtil.Str( (decimal)(A14InvoiceId), 6, 0)));
@@ -1735,6 +1765,8 @@ namespace GeneXus.Programs {
                A20InvoiceLastLineId = O20InvoiceLastLineId ;
                n20InvoiceLastLineId = false ;
                context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+               A9CustomerBalance = O9CustomerBalance ;
+               context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A9CustomerBalance", StringUtil.LTrim( StringUtil.Str( A9CustomerBalance, 9, 2)));
                delete( ) ;
                AfterTrn( ) ;
                GX_FocusControl = edtInvoiceId_Internalname ;
@@ -1753,6 +1785,8 @@ namespace GeneXus.Programs {
                A20InvoiceLastLineId = O20InvoiceLastLineId ;
                n20InvoiceLastLineId = false ;
                context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+               A9CustomerBalance = O9CustomerBalance ;
+               context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A9CustomerBalance", StringUtil.LTrim( StringUtil.Str( A9CustomerBalance, 9, 2)));
                Update044( ) ;
                GX_FocusControl = edtInvoiceId_Internalname ;
                context.httpAjaxContext.ajax_rsp_assign_attri("", false, "GX_FocusControl", GX_FocusControl);
@@ -1773,6 +1807,8 @@ namespace GeneXus.Programs {
                A20InvoiceLastLineId = O20InvoiceLastLineId ;
                n20InvoiceLastLineId = false ;
                context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+               A9CustomerBalance = O9CustomerBalance ;
+               context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A9CustomerBalance", StringUtil.LTrim( StringUtil.Str( A9CustomerBalance, 9, 2)));
                GX_FocusControl = edtInvoiceId_Internalname ;
                context.httpAjaxContext.ajax_rsp_assign_attri("", false, "GX_FocusControl", GX_FocusControl);
                Insert044( ) ;
@@ -1804,6 +1840,8 @@ namespace GeneXus.Programs {
                   A20InvoiceLastLineId = O20InvoiceLastLineId ;
                   n20InvoiceLastLineId = false ;
                   context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+                  A9CustomerBalance = O9CustomerBalance ;
+                  context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A9CustomerBalance", StringUtil.LTrim( StringUtil.Str( A9CustomerBalance, 9, 2)));
                   GX_FocusControl = edtInvoiceId_Internalname ;
                   context.httpAjaxContext.ajax_rsp_assign_attri("", false, "GX_FocusControl", GX_FocusControl);
                   Insert044( ) ;
@@ -1839,6 +1877,8 @@ namespace GeneXus.Programs {
             A20InvoiceLastLineId = O20InvoiceLastLineId ;
             n20InvoiceLastLineId = false ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+            A9CustomerBalance = O9CustomerBalance ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A9CustomerBalance", StringUtil.LTrim( StringUtil.Str( A9CustomerBalance, 9, 2)));
             delete( ) ;
             AfterTrn( ) ;
             GX_FocusControl = edtInvoiceId_Internalname ;
@@ -2149,6 +2189,8 @@ namespace GeneXus.Programs {
                   A20InvoiceLastLineId = O20InvoiceLastLineId ;
                   n20InvoiceLastLineId = false ;
                   context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+                  A9CustomerBalance = O9CustomerBalance ;
+                  context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A9CustomerBalance", StringUtil.LTrim( StringUtil.Str( A9CustomerBalance, 9, 2)));
                   ScanStart045( ) ;
                   while ( RcdFound5 != 0 )
                   {
@@ -2163,6 +2205,8 @@ namespace GeneXus.Programs {
                      O20InvoiceLastLineId = A20InvoiceLastLineId ;
                      n20InvoiceLastLineId = false ;
                      context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+                     O9CustomerBalance = A9CustomerBalance ;
+                     context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A9CustomerBalance", StringUtil.LTrim( StringUtil.Str( A9CustomerBalance, 9, 2)));
                   }
                   ScanEnd045( ) ;
                   if ( AnyError == 0 )
@@ -2270,6 +2314,8 @@ namespace GeneXus.Programs {
                   context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A7CustomerTotalPurchases", StringUtil.LTrim( StringUtil.Str( A7CustomerTotalPurchases, 9, 2)));
                }
             }
+            A9CustomerBalance = (decimal)(A7CustomerTotalPurchases-A16InvoiceAmount) ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A9CustomerBalance", StringUtil.LTrim( StringUtil.Str( A9CustomerBalance, 9, 2)));
          }
       }
 
@@ -2283,8 +2329,10 @@ namespace GeneXus.Programs {
          s20InvoiceLastLineId = O20InvoiceLastLineId ;
          n20InvoiceLastLineId = false ;
          context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
-         nGXsfl_65_idx = 0 ;
-         while ( nGXsfl_65_idx < nRC_Gridinvoice_detail )
+         s9CustomerBalance = O9CustomerBalance ;
+         context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A9CustomerBalance", StringUtil.LTrim( StringUtil.Str( A9CustomerBalance, 9, 2)));
+         nGXsfl_70_idx = 0 ;
+         while ( nGXsfl_70_idx < nRC_Gridinvoice_detail )
          {
             ReadRow045( ) ;
             if ( ( nRcdExists_5 != 0 ) || ( nIsMod_5 != 0 ) )
@@ -2346,6 +2394,8 @@ namespace GeneXus.Programs {
                O20InvoiceLastLineId = A20InvoiceLastLineId ;
                n20InvoiceLastLineId = false ;
                context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+               O9CustomerBalance = A9CustomerBalance ;
+               context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A9CustomerBalance", StringUtil.LTrim( StringUtil.Str( A9CustomerBalance, 9, 2)));
             }
             ChangePostValue( edtInvoiceDetailId_Internalname, StringUtil.LTrim( StringUtil.NToC( (decimal)(A17InvoiceDetailId), 2, 0, ".", ""))) ;
             ChangePostValue( edtProductId_Internalname, StringUtil.LTrim( StringUtil.NToC( (decimal)(A10ProductId), 6, 0, ".", ""))) ;
@@ -2353,24 +2403,24 @@ namespace GeneXus.Programs {
             ChangePostValue( edtProductPrice_Internalname, StringUtil.LTrim( StringUtil.NToC( A13ProductPrice, 9, 2, ".", ""))) ;
             ChangePostValue( edtInvoiceDetailQuantiity_Internalname, StringUtil.LTrim( StringUtil.NToC( (decimal)(A18InvoiceDetailQuantiity), 3, 0, ".", ""))) ;
             ChangePostValue( edtInvoiceDetailAmount_Internalname, StringUtil.LTrim( StringUtil.NToC( A19InvoiceDetailAmount, 9, 2, ".", ""))) ;
-            ChangePostValue( "ZT_"+"Z17InvoiceDetailId_"+sGXsfl_65_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(Z17InvoiceDetailId), 2, 0, ".", ""))) ;
-            ChangePostValue( "ZT_"+"Z18InvoiceDetailQuantiity_"+sGXsfl_65_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(Z18InvoiceDetailQuantiity), 3, 0, ".", ""))) ;
-            ChangePostValue( "ZT_"+"Z10ProductId_"+sGXsfl_65_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(Z10ProductId), 6, 0, ".", ""))) ;
-            ChangePostValue( "ZT_"+"Z11ProductDescription_"+sGXsfl_65_idx, StringUtil.RTrim( Z11ProductDescription)) ;
-            ChangePostValue( "ZT_"+"Z13ProductPrice_"+sGXsfl_65_idx, StringUtil.LTrim( StringUtil.NToC( Z13ProductPrice, 9, 2, ".", ""))) ;
-            ChangePostValue( "T12ProductStock_"+sGXsfl_65_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(O12ProductStock), 4, 0, ".", ""))) ;
-            ChangePostValue( "T19InvoiceDetailAmount_"+sGXsfl_65_idx, StringUtil.LTrim( StringUtil.NToC( O19InvoiceDetailAmount, 9, 2, ".", ""))) ;
-            ChangePostValue( "nRcdDeleted_5_"+sGXsfl_65_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(nRcdDeleted_5), 4, 0, ".", ""))) ;
-            ChangePostValue( "nRcdExists_5_"+sGXsfl_65_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(nRcdExists_5), 4, 0, ".", ""))) ;
-            ChangePostValue( "nIsMod_5_"+sGXsfl_65_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(nIsMod_5), 4, 0, ".", ""))) ;
+            ChangePostValue( "ZT_"+"Z17InvoiceDetailId_"+sGXsfl_70_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(Z17InvoiceDetailId), 2, 0, ".", ""))) ;
+            ChangePostValue( "ZT_"+"Z18InvoiceDetailQuantiity_"+sGXsfl_70_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(Z18InvoiceDetailQuantiity), 3, 0, ".", ""))) ;
+            ChangePostValue( "ZT_"+"Z10ProductId_"+sGXsfl_70_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(Z10ProductId), 6, 0, ".", ""))) ;
+            ChangePostValue( "ZT_"+"Z11ProductDescription_"+sGXsfl_70_idx, StringUtil.RTrim( Z11ProductDescription)) ;
+            ChangePostValue( "ZT_"+"Z13ProductPrice_"+sGXsfl_70_idx, StringUtil.LTrim( StringUtil.NToC( Z13ProductPrice, 9, 2, ".", ""))) ;
+            ChangePostValue( "T12ProductStock_"+sGXsfl_70_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(O12ProductStock), 4, 0, ".", ""))) ;
+            ChangePostValue( "T19InvoiceDetailAmount_"+sGXsfl_70_idx, StringUtil.LTrim( StringUtil.NToC( O19InvoiceDetailAmount, 9, 2, ".", ""))) ;
+            ChangePostValue( "nRcdDeleted_5_"+sGXsfl_70_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(nRcdDeleted_5), 4, 0, ".", ""))) ;
+            ChangePostValue( "nRcdExists_5_"+sGXsfl_70_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(nRcdExists_5), 4, 0, ".", ""))) ;
+            ChangePostValue( "nIsMod_5_"+sGXsfl_70_idx, StringUtil.LTrim( StringUtil.NToC( (decimal)(nIsMod_5), 4, 0, ".", ""))) ;
             if ( nIsMod_5 != 0 )
             {
-               ChangePostValue( "INVOICEDETAILID_"+sGXsfl_65_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtInvoiceDetailId_Enabled), 5, 0, ".", ""))) ;
-               ChangePostValue( "PRODUCTID_"+sGXsfl_65_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtProductId_Enabled), 5, 0, ".", ""))) ;
-               ChangePostValue( "PRODUCTDESCRIPTION_"+sGXsfl_65_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtProductDescription_Enabled), 5, 0, ".", ""))) ;
-               ChangePostValue( "PRODUCTPRICE_"+sGXsfl_65_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtProductPrice_Enabled), 5, 0, ".", ""))) ;
-               ChangePostValue( "INVOICEDETAILQUANTIITY_"+sGXsfl_65_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtInvoiceDetailQuantiity_Enabled), 5, 0, ".", ""))) ;
-               ChangePostValue( "INVOICEDETAILAMOUNT_"+sGXsfl_65_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtInvoiceDetailAmount_Enabled), 5, 0, ".", ""))) ;
+               ChangePostValue( "INVOICEDETAILID_"+sGXsfl_70_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtInvoiceDetailId_Enabled), 5, 0, ".", ""))) ;
+               ChangePostValue( "PRODUCTID_"+sGXsfl_70_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtProductId_Enabled), 5, 0, ".", ""))) ;
+               ChangePostValue( "PRODUCTDESCRIPTION_"+sGXsfl_70_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtProductDescription_Enabled), 5, 0, ".", ""))) ;
+               ChangePostValue( "PRODUCTPRICE_"+sGXsfl_70_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtProductPrice_Enabled), 5, 0, ".", ""))) ;
+               ChangePostValue( "INVOICEDETAILQUANTIITY_"+sGXsfl_70_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtInvoiceDetailQuantiity_Enabled), 5, 0, ".", ""))) ;
+               ChangePostValue( "INVOICEDETAILAMOUNT_"+sGXsfl_70_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtInvoiceDetailAmount_Enabled), 5, 0, ".", ""))) ;
             }
          }
          /* Start of After( level) rules */
@@ -2386,6 +2436,8 @@ namespace GeneXus.Programs {
             O20InvoiceLastLineId = s20InvoiceLastLineId ;
             n20InvoiceLastLineId = false ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+            O9CustomerBalance = s9CustomerBalance ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A9CustomerBalance", StringUtil.LTrim( StringUtil.Str( A9CustomerBalance, 9, 2)));
          }
          nRcdExists_5 = 0 ;
          nIsMod_5 = 0 ;
@@ -2407,6 +2459,8 @@ namespace GeneXus.Programs {
             O20InvoiceLastLineId = s20InvoiceLastLineId ;
             n20InvoiceLastLineId = false ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A20InvoiceLastLineId", StringUtil.LTrim( StringUtil.Str( (decimal)(A20InvoiceLastLineId), 4, 0)));
+            O9CustomerBalance = s9CustomerBalance ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A9CustomerBalance", StringUtil.LTrim( StringUtil.Str( A9CustomerBalance, 9, 2)));
          }
          /* Restore parent mode. */
          Gx_mode = sMode4 ;
@@ -2548,13 +2602,15 @@ namespace GeneXus.Programs {
          context.httpAjaxContext.ajax_rsp_assign_prop("", false, edtCustomerName_Internalname, "Enabled", StringUtil.LTrim( StringUtil.Str( (decimal)(edtCustomerName_Enabled), 5, 0)));
          edtCustomerTotalPurchases_Enabled = 0 ;
          context.httpAjaxContext.ajax_rsp_assign_prop("", false, edtCustomerTotalPurchases_Internalname, "Enabled", StringUtil.LTrim( StringUtil.Str( (decimal)(edtCustomerTotalPurchases_Enabled), 5, 0)));
+         edtCustomerBalance_Enabled = 0 ;
+         context.httpAjaxContext.ajax_rsp_assign_prop("", false, edtCustomerBalance_Internalname, "Enabled", StringUtil.LTrim( StringUtil.Str( (decimal)(edtCustomerBalance_Enabled), 5, 0)));
          edtInvoiceAmount_Enabled = 0 ;
          context.httpAjaxContext.ajax_rsp_assign_prop("", false, edtInvoiceAmount_Internalname, "Enabled", StringUtil.LTrim( StringUtil.Str( (decimal)(edtInvoiceAmount_Enabled), 5, 0)));
       }
 
       protected void ZM045( short GX_JID )
       {
-         if ( ( GX_JID == 22 ) || ( GX_JID == 0 ) )
+         if ( ( GX_JID == 24 ) || ( GX_JID == 0 ) )
          {
             if ( StringUtil.StrCmp(Gx_mode, "INS") != 0 )
             {
@@ -2567,12 +2623,12 @@ namespace GeneXus.Programs {
                Z10ProductId = A10ProductId ;
             }
          }
-         if ( ( GX_JID == 23 ) || ( GX_JID == 0 ) )
+         if ( ( GX_JID == 25 ) || ( GX_JID == 0 ) )
          {
             Z11ProductDescription = T00045_A11ProductDescription[0] ;
             Z13ProductPrice = T00045_A13ProductPrice[0] ;
          }
-         if ( GX_JID == -22 )
+         if ( GX_JID == -24 )
          {
             Z14InvoiceId = A14InvoiceId ;
             Z17InvoiceDetailId = A17InvoiceDetailId ;
@@ -2638,7 +2694,7 @@ namespace GeneXus.Programs {
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A18InvoiceDetailQuantiity", StringUtil.LTrim( StringUtil.Str( (decimal)(A18InvoiceDetailQuantiity), 3, 0)));
             A10ProductId = T000438_A10ProductId[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A10ProductId", StringUtil.LTrim( StringUtil.Str( (decimal)(A10ProductId), 6, 0)));
-            ZM045( -22) ;
+            ZM045( -24) ;
          }
          pr_default.close(28);
          OnLoadActions045( ) ;
@@ -2684,6 +2740,8 @@ namespace GeneXus.Programs {
             A7CustomerTotalPurchases = (decimal)(O7CustomerTotalPurchases+A16InvoiceAmount-O16InvoiceAmount) ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A7CustomerTotalPurchases", StringUtil.LTrim( StringUtil.Str( A7CustomerTotalPurchases, 9, 2)));
          }
+         A9CustomerBalance = (decimal)(A7CustomerTotalPurchases-A16InvoiceAmount) ;
+         context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A9CustomerBalance", StringUtil.LTrim( StringUtil.Str( A9CustomerBalance, 9, 2)));
          A19InvoiceDetailAmount = (decimal)(A13ProductPrice*A18InvoiceDetailQuantiity) ;
          context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A19InvoiceDetailAmount", StringUtil.LTrim( StringUtil.Str( A19InvoiceDetailAmount, 9, 2)));
          O19InvoiceDetailAmount = A19InvoiceDetailAmount ;
@@ -2776,6 +2834,8 @@ namespace GeneXus.Programs {
             A7CustomerTotalPurchases = (decimal)(O7CustomerTotalPurchases+A16InvoiceAmount-O16InvoiceAmount) ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A7CustomerTotalPurchases", StringUtil.LTrim( StringUtil.Str( A7CustomerTotalPurchases, 9, 2)));
          }
+         A9CustomerBalance = (decimal)(A7CustomerTotalPurchases-A16InvoiceAmount) ;
+         context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A9CustomerBalance", StringUtil.LTrim( StringUtil.Str( A9CustomerBalance, 9, 2)));
          A19InvoiceDetailAmount = (decimal)(A13ProductPrice*A18InvoiceDetailQuantiity) ;
          context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A19InvoiceDetailAmount", StringUtil.LTrim( StringUtil.Str( A19InvoiceDetailAmount, 9, 2)));
          if ( ( StringUtil.StrCmp(Gx_mode, "INS") == 0 )  )
@@ -2813,7 +2873,7 @@ namespace GeneXus.Programs {
       {
       }
 
-      protected void gxLoad_23( int A10ProductId )
+      protected void gxLoad_25( int A10ProductId )
       {
          /* Using cursor T000439 */
          pr_default.execute(29, new Object[] {A10ProductId});
@@ -2869,7 +2929,7 @@ namespace GeneXus.Programs {
          pr_default.execute(1, new Object[] {A14InvoiceId, A17InvoiceDetailId});
          if ( (pr_default.getStatus(1) != 101) )
          {
-            ZM045( 22) ;
+            ZM045( 24) ;
             RcdFound5 = 1 ;
             InitializeNonKey045( ) ;
             A17InvoiceDetailId = T00043_A17InvoiceDetailId[0] ;
@@ -3142,6 +3202,8 @@ namespace GeneXus.Programs {
                A7CustomerTotalPurchases = (decimal)(O7CustomerTotalPurchases+A16InvoiceAmount-O16InvoiceAmount) ;
                context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A7CustomerTotalPurchases", StringUtil.LTrim( StringUtil.Str( A7CustomerTotalPurchases, 9, 2)));
             }
+            A9CustomerBalance = (decimal)(A7CustomerTotalPurchases-A16InvoiceAmount) ;
+            context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A9CustomerBalance", StringUtil.LTrim( StringUtil.Str( A9CustomerBalance, 9, 2)));
             if ( ( StringUtil.StrCmp(Gx_mode, "INS") == 0 )  )
             {
                A20InvoiceLastLineId = (short)(O20InvoiceLastLineId+1) ;
@@ -3276,15 +3338,15 @@ namespace GeneXus.Programs {
 
       protected void AddRow045( )
       {
-         nGXsfl_65_idx = (short)(nGXsfl_65_idx+1) ;
-         sGXsfl_65_idx = StringUtil.PadL( StringUtil.LTrim( StringUtil.Str( (decimal)(nGXsfl_65_idx), 4, 0)), 4, "0") ;
-         edtInvoiceDetailId_Internalname = "INVOICEDETAILID_"+sGXsfl_65_idx ;
-         edtProductId_Internalname = "PRODUCTID_"+sGXsfl_65_idx ;
-         imgprompt_10_Internalname = "PROMPT_10_"+sGXsfl_65_idx ;
-         edtProductDescription_Internalname = "PRODUCTDESCRIPTION_"+sGXsfl_65_idx ;
-         edtProductPrice_Internalname = "PRODUCTPRICE_"+sGXsfl_65_idx ;
-         edtInvoiceDetailQuantiity_Internalname = "INVOICEDETAILQUANTIITY_"+sGXsfl_65_idx ;
-         edtInvoiceDetailAmount_Internalname = "INVOICEDETAILAMOUNT_"+sGXsfl_65_idx ;
+         nGXsfl_70_idx = (short)(nGXsfl_70_idx+1) ;
+         sGXsfl_70_idx = StringUtil.PadL( StringUtil.LTrim( StringUtil.Str( (decimal)(nGXsfl_70_idx), 4, 0)), 4, "0") ;
+         edtInvoiceDetailId_Internalname = "INVOICEDETAILID_"+sGXsfl_70_idx ;
+         edtProductId_Internalname = "PRODUCTID_"+sGXsfl_70_idx ;
+         imgprompt_10_Internalname = "PROMPT_10_"+sGXsfl_70_idx ;
+         edtProductDescription_Internalname = "PRODUCTDESCRIPTION_"+sGXsfl_70_idx ;
+         edtProductPrice_Internalname = "PRODUCTPRICE_"+sGXsfl_70_idx ;
+         edtInvoiceDetailQuantiity_Internalname = "INVOICEDETAILQUANTIITY_"+sGXsfl_70_idx ;
+         edtInvoiceDetailAmount_Internalname = "INVOICEDETAILAMOUNT_"+sGXsfl_70_idx ;
          SendRow045( ) ;
       }
 
@@ -3326,7 +3388,7 @@ namespace GeneXus.Programs {
          {
             /* Report style subfile background logic. */
             subGridinvoice_detail_Backstyle = 1 ;
-            if ( ((int)(nGXsfl_65_idx) % (2)) == 0 )
+            if ( ((int)(nGXsfl_70_idx) % (2)) == 0 )
             {
                subGridinvoice_detail_Backcolor = (int)(0x0) ;
                context.httpAjaxContext.ajax_rsp_assign_prop("", false, "Gridinvoice_detailContainerDiv", "Backcolor", StringUtil.LTrim( StringUtil.Str( (decimal)(subGridinvoice_detail_Backcolor), 9, 0)));
@@ -3345,23 +3407,23 @@ namespace GeneXus.Programs {
                }
             }
          }
-         imgprompt_10_Link = ((StringUtil.StrCmp(Gx_mode, "DSP")==0) ? "" : "javascript:"+"gx.popup.openPrompt('"+"gx0030.aspx"+"',["+"{Ctrl:gx.dom.el('"+"PRODUCTID_"+sGXsfl_65_idx+"'), id:'"+"PRODUCTID_"+sGXsfl_65_idx+"'"+",isOut:true,isKey:false,isLastKey:false}"+"],"+"gx.dom.form()."+"nIsMod_5_"+sGXsfl_65_idx+","+"'', false"+","+"false"+");") ;
+         imgprompt_10_Link = ((StringUtil.StrCmp(Gx_mode, "DSP")==0) ? "" : "javascript:"+"gx.popup.openPrompt('"+"gx0030.aspx"+"',["+"{Ctrl:gx.dom.el('"+"PRODUCTID_"+sGXsfl_70_idx+"'), id:'"+"PRODUCTID_"+sGXsfl_70_idx+"'"+",isOut:true,isKey:false,isLastKey:false}"+"],"+"gx.dom.form()."+"nIsMod_5_"+sGXsfl_70_idx+","+"'', false"+","+"false"+");") ;
          /* * Property Link not supported in */
          /* * Property Link not supported in */
          /* Subfile cell */
          /* Single line edit */
-         TempTags = " gxoch1=\"gx.fn.setControlValue('nIsMod_5_" + sGXsfl_65_idx + "',1);\"  onfocus=\"gx.evt.onfocus(this, 66,'',false,'" + sGXsfl_65_idx + "',65)\"" ;
+         TempTags = " gxoch1=\"gx.fn.setControlValue('nIsMod_5_" + sGXsfl_70_idx + "',1);\"  onfocus=\"gx.evt.onfocus(this, 71,'',false,'" + sGXsfl_70_idx + "',70)\"" ;
          ClassString = "Attribute" ;
          StyleString = "" ;
          ROClassString = ClassString ;
-         Gridinvoice_detailRow.AddColumnProperties("edit", 1, isAjaxCallMode( ), new Object[] {(String)edtInvoiceDetailId_Internalname,StringUtil.LTrim( StringUtil.NToC( (decimal)(A17InvoiceDetailId), 2, 0, ".", "")),(String)"",(short)0,(String)"px",(short)17,(String)"px",(short)2,(short)-1,(int)edtInvoiceDetailId_Enabled,(short)1,(short)0,(short)0,(String)"",(String)"",(String)StyleString,(String)ClassString,(String)ROClassString,context.localUtil.Format( (decimal)(A17InvoiceDetailId), "Z9"),TempTags+" onchange=\"gx.evt.onchange(this)\" "+" onblur=\""+"gx.num.valid_integer( this,',');"+";gx.evt.onblur(66);\"",(short)0,(String)edtInvoiceDetailId_Jsonclick,(String)"",(short)65,(short)1,(short)-1,(bool)true,(String)"right"});
+         Gridinvoice_detailRow.AddColumnProperties("edit", 1, isAjaxCallMode( ), new Object[] {(String)edtInvoiceDetailId_Internalname,StringUtil.LTrim( StringUtil.NToC( (decimal)(A17InvoiceDetailId), 2, 0, ".", "")),(String)"",(short)0,(String)"px",(short)17,(String)"px",(short)2,(short)-1,(int)edtInvoiceDetailId_Enabled,(short)1,(short)0,(short)0,(String)"",(String)"",(String)StyleString,(String)ClassString,(String)ROClassString,context.localUtil.Format( (decimal)(A17InvoiceDetailId), "Z9"),TempTags+" onchange=\"gx.evt.onchange(this)\" "+" onblur=\""+"gx.num.valid_integer( this,',');"+";gx.evt.onblur(71);\"",(short)0,(String)edtInvoiceDetailId_Jsonclick,(String)"",(short)70,(short)1,(short)-1,(bool)true,(String)"right"});
          /* Subfile cell */
          /* Single line edit */
-         TempTags = " gxoch1=\"gx.fn.setControlValue('nIsMod_5_" + sGXsfl_65_idx + "',1);\"  onfocus=\"gx.evt.onfocus(this, 67,'',false,'" + sGXsfl_65_idx + "',65)\"" ;
+         TempTags = " gxoch1=\"gx.fn.setControlValue('nIsMod_5_" + sGXsfl_70_idx + "',1);\"  onfocus=\"gx.evt.onfocus(this, 72,'',false,'" + sGXsfl_70_idx + "',70)\"" ;
          ClassString = "Attribute" ;
          StyleString = "" ;
          ROClassString = ClassString ;
-         Gridinvoice_detailRow.AddColumnProperties("edit", 1, isAjaxCallMode( ), new Object[] {(String)edtProductId_Internalname,StringUtil.LTrim( StringUtil.NToC( (decimal)(A10ProductId), 6, 0, ".", "")),(String)"",(short)0,(String)"px",(short)17,(String)"px",(short)6,(short)-1,(int)edtProductId_Enabled,(short)0,(short)0,(short)0,(String)"",(String)"",(String)StyleString,(String)ClassString,(String)ROClassString,context.localUtil.Format( (decimal)(A10ProductId), "ZZZZZ9"),TempTags+" onchange=\"gx.evt.onchange(this)\" "+" onblur=\""+"gx.num.valid_integer( this,',');"+";gx.evt.onblur(67);\"",(short)0,(String)edtProductId_Jsonclick,(String)"",(short)65,(short)1,(short)-1,(bool)true,(String)"right"});
+         Gridinvoice_detailRow.AddColumnProperties("edit", 1, isAjaxCallMode( ), new Object[] {(String)edtProductId_Internalname,StringUtil.LTrim( StringUtil.NToC( (decimal)(A10ProductId), 6, 0, ".", "")),(String)"",(short)0,(String)"px",(short)17,(String)"px",(short)6,(short)-1,(int)edtProductId_Enabled,(short)0,(short)0,(short)0,(String)"",(String)"",(String)StyleString,(String)ClassString,(String)ROClassString,context.localUtil.Format( (decimal)(A10ProductId), "ZZZZZ9"),TempTags+" onchange=\"gx.evt.onchange(this)\" "+" onblur=\""+"gx.num.valid_integer( this,',');"+";gx.evt.onblur(72);\"",(short)0,(String)edtProductId_Jsonclick,(String)"",(short)70,(short)1,(short)-1,(bool)true,(String)"right"});
          /* Subfile cell */
          /* Static images/pictures */
          ClassString = "Image" ;
@@ -3372,84 +3434,84 @@ namespace GeneXus.Programs {
          ClassString = "Attribute" ;
          StyleString = "" ;
          ROClassString = ClassString ;
-         Gridinvoice_detailRow.AddColumnProperties("edit", 1, isAjaxCallMode( ), new Object[] {(String)edtProductDescription_Internalname,StringUtil.RTrim( A11ProductDescription),(String)"",(short)0,(String)"px",(short)17,(String)"px",(short)30,(short)-1,(int)edtProductDescription_Enabled,(short)0,(short)0,(short)0,(String)"",(String)"",(String)StyleString,(String)ClassString,(String)ROClassString,StringUtil.RTrim( context.localUtil.Format( A11ProductDescription, "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")),(String)"",(short)0,(String)edtProductDescription_Jsonclick,(String)"",(short)65,(short)1,(short)-1,(bool)true,(String)"left"});
+         Gridinvoice_detailRow.AddColumnProperties("edit", 1, isAjaxCallMode( ), new Object[] {(String)edtProductDescription_Internalname,StringUtil.RTrim( A11ProductDescription),(String)"",(short)0,(String)"px",(short)17,(String)"px",(short)30,(short)-1,(int)edtProductDescription_Enabled,(short)0,(short)0,(short)0,(String)"",(String)"",(String)StyleString,(String)ClassString,(String)ROClassString,StringUtil.RTrim( context.localUtil.Format( A11ProductDescription, "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")),(String)"",(short)0,(String)edtProductDescription_Jsonclick,(String)"",(short)70,(short)1,(short)-1,(bool)true,(String)"left"});
          /* Subfile cell */
          /* Single line edit */
          ClassString = "Attribute" ;
          StyleString = "" ;
          ROClassString = ClassString ;
-         Gridinvoice_detailRow.AddColumnProperties("edit", 1, isAjaxCallMode( ), new Object[] {(String)edtProductPrice_Internalname,StringUtil.LTrim( StringUtil.NToC( A13ProductPrice, 9, 2, ".", "")),(String)"",(short)0,(String)"px",(short)17,(String)"px",(short)9,(short)-1,(int)edtProductPrice_Enabled,(short)0,(short)0,(short)0,(String)"",(String)"",(String)StyleString,(String)ClassString,(String)ROClassString,context.localUtil.Format( A13ProductPrice, "ZZZZZ9.99"),(String)"",(short)0,(String)edtProductPrice_Jsonclick,(String)"",(short)65,(short)1,(short)-1,(bool)true,(String)"right"});
+         Gridinvoice_detailRow.AddColumnProperties("edit", 1, isAjaxCallMode( ), new Object[] {(String)edtProductPrice_Internalname,StringUtil.LTrim( StringUtil.NToC( A13ProductPrice, 9, 2, ".", "")),(String)"",(short)0,(String)"px",(short)17,(String)"px",(short)9,(short)-1,(int)edtProductPrice_Enabled,(short)0,(short)0,(short)0,(String)"",(String)"",(String)StyleString,(String)ClassString,(String)ROClassString,context.localUtil.Format( A13ProductPrice, "ZZZZZ9.99"),(String)"",(short)0,(String)edtProductPrice_Jsonclick,(String)"",(short)70,(short)1,(short)-1,(bool)true,(String)"right"});
          /* Subfile cell */
          /* Single line edit */
-         TempTags = " gxoch1=\"gx.fn.setControlValue('nIsMod_5_" + sGXsfl_65_idx + "',1);\"  onfocus=\"gx.evt.onfocus(this, 70,'',false,'" + sGXsfl_65_idx + "',65)\"" ;
+         TempTags = " gxoch1=\"gx.fn.setControlValue('nIsMod_5_" + sGXsfl_70_idx + "',1);\"  onfocus=\"gx.evt.onfocus(this, 75,'',false,'" + sGXsfl_70_idx + "',70)\"" ;
          ClassString = "Attribute" ;
          StyleString = "" ;
          ROClassString = ClassString ;
-         Gridinvoice_detailRow.AddColumnProperties("edit", 1, isAjaxCallMode( ), new Object[] {(String)edtInvoiceDetailQuantiity_Internalname,StringUtil.LTrim( StringUtil.NToC( (decimal)(A18InvoiceDetailQuantiity), 3, 0, ".", "")),(String)"",(short)0,(String)"px",(short)17,(String)"px",(short)3,(short)-1,(int)edtInvoiceDetailQuantiity_Enabled,(short)0,(short)0,(short)0,(String)"",(String)"",(String)StyleString,(String)ClassString,(String)ROClassString,context.localUtil.Format( (decimal)(A18InvoiceDetailQuantiity), "ZZ9"),TempTags+" onchange=\"gx.evt.onchange(this)\" "+" onblur=\""+"gx.num.valid_integer( this,',');"+";gx.evt.onblur(70);\"",(short)0,(String)edtInvoiceDetailQuantiity_Jsonclick,(String)"",(short)65,(short)1,(short)-1,(bool)true,(String)"right"});
+         Gridinvoice_detailRow.AddColumnProperties("edit", 1, isAjaxCallMode( ), new Object[] {(String)edtInvoiceDetailQuantiity_Internalname,StringUtil.LTrim( StringUtil.NToC( (decimal)(A18InvoiceDetailQuantiity), 3, 0, ".", "")),(String)"",(short)0,(String)"px",(short)17,(String)"px",(short)3,(short)-1,(int)edtInvoiceDetailQuantiity_Enabled,(short)0,(short)0,(short)0,(String)"",(String)"",(String)StyleString,(String)ClassString,(String)ROClassString,context.localUtil.Format( (decimal)(A18InvoiceDetailQuantiity), "ZZ9"),TempTags+" onchange=\"gx.evt.onchange(this)\" "+" onblur=\""+"gx.num.valid_integer( this,',');"+";gx.evt.onblur(75);\"",(short)0,(String)edtInvoiceDetailQuantiity_Jsonclick,(String)"",(short)70,(short)1,(short)-1,(bool)true,(String)"right"});
          /* Subfile cell */
          /* Single line edit */
          ClassString = "Attribute" ;
          StyleString = "" ;
          ROClassString = ClassString ;
-         Gridinvoice_detailRow.AddColumnProperties("edit", 1, isAjaxCallMode( ), new Object[] {(String)edtInvoiceDetailAmount_Internalname,StringUtil.LTrim( StringUtil.NToC( A19InvoiceDetailAmount, 9, 2, ".", "")),(String)"",(short)0,(String)"px",(short)17,(String)"px",(short)9,(short)-1,(int)edtInvoiceDetailAmount_Enabled,(short)0,(short)0,(short)0,(String)"",(String)"",(String)StyleString,(String)ClassString,(String)ROClassString,context.localUtil.Format( A19InvoiceDetailAmount, "ZZZZZ9.99"),(String)"",(short)0,(String)edtInvoiceDetailAmount_Jsonclick,(String)"",(short)65,(short)1,(short)-1,(bool)true,(String)"right"});
+         Gridinvoice_detailRow.AddColumnProperties("edit", 1, isAjaxCallMode( ), new Object[] {(String)edtInvoiceDetailAmount_Internalname,StringUtil.LTrim( StringUtil.NToC( A19InvoiceDetailAmount, 9, 2, ".", "")),(String)"",(short)0,(String)"px",(short)17,(String)"px",(short)9,(short)-1,(int)edtInvoiceDetailAmount_Enabled,(short)0,(short)0,(short)0,(String)"",(String)"",(String)StyleString,(String)ClassString,(String)ROClassString,context.localUtil.Format( A19InvoiceDetailAmount, "ZZZZZ9.99"),(String)"",(short)0,(String)edtInvoiceDetailAmount_Jsonclick,(String)"",(short)70,(short)1,(short)-1,(bool)true,(String)"right"});
          context.httpAjaxContext.ajax_sending_grid_row(Gridinvoice_detailRow);
-         GXCCtl = "Z17InvoiceDetailId_" + sGXsfl_65_idx ;
+         GXCCtl = "Z17InvoiceDetailId_" + sGXsfl_70_idx ;
          GxWebStd.gx_hidden_field( context, GXCCtl, StringUtil.LTrim( StringUtil.NToC( (decimal)(Z17InvoiceDetailId), 2, 0, ".", "")));
-         GXCCtl = "Z18InvoiceDetailQuantiity_" + sGXsfl_65_idx ;
+         GXCCtl = "Z18InvoiceDetailQuantiity_" + sGXsfl_70_idx ;
          GxWebStd.gx_hidden_field( context, GXCCtl, StringUtil.LTrim( StringUtil.NToC( (decimal)(Z18InvoiceDetailQuantiity), 3, 0, ".", "")));
-         GXCCtl = "Z10ProductId_" + sGXsfl_65_idx ;
+         GXCCtl = "Z10ProductId_" + sGXsfl_70_idx ;
          GxWebStd.gx_hidden_field( context, GXCCtl, StringUtil.LTrim( StringUtil.NToC( (decimal)(Z10ProductId), 6, 0, ".", "")));
-         GXCCtl = "Z11ProductDescription_" + sGXsfl_65_idx ;
+         GXCCtl = "Z11ProductDescription_" + sGXsfl_70_idx ;
          GxWebStd.gx_hidden_field( context, GXCCtl, StringUtil.RTrim( Z11ProductDescription));
-         GXCCtl = "Z13ProductPrice_" + sGXsfl_65_idx ;
+         GXCCtl = "Z13ProductPrice_" + sGXsfl_70_idx ;
          GxWebStd.gx_hidden_field( context, GXCCtl, StringUtil.LTrim( StringUtil.NToC( Z13ProductPrice, 9, 2, ".", "")));
-         GXCCtl = "O12ProductStock_" + sGXsfl_65_idx ;
+         GXCCtl = "O12ProductStock_" + sGXsfl_70_idx ;
          GxWebStd.gx_hidden_field( context, GXCCtl, StringUtil.LTrim( StringUtil.NToC( (decimal)(O12ProductStock), 4, 0, ".", "")));
-         GXCCtl = "O19InvoiceDetailAmount_" + sGXsfl_65_idx ;
+         GXCCtl = "O19InvoiceDetailAmount_" + sGXsfl_70_idx ;
          GxWebStd.gx_hidden_field( context, GXCCtl, StringUtil.LTrim( StringUtil.NToC( O19InvoiceDetailAmount, 9, 2, ".", "")));
-         GXCCtl = "PRODUCTSTOCK_" + sGXsfl_65_idx ;
+         GXCCtl = "PRODUCTSTOCK_" + sGXsfl_70_idx ;
          GxWebStd.gx_hidden_field( context, GXCCtl, StringUtil.LTrim( StringUtil.NToC( (decimal)(A12ProductStock), 4, 0, ".", "")));
-         GXCCtl = "nRcdDeleted_5_" + sGXsfl_65_idx ;
+         GXCCtl = "nRcdDeleted_5_" + sGXsfl_70_idx ;
          GxWebStd.gx_hidden_field( context, GXCCtl, StringUtil.LTrim( StringUtil.NToC( (decimal)(nRcdDeleted_5), 4, 0, ".", "")));
-         GXCCtl = "nRcdExists_5_" + sGXsfl_65_idx ;
+         GXCCtl = "nRcdExists_5_" + sGXsfl_70_idx ;
          GxWebStd.gx_hidden_field( context, GXCCtl, StringUtil.LTrim( StringUtil.NToC( (decimal)(nRcdExists_5), 4, 0, ".", "")));
-         GXCCtl = "nIsMod_5_" + sGXsfl_65_idx ;
+         GXCCtl = "nIsMod_5_" + sGXsfl_70_idx ;
          GxWebStd.gx_hidden_field( context, GXCCtl, StringUtil.LTrim( StringUtil.NToC( (decimal)(nIsMod_5), 4, 0, ".", "")));
-         GxWebStd.gx_hidden_field( context, "INVOICEDETAILID_"+sGXsfl_65_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtInvoiceDetailId_Enabled), 5, 0, ".", "")));
-         GxWebStd.gx_hidden_field( context, "PRODUCTID_"+sGXsfl_65_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtProductId_Enabled), 5, 0, ".", "")));
-         GxWebStd.gx_hidden_field( context, "PRODUCTDESCRIPTION_"+sGXsfl_65_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtProductDescription_Enabled), 5, 0, ".", "")));
-         GxWebStd.gx_hidden_field( context, "PRODUCTPRICE_"+sGXsfl_65_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtProductPrice_Enabled), 5, 0, ".", "")));
-         GxWebStd.gx_hidden_field( context, "INVOICEDETAILQUANTIITY_"+sGXsfl_65_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtInvoiceDetailQuantiity_Enabled), 5, 0, ".", "")));
-         GxWebStd.gx_hidden_field( context, "INVOICEDETAILAMOUNT_"+sGXsfl_65_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtInvoiceDetailAmount_Enabled), 5, 0, ".", "")));
-         GxWebStd.gx_hidden_field( context, "PROMPT_10_"+sGXsfl_65_idx+"Link", StringUtil.RTrim( imgprompt_10_Link));
+         GxWebStd.gx_hidden_field( context, "INVOICEDETAILID_"+sGXsfl_70_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtInvoiceDetailId_Enabled), 5, 0, ".", "")));
+         GxWebStd.gx_hidden_field( context, "PRODUCTID_"+sGXsfl_70_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtProductId_Enabled), 5, 0, ".", "")));
+         GxWebStd.gx_hidden_field( context, "PRODUCTDESCRIPTION_"+sGXsfl_70_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtProductDescription_Enabled), 5, 0, ".", "")));
+         GxWebStd.gx_hidden_field( context, "PRODUCTPRICE_"+sGXsfl_70_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtProductPrice_Enabled), 5, 0, ".", "")));
+         GxWebStd.gx_hidden_field( context, "INVOICEDETAILQUANTIITY_"+sGXsfl_70_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtInvoiceDetailQuantiity_Enabled), 5, 0, ".", "")));
+         GxWebStd.gx_hidden_field( context, "INVOICEDETAILAMOUNT_"+sGXsfl_70_idx+"Enabled", StringUtil.LTrim( StringUtil.NToC( (decimal)(edtInvoiceDetailAmount_Enabled), 5, 0, ".", "")));
+         GxWebStd.gx_hidden_field( context, "PROMPT_10_"+sGXsfl_70_idx+"Link", StringUtil.RTrim( imgprompt_10_Link));
          context.httpAjaxContext.ajax_sending_grid_row(null);
          Gridinvoice_detailContainer.AddRow(Gridinvoice_detailRow);
       }
 
       protected void ReadRow045( )
       {
-         nGXsfl_65_idx = (short)(nGXsfl_65_idx+1) ;
-         sGXsfl_65_idx = StringUtil.PadL( StringUtil.LTrim( StringUtil.Str( (decimal)(nGXsfl_65_idx), 4, 0)), 4, "0") ;
-         edtInvoiceDetailId_Internalname = "INVOICEDETAILID_"+sGXsfl_65_idx ;
-         edtProductId_Internalname = "PRODUCTID_"+sGXsfl_65_idx ;
-         imgprompt_10_Internalname = "PROMPT_10_"+sGXsfl_65_idx ;
-         edtProductDescription_Internalname = "PRODUCTDESCRIPTION_"+sGXsfl_65_idx ;
-         edtProductPrice_Internalname = "PRODUCTPRICE_"+sGXsfl_65_idx ;
-         edtInvoiceDetailQuantiity_Internalname = "INVOICEDETAILQUANTIITY_"+sGXsfl_65_idx ;
-         edtInvoiceDetailAmount_Internalname = "INVOICEDETAILAMOUNT_"+sGXsfl_65_idx ;
-         edtInvoiceDetailId_Enabled = (int)(context.localUtil.CToN( cgiGet( "INVOICEDETAILID_"+sGXsfl_65_idx+"Enabled"), ".", ",")) ;
+         nGXsfl_70_idx = (short)(nGXsfl_70_idx+1) ;
+         sGXsfl_70_idx = StringUtil.PadL( StringUtil.LTrim( StringUtil.Str( (decimal)(nGXsfl_70_idx), 4, 0)), 4, "0") ;
+         edtInvoiceDetailId_Internalname = "INVOICEDETAILID_"+sGXsfl_70_idx ;
+         edtProductId_Internalname = "PRODUCTID_"+sGXsfl_70_idx ;
+         imgprompt_10_Internalname = "PROMPT_10_"+sGXsfl_70_idx ;
+         edtProductDescription_Internalname = "PRODUCTDESCRIPTION_"+sGXsfl_70_idx ;
+         edtProductPrice_Internalname = "PRODUCTPRICE_"+sGXsfl_70_idx ;
+         edtInvoiceDetailQuantiity_Internalname = "INVOICEDETAILQUANTIITY_"+sGXsfl_70_idx ;
+         edtInvoiceDetailAmount_Internalname = "INVOICEDETAILAMOUNT_"+sGXsfl_70_idx ;
+         edtInvoiceDetailId_Enabled = (int)(context.localUtil.CToN( cgiGet( "INVOICEDETAILID_"+sGXsfl_70_idx+"Enabled"), ".", ",")) ;
          context.httpAjaxContext.ajax_rsp_assign_prop("", false, edtInvoiceDetailId_Internalname, "Enabled", StringUtil.LTrim( StringUtil.Str( (decimal)(edtInvoiceDetailId_Enabled), 5, 0)));
-         edtProductId_Enabled = (int)(context.localUtil.CToN( cgiGet( "PRODUCTID_"+sGXsfl_65_idx+"Enabled"), ".", ",")) ;
+         edtProductId_Enabled = (int)(context.localUtil.CToN( cgiGet( "PRODUCTID_"+sGXsfl_70_idx+"Enabled"), ".", ",")) ;
          context.httpAjaxContext.ajax_rsp_assign_prop("", false, edtProductId_Internalname, "Enabled", StringUtil.LTrim( StringUtil.Str( (decimal)(edtProductId_Enabled), 5, 0)));
-         edtProductDescription_Enabled = (int)(context.localUtil.CToN( cgiGet( "PRODUCTDESCRIPTION_"+sGXsfl_65_idx+"Enabled"), ".", ",")) ;
+         edtProductDescription_Enabled = (int)(context.localUtil.CToN( cgiGet( "PRODUCTDESCRIPTION_"+sGXsfl_70_idx+"Enabled"), ".", ",")) ;
          context.httpAjaxContext.ajax_rsp_assign_prop("", false, edtProductDescription_Internalname, "Enabled", StringUtil.LTrim( StringUtil.Str( (decimal)(edtProductDescription_Enabled), 5, 0)));
-         edtProductPrice_Enabled = (int)(context.localUtil.CToN( cgiGet( "PRODUCTPRICE_"+sGXsfl_65_idx+"Enabled"), ".", ",")) ;
+         edtProductPrice_Enabled = (int)(context.localUtil.CToN( cgiGet( "PRODUCTPRICE_"+sGXsfl_70_idx+"Enabled"), ".", ",")) ;
          context.httpAjaxContext.ajax_rsp_assign_prop("", false, edtProductPrice_Internalname, "Enabled", StringUtil.LTrim( StringUtil.Str( (decimal)(edtProductPrice_Enabled), 5, 0)));
-         edtInvoiceDetailQuantiity_Enabled = (int)(context.localUtil.CToN( cgiGet( "INVOICEDETAILQUANTIITY_"+sGXsfl_65_idx+"Enabled"), ".", ",")) ;
+         edtInvoiceDetailQuantiity_Enabled = (int)(context.localUtil.CToN( cgiGet( "INVOICEDETAILQUANTIITY_"+sGXsfl_70_idx+"Enabled"), ".", ",")) ;
          context.httpAjaxContext.ajax_rsp_assign_prop("", false, edtInvoiceDetailQuantiity_Internalname, "Enabled", StringUtil.LTrim( StringUtil.Str( (decimal)(edtInvoiceDetailQuantiity_Enabled), 5, 0)));
-         edtInvoiceDetailAmount_Enabled = (int)(context.localUtil.CToN( cgiGet( "INVOICEDETAILAMOUNT_"+sGXsfl_65_idx+"Enabled"), ".", ",")) ;
+         edtInvoiceDetailAmount_Enabled = (int)(context.localUtil.CToN( cgiGet( "INVOICEDETAILAMOUNT_"+sGXsfl_70_idx+"Enabled"), ".", ",")) ;
          context.httpAjaxContext.ajax_rsp_assign_prop("", false, edtInvoiceDetailAmount_Internalname, "Enabled", StringUtil.LTrim( StringUtil.Str( (decimal)(edtInvoiceDetailAmount_Enabled), 5, 0)));
-         imgprompt_3_Link = cgiGet( "PROMPT_10_"+sGXsfl_65_idx+"Link") ;
+         imgprompt_3_Link = cgiGet( "PROMPT_10_"+sGXsfl_70_idx+"Link") ;
          if ( ( ( context.localUtil.CToN( cgiGet( edtInvoiceDetailId_Internalname), ".", ",") < Convert.ToDecimal( 0 )) ) || ( ( context.localUtil.CToN( cgiGet( edtInvoiceDetailId_Internalname), ".", ",") > Convert.ToDecimal( 99 )) ) )
          {
             GX_msglist.addItem(context.GetMessage( "GXM_badnum"), 1, "INVOICEDETAILID");
@@ -3501,27 +3563,27 @@ namespace GeneXus.Programs {
          }
          A19InvoiceDetailAmount = context.localUtil.CToN( cgiGet( edtInvoiceDetailAmount_Internalname), ".", ",") ;
          context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A19InvoiceDetailAmount", StringUtil.LTrim( StringUtil.Str( A19InvoiceDetailAmount, 9, 2)));
-         GXCCtl = "Z17InvoiceDetailId_" + sGXsfl_65_idx ;
+         GXCCtl = "Z17InvoiceDetailId_" + sGXsfl_70_idx ;
          Z17InvoiceDetailId = (short)(context.localUtil.CToN( cgiGet( GXCCtl), ".", ",")) ;
-         GXCCtl = "Z18InvoiceDetailQuantiity_" + sGXsfl_65_idx ;
+         GXCCtl = "Z18InvoiceDetailQuantiity_" + sGXsfl_70_idx ;
          Z18InvoiceDetailQuantiity = (short)(context.localUtil.CToN( cgiGet( GXCCtl), ".", ",")) ;
-         GXCCtl = "Z10ProductId_" + sGXsfl_65_idx ;
+         GXCCtl = "Z10ProductId_" + sGXsfl_70_idx ;
          Z10ProductId = (int)(context.localUtil.CToN( cgiGet( GXCCtl), ".", ",")) ;
-         GXCCtl = "Z11ProductDescription_" + sGXsfl_65_idx ;
+         GXCCtl = "Z11ProductDescription_" + sGXsfl_70_idx ;
          Z11ProductDescription = cgiGet( GXCCtl) ;
-         GXCCtl = "Z13ProductPrice_" + sGXsfl_65_idx ;
+         GXCCtl = "Z13ProductPrice_" + sGXsfl_70_idx ;
          Z13ProductPrice = context.localUtil.CToN( cgiGet( GXCCtl), ".", ",") ;
-         GXCCtl = "O12ProductStock_" + sGXsfl_65_idx ;
+         GXCCtl = "O12ProductStock_" + sGXsfl_70_idx ;
          O12ProductStock = (short)(context.localUtil.CToN( cgiGet( GXCCtl), ".", ",")) ;
-         GXCCtl = "O19InvoiceDetailAmount_" + sGXsfl_65_idx ;
+         GXCCtl = "O19InvoiceDetailAmount_" + sGXsfl_70_idx ;
          O19InvoiceDetailAmount = context.localUtil.CToN( cgiGet( GXCCtl), ".", ",") ;
-         GXCCtl = "PRODUCTSTOCK_" + sGXsfl_65_idx ;
+         GXCCtl = "PRODUCTSTOCK_" + sGXsfl_70_idx ;
          A12ProductStock = (short)(context.localUtil.CToN( cgiGet( GXCCtl), ".", ",")) ;
-         GXCCtl = "nRcdDeleted_5_" + sGXsfl_65_idx ;
+         GXCCtl = "nRcdDeleted_5_" + sGXsfl_70_idx ;
          nRcdDeleted_5 = (short)(context.localUtil.CToN( cgiGet( GXCCtl), ".", ",")) ;
-         GXCCtl = "nRcdExists_5_" + sGXsfl_65_idx ;
+         GXCCtl = "nRcdExists_5_" + sGXsfl_70_idx ;
          nRcdExists_5 = (short)(context.localUtil.CToN( cgiGet( GXCCtl), ".", ",")) ;
-         GXCCtl = "nIsMod_5_" + sGXsfl_65_idx ;
+         GXCCtl = "nIsMod_5_" + sGXsfl_70_idx ;
          nIsMod_5 = (short)(context.localUtil.CToN( cgiGet( GXCCtl), ".", ",")) ;
       }
 
@@ -3532,36 +3594,36 @@ namespace GeneXus.Programs {
 
       protected void ConfirmValues040( )
       {
-         nGXsfl_65_idx = 0 ;
-         sGXsfl_65_idx = StringUtil.PadL( StringUtil.LTrim( StringUtil.Str( (decimal)(nGXsfl_65_idx), 4, 0)), 4, "0") ;
-         edtInvoiceDetailId_Internalname = "INVOICEDETAILID_"+sGXsfl_65_idx ;
-         edtProductId_Internalname = "PRODUCTID_"+sGXsfl_65_idx ;
-         imgprompt_10_Internalname = "PROMPT_10_"+sGXsfl_65_idx ;
-         edtProductDescription_Internalname = "PRODUCTDESCRIPTION_"+sGXsfl_65_idx ;
-         edtProductPrice_Internalname = "PRODUCTPRICE_"+sGXsfl_65_idx ;
-         edtInvoiceDetailQuantiity_Internalname = "INVOICEDETAILQUANTIITY_"+sGXsfl_65_idx ;
-         edtInvoiceDetailAmount_Internalname = "INVOICEDETAILAMOUNT_"+sGXsfl_65_idx ;
-         while ( nGXsfl_65_idx < nRC_Gridinvoice_detail )
+         nGXsfl_70_idx = 0 ;
+         sGXsfl_70_idx = StringUtil.PadL( StringUtil.LTrim( StringUtil.Str( (decimal)(nGXsfl_70_idx), 4, 0)), 4, "0") ;
+         edtInvoiceDetailId_Internalname = "INVOICEDETAILID_"+sGXsfl_70_idx ;
+         edtProductId_Internalname = "PRODUCTID_"+sGXsfl_70_idx ;
+         imgprompt_10_Internalname = "PROMPT_10_"+sGXsfl_70_idx ;
+         edtProductDescription_Internalname = "PRODUCTDESCRIPTION_"+sGXsfl_70_idx ;
+         edtProductPrice_Internalname = "PRODUCTPRICE_"+sGXsfl_70_idx ;
+         edtInvoiceDetailQuantiity_Internalname = "INVOICEDETAILQUANTIITY_"+sGXsfl_70_idx ;
+         edtInvoiceDetailAmount_Internalname = "INVOICEDETAILAMOUNT_"+sGXsfl_70_idx ;
+         while ( nGXsfl_70_idx < nRC_Gridinvoice_detail )
          {
-            nGXsfl_65_idx = (short)(nGXsfl_65_idx+1) ;
-            sGXsfl_65_idx = StringUtil.PadL( StringUtil.LTrim( StringUtil.Str( (decimal)(nGXsfl_65_idx), 4, 0)), 4, "0") ;
-            edtInvoiceDetailId_Internalname = "INVOICEDETAILID_"+sGXsfl_65_idx ;
-            edtProductId_Internalname = "PRODUCTID_"+sGXsfl_65_idx ;
-            imgprompt_10_Internalname = "PROMPT_10_"+sGXsfl_65_idx ;
-            edtProductDescription_Internalname = "PRODUCTDESCRIPTION_"+sGXsfl_65_idx ;
-            edtProductPrice_Internalname = "PRODUCTPRICE_"+sGXsfl_65_idx ;
-            edtInvoiceDetailQuantiity_Internalname = "INVOICEDETAILQUANTIITY_"+sGXsfl_65_idx ;
-            edtInvoiceDetailAmount_Internalname = "INVOICEDETAILAMOUNT_"+sGXsfl_65_idx ;
-            ChangePostValue( "Z17InvoiceDetailId_"+sGXsfl_65_idx, cgiGet( "ZT_"+"Z17InvoiceDetailId_"+sGXsfl_65_idx)) ;
-            DeletePostValue( "ZT_"+"Z17InvoiceDetailId_"+sGXsfl_65_idx) ;
-            ChangePostValue( "Z18InvoiceDetailQuantiity_"+sGXsfl_65_idx, cgiGet( "ZT_"+"Z18InvoiceDetailQuantiity_"+sGXsfl_65_idx)) ;
-            DeletePostValue( "ZT_"+"Z18InvoiceDetailQuantiity_"+sGXsfl_65_idx) ;
-            ChangePostValue( "Z10ProductId_"+sGXsfl_65_idx, cgiGet( "ZT_"+"Z10ProductId_"+sGXsfl_65_idx)) ;
-            DeletePostValue( "ZT_"+"Z10ProductId_"+sGXsfl_65_idx) ;
-            ChangePostValue( "Z11ProductDescription_"+sGXsfl_65_idx, cgiGet( "ZT_"+"Z11ProductDescription_"+sGXsfl_65_idx)) ;
-            DeletePostValue( "ZT_"+"Z11ProductDescription_"+sGXsfl_65_idx) ;
-            ChangePostValue( "Z13ProductPrice_"+sGXsfl_65_idx, cgiGet( "ZT_"+"Z13ProductPrice_"+sGXsfl_65_idx)) ;
-            DeletePostValue( "ZT_"+"Z13ProductPrice_"+sGXsfl_65_idx) ;
+            nGXsfl_70_idx = (short)(nGXsfl_70_idx+1) ;
+            sGXsfl_70_idx = StringUtil.PadL( StringUtil.LTrim( StringUtil.Str( (decimal)(nGXsfl_70_idx), 4, 0)), 4, "0") ;
+            edtInvoiceDetailId_Internalname = "INVOICEDETAILID_"+sGXsfl_70_idx ;
+            edtProductId_Internalname = "PRODUCTID_"+sGXsfl_70_idx ;
+            imgprompt_10_Internalname = "PROMPT_10_"+sGXsfl_70_idx ;
+            edtProductDescription_Internalname = "PRODUCTDESCRIPTION_"+sGXsfl_70_idx ;
+            edtProductPrice_Internalname = "PRODUCTPRICE_"+sGXsfl_70_idx ;
+            edtInvoiceDetailQuantiity_Internalname = "INVOICEDETAILQUANTIITY_"+sGXsfl_70_idx ;
+            edtInvoiceDetailAmount_Internalname = "INVOICEDETAILAMOUNT_"+sGXsfl_70_idx ;
+            ChangePostValue( "Z17InvoiceDetailId_"+sGXsfl_70_idx, cgiGet( "ZT_"+"Z17InvoiceDetailId_"+sGXsfl_70_idx)) ;
+            DeletePostValue( "ZT_"+"Z17InvoiceDetailId_"+sGXsfl_70_idx) ;
+            ChangePostValue( "Z18InvoiceDetailQuantiity_"+sGXsfl_70_idx, cgiGet( "ZT_"+"Z18InvoiceDetailQuantiity_"+sGXsfl_70_idx)) ;
+            DeletePostValue( "ZT_"+"Z18InvoiceDetailQuantiity_"+sGXsfl_70_idx) ;
+            ChangePostValue( "Z10ProductId_"+sGXsfl_70_idx, cgiGet( "ZT_"+"Z10ProductId_"+sGXsfl_70_idx)) ;
+            DeletePostValue( "ZT_"+"Z10ProductId_"+sGXsfl_70_idx) ;
+            ChangePostValue( "Z11ProductDescription_"+sGXsfl_70_idx, cgiGet( "ZT_"+"Z11ProductDescription_"+sGXsfl_70_idx)) ;
+            DeletePostValue( "ZT_"+"Z11ProductDescription_"+sGXsfl_70_idx) ;
+            ChangePostValue( "Z13ProductPrice_"+sGXsfl_70_idx, cgiGet( "ZT_"+"Z13ProductPrice_"+sGXsfl_70_idx)) ;
+            DeletePostValue( "ZT_"+"Z13ProductPrice_"+sGXsfl_70_idx) ;
          }
          ChangePostValue( "O12ProductStock", cgiGet( "T12ProductStock")) ;
          DeletePostValue( "T12ProductStock") ;
@@ -3636,7 +3698,7 @@ namespace GeneXus.Programs {
          GxWebStd.gx_hidden_field( context, "IsConfirmed", StringUtil.LTrim( StringUtil.NToC( (decimal)(IsConfirmed), 4, 0, ".", "")));
          GxWebStd.gx_hidden_field( context, "IsModified", StringUtil.LTrim( StringUtil.NToC( (decimal)(IsModified), 4, 0, ".", "")));
          GxWebStd.gx_hidden_field( context, "Mode", StringUtil.RTrim( Gx_mode));
-         GxWebStd.gx_hidden_field( context, "nRC_Gridinvoice_detail", StringUtil.LTrim( StringUtil.NToC( (decimal)(nGXsfl_65_idx), 4, 0, ".", "")));
+         GxWebStd.gx_hidden_field( context, "nRC_Gridinvoice_detail", StringUtil.LTrim( StringUtil.NToC( (decimal)(nGXsfl_70_idx), 4, 0, ".", "")));
          GxWebStd.gx_hidden_field( context, "vTODAY", context.localUtil.DToC( Gx_date, 0, "/"));
          GxWebStd.gx_hidden_field( context, "vGXBSCREEN", StringUtil.LTrim( StringUtil.NToC( (decimal)(Gx_BScreen), 1, 0, ".", "")));
          GxWebStd.gx_hidden_field( context, "INVOICELASTLINEID", StringUtil.LTrim( StringUtil.NToC( (decimal)(A20InvoiceLastLineId), 4, 0, ".", "")));
@@ -3697,6 +3759,8 @@ namespace GeneXus.Programs {
       {
          A7CustomerTotalPurchases = 0 ;
          context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A7CustomerTotalPurchases", StringUtil.LTrim( StringUtil.Str( A7CustomerTotalPurchases, 9, 2)));
+         A9CustomerBalance = 0 ;
+         context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A9CustomerBalance", StringUtil.LTrim( StringUtil.Str( A9CustomerBalance, 9, 2)));
          A3CustomerId = 0 ;
          context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A3CustomerId", StringUtil.LTrim( StringUtil.Str( (decimal)(A3CustomerId), 6, 0)));
          A4CustomerName = "" ;
@@ -3773,7 +3837,7 @@ namespace GeneXus.Programs {
          idxLst = 1 ;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( Form.Jscriptsrc.Item(idxLst)), "?1738658");
+            context.AddJavascriptSource(StringUtil.RTrim( Form.Jscriptsrc.Item(idxLst)), "?19241010");
             idxLst = (int)(idxLst+1) ;
          }
          /* End function define_styles */
@@ -3782,7 +3846,7 @@ namespace GeneXus.Programs {
       protected void include_jscripts( )
       {
          context.AddJavascriptSource("messages.eng.js", "?46473");
-         context.AddJavascriptSource("invoice.js", "?1738659");
+         context.AddJavascriptSource("invoice.js", "?19241010");
          /* End function include_jscripts */
       }
 
@@ -3821,6 +3885,8 @@ namespace GeneXus.Programs {
          edtCustomerName_Internalname = "CUSTOMERNAME" ;
          lblTextblockcustomertotalpurchases_Internalname = "TEXTBLOCKCUSTOMERTOTALPURCHASES" ;
          edtCustomerTotalPurchases_Internalname = "CUSTOMERTOTALPURCHASES" ;
+         lblTextblockcustomertotalpurchases2_Internalname = "TEXTBLOCKCUSTOMERTOTALPURCHASES2" ;
+         edtCustomerBalance_Internalname = "CUSTOMERBALANCE" ;
          lblTitledetail_Internalname = "TITLEDETAIL" ;
          tblTable3_Internalname = "TABLE3" ;
          lblTextblockinvoiceamount_Internalname = "TEXTBLOCKINVOICEAMOUNT" ;
@@ -3881,6 +3947,8 @@ namespace GeneXus.Programs {
          edtProductId_Enabled = 1 ;
          edtInvoiceDetailId_Enabled = 1 ;
          subGridinvoice_detail_Backcolorstyle = 2 ;
+         edtCustomerBalance_Jsonclick = "" ;
+         edtCustomerBalance_Enabled = 0 ;
          edtCustomerTotalPurchases_Jsonclick = "" ;
          edtCustomerTotalPurchases_Enabled = 0 ;
          edtCustomerName_Jsonclick = "" ;
@@ -3905,20 +3973,20 @@ namespace GeneXus.Programs {
       }
 
       protected void gxnrGridinvoice_detail_newrow( short nRC_Gridinvoice_detail ,
-                                                    short nGXsfl_65_idx ,
-                                                    String sGXsfl_65_idx )
+                                                    short nGXsfl_70_idx ,
+                                                    String sGXsfl_70_idx )
       {
          GxWebStd.set_html_headers( context, 0, "", "");
          Gx_mode = "INS" ;
          context.httpAjaxContext.ajax_rsp_assign_attri("", false, "Gx_mode", Gx_mode);
-         edtInvoiceDetailId_Internalname = "INVOICEDETAILID_"+sGXsfl_65_idx ;
-         edtProductId_Internalname = "PRODUCTID_"+sGXsfl_65_idx ;
-         imgprompt_10_Internalname = "PROMPT_10_"+sGXsfl_65_idx ;
-         edtProductDescription_Internalname = "PRODUCTDESCRIPTION_"+sGXsfl_65_idx ;
-         edtProductPrice_Internalname = "PRODUCTPRICE_"+sGXsfl_65_idx ;
-         edtInvoiceDetailQuantiity_Internalname = "INVOICEDETAILQUANTIITY_"+sGXsfl_65_idx ;
-         edtInvoiceDetailAmount_Internalname = "INVOICEDETAILAMOUNT_"+sGXsfl_65_idx ;
-         while ( nGXsfl_65_idx <= nRC_Gridinvoice_detail )
+         edtInvoiceDetailId_Internalname = "INVOICEDETAILID_"+sGXsfl_70_idx ;
+         edtProductId_Internalname = "PRODUCTID_"+sGXsfl_70_idx ;
+         imgprompt_10_Internalname = "PROMPT_10_"+sGXsfl_70_idx ;
+         edtProductDescription_Internalname = "PRODUCTDESCRIPTION_"+sGXsfl_70_idx ;
+         edtProductPrice_Internalname = "PRODUCTPRICE_"+sGXsfl_70_idx ;
+         edtInvoiceDetailQuantiity_Internalname = "INVOICEDETAILQUANTIITY_"+sGXsfl_70_idx ;
+         edtInvoiceDetailAmount_Internalname = "INVOICEDETAILAMOUNT_"+sGXsfl_70_idx ;
+         while ( nGXsfl_70_idx <= nRC_Gridinvoice_detail )
          {
             standaloneNotModal( ) ;
             standaloneModal( ) ;
@@ -3926,15 +3994,15 @@ namespace GeneXus.Programs {
             standaloneModal045( ) ;
             dynload_actions( ) ;
             SendRow045( ) ;
-            nGXsfl_65_idx = (short)(nGXsfl_65_idx+1) ;
-            sGXsfl_65_idx = StringUtil.PadL( StringUtil.LTrim( StringUtil.Str( (decimal)(nGXsfl_65_idx), 4, 0)), 4, "0") ;
-            edtInvoiceDetailId_Internalname = "INVOICEDETAILID_"+sGXsfl_65_idx ;
-            edtProductId_Internalname = "PRODUCTID_"+sGXsfl_65_idx ;
-            imgprompt_10_Internalname = "PROMPT_10_"+sGXsfl_65_idx ;
-            edtProductDescription_Internalname = "PRODUCTDESCRIPTION_"+sGXsfl_65_idx ;
-            edtProductPrice_Internalname = "PRODUCTPRICE_"+sGXsfl_65_idx ;
-            edtInvoiceDetailQuantiity_Internalname = "INVOICEDETAILQUANTIITY_"+sGXsfl_65_idx ;
-            edtInvoiceDetailAmount_Internalname = "INVOICEDETAILAMOUNT_"+sGXsfl_65_idx ;
+            nGXsfl_70_idx = (short)(nGXsfl_70_idx+1) ;
+            sGXsfl_70_idx = StringUtil.PadL( StringUtil.LTrim( StringUtil.Str( (decimal)(nGXsfl_70_idx), 4, 0)), 4, "0") ;
+            edtInvoiceDetailId_Internalname = "INVOICEDETAILID_"+sGXsfl_70_idx ;
+            edtProductId_Internalname = "PRODUCTID_"+sGXsfl_70_idx ;
+            imgprompt_10_Internalname = "PROMPT_10_"+sGXsfl_70_idx ;
+            edtProductDescription_Internalname = "PRODUCTDESCRIPTION_"+sGXsfl_70_idx ;
+            edtProductPrice_Internalname = "PRODUCTPRICE_"+sGXsfl_70_idx ;
+            edtInvoiceDetailQuantiity_Internalname = "INVOICEDETAILQUANTIITY_"+sGXsfl_70_idx ;
+            edtInvoiceDetailAmount_Internalname = "INVOICEDETAILAMOUNT_"+sGXsfl_70_idx ;
          }
          context.GX_webresponse.AddString(Gridinvoice_detailContainer.ToJavascriptSource());
          /* End function gxnrGridinvoice_detail_newrow */
@@ -4009,6 +4077,7 @@ namespace GeneXus.Programs {
          isValidOutput.Add((Object)(StringUtil.LTrim( StringUtil.NToC( A16InvoiceAmount, 9, 2, ".", ""))));
          isValidOutput.Add((Object)(StringUtil.LTrim( StringUtil.NToC( A7CustomerTotalPurchases, 9, 2, ".", ""))));
          isValidOutput.Add((Object)(StringUtil.RTrim( A4CustomerName)));
+         isValidOutput.Add((Object)(StringUtil.LTrim( StringUtil.NToC( A9CustomerBalance, 9, 2, ".", ""))));
          isValidOutput.Add((Object)(StringUtil.RTrim( Gx_mode)));
          isValidOutput.Add((Object)(StringUtil.LTrim( StringUtil.NToC( (decimal)(Z14InvoiceId), 6, 0, ".", ""))));
          isValidOutput.Add((Object)(context.localUtil.DToC( Z15InvoiceDate, 0, "/")));
@@ -4017,6 +4086,7 @@ namespace GeneXus.Programs {
          isValidOutput.Add((Object)(StringUtil.LTrim( StringUtil.NToC( Z16InvoiceAmount, 9, 2, ".", ""))));
          isValidOutput.Add((Object)(StringUtil.LTrim( StringUtil.NToC( Z7CustomerTotalPurchases, 9, 2, ".", ""))));
          isValidOutput.Add((Object)(StringUtil.RTrim( Z4CustomerName)));
+         isValidOutput.Add((Object)(StringUtil.LTrim( StringUtil.NToC( Z9CustomerBalance, 9, 2, ".", ""))));
          isValidOutput.Add((Object)(StringUtil.LTrim( StringUtil.NToC( O16InvoiceAmount, 9, 2, ".", ""))));
          isValidOutput.Add((Object)(StringUtil.LTrim( StringUtil.NToC( O7CustomerTotalPurchases, 9, 2, ".", ""))));
          isValidOutput.Add((Object)(StringUtil.LTrim( StringUtil.NToC( (decimal)(O20InvoiceLastLineId), 4, 0, ".", ""))));
@@ -4033,7 +4103,8 @@ namespace GeneXus.Programs {
                                     int GX_Parm4 ,
                                     decimal GX_Parm5 ,
                                     decimal GX_Parm6 ,
-                                    String GX_Parm7 )
+                                    String GX_Parm7 ,
+                                    decimal GX_Parm8 )
       {
          Gx_mode = GX_Parm1 ;
          O16InvoiceAmount = GX_Parm2 ;
@@ -4043,6 +4114,7 @@ namespace GeneXus.Programs {
          A16InvoiceAmount = GX_Parm6 ;
          n16InvoiceAmount = false ;
          A4CustomerName = GX_Parm7 ;
+         A9CustomerBalance = GX_Parm8 ;
          /* Using cursor T000434 */
          pr_default.execute(24, new Object[] {A3CustomerId});
          Z4CustomerName = T000434_A4CustomerName[0] ;
@@ -4070,6 +4142,7 @@ namespace GeneXus.Programs {
                A7CustomerTotalPurchases = (decimal)(O7CustomerTotalPurchases+A16InvoiceAmount-O16InvoiceAmount) ;
             }
          }
+         A9CustomerBalance = (decimal)(A7CustomerTotalPurchases-A16InvoiceAmount) ;
          dynload_actions( ) ;
          if ( AnyError == 1 )
          {
@@ -4079,6 +4152,7 @@ namespace GeneXus.Programs {
          isValidOutput.Add((Object)(StringUtil.LTrim( StringUtil.NToC( O7CustomerTotalPurchases, 9, 2, ".", ""))));
          isValidOutput.Add((Object)(StringUtil.LTrim( StringUtil.NToC( A7CustomerTotalPurchases, 9, 2, ".", ""))));
          isValidOutput.Add((Object)(StringUtil.RTrim( A4CustomerName)));
+         isValidOutput.Add((Object)(StringUtil.LTrim( StringUtil.NToC( A9CustomerBalance, 9, 2, ".", ""))));
          isValidOutput.Add((Object)(context.GX_msglist.ToJavascriptSource()));
          context.GX_webresponse.AddString(isValidOutput.ToJSonString());
       }
@@ -4171,6 +4245,7 @@ namespace GeneXus.Programs {
          lblTextblockcustomername_Jsonclick = "" ;
          A4CustomerName = "" ;
          lblTextblockcustomertotalpurchases_Jsonclick = "" ;
+         lblTextblockcustomertotalpurchases2_Jsonclick = "" ;
          Gridinvoice_detailContainer = new GXWebGrid( context);
          Gridinvoice_detailColumn = new GXWebColumn();
          A11ProductDescription = "" ;
@@ -4419,7 +4494,7 @@ namespace GeneXus.Programs {
       private short RcdFound4 ;
       private short GxWebError ;
       private short nRC_Gridinvoice_detail ;
-      private short nGXsfl_65_idx=1 ;
+      private short nGXsfl_70_idx=1 ;
       private short IsConfirmed ;
       private short IsModified ;
       private short AnyError ;
@@ -4463,6 +4538,7 @@ namespace GeneXus.Programs {
       private int imgprompt_3_Visible ;
       private int edtCustomerName_Enabled ;
       private int edtCustomerTotalPurchases_Enabled ;
+      private int edtCustomerBalance_Enabled ;
       private int edtInvoiceDetailId_Enabled ;
       private int edtProductId_Enabled ;
       private int edtProductDescription_Enabled ;
@@ -4499,6 +4575,7 @@ namespace GeneXus.Programs {
       private int defedtInvoiceDetailId_Enabled ;
       private int idxLst ;
       private decimal A7CustomerTotalPurchases ;
+      private decimal A9CustomerBalance ;
       private decimal A13ProductPrice ;
       private decimal A19InvoiceDetailAmount ;
       private decimal B16InvoiceAmount ;
@@ -4508,13 +4585,16 @@ namespace GeneXus.Programs {
       private decimal O7CustomerTotalPurchases ;
       private decimal s16InvoiceAmount ;
       private decimal s7CustomerTotalPurchases ;
+      private decimal s9CustomerBalance ;
+      private decimal O9CustomerBalance ;
       private decimal Z13ProductPrice ;
       private decimal T19InvoiceDetailAmount ;
       private decimal O19InvoiceDetailAmount ;
       private decimal Z16InvoiceAmount ;
       private decimal Z7CustomerTotalPurchases ;
+      private decimal Z9CustomerBalance ;
       private String sPrefix ;
-      private String sGXsfl_65_idx="0001" ;
+      private String sGXsfl_70_idx="0001" ;
       private String scmdbuf ;
       private String gxfirstwebparm ;
       private String gxfirstwebparm_bkp ;
@@ -4558,6 +4638,10 @@ namespace GeneXus.Programs {
       private String lblTextblockcustomertotalpurchases_Jsonclick ;
       private String edtCustomerTotalPurchases_Internalname ;
       private String edtCustomerTotalPurchases_Jsonclick ;
+      private String lblTextblockcustomertotalpurchases2_Internalname ;
+      private String lblTextblockcustomertotalpurchases2_Jsonclick ;
+      private String edtCustomerBalance_Internalname ;
+      private String edtCustomerBalance_Jsonclick ;
       private String A11ProductDescription ;
       private String Gx_mode ;
       private String sMode5 ;
