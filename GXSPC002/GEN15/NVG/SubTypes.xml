@@ -1,0 +1,25 @@
+
+<ObjectSpec>
+<SpecVersion>10_1_6-46473</SpecVersion>
+<Object>
+<ObjCls>10</ObjCls>
+<ObjId>0</ObjId>
+<ObjName>SubTypes</ObjName>
+<ObjDesc>Subtype groups analysis report</ObjDesc>
+<ObjPgmName>SubTypes</ObjPgmName>
+<ObjClsName>Subtype group</ObjClsName></Object>
+<Warnings>
+<Warning>
+<MsgCode>spc0079</MsgCode>
+<Message>
+<Token>Attribute(s) </Token>
+<Attribute>
+<AttriId>27</AttriId>
+<AttriName>InvoiceCustomerCountryId</AttriName>
+<Description>Invoice Customer Country Id</Description></Attribute>
+<Token> in subtype group '</Token>
+<SubtypeGroup>
+<SubtypeGroupId>2</SubtypeGroupId>
+<SubtypeGroupName>InvoiceCustomerCountry</SubtypeGroupName></SubtypeGroup>
+<Token>' is(are) not associated to any transaction.</Token></Message></Warning></Warnings>
+<Errors></Errors></ObjectSpec>

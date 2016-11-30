@@ -2,7 +2,7 @@
                File: Customer
         Description: Customer
              Author: GeneXus C# Generator version 10_1_6-46473
-       Generated on: 11/30/2016 15:26:4.34
+       Generated on: 11/30/2016 17:45:46.36
        Program type: Callable routine
           Main DBMS: sqlserver
 */
@@ -2049,7 +2049,7 @@ namespace GeneXus.Programs {
          idxLst = 1 ;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( Form.Jscriptsrc.Item(idxLst)), "?152668");
+            context.AddJavascriptSource(StringUtil.RTrim( Form.Jscriptsrc.Item(idxLst)), "?17454775");
             idxLst = (int)(idxLst+1) ;
          }
          /* End function define_styles */
@@ -2058,7 +2058,7 @@ namespace GeneXus.Programs {
       protected void include_jscripts( )
       {
          context.AddJavascriptSource("messages.eng.js", "?46473");
-         context.AddJavascriptSource("customer.js", "?152668");
+         context.AddJavascriptSource("customer.js", "?17454775");
          /* End function include_jscripts */
       }
 

@@ -18,7 +18,7 @@ las_i(2,[ [] ]).
 lac_i(2,[ [] ]).
  
  
-lits_i('Villequi System',5,10).
+lits_i('Billing System',5,10).
 lits_i('Home',5,10).
 lits_i('First Option',5,10).
 lits_i('Second Option',5,10).
@@ -27,7 +27,7 @@ lits_i('Fourth Option',5,10).
 lits_i('Last One',5,10).
 lits_i('Footer Info',5,10).
  
-cls_i([ 5,10 ],[ 5,24 ]).
+cls_i([ 5,10 ],[ 5,23 ]).
  
  
  
@@ -207,7 +207,7 @@ html_sub_i(12,13,html_i(0,cell(13))).
 html_sub_i(12,14,html_i(1,cell(14))).
 html_sub_i(14,0,html_i(0,html('&nbsp;'))).
 html_sub_i(14,15,html_i(1,bitmap('9fb193d9-64a4-4d30-b129-ff7c76830f7e-63'))).
-html_sub_i(14,16,html_i(2,t('Villequi System',3))).
+html_sub_i(14,16,html_i(2,t('Billing System',3))).
 html_sub_i(12,17,html_i(2,cell(17))).
 html_sub_i(17,18,html_i(0,bitmap('9fb193d9-64a4-4d30-b129-ff7c76830f7e-14'))).
 html_sub_i(5,0,html_i(3,html('</TBODY>'))).
@@ -356,7 +356,7 @@ html_comp_i(15,'Hspace',0,v,[ num ]).
 html_comp_i(15,'Vspace',0,d,[ num ]).
 html_comp_i(15,'Align',left,d,[ str ]).
 html_comp_i(15,'Usemap','',d,[ str ]).
-html_comp_i(16,'Caption','Villequi System',d,[ str ]).
+html_comp_i(16,'Caption','Billing System',d,[ str ]).
 html_comp_i(16,'Id','Textblockheader1',v,[ str ]).
 html_comp_i(16,'Class','TextBlockHeader',v,[ str ]).
 html_comp_i(16,'Event','',d,[ str ]).
@@ -585,7 +585,7 @@ html_comp_i(62,'Rules',none,d,[ str ]).
 lit_i(8,1,bitmap('9fb193d9-64a4-4d30-b129-ff7c76830f7e-61'),[ ctlname('Btn_topl') ]).
 lit_i(11,1,bitmap('9fb193d9-64a4-4d30-b129-ff7c76830f7e-62'),[ ctlname('Btn_topr') ]).
 lit_i(15,1,bitmap('9fb193d9-64a4-4d30-b129-ff7c76830f7e-63'),[ ctlname('Image2') ]).
-lit_i(16,1,t('Villequi System',3),[ ctlname('Textblockheader1') ]).
+lit_i(16,1,t('Billing System',3),[ ctlname('Textblockheader1') ]).
 lit_i(18,1,bitmap('9fb193d9-64a4-4d30-b129-ff7c76830f7e-14'),[ ctlname('Image1') ]).
 lit_i(5,1,table(5),[ ctlname('Table1') ]).
 lit_i(22,1,t('Home',3),[ ctlname('Home') ]).

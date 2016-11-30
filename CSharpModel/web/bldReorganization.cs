@@ -60,6 +60,8 @@ public class bldReorganization : GxBaseBuilder
       {
          if (checkTime(obj, cs_path + @"\Reorganization.cs" ))
             return true;
+         if (checkTime(obj, cs_path + @"\invoiceconversion.cs" ))
+            return true;
          if (checkTime(obj, cs_path + @"\reorg.cs" ))
             return true;
       }

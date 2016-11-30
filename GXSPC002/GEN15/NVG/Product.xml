@@ -114,7 +114,12 @@
 <TableId>3</TableId>
 <TableName>Product</TableName>
 <Description>Product</Description></Table>
-<Token>Gx0030</Token>
+<Object>
+<ObjCls>13</ObjCls>
+<ObjId>6</ObjId>
+<ObjName>Gx0030</ObjName>
+<ObjPgmName>Gx0030</ObjPgmName>
+<ObjClsName>Web Panel</ObjClsName></Object>
 <InputParameters></InputParameters>
 <OutputParameters>
 <Attribute>

@@ -2,7 +2,7 @@
                File: Product
         Description: Product
              Author: GeneXus C# Generator version 10_1_6-46473
-       Generated on: 11/23/2016 16:35:46.84
+       Generated on: 11/30/2016 16:40:55.82
        Program type: Callable routine
           Main DBMS: sqlserver
 */
@@ -1670,7 +1670,7 @@ namespace GeneXus.Programs {
          idxLst = 1 ;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( Form.Jscriptsrc.Item(idxLst)), "?16354763");
+            context.AddJavascriptSource(StringUtil.RTrim( Form.Jscriptsrc.Item(idxLst)), "?16405787");
             idxLst = (int)(idxLst+1) ;
          }
          /* End function define_styles */
@@ -1679,7 +1679,7 @@ namespace GeneXus.Programs {
       protected void include_jscripts( )
       {
          context.AddJavascriptSource("messages.eng.js", "?46473");
-         context.AddJavascriptSource("product.js", "?16354763");
+         context.AddJavascriptSource("product.js", "?16405788");
          /* End function include_jscripts */
       }
 

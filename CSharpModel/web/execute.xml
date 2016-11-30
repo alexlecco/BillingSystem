@@ -25,10 +25,4 @@
     <ObjDesc>Invoice</ObjDesc>
     <ObjLink>invoice.aspx</ObjLink>
   </Object>
-  <Object>
-    <ObjCls>13</ObjCls>
-    <ObjName>clientesEnRango</ObjName>
-    <ObjDesc>clientes En Rango</ObjDesc>
-    <ObjLink>clientesenrango.aspx</ObjLink>
-  </Object>
 </Objects>

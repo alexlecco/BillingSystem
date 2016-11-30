@@ -1226,7 +1226,7 @@ att_prop_i(2,14,'FullName','InvoiceId',v).
 tbl_prop_i(2,4,'AllDirSuper',[ [ 2,[ 3 ] ] ],v).
 tbl_prop_i(2,2,'AllDirSuper',[ [ 1,[ 1 ] ] ],v).
 tbl_prop_i(2,2,'DirSuperNull',[ [ 1,[ 1 ] ] ],v).
-tbl_prop_i(2,1,'DirSubor',[ [ 2,[ 1 ] ] ],v).
+tbl_prop_i(2,1,'DirSubor',[ [ 2,[ 1 ] ],[ 4,[ 25 ] ] ],v).
 tbl_prop_i(2,2,'DirSubor',[ [ 4,[ 3 ] ] ],v).
 tbl_prop_i(2,4,'DirSuper',[ [ 2,[ 3 ] ] ],v).
 tbl_prop_i(2,2,'DirSuper',[ [ 1,[ 1 ] ] ],v).

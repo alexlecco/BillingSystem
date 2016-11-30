@@ -27,26 +27,7 @@
 <AttriId>10</AttriId>
 <AttriName>ProductId</AttriName>
 <Description>Product Identifier</Description></Attribute>
-<Token> will be read-only in update mode.</Token></Message></Warning>
-<Warning>
-<MsgCode>spc0170</MsgCode>
-<Message>
-<Token>Attribute </Token>
-<Attribute>
-<AttriId>1</AttriId>
-<AttriName>CountryId</AttriName>
-<Description>Country Id</Description></Attribute>
-<Token> will be empty when the value of description attribute </Token>
-<Attribute>
-<AttriId>2</AttriId>
-<AttriName>CountryName</AttriName>
-<Description>Country Name</Description></Attribute>
-<Token> does not exist in table </Token>
-<Table>
-<TableId>1</TableId>
-<TableName>Country</TableName>
-<Description>Country</Description></Table>
-<Token>.</Token></Message></Warning></Warnings>
+<Token> will be read-only in update mode.</Token></Message></Warning></Warnings>
 <Errors></Errors>
 <Generator>
 <GenId>15</GenId>
@@ -99,6 +80,17 @@
 <Description>Country Id</Description></Attribute></KeyAttributes>
 <JoinType>Outer</JoinType>
 <Tables></Tables></Table></Tables></Table>
+<Table>
+<TableId>1</TableId>
+<TableName>Country</TableName>
+<Description>Country</Description>
+<RecordsToRead>one</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>25</AttriId>
+<AttriName>InvoiceCountryId</AttriName>
+<Description>Invoice Country Id</Description></Attribute></KeyAttributes>
+<Tables></Tables></Table>
 <Table>
 <TableId>4</TableId>
 <TableName>InvoiceLastLineId navigation</TableName>
@@ -168,7 +160,11 @@
 <Attribute>
 <AttriId>3</AttriId>
 <AttriName>CustomerId</AttriName>
-<Description>Customer Id</Description></Attribute></AttrisToUpdate></TableToUpdate>
+<Description>Customer Id</Description></Attribute>
+<Attribute>
+<AttriId>25</AttriId>
+<AttriName>InvoiceCountryId</AttriName>
+<Description>Invoice Country Id</Description></Attribute></AttrisToUpdate></TableToUpdate>
 <TableToUpdate>
 <Table>
 <TableId>4</TableId>
@@ -183,7 +179,11 @@
 <Attribute>
 <AttriId>3</AttriId>
 <AttriName>CustomerId</AttriName>
-<Description>Customer Id</Description></Attribute></AttrisToUpdate></TableToUpdate>
+<Description>Customer Id</Description></Attribute>
+<Attribute>
+<AttriId>25</AttriId>
+<AttriName>InvoiceCountryId</AttriName>
+<Description>Invoice Country Id</Description></Attribute></AttrisToUpdate></TableToUpdate>
 <TableToUpdate>
 <Table>
 <TableId>4</TableId>
@@ -356,6 +356,24 @@
 <AttriId>17</AttriId>
 <AttriName>InvoiceDetailId</AttriName>
 <Description>Detail Identifier</Description></Attribute></OutputParameters>
+<PromptType>System</PromptType></Prompt>
+<Prompt>
+<Table>
+<TableId>1</TableId>
+<TableName>Country</TableName>
+<Description>Country</Description></Table>
+<Object>
+<ObjCls>13</ObjCls>
+<ObjId>4</ObjId>
+<ObjName>Gx0010</ObjName>
+<ObjPgmName>Gx0010</ObjPgmName>
+<ObjClsName>Web Panel</ObjClsName></Object>
+<InputParameters></InputParameters>
+<OutputParameters>
+<Attribute>
+<AttriId>25</AttriId>
+<AttriName>InvoiceCountryId</AttriName>
+<Description>Invoice Country Id</Description></Attribute></OutputParameters>
 <PromptType>System</PromptType></Prompt>
 <Prompt>
 <Table>

@@ -8,7 +8,7 @@
 <ObjDesc>Selection List Product</ObjDesc>
 <ObjPgmName>Gx0030</ObjPgmName>
 <ObjClsName>Web Panel</ObjClsName></Object>
-<Result>genreq</Result>
+<Result>nogenreq</Result>
 <Warnings></Warnings>
 <Errors></Errors>
 <Generator>

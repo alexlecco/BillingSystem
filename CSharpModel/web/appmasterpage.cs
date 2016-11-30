@@ -2,7 +2,7 @@
                File: AppMasterPage
         Description: Application Master Page
              Author: GeneXus C# Generator version 10_1_6-46473
-       Generated on: 11/25/2016 15:8:27.57
+       Generated on: 11/30/2016 16:40:52.9
        Program type: Callable routine
           Main DBMS: sqlserver
 */
@@ -116,7 +116,7 @@ namespace GeneXus.Programs {
          {
             WebComp_Wcrecentlinks.componentjscripts();
          }
-         context.AddJavascriptSource("appmasterpage.js", "?1582758");
+         context.AddJavascriptSource("appmasterpage.js", "?16405211");
          context.WriteHtmlTextNl( "</body>") ;
          context.WriteHtmlTextNl( "</html>") ;
       }
@@ -877,7 +877,7 @@ namespace GeneXus.Programs {
             /* Text block */
             ClassString = "TextBlockHeader" ;
             StyleString = "" ;
-            GxWebStd.gx_label_ctrl( context, lblTextblockheader1_Internalname, 1, 1, 0, "Villequi System", "", "", "", 0, lblTextblockheader1_Jsonclick, "E_MPAGE.", StyleString, ClassString, "HLP_AppMasterPage.htm");
+            GxWebStd.gx_label_ctrl( context, lblTextblockheader1_Internalname, 1, 1, 0, "Billing System", "", "", "", 0, lblTextblockheader1_Jsonclick, "E_MPAGE.", StyleString, ClassString, "HLP_AppMasterPage.htm");
             context.WriteHtmlText( "</td>") ;
             context.WriteHtmlText( "<td style=\"text-align:"+context.GetCssProperty( "Align", "right")+"\">") ;
             /* Static images/pictures */
@@ -943,7 +943,7 @@ namespace GeneXus.Programs {
          idxLst = 1 ;
          while ( idxLst <= getDataAreaObject().GetForm().Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( getDataAreaObject().GetForm().Jscriptsrc.Item(idxLst)), "?1582774");
+            context.AddJavascriptSource(StringUtil.RTrim( getDataAreaObject().GetForm().Jscriptsrc.Item(idxLst)), "?16405260");
             idxLst = (int)(idxLst+1) ;
          }
          /* End function define_styles */
@@ -951,7 +951,7 @@ namespace GeneXus.Programs {
 
       protected void include_jscripts( )
       {
-         context.AddJavascriptSource("appmasterpage.js", "?1582775");
+         context.AddJavascriptSource("appmasterpage.js", "?16405260");
          /* End function include_jscripts */
       }
 
