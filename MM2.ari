@@ -2,12 +2,12 @@
  
  
  
-pgm_prop_i(web,7,'GX0040','USE_ENCRYPTION','NO').
 pgm_prop_i(web,5,'GX0020','USE_ENCRYPTION','NO').
+pgm_prop_i(web,4,'GX0010','USE_ENCRYPTION','NO').
+pgm_prop_i(web,7,'GX0040','USE_ENCRYPTION','NO').
 pgm_prop_i(web,8,'GX0051','USE_ENCRYPTION','NO').
 pgm_prop_i(web,6,'GX0030','USE_ENCRYPTION','NO').
 pgm_prop_i(web,1,'APPMASTERPAGE','WEB_COMP','Master').
-pgm_prop_i(web,4,'GX0010','USE_ENCRYPTION','NO').
 pgm_prop_i(web,3,'PROMPTMASTERPAGE','WEB_COMP','Master').
 pgm_prop_i(web,2,'RECENTLINKS','WEB_COMP','Yes').
 pgm_prop_i(web,2,'RECENTLINKS','URLAccess','No').
@@ -72,10 +72,12 @@ datastore_i(1,'NAME','Default').
  
 subview_i(2,506,1).
  
+subtype_group_i(2,2,[ 'InvoiceCustomerCountry',[] ]).
+subtype_group_i(2,3,[ 'CustomerCountry',[] ]).
 subtype_group_i(1,1,[ 'InvoiceCountry',[ [ 25,1 ],[ 26,2 ] ] ]).
 subtype_group_i(1,2,[ 'InvoiceCustomerCountry',[] ]).
+subtype_group_i(1,3,[ 'CustomerCountry',[] ]).
 subtype_group_i(2,1,[ 'InvoiceCountry',[ [ 25,1 ],[ 26,2 ] ] ]).
-subtype_group_i(2,2,[ 'InvoiceCustomerCountry',[] ]).
  
  
 culture_id_i(eng).
@@ -90,5 +92,5 @@ lng_prop_i(1,'LangDateFormat','ENG',v).
 lng_prop_i(1,'LangTimeFormat','12',v).
 lng_prop_i(1,'LangDecimalPoint','.',v).
  
-ver_stamp('20161130.204520').
+ver_stamp('20161130.213254').
  

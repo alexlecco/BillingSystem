@@ -2,7 +2,7 @@ subtype_view_i(2,506,1,1,[ [ 25 ],[ 25,26 ],[ [ 25,[ 1 ] ],[ 26,[ 2 ] ] ],[ [ 25
  
 subtype_views_enabled_i(2,yes,'10_1_5-39932').
  
-subtype_view_last_no_i(2,506).
+subtype_view_last_no_i(2,507).
  
-subtype_view_ts_i(2,'2016-11-30 20:45:20').
+subtype_view_ts_i(2,'2016-11-30 21:32:54').
  

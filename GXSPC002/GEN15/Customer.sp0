@@ -171,6 +171,8 @@ rule_i(0,prop(idBC,'0')).
 rule_i(0,prop('Folder',o(8,'Objects'))).
 rule_i(0,prop('ObjDesc','Customer')).
 rule_i(0,prop('ObjName','Customer')).
+rule_i(2,prompt([ 1,[ [ 2,1,1 ] ],[ 1 ],[ 1 ],[ t(o(13,'Gx0010'),28),t(1,2) ],[],n,[] ])).
+rule_i(2,rule([ a(23,[ [ 1 ],[ t(o(13,'Gx0010'),28),t(1,2) ] ]) ],[],[],[ 1 ])).
 rule_i(2,prompt([ 2,[ [ [],3,3 ] ],[],[],[ t(o(13,'Gx0020'),28),t(3,2) ],[],n,[] ])).
 rule_i(2,rule([ a(23,[ [ 3 ],[ t(o(13,'Gx0020'),28),t(3,2) ] ]) ],[],[],[ 3 ])).
 rule_i(0,rule([ a(22,[ 'Dlt','"Delete"','' ]) ],[],[],[])).
@@ -188,12 +190,11 @@ a_i(3,2,f,[ t(7,2),t('Enabled',3) ],[],[ [],[ t(0,3),t(';',18) ] ]).
 a_i(4,2,f,[ t(9,2),t('Enabled',3) ],[],[ [],[ t(0,3),t(';',18) ] ]).
 a_i(5,2,f,6,[],[ [ insert ],[ t('''F''',3),t('IF',17),t(insert,1),t('AND',9),t('null1(',1),t(6,2),t(')',4),t('AND',9),t('GxBScreen',23),t(=,10),t(0,3),t(';',18) ] ]).
 a_i(6,2,f,22,[],[ [ insert ],[ t([ 15,'Active' ],44),t('IF',17),t(insert,1),t('AND',9),t('null1(',1),t(22,2),t(')',4),t('AND',9),t('GxBScreen',23),t(=,10),t(0,3),t(';',18) ] ]).
-a_i(7,2,h,1,[],[ [ 1 ],[ 2 ],[ [ [ 1,2 ],[ 1,1 ] ],n,[ [ 1,many ] ],[],[ c([ t(2,2),t(=,10),t(2,23) ],[ 2 ]) ],[],[],[],[] ] ]).
-a_i(8,2,b,1,[],[ [],[ a(1,[ t('''No se permiten CLIENTES sin NOMBRE''',3) ]) ],[ t('null(',1),t(4,2),t(')',4) ] ]).
-a_i(9,2,b,2,[],[ [],[ a(1,[ t('''No se ingresó DIRECCIÓN para el CLIENTE''',3) ]) ],[ t('null(',1),t(5,2),t(')',4) ] ]).
-a_i(10,2,t,2,[],[ [ [ [],3,3 ] ],'ICUSTOMER',[] ]).
-a_i(11,2,r,1,[],[ [ [ 2,1,1 ] ],'ICOUNTRY',[] ]).
-a_i(12,2,f,'GxBScreen',[],[ [],[ t('0',3) ] ]).
+a_i(7,2,b,1,[],[ [],[ a(1,[ t('''No se permiten CLIENTES sin NOMBRE''',3) ]) ],[ t('null(',1),t(4,2),t(')',4) ] ]).
+a_i(8,2,b,2,[],[ [],[ a(1,[ t('''No se ingresó DIRECCIÓN para el CLIENTE''',3) ]) ],[ t('null(',1),t(5,2),t(')',4) ] ]).
+a_i(9,2,t,2,[],[ [ [ [],3,3 ] ],'ICUSTOMER',[] ]).
+a_i(10,2,r,1,[],[ [ [ 2,1,1 ] ],'ICOUNTRY',[] ]).
+a_i(11,2,f,'GxBScreen',[],[ [],[ t('0',3) ] ]).
  
 v_i(f,i,1,7).
 v_i(f,i,1,16).
@@ -209,24 +210,22 @@ v_i(f,i,5,'GxBScreen').
 v_i(f,o,5,6).
 v_i(f,i,6,'GxBScreen').
 v_i(f,o,6,22).
-v_i(h,i,7,1).
-v_i(h,o,7,1).
-v_i(b,i,8,4).
+v_i(b,i,7,4).
+v_i(b,o,7,[]).
+v_i(b,i,8,5).
 v_i(b,o,8,[]).
-v_i(b,i,9,5).
-v_i(b,o,9,[]).
-v_i(t,i,10,3).
-v_i(t,o,10,4).
-v_i(t,o,10,5).
-v_i(t,o,10,6).
-v_i(t,o,10,7).
-v_i(t,o,10,8).
-v_i(t,o,10,22).
-v_i(t,o,10,1).
-v_i(r,i,11,1).
-v_i(r,o,11,2).
-v_i(f,i,12,[]).
-v_i(f,o,12,'GxBScreen').
+v_i(t,i,9,3).
+v_i(t,o,9,4).
+v_i(t,o,9,5).
+v_i(t,o,9,6).
+v_i(t,o,9,7).
+v_i(t,o,9,8).
+v_i(t,o,9,22).
+v_i(t,o,9,1).
+v_i(r,i,10,1).
+v_i(r,o,10,2).
+v_i(f,i,11,[]).
+v_i(f,o,11,'GxBScreen').
  
 ca_i(6,22).
 ca_i(5,6).
@@ -970,26 +969,21 @@ html_comp_i(73,'Class','Attribute',d,[ str ]).
 html_comp_i(73,'Controlname','Countryid',d,[ str ]).
 html_comp_i(73,'Returnonclick',0,d,[ bool ]).
 html_comp_i(73,'Controltype',2,d,[ num ]).
-html_comp_i(73,'Inputtype',1,v,[ num ]).
-html_comp_i(73,'Controlitemvalues',1,d,[ num ]).
-html_comp_i(73,'Controlitemdescription',2,v,[ num ]).
-html_comp_i(73,'Editautocomplete',0,d,[ num ]).
-html_comp_i(73,'Controlwhere','',d,[ str ]).
-html_comp_i(73,'Controlrestrictedby','',d,[ str ]).
+html_comp_i(73,'Inputtype',0,v,[ num ]).
 html_comp_i(73,'Notifycontextchange',0,d,[ bool ]).
 html_comp_i(73,'Emptyasnull','Yes',d,[ str ]).
 html_comp_i(73,'Readonly',0,d,[ bool ]).
 html_comp_i(73,'Autocomplete',-1,d,[ bool ]).
 html_comp_i(73,'Ispassword',0,d,[ bool ]).
 html_comp_i(73,'Autoresize',-1,d,[ bool ]).
-html_comp_i(73,'Gxwidth',measure(30,chr),d,[ measure ]).
+html_comp_i(73,'Gxwidth',measure(6,chr),d,[ measure ]).
 html_comp_i(73,'Gxheight',measure(1,row),d,[ measure ]).
 html_comp_i(73,'Ismultiline',0,d,[ bool ]).
 html_comp_i(73,'Fill',-1,d,[ bool ]).
 html_comp_i(73,'Backcolor',rgb(255,255,255),d,[ color ]).
 html_comp_i(73,'Forecolor',rgb(51,51,51),d,[ color ]).
 html_comp_i(73,'Font',font('Arial',9,[]),d,[ font ]).
-html_comp_i(73,'Horizontalalignment',left,d,[ str ]).
+html_comp_i(73,'Horizontalalignment',right,d,[ str ]).
 html_comp_i(73,'Gxformat',0,d,[ num ]).
 html_comp_i(73,'Title','',d,[ str ]).
 html_comp_i(75,'Valign',top,v,[ str ]).
@@ -1258,12 +1252,12 @@ trn_level_i(2,[ [ 3,4,5,6,7,8,9,1,2,22 ],'Customer','Customer','Customer','',4 ]
  
  
 pgm_parm_i(web,5,'GX0020',[ [ int,6,0,0 ] ],[ [ pCustomerId,out,[] ] ]).
+pgm_parm_i(web,4,'GX0010',[ [ int,6,0,0 ] ],[ [ pCountryId,out,[] ] ]).
  
  
  
  
  
-hc_i(1,2,t(1,2),[ 1 ]).
  
  
  

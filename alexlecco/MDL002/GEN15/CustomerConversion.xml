@@ -221,15 +221,38 @@
 <Value>No</Value></Property>
 <Property>
 <Name>AllowNulls</Name>
-<Value>Yes</Value></Property></Properties></AttriType></Attribute>
+<Value>Yes</Value></Property></Properties></AttriType>
+<AttriOldType>
+<DataType>N</DataType>
+<Presicion>6</Presicion>
+<Scale>0</Scale>
+<Properties>
+<Property>
+<Name>Autonumber</Name>
+<Value>No</Value></Property>
+<Property>
+<Name>Autogenerate</Name>
+<Value>No</Value></Property>
+<Property>
+<Name>AllowNulls</Name>
+<Value>No</Value></Property></Properties></AttriOldType>
+<AttriChangeType>upd</AttriChangeType></Attribute>
 <Attribute>
 <AttriId>22</AttriId>
 <AttriName>CustomerStatus</AttriName>
 <Description>Customer Status</Description>
 <TakesValueFrom>
+<Table>
+<TableId>2</TableId>
+<TableName>Customer</TableName>
+<Description>Customer</Description></Table>
 <FromValue>
-<Token>Status</Token>
-<Token>.Active</Token></FromValue></TakesValueFrom>
+<Token>.</Token>
+<Sp></Sp>
+<Attribute>
+<AttriId>22</AttriId>
+<AttriName>CustomerStatus</AttriName>
+<Description>Customer Status</Description></Attribute></FromValue></TakesValueFrom>
 <AttriType>
 <DataType>V</DataType>
 <Presicion>40</Presicion>
@@ -243,8 +266,7 @@
 <Value>No</Value></Property>
 <Property>
 <Name>AllowNulls</Name>
-<Value>No</Value></Property></Properties></AttriType>
-<AttriChangeType>ni</AttriChangeType></Attribute></AttrisInTable>
+<Value>No</Value></Property></Properties></AttriType></Attribute></AttrisInTable>
 <AttrisNoLongerInTable></AttrisNoLongerInTable>
 <AttrisInManyTables></AttrisInManyTables></TableAttributes>
 <NavigationTree>
@@ -295,8 +317,9 @@
 <AttriName>CountryId</AttriName>
 <Description>Country Id</Description></Attribute></Attributes></FKConstraint></FKConstraints>
 <Statements>
-<Statement>ALTER TABLE [Customer] ADD [CustomerStatus] varchar(40) NOT NULL CONSTRAINT CustomerStatusCustomer_DEFAULT DEFAULT 'value 0'</Statement>
-<Statement>ALTER TABLE [Customer] DROP CONSTRAINT CustomerStatusCustomer_DEFAULT</Statement></Statements>
+<Statement>DROP INDEX [ICUSTOMER1] ON [Customer]</Statement>
+<Statement>ALTER TABLE [Customer] ALTER COLUMN [CountryId] int NULL </Statement>
+<Statement>CREATE NONCLUSTERED INDEX [ICUSTOMER1] ON [Customer] ([CountryId] )</Statement></Statements>
 <NeedReorganizationProgram>False</NeedReorganizationProgram>
 <Warnings></Warnings>
 <Errors></Errors></ReorgSpec>

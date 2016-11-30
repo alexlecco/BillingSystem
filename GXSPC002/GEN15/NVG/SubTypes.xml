@@ -21,5 +21,18 @@
 <SubtypeGroup>
 <SubtypeGroupId>2</SubtypeGroupId>
 <SubtypeGroupName>InvoiceCustomerCountry</SubtypeGroupName></SubtypeGroup>
+<Token>' is(are) not associated to any transaction.</Token></Message></Warning>
+<Warning>
+<MsgCode>spc0079</MsgCode>
+<Message>
+<Token>Attribute(s) </Token>
+<Attribute>
+<AttriId>29</AttriId>
+<AttriName>CustomerCountryId</AttriName>
+<Description>Customer Country Id</Description></Attribute>
+<Token> in subtype group '</Token>
+<SubtypeGroup>
+<SubtypeGroupId>3</SubtypeGroupId>
+<SubtypeGroupName>CustomerCountry</SubtypeGroupName></SubtypeGroup>
 <Token>' is(are) not associated to any transaction.</Token></Message></Warning></Warnings>
 <Errors></Errors></ObjectSpec>

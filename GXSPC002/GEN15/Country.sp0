@@ -170,22 +170,28 @@ v_i(t,i,2,1).
 v_i(t,o,2,2).
  
  
+tbl_to_delete_i(1,[ 4,[ [ 1,1,25 ] ],c,'IINVOICE2',[ [ 4,25 ] ],[ 14 ] ]).
 tbl_to_delete_i(1,[ 2,[ [ 1,1,1 ] ],c,'ICUSTOMER1',[ [ 2,1 ] ],[ 3 ] ]).
  
  
  
+attri_i(14,[ 'InvoiceId',int,6,0,'ZZZZZ9',0,'Invoice Id','',0 ]).
+attri_i(25,[ 'InvoiceCountryId',int,6,0,'ZZZZZ9',0,'Invoice Country Id','',0 ]).
 attri_i(3,[ 'CustomerId',int,6,0,'ZZZZZ9',0,'Customer Id','',0 ]).
 attri_i(2,[ 'CountryName',char,30,0,'',0,'Country Name','',0 ]).
 attri_i(1,[ 'CountryId',int,6,0,'ZZZZZ9',0,'Country Id','',0 ]).
 attri_i('Gxremove',[ 'GxRemove',int,1,0,'9',0,'Gx Remove','',5 ]).
 attri_i('Mode',[ 'Gx_mode',char,3,0,'@!',1,'','',2 ]).
  
+table_i(4,[ 'Invoice',[ 14,25 ],'Invoice','Invoice' ]).
 table_i(2,[ 'Customer',[ 3,1 ],'Customer','Customer' ]).
 table_i(1,[ 'Country',[ 1,2 ],'Country','Country' ]).
  
 index_i(1,[ 'ICOUNTRY',u,[ 1 ],'ICountry' ]).
 index_i(2,[ 'ICUSTOMER',u,[ 3 ],'ICustomer' ]).
 index_i(2,[ 'ICUSTOMER1',d,[ 1 ],'ICustomer1' ]).
+index_i(4,[ 'IINVOICE',u,[ 14 ],'IInvoice' ]).
+index_i(4,[ 'IINVOICE2',d,[ 25 ],'IInvoice2' ]).
  
  
  
@@ -783,10 +789,35 @@ att_prop_i(2,3,'ATT_INITIAL_VALUE','',d).
 att_prop_i(2,3,'AttRegEx','',d).
 att_prop_i(2,3,'AttValidationFailedMsg','',d).
 att_prop_i(2,3,'FullName','CustomerId',v).
+att_prop_i(2,25,'ExternalName','InvoiceCountryId',d).
+att_prop_i(2,25,'ExternalNamespace','BillingSystem',d).
+att_prop_i(2,25,'EmptyAsNull','Yes',d).
+att_prop_i(2,25,'AUTONUMBER','-1',d).
+att_prop_i(2,25,'AUTONUMBER_START','1',d).
+att_prop_i(2,25,'AUTONUMBER_STEP','1',d).
+att_prop_i(2,25,'AUTONUMBER_FORREPLICATION','-1',d).
+att_prop_i(2,25,'ATT_INITIAL_VALUE','',d).
+att_prop_i(2,25,'AttRegEx','',d).
+att_prop_i(2,25,'AttValidationFailedMsg','',d).
+att_prop_i(2,25,'FullName','InvoiceCountryId',v).
+att_prop_i(2,14,'ExternalName','InvoiceId',d).
+att_prop_i(2,14,'ExternalNamespace','BillingSystem',d).
+att_prop_i(2,14,'EmptyAsNull','Yes',d).
+att_prop_i(2,14,'AUTONUMBER','-1',d).
+att_prop_i(2,14,'AUTONUMBER_START','1',d).
+att_prop_i(2,14,'AUTONUMBER_STEP','1',d).
+att_prop_i(2,14,'AUTONUMBER_FORREPLICATION','-1',d).
+att_prop_i(2,14,'ATT_INITIAL_VALUE','',d).
+att_prop_i(2,14,'AttRegEx','',d).
+att_prop_i(2,14,'AttValidationFailedMsg','',d).
+att_prop_i(2,14,'FullName','InvoiceId',v).
  
+tbl_prop_i(2,4,'AllDirSuper',[ [ 2,[ 3 ] ] ],v).
 tbl_prop_i(2,2,'AllDirSuper',[ [ 1,[ 1 ] ] ],v).
 tbl_prop_i(2,2,'DirSuperNull',[ [ 1,[ 1 ] ] ],v).
-tbl_prop_i(2,1,'DirSubor',[ [ 2,[ 1 ] ] ],v).
+tbl_prop_i(2,2,'DirSubor',[ [ 4,[ 3 ] ] ],v).
+tbl_prop_i(2,1,'DirSubor',[ [ 2,[ 1 ] ],[ 4,[ 25 ] ] ],v).
+tbl_prop_i(2,4,'DirSuper',[ [ 2,[ 3 ] ] ],v).
 tbl_prop_i(2,2,'DirSuper',[ [ 1,[ 1 ] ] ],v).
  
 tbl_att_prop_i(2,1,1,'AllowNulls',n).
@@ -794,6 +825,9 @@ tbl_att_prop_i(2,1,1,'AUTONUMBER',y).
 tbl_att_prop_i(2,1,2,'AllowNulls',n).
 tbl_att_prop_i(2,2,3,'AllowNulls',n).
 tbl_att_prop_i(2,2,3,'AUTONUMBER',y).
+tbl_att_prop_i(2,4,14,'AllowNulls',n).
+tbl_att_prop_i(2,4,14,'AUTONUMBER',y).
+tbl_att_prop_i(2,4,25,'AllowNulls',n).
  
  
  

@@ -1,17 +1,4 @@
-CREATE TABLE [GXA0004] ([InvoiceId] int NOT NULL  IDENTITY(1,1), [InvoiceDate] datetime NOT NULL , [CustomerId] int NOT NULL , [InvoiceCountryId] int NOT NULL )
-Run conversion program for table Invoice
-DROP TABLE [Invoice]
-sp_rename '[GXA0004]', 'Invoice'
-ALTER TABLE [Invoice] ADD PRIMARY KEY([InvoiceId])
-SET IDENTITY_INSERT [Country] ON
-INSERT INTO [Country] ([CountryId], [CountryName]) SELECT TOP 1 convert(int, 0), '' FROM [Invoice] WHERE NOT EXISTS (SELECT 1 FROM [Country] WHERE CountryId=convert(int, 0))
-SET IDENTITY_INSERT [Country] OFF
-CREATE NONCLUSTERED INDEX [IINVOICE1] ON [Invoice] ([CustomerId] )
-CREATE NONCLUSTERED INDEX [IINVOICE2] ON [Invoice] ([InvoiceCountryId] )
-
-ALTER TABLE [InvoiceDetail] ADD CONSTRAINT [IINVOICEDETAIL2] FOREIGN KEY ([InvoiceId]) REFERENCES [Invoice] ([InvoiceId])
-ALTER TABLE [InvoiceDetail] ADD CONSTRAINT [IINVOICEDETAIL1] FOREIGN KEY ([ProductId]) REFERENCES [Product] ([ProductId])
-
-ALTER TABLE [Invoice] ADD CONSTRAINT [IINVOICE1] FOREIGN KEY ([CustomerId]) REFERENCES [Customer] ([CustomerId])
-ALTER TABLE [Invoice] ADD CONSTRAINT [IINVOICE2] FOREIGN KEY ([InvoiceCountryId]) REFERENCES [Country] ([CountryId])
+DROP INDEX [ICUSTOMER1] ON [Customer]
+ALTER TABLE [Customer] ALTER COLUMN [CountryId] int NULL
+CREATE NONCLUSTERED INDEX [ICUSTOMER1] ON [Customer] ([CountryId] )
 

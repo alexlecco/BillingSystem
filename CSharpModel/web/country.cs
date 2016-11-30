@@ -2,7 +2,7 @@
                File: Country
         Description: Country
              Author: GeneXus C# Generator version 10_1_6-46473
-       Generated on: 11/30/2016 15:26:2.47
+       Generated on: 11/30/2016 18:33:21.9
        Program type: Callable routine
           Main DBMS: sqlserver
 */
@@ -1324,10 +1324,18 @@ namespace GeneXus.Programs {
             pr_default.execute(11, new Object[] {n1CountryId, A1CountryId});
             if ( (pr_default.getStatus(11) != 101) )
             {
-               GX_msglist.addItem(context.GetMessage( "GXM_del", new   object[]  {"Customer"}), "CannotDeleteReferencedRecord", 1, "");
+               GX_msglist.addItem(context.GetMessage( "GXM_del", new   object[]  {"Invoice"}), "CannotDeleteReferencedRecord", 1, "");
                AnyError = 1 ;
             }
             pr_default.close(11);
+            /* Using cursor T000114 */
+            pr_default.execute(12, new Object[] {n1CountryId, A1CountryId});
+            if ( (pr_default.getStatus(12) != 101) )
+            {
+               GX_msglist.addItem(context.GetMessage( "GXM_del", new   object[]  {"Customer"}), "CannotDeleteReferencedRecord", 1, "");
+               AnyError = 1 ;
+            }
+            pr_default.close(12);
          }
       }
 
@@ -1370,29 +1378,29 @@ namespace GeneXus.Programs {
 
       protected void ScanStart011( )
       {
-         /* Using cursor T000114 */
-         pr_default.execute(12);
+         /* Using cursor T000115 */
+         pr_default.execute(13);
          RcdFound1 = 0 ;
-         if ( (pr_default.getStatus(12) != 101) )
+         if ( (pr_default.getStatus(13) != 101) )
          {
             RcdFound1 = 1 ;
-            A1CountryId = T000114_A1CountryId[0] ;
+            A1CountryId = T000115_A1CountryId[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A1CountryId", StringUtil.LTrim( StringUtil.Str( (decimal)(A1CountryId), 6, 0)));
-            n1CountryId = T000114_n1CountryId[0] ;
+            n1CountryId = T000115_n1CountryId[0] ;
          }
          /* Load Subordinate Levels */
       }
 
       protected void ScanNext011( )
       {
-         pr_default.readNext(12);
+         pr_default.readNext(13);
          RcdFound1 = 0 ;
-         if ( (pr_default.getStatus(12) != 101) )
+         if ( (pr_default.getStatus(13) != 101) )
          {
             RcdFound1 = 1 ;
-            A1CountryId = T000114_A1CountryId[0] ;
+            A1CountryId = T000115_A1CountryId[0] ;
             context.httpAjaxContext.ajax_rsp_assign_attri("", false, "A1CountryId", StringUtil.LTrim( StringUtil.Str( (decimal)(A1CountryId), 6, 0)));
-            n1CountryId = T000114_n1CountryId[0] ;
+            n1CountryId = T000115_n1CountryId[0] ;
          }
       }
 
@@ -1581,7 +1589,7 @@ namespace GeneXus.Programs {
          idxLst = 1 ;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( Form.Jscriptsrc.Item(idxLst)), "?1526362");
+            context.AddJavascriptSource(StringUtil.RTrim( Form.Jscriptsrc.Item(idxLst)), "?18332171");
             idxLst = (int)(idxLst+1) ;
          }
          /* End function define_styles */
@@ -1590,7 +1598,7 @@ namespace GeneXus.Programs {
       protected void include_jscripts( )
       {
          context.AddJavascriptSource("messages.eng.js", "?46473");
-         context.AddJavascriptSource("country.js", "?1526362");
+         context.AddJavascriptSource("country.js", "?18332171");
          /* End function include_jscripts */
       }
 
@@ -1712,7 +1720,7 @@ namespace GeneXus.Programs {
 
       protected void CloseOpenCursors( )
       {
-         pr_default.close(12);
+         pr_default.close(13);
          pr_default.close(5);
          pr_default.close(4);
       }
@@ -1777,9 +1785,10 @@ namespace GeneXus.Programs {
          T00018_A2CountryName = new String[] {""} ;
          T000110_A1CountryId = new int[1] ;
          T000110_n1CountryId = new bool[] {false} ;
-         T000113_A3CustomerId = new int[1] ;
-         T000114_A1CountryId = new int[1] ;
-         T000114_n1CountryId = new bool[] {false} ;
+         T000113_A14InvoiceId = new int[1] ;
+         T000114_A3CustomerId = new int[1] ;
+         T000115_A1CountryId = new int[1] ;
+         T000115_n1CountryId = new bool[] {false} ;
          sDynURL = "" ;
          FormProcess = "" ;
          GXt_char2 = "" ;
@@ -1819,10 +1828,13 @@ namespace GeneXus.Programs {
                , new Object[] {
                }
                , new Object[] {
-               T000113_A3CustomerId
+               T000113_A14InvoiceId
                }
                , new Object[] {
-               T000114_A1CountryId
+               T000114_A3CustomerId
+               }
+               , new Object[] {
+               T000115_A1CountryId
                }
             }
          );
@@ -1964,9 +1976,10 @@ namespace GeneXus.Programs {
       private String[] T00018_A2CountryName ;
       private int[] T000110_A1CountryId ;
       private bool[] T000110_n1CountryId ;
-      private int[] T000113_A3CustomerId ;
-      private int[] T000114_A1CountryId ;
-      private bool[] T000114_n1CountryId ;
+      private int[] T000113_A14InvoiceId ;
+      private int[] T000114_A3CustomerId ;
+      private int[] T000115_A1CountryId ;
+      private bool[] T000115_n1CountryId ;
       private int[] T00012_A1CountryId ;
       private String[] T00012_A2CountryName ;
       private GXWebForm Form ;
@@ -1991,6 +2004,7 @@ namespace GeneXus.Programs {
          ,new UpdateCursor(def[10])
          ,new ForEachCursor(def[11])
          ,new ForEachCursor(def[12])
+         ,new ForEachCursor(def[13])
        };
     }
 
@@ -2049,6 +2063,10 @@ namespace GeneXus.Programs {
           } ;
           Object[] prmT000114 ;
           prmT000114 = new Object[] {
+          new Object[] {"@CountryId",SqlDbType.Int,6,0}
+          } ;
+          Object[] prmT000115 ;
+          prmT000115 = new Object[] {
           } ;
           def= new CursorDef[] {
               new CursorDef("T00012", "SELECT [CountryId], [CountryName] FROM [Country] WITH (UPDLOCK) WHERE [CountryId] = @CountryId ",true, GxErrorMask.GX_NOMASK, false, this,prmT00012,1,0,true,false )
@@ -2062,8 +2080,9 @@ namespace GeneXus.Programs {
              ,new CursorDef("T000110", "SELECT Ident_Current('[Country]') ",true, GxErrorMask.GX_NOMASK, false, this,prmT000110,1,0,true,false )
              ,new CursorDef("T000111", "UPDATE [Country] SET [CountryName]=@CountryName  WHERE [CountryId] = @CountryId", GxErrorMask.GX_NOMASK,prmT000111)
              ,new CursorDef("T000112", "DELETE FROM [Country]  WHERE [CountryId] = @CountryId", GxErrorMask.GX_NOMASK,prmT000112)
-             ,new CursorDef("T000113", "SELECT TOP 1 [CustomerId] FROM [Customer] WITH (NOLOCK) WHERE [CountryId] = @CountryId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000113,1,0,true,true )
-             ,new CursorDef("T000114", "SELECT [CountryId] FROM [Country] WITH (NOLOCK) ORDER BY [CountryId]  OPTION (FAST 100)",true, GxErrorMask.GX_NOMASK, false, this,prmT000114,100,0,true,false )
+             ,new CursorDef("T000113", "SELECT TOP 1 [InvoiceId] FROM [Invoice] WITH (NOLOCK) WHERE [InvoiceCountryId] = @CountryId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000113,1,0,true,true )
+             ,new CursorDef("T000114", "SELECT TOP 1 [CustomerId] FROM [Customer] WITH (NOLOCK) WHERE [CountryId] = @CountryId ",true, GxErrorMask.GX_NOMASK, false, this,prmT000114,1,0,true,true )
+             ,new CursorDef("T000115", "SELECT [CountryId] FROM [Country] WITH (NOLOCK) ORDER BY [CountryId]  OPTION (FAST 100)",true, GxErrorMask.GX_NOMASK, false, this,prmT000115,100,0,true,false )
           };
        }
     }
@@ -2106,6 +2125,9 @@ namespace GeneXus.Programs {
                 ((int[]) buf[0])[0] = rslt.getInt(1) ;
                 break;
              case 12 :
+                ((int[]) buf[0])[0] = rslt.getInt(1) ;
+                break;
+             case 13 :
                 ((int[]) buf[0])[0] = rslt.getInt(1) ;
                 break;
        }
@@ -2212,6 +2234,16 @@ namespace GeneXus.Programs {
                 }
                 break;
              case 11 :
+                if ( (bool)parms[0] )
+                {
+                   stmt.setNull( 1 , SqlDbType.Int );
+                }
+                else
+                {
+                   stmt.SetParameter(1, (int)parms[1]);
+                }
+                break;
+             case 12 :
                 if ( (bool)parms[0] )
                 {
                    stmt.setNull( 1 , SqlDbType.Int );

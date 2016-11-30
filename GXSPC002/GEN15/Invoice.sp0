@@ -1021,6 +1021,7 @@ html_comp_i(53,'Font',font('Arial',9,[]),d,[ font ]).
 html_comp_i(53,'Horizontalalignment',left,d,[ str ]).
 html_comp_i(53,'Gxformat',0,d,[ num ]).
 html_comp_i(53,'Title','',d,[ str ]).
+html_comp_i(55,'Height',measure(23,px),v,[ measure ]).
 html_comp_i(56,'Caption','Country Id',d,[ str ]).
 html_comp_i(56,'Id','Textblockcustomertotalpurchases3',v,[ str ]).
 html_comp_i(56,'Class','TextBlock',d,[ str ]).

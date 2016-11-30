@@ -2,7 +2,7 @@
                File: Gx0020
         Description: Selection List Customer
              Author: GeneXus C# Generator version 10_1_6-46473
-       Generated on: 11/30/2016 15:25:59.98
+       Generated on: 11/30/2016 18:33:20.28
        Program type: Callable routine
           Main DBMS: sqlserver
 */
@@ -1424,7 +1424,7 @@ namespace GeneXus.Programs {
          idxLst = 1 ;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( Form.Jscriptsrc.Item(idxLst)), "?1526141");
+            context.AddJavascriptSource(StringUtil.RTrim( Form.Jscriptsrc.Item(idxLst)), "?18332080");
             idxLst = (int)(idxLst+1) ;
          }
          /* End function define_styles */
@@ -1433,7 +1433,7 @@ namespace GeneXus.Programs {
       protected void include_jscripts( )
       {
          context.AddJavascriptSource("messages.eng.js", "?46473");
-         context.AddJavascriptSource("gx0020.js", "?1526141");
+         context.AddJavascriptSource("gx0020.js", "?18332080");
          /* End function include_jscripts */
       }
 

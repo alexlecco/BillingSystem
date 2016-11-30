@@ -80,6 +80,16 @@
 <AfterDeleteRules></AfterDeleteRules>
 <TablesToControlOnDelete>
 <Table>
+<TableId>4</TableId>
+<TableName>Invoice</TableName>
+<Description>Invoice</Description>
+<RecordsToRead>one</RecordsToRead>
+<KeyAttributes>
+<Attribute>
+<AttriId>25</AttriId>
+<AttriName>InvoiceCountryId</AttriName>
+<Description>Invoice Country Id</Description></Attribute></KeyAttributes></Table>
+<Table>
 <TableId>2</TableId>
 <TableName>Customer</TableName>
 <Description>Customer</Description>

@@ -2,7 +2,7 @@
                File: Invoice
         Description: Invoice
              Author: GeneXus C# Generator version 10_1_6-46473
-       Generated on: 11/30/2016 17:47:59.40
+       Generated on: 11/30/2016 18:33:23.57
        Program type: Callable routine
           Main DBMS: sqlserver
 */
@@ -497,7 +497,7 @@ namespace GeneXus.Programs {
             context.WriteHtmlText( "</td>") ;
             context.WriteHtmlText( "</tr>") ;
             context.WriteHtmlText( "<tr>") ;
-            context.WriteHtmlText( "<td>") ;
+            context.WriteHtmlText( "<td style=\"height:23px\">") ;
             /* Text block */
             ClassString = "TextBlock" ;
             StyleString = "" ;
@@ -4239,7 +4239,7 @@ namespace GeneXus.Programs {
          idxLst = 1 ;
          while ( idxLst <= Form.Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( Form.Jscriptsrc.Item(idxLst)), "?1748246");
+            context.AddJavascriptSource(StringUtil.RTrim( Form.Jscriptsrc.Item(idxLst)), "?18332630");
             idxLst = (int)(idxLst+1) ;
          }
          /* End function define_styles */
@@ -4248,7 +4248,7 @@ namespace GeneXus.Programs {
       protected void include_jscripts( )
       {
          context.AddJavascriptSource("messages.eng.js", "?46473");
-         context.AddJavascriptSource("invoice.js", "?1748247");
+         context.AddJavascriptSource("invoice.js", "?18332630");
          /* End function include_jscripts */
       }
 

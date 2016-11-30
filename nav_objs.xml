@@ -1,8 +1,7 @@
 
 <Object>
 <ObjCls>0</ObjCls>
-<ObjId>4</ObjId>
-<ObjName>Invoice</ObjName>
+<ObjId>2</ObjId>
+<ObjName>Customer</ObjName>
 <ObjStatus>genreq</ObjStatus>
-<HasWarnings>Yes</HasWarnings>
-<ObjNavig>GXSPC002\GEN15\NVG\Invoice.xml</ObjNavig></Object>
+<ObjNavig>GXSPC002\GEN15\NVG\Customer.xml</ObjNavig></Object>

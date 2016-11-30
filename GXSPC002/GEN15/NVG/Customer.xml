@@ -155,6 +155,24 @@
 <Prompts>
 <Prompt>
 <Table>
+<TableId>1</TableId>
+<TableName>Country</TableName>
+<Description>Country</Description></Table>
+<Object>
+<ObjCls>13</ObjCls>
+<ObjId>4</ObjId>
+<ObjName>Gx0010</ObjName>
+<ObjPgmName>Gx0010</ObjPgmName>
+<ObjClsName>Web Panel</ObjClsName></Object>
+<InputParameters></InputParameters>
+<OutputParameters>
+<Attribute>
+<AttriId>1</AttriId>
+<AttriName>CountryId</AttriName>
+<Description>Country Id</Description></Attribute></OutputParameters>
+<PromptType>System</PromptType></Prompt>
+<Prompt>
+<Table>
 <TableId>2</TableId>
 <TableName>Customer</TableName>
 <Description>Customer</Description></Table>
