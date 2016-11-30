@@ -1,2 +1,3 @@
-ALTER TABLE [Customer] DROP COLUMN [CustomerBalance]
+ALTER TABLE [Customer] ADD [CustomerStatus] varchar(40) NOT NULL CONSTRAINT CustomerStatusCustomer_DEFAULT DEFAULT 'value 0'
+ALTER TABLE [Customer] DROP CONSTRAINT CustomerStatusCustomer_DEFAULT
 

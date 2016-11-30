@@ -2,7 +2,7 @@
                File: reorg
         Description: Table Manager
              Author: GeneXus C# Generator version 10_1_6-46473
-       Generated on: 11/23/2016 18:3:24.7
+       Generated on: 11/30/2016 15:25:40.25
        Program type: Callable routine
           Main DBMS: sqlserver
 */
@@ -74,7 +74,13 @@ namespace GeneXus.Programs {
       {
          String cmdBuffer ;
          /* Indices for table Customer */
-         cmdBuffer=" ALTER TABLE [Customer] DROP COLUMN [CustomerBalance] "
+         cmdBuffer=" ALTER TABLE [Customer] ADD [CustomerStatus] varchar(40) NOT NULL CONSTRAINT CustomerStatusCustomer_DEFAULT DEFAULT 'value 0' "
+         ;
+         RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
+         RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
+         RGZ.ExecuteStmt() ;
+         RGZ.Drop();
+         cmdBuffer=" ALTER TABLE [Customer] DROP CONSTRAINT CustomerStatusCustomer_DEFAULT "
          ;
          RGZ = new GxCommand(dsDefault.Db, cmdBuffer, dsDefault,0,true,false,null);
          RGZ.ErrorMask = GxErrorMask.GX_NOMASK | GxErrorMask.GX_MASKLOOPLOCK;
@@ -132,9 +138,9 @@ namespace GeneXus.Programs {
             }
             pr_default.close(2);
          }
-         if ( ! ColumnExist("Customer",sSchemaVar,"CustomerBalance") )
+         if ( ColumnExist("Customer",sSchemaVar,"CustomerStatus") )
          {
-            SetCheckError ( GXResourceManager.GetMessage("GXM_column_not_exist", new   object[]  {"CustomerBalance", "Customer"}) );
+            SetCheckError ( GXResourceManager.GetMessage("GXM_column_exist", new   object[]  {"CustomerStatus", "Customer"}) );
             return false;
          }
          return true ;

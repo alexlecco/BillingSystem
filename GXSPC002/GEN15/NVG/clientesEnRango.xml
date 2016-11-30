@@ -1,0 +1,22 @@
+
+<ObjectSpec>
+<SpecVersion>10_1_6-46473</SpecVersion>
+<Object>
+<ObjCls>13</ObjCls>
+<ObjId>9</ObjId>
+<ObjName>clientesEnRango</ObjName>
+<ObjDesc>clientes En Rango</ObjDesc>
+<ObjPgmName>clientesEnRango</ObjPgmName>
+<ObjClsName>Web Panel</ObjClsName></Object>
+<Result>genreq</Result>
+<Warnings></Warnings>
+<Errors></Errors>
+<Generator>
+<GenId>15</GenId>
+<GenName>Default (C#)</GenName></Generator>
+<FormClass>HTML</FormClass>
+<Parameters></Parameters>
+<StandAloneRules></StandAloneRules>
+<Event>
+<EventName>Load</EventName></Event>
+<Suggests></Suggests></ObjectSpec>

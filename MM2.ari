@@ -2,9 +2,9 @@
  
  
  
+pgm_prop_i(web,5,'GX0020','USE_ENCRYPTION','NO').
 pgm_prop_i(web,1,'APPMASTERPAGE','WEB_COMP','Master').
 pgm_prop_i(web,7,'GX0040','USE_ENCRYPTION','NO').
-pgm_prop_i(web,5,'GX0020','USE_ENCRYPTION','NO').
 pgm_prop_i(web,8,'GX0051','USE_ENCRYPTION','NO').
 pgm_prop_i(web,6,'GX0030','USE_ENCRYPTION','NO').
 pgm_prop_i(web,4,'GX0010','USE_ENCRYPTION','NO').
@@ -85,5 +85,5 @@ lng_prop_i(1,'LangDateFormat','ENG',v).
 lng_prop_i(1,'LangTimeFormat','12',v).
 lng_prop_i(1,'LangDecimalPoint','.',v).
  
-ver_stamp('20161125.162310').
+ver_stamp('20161130.182204').
  

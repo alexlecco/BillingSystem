@@ -1,4 +1,6 @@
 dir_superordinates_i(2,2,[ [ 1,[ 1 ] ] ]).
-dir_superordinates_i(2,1,[]).
+dir_superordinates_i(2,5,[ [ 3,[ 10 ] ],[ 4,[ 14 ] ] ]).
 dir_superordinates_i(2,4,[ [ 2,[ 3 ] ] ]).
+dir_superordinates_i(2,3,[]).
+dir_superordinates_i(2,1,[]).
  

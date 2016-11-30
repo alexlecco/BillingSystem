@@ -86,6 +86,10 @@
 <AttriName>CustomerTotalPayments</AttriName>
 <Description>Customer Total Payments</Description></Attribute>
 <Attribute>
+<AttriId>22</AttriId>
+<AttriName>CustomerStatus</AttriName>
+<Description>Customer Status</Description></Attribute>
+<Attribute>
 <AttriId>1</AttriId>
 <AttriName>CountryId</AttriName>
 <Description>Country Id</Description></Attribute></AttrisToUpdate></TableToUpdate>
@@ -116,6 +120,10 @@
 <AttriId>8</AttriId>
 <AttriName>CustomerTotalPayments</AttriName>
 <Description>Customer Total Payments</Description></Attribute>
+<Attribute>
+<AttriId>22</AttriId>
+<AttriName>CustomerStatus</AttriName>
+<Description>Customer Status</Description></Attribute>
 <Attribute>
 <AttriId>1</AttriId>
 <AttriName>CountryId</AttriName>

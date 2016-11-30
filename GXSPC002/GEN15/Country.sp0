@@ -207,9 +207,15 @@ upd_i(1,1,d,[ [],[],'ICOUNTRY',[] ]).
  
  
  
+enumerated_i(2,22,15).
  
+enum_value_i(2,15,'"value 0"','Active','"Active"').
+enum_value_i(2,15,'"value 1"','OnHold','"On Hold"').
+enum_value_i(2,15,'"value 2"','Closed','"Closed"').
  
+enum_value_info_i(2,15,'Status').
  
+enum_type_i(2,15,svchar,40,0).
  
  
 break_i(2,nvg,1,[],[ [],[],[] ]).

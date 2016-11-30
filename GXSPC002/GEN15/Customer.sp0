@@ -11,9 +11,9 @@ lwi_i(2,[ [] ]).
  
  
  
-ta_i(2,[ [ [ 2,3 ],[ 2,4 ],[ 2,5 ],[ 2,6 ],[ 2,7 ],[ 2,8 ],[ 1,2 ],[ 2,1 ] ] ]).
+ta_i(2,[ [ [ 2,3 ],[ 2,4 ],[ 2,5 ],[ 2,6 ],[ 2,7 ],[ 2,8 ],[ 1,2 ],[ 2,22 ],[ 2,1 ] ] ]).
  
-las_i(2,[ [ 3,9,'GxBScreen',4,5,6,7,8,1,2 ] ]).
+las_i(2,[ [ 3,9,'GxBScreen',4,5,6,7,8,1,2,22 ] ]).
  
 lac_i(2,[ [ 3,4,5,6,8,1 ] ]).
  
@@ -41,6 +41,7 @@ pos_i(1,[ 0,0,0 ]).
 pos_i(2,[ 0,0,0 ]).
  
  
+default_i(e(22,4,3,[ t([ 15,'Active' ],44) ])).
 default_i(e(6,4,3,[ t('''F''',3) ])).
  
 rule_i(0,datastore(1,'DS_LAST_CHANGE','')).
@@ -186,12 +187,13 @@ a_i(2,2,f,9,[],[ [],[ t(7,2),t(-,5),t(8,2),t(';',18) ] ]).
 a_i(3,2,f,[ t(7,2),t('Enabled',3) ],[],[ [],[ t(0,3),t(';',18) ] ]).
 a_i(4,2,f,[ t(9,2),t('Enabled',3) ],[],[ [],[ t(0,3),t(';',18) ] ]).
 a_i(5,2,f,6,[],[ [ insert ],[ t('''F''',3),t('IF',17),t(insert,1),t('AND',9),t('null1(',1),t(6,2),t(')',4),t('AND',9),t('GxBScreen',23),t(=,10),t(0,3),t(';',18) ] ]).
-a_i(6,2,h,1,[],[ [ 1 ],[ 2 ],[ [ [ 1,2 ],[ 1,1 ] ],n,[ [ 1,many ] ],[],[ c([ t(2,2),t(=,10),t(2,23) ],[ 2 ]) ],[],[],[],[] ] ]).
-a_i(7,2,b,1,[],[ [],[ a(1,[ t('''No se permiten CLIENTES sin NOMBRE''',3) ]) ],[ t('null(',1),t(4,2),t(')',4) ] ]).
-a_i(8,2,b,2,[],[ [],[ a(1,[ t('''No se ingresó DIRECCIÓN para el CLIENTE''',3) ]) ],[ t('null(',1),t(5,2),t(')',4) ] ]).
-a_i(9,2,t,2,[],[ [ [ [],3,3 ] ],'ICUSTOMER',[] ]).
-a_i(10,2,r,1,[],[ [ [ 2,1,1 ] ],'ICOUNTRY',[] ]).
-a_i(11,2,f,'GxBScreen',[],[ [],[ t('0',3) ] ]).
+a_i(6,2,f,22,[],[ [ insert ],[ t([ 15,'Active' ],44),t('IF',17),t(insert,1),t('AND',9),t('null1(',1),t(22,2),t(')',4),t('AND',9),t('GxBScreen',23),t(=,10),t(0,3),t(';',18) ] ]).
+a_i(7,2,h,1,[],[ [ 1 ],[ 2 ],[ [ [ 1,2 ],[ 1,1 ] ],n,[ [ 1,many ] ],[],[ c([ t(2,2),t(=,10),t(2,23) ],[ 2 ]) ],[],[],[],[] ] ]).
+a_i(8,2,b,1,[],[ [],[ a(1,[ t('''No se permiten CLIENTES sin NOMBRE''',3) ]) ],[ t('null(',1),t(4,2),t(')',4) ] ]).
+a_i(9,2,b,2,[],[ [],[ a(1,[ t('''No se ingresó DIRECCIÓN para el CLIENTE''',3) ]) ],[ t('null(',1),t(5,2),t(')',4) ] ]).
+a_i(10,2,t,2,[],[ [ [ [],3,3 ] ],'ICUSTOMER',[] ]).
+a_i(11,2,r,1,[],[ [ [ 2,1,1 ] ],'ICOUNTRY',[] ]).
+a_i(12,2,f,'GxBScreen',[],[ [],[ t('0',3) ] ]).
  
 v_i(f,i,1,7).
 v_i(f,i,1,16).
@@ -205,24 +207,28 @@ v_i(f,i,4,[]).
 v_i(f,o,4,[ t(9,2),t('Enabled',3) ]).
 v_i(f,i,5,'GxBScreen').
 v_i(f,o,5,6).
-v_i(h,i,6,1).
-v_i(h,o,6,1).
-v_i(b,i,7,4).
-v_i(b,o,7,[]).
-v_i(b,i,8,5).
+v_i(f,i,6,'GxBScreen').
+v_i(f,o,6,22).
+v_i(h,i,7,1).
+v_i(h,o,7,1).
+v_i(b,i,8,4).
 v_i(b,o,8,[]).
-v_i(t,i,9,3).
-v_i(t,o,9,4).
-v_i(t,o,9,5).
-v_i(t,o,9,6).
-v_i(t,o,9,7).
-v_i(t,o,9,8).
-v_i(t,o,9,1).
-v_i(r,i,10,1).
-v_i(r,o,10,2).
-v_i(f,i,11,[]).
-v_i(f,o,11,'GxBScreen').
+v_i(b,i,9,5).
+v_i(b,o,9,[]).
+v_i(t,i,10,3).
+v_i(t,o,10,4).
+v_i(t,o,10,5).
+v_i(t,o,10,6).
+v_i(t,o,10,7).
+v_i(t,o,10,8).
+v_i(t,o,10,22).
+v_i(t,o,10,1).
+v_i(r,i,11,1).
+v_i(r,o,11,2).
+v_i(f,i,12,[]).
+v_i(f,o,12,'GxBScreen').
  
+ca_i(6,22).
 ca_i(5,6).
  
 tbl_to_delete_i(2,[ 4,[ [ 2,3,3 ] ],c,'IINVOICE1',[ [ 4,3 ] ],[ 14 ] ]).
@@ -230,6 +236,7 @@ tbl_to_delete_i(2,[ 4,[ [ 2,3,3 ] ],c,'IINVOICE1',[ [ 4,3 ] ],[ 14 ] ]).
  
  
 attri_i(14,[ 'InvoiceId',int,6,0,'ZZZZZ9',0,'Invoice Id','',0 ]).
+attri_i(22,[ 'CustomerStatus',svchar,40,0,'',0,'Customer Status','',0 ]).
 attri_i(2,[ 'CountryName',char,30,0,'',0,'Country Name','',0 ]).
 attri_i(1,[ 'CountryId',int,6,0,'ZZZZZ9',0,'Country Id','',0 ]).
 attri_i(8,[ 'CustomerTotalPayments',int,9,2,'ZZZZZ9.99',0,'Customer Total Payments','',0 ]).
@@ -245,7 +252,7 @@ attri_i('Mode',[ 'Gx_mode',char,3,0,'@!',1,'','',2 ]).
  
 table_i(4,[ 'Invoice',[ 14,3 ],'Invoice','Invoice' ]).
 table_i(1,[ 'Country',[ 1,2 ],'Country','Country' ]).
-table_i(2,[ 'Customer',[ 3,4,5,6,7,8,1 ],'Customer','Customer' ]).
+table_i(2,[ 'Customer',[ 3,4,5,6,7,8,1,22 ],'Customer','Customer' ]).
  
 index_i(2,[ 'ICUSTOMER',u,[ 3 ],'ICustomer' ]).
 index_i(1,[ 'ICOUNTRY',u,[ 1 ],'ICountry' ]).
@@ -261,8 +268,8 @@ index_i(4,[ 'IINVOICE1',d,[ 3 ],'IInvoice1' ]).
  
  
  
-upd_i(2,2,i,[ [ 4,5,6,7,8,1 ],[],'ICUSTOMER',[ [ [],3,3 ] ] ]).
-upd_i(2,2,u,[ [ 4,5,6,7,8,1 ],[],'ICUSTOMER',[] ]).
+upd_i(2,2,i,[ [ 4,5,6,7,8,22,1 ],[],'ICUSTOMER',[ [ [],3,3 ] ] ]).
+upd_i(2,2,u,[ [ 4,5,6,7,8,22,1 ],[],'ICUSTOMER',[] ]).
 upd_i(2,2,d,[ [],[],'ICUSTOMER',[] ]).
  
  
@@ -272,9 +279,15 @@ upd_i(2,2,d,[ [],[],'ICUSTOMER',[] ]).
  
  
  
+enumerated_i(2,22,15).
  
+enum_value_i(2,15,'"value 0"','Active','"Active"').
+enum_value_i(2,15,'"value 1"','OnHold','"On Hold"').
+enum_value_i(2,15,'"value 2"','Closed','"Closed"').
  
+enum_value_info_i(2,15,'Status').
  
+enum_type_i(2,15,svchar,40,0).
  
  
 break_i(2,nvg,1,[],[ [],[],[] ]).
@@ -1190,6 +1203,14 @@ att_prop_i(2,2,'DB_NLS_SUPPORT','No',d).
 att_prop_i(2,2,'AttRegEx','',d).
 att_prop_i(2,2,'AttValidationFailedMsg','',d).
 att_prop_i(2,2,'FullName','CountryName',v).
+att_prop_i(2,22,'ExternalName','CustomerStatus',d).
+att_prop_i(2,22,'ExternalNamespace','BillingSystem',d).
+att_prop_i(2,22,'EmptyAsNull','Yes',d).
+att_prop_i(2,22,'ATT_INITIAL_VALUE',[ t([ 15,'Active' ],44) ],v).
+att_prop_i(2,22,'DB_NLS_SUPPORT','No',d).
+att_prop_i(2,22,'AttRegEx','',d).
+att_prop_i(2,22,'AttValidationFailedMsg','GXSPC_OutOfRange',d).
+att_prop_i(2,22,'FullName','CustomerStatus',v).
 att_prop_i(2,14,'ExternalName','InvoiceId',d).
 att_prop_i(2,14,'ExternalNamespace','BillingSystem',d).
 att_prop_i(2,14,'EmptyAsNull','Yes',d).
@@ -1217,6 +1238,7 @@ tbl_att_prop_i(2,2,5,'AllowNulls',n).
 tbl_att_prop_i(2,2,6,'AllowNulls',n).
 tbl_att_prop_i(2,2,7,'AllowNulls',n).
 tbl_att_prop_i(2,2,8,'AllowNulls',n).
+tbl_att_prop_i(2,2,22,'AllowNulls',n).
 tbl_att_prop_i(2,1,1,'AllowNulls',n).
 tbl_att_prop_i(2,1,1,'AUTONUMBER',y).
 tbl_att_prop_i(2,1,2,'AllowNulls',n).
@@ -1228,7 +1250,7 @@ tbl_att_prop_i(2,4,3,'AllowNulls',n).
  
  
  
-trn_level_i(2,[ [ 3,4,5,6,7,8,9,1,2 ],'Customer','Customer','Customer','',4 ]).
+trn_level_i(2,[ [ 3,4,5,6,7,8,9,1,2,22 ],'Customer','Customer','Customer','',4 ]).
  
  
  
