@@ -1,20 +1,7 @@
 
 <Object>
-<ObjCls>13</ObjCls>
-<ObjId>1</ObjId>
-<ObjName>AppMasterPage</ObjName>
-<ObjStatus>genreq</ObjStatus>
-<ObjNavig>GXSPC002\GEN15\NVG\AppMasterPage.xml</ObjNavig></Object>
-<Object>
 <ObjCls>0</ObjCls>
 <ObjId>2</ObjId>
 <ObjName>Customer</ObjName>
 <ObjStatus>genreq</ObjStatus>
 <ObjNavig>GXSPC002\GEN15\NVG\Customer.xml</ObjNavig></Object>
-<Object>
-<ObjCls>0</ObjCls>
-<ObjId>4</ObjId>
-<ObjName>Invoice</ObjName>
-<ObjStatus>genreq</ObjStatus>
-<HasWarnings>Yes</HasWarnings>
-<ObjNavig>GXSPC002\GEN15\NVG\Invoice.xml</ObjNavig></Object>

@@ -7,14 +7,14 @@ called_program_i(13,6,13,3).
 called_program_i(13,7,13,3).
 called_program_i(13,8,13,3).
 called_program_i(13,5,13,3).
-called_program_i(13,1,13,2).
-called_program_i(0,2,13,1).
-called_program_i(0,2,13,5).
 called_program_i(0,4,13,1).
 called_program_i(0,4,13,5).
 called_program_i(0,4,13,6).
 called_program_i(0,4,13,7).
 called_program_i(0,4,13,8).
+called_program_i(13,1,13,2).
+called_program_i(0,2,13,1).
+called_program_i(0,2,13,5).
 call_tree_built_i.
 sdt_map_i(15,'LinkList.LinkItem',[ 26,2,2 ]).
 domain_i(3,'GXDOMAINRecentLinksOptions.cs').

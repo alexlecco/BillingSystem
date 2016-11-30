@@ -2,7 +2,7 @@
                File: AppMasterPage
         Description: Application Master Page
              Author: GeneXus C# Generator version 10_1_6-46473
-       Generated on: 11/25/2016 14:44:20.90
+       Generated on: 11/25/2016 15:8:27.57
        Program type: Callable routine
           Main DBMS: sqlserver
 */
@@ -116,7 +116,7 @@ namespace GeneXus.Programs {
          {
             WebComp_Wcrecentlinks.componentjscripts();
          }
-         context.AddJavascriptSource("appmasterpage.js", "?14442099");
+         context.AddJavascriptSource("appmasterpage.js", "?1582758");
          context.WriteHtmlTextNl( "</body>") ;
          context.WriteHtmlTextNl( "</html>") ;
       }
@@ -445,7 +445,7 @@ namespace GeneXus.Programs {
             GxWebStd.gx_table_start( context, tblTable4_Internalname, tblTable4_Internalname, "", "Table95", 0, "", "", 0, 0, sStyleString, "", 0);
             context.WriteHtmlText( "<tbody>") ;
             context.WriteHtmlText( "<tr>") ;
-            context.WriteHtmlText( "<td colspan=\"3\" >") ;
+            context.WriteHtmlText( "<td colspan=\"3\"  style=\"height:130px\">") ;
             wb_table2_5_012( true) ;
          }
          else
@@ -475,7 +475,7 @@ namespace GeneXus.Programs {
             context.WriteHtmlText( "</td>") ;
             context.WriteHtmlText( "</tr>") ;
             context.WriteHtmlText( "<tr>") ;
-            context.WriteHtmlText( "<td colspan=\"3\" >") ;
+            context.WriteHtmlText( "<td colspan=\"3\"  style=\"height:14px\">") ;
             /* WebComponent */
             GxWebStd.gx_hidden_field( context, "MPW0035"+"", StringUtil.RTrim( WebComp_Wcrecentlinks_Component));
             context.WriteHtmlText( "<div") ;
@@ -869,7 +869,11 @@ namespace GeneXus.Programs {
             context.WriteHtmlText( "<td>") ;
             context.WriteHtmlText( "</td>") ;
             context.WriteHtmlText( "<td>") ;
-            context.WriteHtmlText( "&nbsp; ") ;
+            context.WriteHtmlText( "&nbsp;") ;
+            /* Static images/pictures */
+            ClassString = "Image" ;
+            StyleString = "" ;
+            GxWebStd.gx_bitmap( context, imgImage2_Internalname, "", context.GetImagePath( "ee2902f8-fadd-43f8-bdba-9c24c220a598", "", "GeneXusX"), "GeneXusX", 1, 1, "", "", 0, 0, 82, "", 73, "", 0, 0, "", "", 0, "", "", StyleString, ClassString, "", "", "", "", "HLP_AppMasterPage.htm");
             /* Text block */
             ClassString = "TextBlockHeader" ;
             StyleString = "" ;
@@ -880,10 +884,6 @@ namespace GeneXus.Programs {
             ClassString = "HeaderImage1" ;
             StyleString = "" ;
             GxWebStd.gx_bitmap( context, imgImage1_Internalname, "", context.GetImagePath( "7326b96a-20b7-4973-8d71-35094049767d", "", "GeneXusX"), "GeneXusX", 1, 1, "", "", 0, 0, 0, "", 0, "", 0, 0, "", "", 0, "", "", StyleString, ClassString, "", "", "", "", "HLP_AppMasterPage.htm");
-            /* Static images/pictures */
-            ClassString = "Image" ;
-            StyleString = "" ;
-            GxWebStd.gx_bitmap( context, imgImage2_Internalname, "", context.GetImagePath( "ee2902f8-fadd-43f8-bdba-9c24c220a598", "", "GeneXusX"), "GeneXusX", 1, 1, "", "", 0, 0, 114, "", 99, "", 0, 0, "", "", 0, "", "", StyleString, ClassString, "", "", "", "", "HLP_AppMasterPage.htm");
             context.WriteHtmlText( "</td>") ;
             context.WriteHtmlText( "</tr>") ;
             context.WriteHtmlText( "</tbody>") ;
@@ -943,7 +943,7 @@ namespace GeneXus.Programs {
          idxLst = 1 ;
          while ( idxLst <= getDataAreaObject().GetForm().Jscriptsrc.Count )
          {
-            context.AddJavascriptSource(StringUtil.RTrim( getDataAreaObject().GetForm().Jscriptsrc.Item(idxLst)), "?14442117");
+            context.AddJavascriptSource(StringUtil.RTrim( getDataAreaObject().GetForm().Jscriptsrc.Item(idxLst)), "?1582774");
             idxLst = (int)(idxLst+1) ;
          }
          /* End function define_styles */
@@ -951,7 +951,7 @@ namespace GeneXus.Programs {
 
       protected void include_jscripts( )
       {
-         context.AddJavascriptSource("appmasterpage.js", "?14442117");
+         context.AddJavascriptSource("appmasterpage.js", "?1582775");
          /* End function include_jscripts */
       }
 
@@ -959,9 +959,9 @@ namespace GeneXus.Programs {
       {
          imgBtn_topl_Internalname = "BTN_TOPL_MPAGE" ;
          imgBtn_topr_Internalname = "BTN_TOPR_MPAGE" ;
+         imgImage2_Internalname = "IMAGE2_MPAGE" ;
          lblTextblockheader1_Internalname = "TEXTBLOCKHEADER1_MPAGE" ;
          imgImage1_Internalname = "IMAGE1_MPAGE" ;
-         imgImage2_Internalname = "IMAGE2_MPAGE" ;
          tblTable1_Internalname = "TABLE1_MPAGE" ;
          lblHome_Internalname = "HOME_MPAGE" ;
          lblFirsttext_Internalname = "FIRSTTEXT_MPAGE" ;
@@ -1094,11 +1094,11 @@ namespace GeneXus.Programs {
       private String tblTable1_Internalname ;
       private String imgBtn_topl_Internalname ;
       private String imgBtn_topr_Internalname ;
+      private String imgImage2_Internalname ;
       private String lblTextblockheader1_Internalname ;
       private String lblTextblockheader1_Jsonclick ;
       private String GXt_char2 ;
       private String imgImage1_Internalname ;
-      private String imgImage2_Internalname ;
       private String sDynURL ;
       private bool wbLoad ;
       private bool Rfr0gs ;

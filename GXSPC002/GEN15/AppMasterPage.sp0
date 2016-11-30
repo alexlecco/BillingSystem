@@ -205,11 +205,11 @@ html_sub_i(10,11,html_i(0,bitmap('9fb193d9-64a4-4d30-b129-ff7c76830f7e-62'))).
 html_sub_i(5,12,html_i(2,row(12))).
 html_sub_i(12,13,html_i(0,cell(13))).
 html_sub_i(12,14,html_i(1,cell(14))).
-html_sub_i(14,0,html_i(0,html('&nbsp; '))).
-html_sub_i(14,15,html_i(1,t('Villequi System',3))).
-html_sub_i(12,16,html_i(2,cell(16))).
-html_sub_i(16,17,html_i(0,bitmap('9fb193d9-64a4-4d30-b129-ff7c76830f7e-14'))).
-html_sub_i(16,18,html_i(1,bitmap('9fb193d9-64a4-4d30-b129-ff7c76830f7e-63'))).
+html_sub_i(14,0,html_i(0,html('&nbsp;'))).
+html_sub_i(14,15,html_i(1,bitmap('9fb193d9-64a4-4d30-b129-ff7c76830f7e-63'))).
+html_sub_i(14,16,html_i(2,t('Villequi System',3))).
+html_sub_i(12,17,html_i(2,cell(17))).
+html_sub_i(17,18,html_i(0,bitmap('9fb193d9-64a4-4d30-b129-ff7c76830f7e-14'))).
 html_sub_i(5,0,html_i(3,html('</TBODY>'))).
 html_sub_i(4,19,html_i(1,table(19))).
 html_sub_i(19,0,html_i(0,html('<TBODY>'))).
@@ -294,6 +294,7 @@ html_comp_i(2,'Cellspacing','0',v,[ str ]).
 html_comp_i(2,'Height',measure(0,px),d,[ measure ]).
 html_comp_i(2,'Width',measure(0,px),d,[ measure ]).
 html_comp_i(2,'Rules',none,d,[ str ]).
+html_comp_i(4,'Height',measure(130,px),v,[ measure ]).
 html_comp_i(4,'Colspan',3,v,[ num ]).
 html_comp_i(5,'Id','Table1',v,[ str ]).
 html_comp_i(5,'Class','TableTop',v,[ str ]).
@@ -340,41 +341,41 @@ html_comp_i(11,'Hspace',0,v,[ num ]).
 html_comp_i(11,'Vspace',0,d,[ num ]).
 html_comp_i(11,'Align',left,d,[ str ]).
 html_comp_i(11,'Usemap','',d,[ str ]).
-html_comp_i(15,'Caption','Villequi System',d,[ str ]).
-html_comp_i(15,'Id','Textblockheader1',v,[ str ]).
-html_comp_i(15,'Class','TextBlockHeader',v,[ str ]).
-html_comp_i(15,'Event','',d,[ str ]).
+html_comp_i(15,'Id','Image2',v,[ str ]).
+html_comp_i(15,'Class','Image',v,[ str ]).
+html_comp_i(15,src,i(98,'ee2902f8-fadd-43f8-bdba-9c24c220a598'),v,[ image ]).
+html_comp_i(15,lowsrc,'',d,[ str ]).
 html_comp_i(15,'Returnonclick',0,d,[ bool ]).
-html_comp_i(15,'Gxformat',0,d,[ num ]).
+html_comp_i(15,'Eventgx','',d,[ str ]).
+html_comp_i(15,'Height',measure(73,px),v,[ measure ]).
+html_comp_i(15,'Width',measure(82,px),v,[ measure ]).
+html_comp_i(15,'Border','0',d,[ str ]).
+html_comp_i(15,'Alt','',d,[ str ]).
 html_comp_i(15,'Title','',d,[ str ]).
-html_comp_i(15,'Fill',-1,d,[ bool ]).
-html_comp_i(15,'Backcolor',rgb(255,255,255),d,[ color ]).
-html_comp_i(15,'Forecolor',rgb(157,31,31),d,[ color ]).
-html_comp_i(15,'Font',font('Microsoft Sans Serif',16,[]),d,[ font ]).
-html_comp_i(16,'Align',right,v,[ str ]).
-html_comp_i(17,'Id','Image1',v,[ str ]).
-html_comp_i(17,'Class','HeaderImage1',v,[ str ]).
-html_comp_i(17,src,i(98,'7326b96a-20b7-4973-8d71-35094049767d'),v,[ image ]).
-html_comp_i(17,lowsrc,'',d,[ str ]).
-html_comp_i(17,'Returnonclick',0,d,[ bool ]).
-html_comp_i(17,'Eventgx','',d,[ str ]).
-html_comp_i(17,'Height',measure(0,px),d,[ measure ]).
-html_comp_i(17,'Width',measure(0,px),d,[ measure ]).
-html_comp_i(17,'Border','0',d,[ str ]).
-html_comp_i(17,'Alt','',d,[ str ]).
-html_comp_i(17,'Title','',d,[ str ]).
-html_comp_i(17,'Hspace',0,v,[ num ]).
-html_comp_i(17,'Vspace',0,d,[ num ]).
-html_comp_i(17,'Align',left,d,[ str ]).
-html_comp_i(17,'Usemap','',d,[ str ]).
-html_comp_i(18,'Id','Image2',v,[ str ]).
-html_comp_i(18,'Class','Image',v,[ str ]).
-html_comp_i(18,src,i(98,'ee2902f8-fadd-43f8-bdba-9c24c220a598'),v,[ image ]).
+html_comp_i(15,'Hspace',0,v,[ num ]).
+html_comp_i(15,'Vspace',0,d,[ num ]).
+html_comp_i(15,'Align',left,d,[ str ]).
+html_comp_i(15,'Usemap','',d,[ str ]).
+html_comp_i(16,'Caption','Villequi System',d,[ str ]).
+html_comp_i(16,'Id','Textblockheader1',v,[ str ]).
+html_comp_i(16,'Class','TextBlockHeader',v,[ str ]).
+html_comp_i(16,'Event','',d,[ str ]).
+html_comp_i(16,'Returnonclick',0,d,[ bool ]).
+html_comp_i(16,'Gxformat',0,d,[ num ]).
+html_comp_i(16,'Title','',d,[ str ]).
+html_comp_i(16,'Fill',-1,d,[ bool ]).
+html_comp_i(16,'Backcolor',rgb(255,255,255),d,[ color ]).
+html_comp_i(16,'Forecolor',rgb(157,31,31),d,[ color ]).
+html_comp_i(16,'Font',font('Microsoft Sans Serif',16,[]),d,[ font ]).
+html_comp_i(17,'Align',right,v,[ str ]).
+html_comp_i(18,'Id','Image1',v,[ str ]).
+html_comp_i(18,'Class','HeaderImage1',v,[ str ]).
+html_comp_i(18,src,i(98,'7326b96a-20b7-4973-8d71-35094049767d'),v,[ image ]).
 html_comp_i(18,lowsrc,'',d,[ str ]).
 html_comp_i(18,'Returnonclick',0,d,[ bool ]).
 html_comp_i(18,'Eventgx','',d,[ str ]).
-html_comp_i(18,'Height',measure(99,px),v,[ measure ]).
-html_comp_i(18,'Width',measure(114,px),v,[ measure ]).
+html_comp_i(18,'Height',measure(0,px),d,[ measure ]).
+html_comp_i(18,'Width',measure(0,px),d,[ measure ]).
 html_comp_i(18,'Border','0',d,[ str ]).
 html_comp_i(18,'Alt','',d,[ str ]).
 html_comp_i(18,'Title','',d,[ str ]).
@@ -461,6 +462,7 @@ html_comp_i(32,'Fill',-1,d,[ bool ]).
 html_comp_i(32,'Backcolor',rgb(255,255,255),d,[ color ]).
 html_comp_i(32,'Forecolor',rgb(116,116,116),d,[ color ]).
 html_comp_i(32,'Font',font('Arial',9,[]),d,[ font ]).
+html_comp_i(34,'Height',measure(14,px),v,[ measure ]).
 html_comp_i(34,'Colspan',3,v,[ num ]).
 html_comp_i(35,'Controlname','Wcrecentlinks',v,[ str ]).
 html_comp_i(35,'Params',[],v,[ params ]).
@@ -582,9 +584,9 @@ html_comp_i(62,'Rules',none,d,[ str ]).
  
 lit_i(8,1,bitmap('9fb193d9-64a4-4d30-b129-ff7c76830f7e-61'),[ ctlname('Btn_topl') ]).
 lit_i(11,1,bitmap('9fb193d9-64a4-4d30-b129-ff7c76830f7e-62'),[ ctlname('Btn_topr') ]).
-lit_i(15,1,t('Villequi System',3),[ ctlname('Textblockheader1') ]).
-lit_i(17,1,bitmap('9fb193d9-64a4-4d30-b129-ff7c76830f7e-14'),[ ctlname('Image1') ]).
-lit_i(18,1,bitmap('9fb193d9-64a4-4d30-b129-ff7c76830f7e-63'),[ ctlname('Image2') ]).
+lit_i(15,1,bitmap('9fb193d9-64a4-4d30-b129-ff7c76830f7e-63'),[ ctlname('Image2') ]).
+lit_i(16,1,t('Villequi System',3),[ ctlname('Textblockheader1') ]).
+lit_i(18,1,bitmap('9fb193d9-64a4-4d30-b129-ff7c76830f7e-14'),[ ctlname('Image1') ]).
 lit_i(5,1,table(5),[ ctlname('Table1') ]).
 lit_i(22,1,t('Home',3),[ ctlname('Home') ]).
 lit_i(24,1,t('First Option',3),[ ctlname('Firsttext') ]).
