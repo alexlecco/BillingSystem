@@ -42,6 +42,7 @@ public class bldDevelopermenu : GxBaseBuilder
    public override ItemCollection GetRuntimeBuildList( )
    {
       ItemCollection sc = new ItemCollection() ;
+      sc.Add( @"bin\clientesenrango.dll", cs_path + @"\clientesenrango.rsp");
       sc.Add( @"bin\gx0051.dll", cs_path + @"\gx0051.rsp");
       sc.Add( @"bin\gx0040.dll", cs_path + @"\gx0040.rsp");
       sc.Add( @"bin\gx0030.dll", cs_path + @"\gx0030.rsp");
@@ -83,6 +84,8 @@ public class bldDevelopermenu : GxBaseBuilder
          if (checkTime(obj, cs_path + @"\GxFullTextSearchReindexer.cs" ))
             return true;
          if (checkTime(obj, cs_path + @"\GxModelInfoProvider.cs" ))
+            return true;
+         if (checkTime(obj, cs_path + @"\GXDOMAINStatus.cs" ))
             return true;
          if (checkTime(obj, cs_path + @"\GXDOMAINRecentLinksOptions.cs" ))
             return true;

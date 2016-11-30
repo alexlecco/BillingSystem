@@ -67,4 +67,10 @@
          <appender-ref  ref="RollingFile"/>
       </root>
    </log4net>
+   <system.web>
+      <trace  enabled="false"/>
+      <httpHandlers>
+         <add  verb="*" path="*.aspx" type="GeneXus.HttpHandlerFactory.HandlerFactory,gxclasses"/>
+      </httpHandlers>
+   </system.web>
 </configuration>

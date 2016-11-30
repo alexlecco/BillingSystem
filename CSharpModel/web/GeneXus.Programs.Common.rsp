@@ -20,6 +20,7 @@ SoapParm.cs
 GxWebStd.cs
 GxFullTextSearchReindexer.cs
 GxModelInfoProvider.cs
+GXDOMAINStatus.cs
 GXDOMAINRecentLinksOptions.cs
 GXDOMAINMessageTypes.cs
 GXDOMAINIMEMode.cs
